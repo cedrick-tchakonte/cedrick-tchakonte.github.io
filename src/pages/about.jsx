@@ -60,12 +60,6 @@ const About = () => {
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink
-                href={siteMetadata.socials.x}
-                icon={xIcon}
-              >
-                Follow on x
-              </SocialLink>
-              <SocialLink
                 href={siteMetadata.socials.instagram}
                 icon={InstagramIcon}
                 className="mt-4"
