@@ -35,10 +35,6 @@ const siteMetadata = {
       href: '/',
     },
     {
-      name: 'About',
-      href: '/about',
-    },
-    {
       name: 'Experience',
       href: '/experience',
     },
@@ -47,17 +43,21 @@ const siteMetadata = {
       href: '/expertise',
     },
     {
-      name: 'Contact',
-      href: '/contact',
-    },
-    {
       name: 'Projects',
       href: '/projects',
     },
     {
       name: 'Skills',
       href: '/skills',
-    }
+    },
+    {
+      name: 'Contact',
+      href: '/contact',
+    },
+    {
+      name: 'About',
+      href: '/about',
+    },
   ],
   siteRepo: 'https://github.com/myeportfolio',
   expertise: [
