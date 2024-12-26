@@ -6,10 +6,10 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { RiLinksLine } from 'react-icons/ri'
 import siteMetadata from '@/data/siteMetadata'
 import logoApple from '@/images/logos/apple.svg'
+import { motion } from 'framer-motion'
 
 // TODO: If you want to include the logo of the company, I suggesting importing the svg from Remix-Design's repo: https://github.com/Remix-Design/RemixIcon/tree/master/icons/Logos
 
-// TODO: Add your own work experience here
 const experiences = [
   {
     title: 'Lead',
@@ -39,7 +39,7 @@ const experiences = [
   },
 ]
 
-export default function Resume() {
+export default function Experience() {
   return (
     <>
       <Head>

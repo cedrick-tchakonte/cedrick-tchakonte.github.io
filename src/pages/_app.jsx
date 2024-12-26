@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
+import Preloader from '@/components/Preloader'
+
 import '@/styles/tailwind.css'
 import 'focus-visible'
 
@@ -21,6 +23,7 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
+      <Preloader />
       <div className="fixed flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
           <div className="w-full bg-white ring-1 ring-primaryText-100 dark:bg-primaryText-900 dark:ring-primaryText-300/20" />

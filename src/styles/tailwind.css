@@ -8,3 +8,17 @@
   background: rgb(2, 48, 71);
   background: linear-gradient(0deg, rgba(2, 48, 71, 1) 0%, rgba(33, 158, 188, 1) 100%);
 }
+
+.loader {
+  border-top-color: #3498db; /* Change this color to match your theme */
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
