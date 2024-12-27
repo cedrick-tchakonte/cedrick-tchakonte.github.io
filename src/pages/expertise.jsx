@@ -11,7 +11,7 @@ const expertise = () => {
   return (
     <>
       <Head>
-        <title>expertise - {siteMetadata.author}</title>
+        <title>{'Expertise-{siteMetadata.author}'}</title>
         <meta name="description" content="expertise" />
       </Head>
       <div className="relative pt-16 overflow-hidden">

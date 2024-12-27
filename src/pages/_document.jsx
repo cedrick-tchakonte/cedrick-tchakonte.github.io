@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document'
+import Preloader from '@/components/Preloader'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -61,6 +62,7 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" content="#000000" />
       </Head>
+      
       <body className="flex h-full flex-col bg-primaryText-50 dark:bg-black">
         <Main />
         <NextScript />

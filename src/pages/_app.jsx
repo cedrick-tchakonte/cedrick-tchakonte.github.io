@@ -31,6 +31,7 @@ export default function App({ Component, pageProps, router }) {
       </div>
       <div className="flex flex-col justify-between h-screen">
         <Header />
+
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>

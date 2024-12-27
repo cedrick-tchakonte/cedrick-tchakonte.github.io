@@ -86,7 +86,7 @@ export default function Skills() {
   return (
     <>
       <Head>
-        <title>Skills - {siteMetadata.author}</title>
+        <title>{'Skills-{siteMetadata.author}'}</title>
         <meta name="description" content={`Skills and expertise of ${siteMetadata.author}`} />
       </Head>
       <SimpleLayout title="Skills" intro="Here are the various skills and tools I have mastered in the field of computer science, with a focus on AI and robotics.">

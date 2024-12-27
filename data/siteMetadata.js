@@ -104,6 +104,17 @@ const siteMetadata = {
     //TODO also need to update the experience array in the ExperienceSection component. This is because of the icons used.
     education: [
       {
+        schoolName: 'Institut Polytechnique de Paris',
+        degree: '2A Computer Science',
+        description:
+        'IP Paris is a prestigious engineering school in France. The computer science program is designed to provide students with a strong foundation in computer science and engineering.',
+        startDate: '2023',
+        endDate: '2025',
+        typeofDegree: 'Master of Science',
+        ImageUrl: '/images/avatar.jpg',
+        alt: 'Institut Polytechnique de Paris',
+      },
+      {
         schoolName: 'Ecole Nationale Supérieure de Techniques Avancées Paris',
         degree: '2A Computer Science',
         description:
@@ -111,6 +122,8 @@ const siteMetadata = {
         startDate: '2023',
         endDate: '2025',
         typeofDegree: 'Master of Science',
+        ImageUrl: '/images/avatar.jpg',
+        alt: 'ENSTA Paris',
       },
       {
         schoolName: 'Ecole Nationale Supérieure Polytechnique de Yaoundé',
@@ -119,6 +132,28 @@ const siteMetadata = {
         'ENSPY is a prestigious engineering school in Cameroon. The computer science program is designed to provide students with a strong foundation in computer science and engineering.',
         startDate: '2022',
         endDate: '2024',
+        ImageUrl: '/images/avatar.jpg',
+        alt: 'ENSPY',
+      },
+      {
+        schoolName: 'Ecole Nationale Supérieure Polytechnique de Yaoundé',
+        degree: 'Integrated preparatory classes | Mathematics, physical sciences and computer science',
+        description:
+        'ENSPY is a prestigious engineering school in Cameroon. The preparatory classes program is designed to provide students with a strong foundation in mathematics, physical sciences and computer science.',        
+        startDate: '2020',
+        endDate: '2022',
+        ImageUrl: '/images/avatar.jpg',
+        alt: 'ENSPY',
+      },
+      {
+        schoolName: 'Lycée Bilingue de Nylon Ndogpassi',
+        degree: 'Baccalauréat | Mathematics, physical sciences and computer science',
+        description:
+        'National examination in Cameroon. The program is designed to provide students with a strong foundation in mathematics, physical sciences and computer science.',
+        startDate: '2022',
+        endDate: '2024',
+        ImageUrl: '/images/avatar.jpg',
+        alt: 'Lycée Bilingue de Nylon Ndogpassi',
       },
     ],
   },

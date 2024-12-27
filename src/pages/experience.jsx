@@ -43,7 +43,7 @@ export default function Experience() {
   return (
     <>
       <Head>
-        <title>Experience - {siteMetadata.author}</title>
+        <title>{'Experience-{siteMetadata.author}'}</title>
         <meta
           name={`Work experience of ${siteMetadata.author}`}
           content={siteMetadata.experience.title}
@@ -84,38 +84,49 @@ export default function Experience() {
                   </li>
                 ))}
               </Card.Description>
-              <p className="relative z-10 flex mt-6 text-sm font-medium transition text-primaryText-400 group-hover:text-accent-500 dark:text-primaryText-200">
+              <div className="relative z-10 flex mt-6 text-sm font-medium transition text-primaryText-400 group-hover:text-accent-500 dark:text-primaryText-200">
                 <RiLinksLine className="flex-none w-6 h-6" />
                 <span className="ml-2">{experience.link.label}</span>
-              </p>
+              </div>
             </Card>
           ))}
         </ul>
 
-        <div className="relative max-w-lg mx-auto mt-24 lg:max-w-7xl">
-          <div>
-            <h2 className="mb-6 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
+        <div class="relative max-w-lg mx-auto mt-24 lg:max-w-7xl px-4">
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl relative inline-block">
               Education
             </h2>
           </div>
-          <div className="grid gap-16 lg:grid-cols-2 lg:gap-x-5 lg:gap-y-12">
+
+          <div class="grid gap-6 lg:grid-cols-3 lg:gap-6">
             {siteMetadata.experience.education.map((item, index) => (
-              <Card key={`education-${index}`}>
-                <p className="text-sm text-primaryText-600 dark:text-primaryText-400">
-                  {item.startDate} - {item.endDate}
-                </p>
-                <div className="block mt-2">
-                  <p className="text-xl font-semibold text-primaryText-800 dark:text-primaryText-100">
-                    {item.degree}
-                  </p>
-                  <p className="text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
-                    {item.schoolName}
-                  </p>
-                  <p className="mt-3 text-base text-primaryText-600 dark:text-primaryText-400">
-                    {item.description}
-                  </p>
+              
+              <div key={`education-${index}`} 
+                  class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group transform hover:-translate-y-2">
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="px-4 py-1 text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 rounded-full">
+                      {item.startDate} - {item.endDate}
+                    </span>
+                    <div class="w-2 h-2 rounded-full bg-blue-500 dark:bg-blue-400"></div>
+                  </div>
+
+                  <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-primaryText-800 dark:text-primaryText-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                      {item.degree}
+                    </h3>
+                    
+                    <h4 class="text-lg font-semibold text-primaryText-700 dark:text-primaryText-200">
+                      {item.schoolName}
+                    </h4>
+
+                    <div class="text-base text-primaryText-600 dark:text-primaryText-400 leading-relaxed">
+                      {item.description}
+                    </div>
+                  </div>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -123,3 +134,6 @@ export default function Experience() {
     </>
   )
 }
+
+
+// utiliser un composant Card pour afficher les expériences professionnelles
