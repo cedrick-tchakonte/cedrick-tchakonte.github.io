@@ -14,28 +14,37 @@ const mobilityData = [
       city: 'Paris',
       country: 'France',
       image: '/images/paris.jpg',
-      description: 'Studied at Sorbonne University for one semester.',
-      startDate: '2022',
-      endDate: 'Présent',
+      description: 'Studied at Ecole Nationale Supérieure de Techniques Avancées | Institut Polytechnique de Paris.',
+      startDate: '2024',
+      endDate: 'Present',
       university: 'Sorbonne University',
     },
     {
-      city: 'Berlin',
-      country: 'Germany',
-      image: '/images/paris.jpg',
-      description: 'Completed a summer exchange program focused on AI.',
-      startDate: '2021',
-      endDate: '2021',
-      university: 'Technical University of Berlin',
+      city: 'Yamoussoukro',
+      country: 'Côte d\'Ivoire',
+      image: '/images/yamoussoukro.jpg',
+      description: "I spent 1 week there, during which time we took the oral entrance exams to the Ecole Polytechnique, often called l'X.",
+      startDate: '2023',
+      endDate: '2023',
+      university: 'Institut National Polytechnique Félix Houphouët-Boigny',
     },
     {
-      city: 'Tokyo',
-      country: 'Japan',
-      image: '/images/paris.jpg',
-      description: 'Participated in a research internship for six months.',
-      startDate: '2022',
-      endDate: '2023',
-      university: 'University of Tokyo',
+      city: 'Yaoundé',
+      country: 'Cameroon',
+      image: '/images/yaounde.png',
+      description: 'Studied Computer Science Engineering at Ecole Nationale Supérieure Polytechnique de Yaoundé',
+      startDate: '2020',
+      endDate: '2024',
+      university: 'University of Yaoundé I',
+    },
+    {
+      city: 'Douala',
+      country: 'Cameroon',
+      image: '/images/douala.png',
+      description: "city ​​where I was born, and where I spent most of my childhood and my secondary studies, it is also where I obtained my Baccalaureate diploma before continuing my studies in the city of Yaoundé",
+      startDate: 'Birth',
+      endDate: '2020',
+      university: 'Lycée Bilingue de Nylon Ndogpassi',
     },
   ];
   
@@ -101,7 +110,7 @@ export default function InternationalMobility() {
         </div>
 
         {/* Cartes de mobilité (optionnel, reste inchangé) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-8">
           {mobilityData.map((location, index) => (
             <InternationalMobilityCard key={index} location={location} />
           ))}
