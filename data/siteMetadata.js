@@ -62,6 +62,14 @@ const siteMetadata = {
       name: 'Education',
       href: '/education',
     },
+    {
+      name: 'Certifications',
+      href: '/certifications',
+    },
+    {
+      name: 'International Mobility',
+      href: '/international-mobility',
+    },
 
   ],
   siteRepo: 'https://github.com/myeportfolio',
