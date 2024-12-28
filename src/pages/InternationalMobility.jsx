@@ -78,7 +78,7 @@ export default function InternationalMobility() {
             </p>
             <p className="text-base text-primaryText-600 dark:text-primaryText-400 leading-relaxed mt-4">
               From Paris to Tokyo, each destination has left an indelible mark on my personal and 
-              professional growth. Join me as I share my story and the incredible places I've been.
+              professional growth. Join me as I share my story and the incredible places I&apos;ve been.
             </p>
           </div>
 
