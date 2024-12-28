@@ -22,3 +22,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* Carrousel Styling */
+.slick-dots {
+  bottom: -25px;
+}
+.slick-dots li button:before {
+  font-size: 10px;
+  color: gray;
+}
+.slick-dots li.slick-active button:before {
+  color: black;
+}

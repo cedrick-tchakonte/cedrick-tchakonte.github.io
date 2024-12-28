@@ -32,7 +32,7 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>{'About-{siteMetadata.author}'}</title>
+        <title>About-{siteMetadata.author}</title>
         <meta name="description" content={siteMetadata.description} />
       </Head>
       <Container className="mt-16 sm:mt-32">

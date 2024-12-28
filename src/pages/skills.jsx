@@ -67,7 +67,7 @@ const skills = [
     items: [
       { name: 'AWS', icon: FaAws },
       { name: 'Azure', icon: SiAzuredevops },
-      { name: 'Google Cloud', icon: SiGooglecloud },
+      { name: 'Google-Cloud', icon: SiGooglecloud },
     ],
   },
   {
@@ -77,7 +77,7 @@ const skills = [
       { name: 'React', icon: FaReact },
       { name: 'Next.JS', icon: SiNextdotjs },
       { name: 'SpringBoot', icon: SiSpringboot },
-      { name: 'Spring Security', icon: SiSpringsecurity },
+      { name: 'Spring-Security', icon: SiSpringsecurity },
     ],
   },
 ]

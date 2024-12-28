@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>{'{siteMetadata.title}'}</title>
+        <title>{siteMetadata.title}</title>
         <meta name="description" content={siteMetadata.description} />
         <link
           rel="apple-touch-icon"

@@ -9,32 +9,30 @@ import ecomLogo from '@/images/projects/ecom.svg'
 import bananaLogo from '@/images/projects/bananaApp.svg'
 import supaSnacksLogo from '@/images/projects/supaSnacks.svg'
 import payByFonieLogo from '@/images/projects/payByFonie.svg'
+import { ChevronRightIcon } from '@/images/icons/NavIcons'
 
 // TODO: Add your own projects here. Logo images from https://heroicons.com/
 const projectsData = [
   {
-    title: 'Chatbot with PyQt5',
-    description: `This is a project that I built while learning React and Redux. It is a fully functional e-commerce website that allows users to sign in with their Google account, add items to their cart, and make payments with Stripe. It is built with TypeScript, React, Redux, Firebase, Stripe, and Tailwind.`,
+    title: "Chatbot with PyQt5",
+    description: "This is a simple chatbot that I built using PyQt5. I wanted to learn more about PyQt5 and how to build desktop applications. The chatbot is a simple application that allows you to chat with a bot. The bot can answer simple questions and provide information about the weather. The chatbot uses the OpenWeatherMap API to get the weather information.",
     logo: ecomLogo,
-    href: 'https://github.com/Cwarcup/ecom-firebase',
+    href: "https://github.com/CeGeek23/chatbot",
+    category: "Desktop Application",
   },
   {
-    title: '',
-    description: `Is this a banana? No. Maybe? I don't know. Use this app to find out. I wanted to learn more about machine learning and how to use TensorFlow.js. I explored the TensorFlow.js website and found a pre-trained image classification model called MobileNet. I used this model to classify images of bananas and other objects.`,
+    title: "Intrusion Detection System",
+    description: "This project is a simple intrusion detection system composed of a mobile application, arduino cards, micro cameras and a server. The system is designed to detect intruders in a room and send an alert to the user's mobile phone. The system uses a combination of motion sensors, cameras and a server to detect intruders and send an alert to the user's mobile phone. The system is built using Arduino, Python, Flask and React Native.",
     logo: bananaLogo,
-    href: 'https://github.com/Cwarcup/wtf_is_this',
+    href: "https://github.com/CeGeek23/Syst-me_detection_d_intrusion",
+    category: "Security System",
   },
   {
-    title: 'Supa Snacks',
-    description: `Supa Snacks is a mini-project to learn Supabase and introduce myself to React-Query. It's a simple app that allows you to add snacks to a list, edit and delete from. Users can also change the order of the snacks in the list. It is built using TypeScript, React, React-Query, Supabase and React Router Dom.`,
+    title: "Trafic prediction app in the city of Yaoundé (Cameroon)",
+    description: "This project is a simple traffic prediction application for the city of Yaoundé in Cameroon. The application uses historical traffic data to predict traffic conditions in the city. The application uses a machine learning model to predict traffic conditions based on historical data. The application is built using Python, Flask and React.",
     logo: supaSnacksLogo,
-    href: 'https://github.com/Cwarcup/supa-snacks',
-  },
-  {
-    title: 'PayByFonie',
-    description: `PayByFonie is a play on the app PayByPhone, a parking app that allows you to pay for parking via your phone. PayByFonie is a similar app, but allows you to search a destination and view parking meter data near that location. Users can search a location using the MapBox API, view the price and time limit of parking meters near that location, and obtain the PayByPhone meter number to pay for that meter. The app was built using React, and Node.js.`,
-    logo: payByFonieLogo,
-    href: 'https://github.com/Cwarcup/free-parking-mapper',
+    href: "https://github.com/CeGeek23/Syst-me_detection_d_intrusion",
+    category: "Machine Learning Model",
   },
 ]
 
@@ -53,7 +51,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>{'Projects-{siteMetadata.author}'}</title>
+        <title>Projects-{siteMetadata.author}</title>
         <meta name="description" content="Personal projects by Cedrick Tchakonte" />
       </Head>
       <SimpleLayout
@@ -81,6 +79,10 @@ export default function Projects() {
                 <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
                   <Card.Link href={project.href}>{project.title}</Card.Link>
                 </h2>
+                {/* Eyebrow - texte complémentaire */}
+                <Card.Eyebrow decorate>
+                  {project.category || "Category"}
+                </Card.Eyebrow>
                 <Card.Description>{project.description}</Card.Description>
                 <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-teal-500 dark:text-zinc-200">
                   <LinkIcon className="flex-none w-6 h-6" />

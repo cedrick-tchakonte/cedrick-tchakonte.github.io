@@ -58,6 +58,11 @@ const siteMetadata = {
       name: 'About',
       href: '/about',
     },
+    {
+      name: 'Education',
+      href: '/education',
+    },
+
   ],
   siteRepo: 'https://github.com/myeportfolio',
   expertise: [
