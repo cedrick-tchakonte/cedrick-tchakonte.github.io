@@ -72,7 +72,7 @@ export default function InternationalMobility() {
               About Me
             </h2>
             <p className="text-base text-primaryText-600 dark:text-primaryText-400 leading-relaxed">
-              Hi! I'm Cedrick Tchakonte, a passionate student who loves exploring the world while 
+              Hi! I&apos;m Cedrick Tchakonte, a passionate student who loves exploring the world while 
               advancing my academic and professional journey. My experiences abroad have shaped 
               me into a global thinker, and I cherish the opportunities to learn from diverse cultures.
             </p>
