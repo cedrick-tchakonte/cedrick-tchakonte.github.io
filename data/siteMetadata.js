@@ -35,6 +35,24 @@ const siteMetadata = {
       href: '/',
     },
     {
+      name: 'Education',
+      href: '/education',
+      submenu: [
+        { 
+          name: 'Academic Background', 
+          href: '/education/academic-background' 
+        },
+        { name: 'Certifications', 
+          href: '/education/certifications' 
+        },
+      ],
+    },
+    { 
+      name: 'Projects', 
+      href: '/projects' 
+    },
+
+    {
       name: 'Experience',
       href: '/experience',
     },
