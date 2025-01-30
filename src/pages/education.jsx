@@ -5,7 +5,7 @@ import siteMetadata from '@/data/siteMetadata'
 
 const educationBackground = [
     {
-      degree: 'Master of Science in Artificial Intelligence',
+      degree: 'Engineering student in Computer Science',
       institution: 'Institut Polytechnique de Paris',
       logo: '/images/logo/ip-paris.png', // Add logo path here
       startDate: 'Juillet 2024',
@@ -13,9 +13,8 @@ const educationBackground = [
       description:
         'IP Paris is a prestigious engineering school in France. The computer science program is designed to provide students with a strong foundation in computer science and engineering. Focused on advanced AI topics, including machine learning, natural language processing, and robotics. Completed with distinction.',
       highlights: [
-        'Thesis: "Deep Learning for Autonomous Vehicles"',
+        'AI Engineering specialization',
         'Relevant Courses: Advanced ML, Computer Vision, AI Ethics',
-        'Dean\'s List for all semesters',
       ],
     },
     {
@@ -27,13 +26,12 @@ const educationBackground = [
       description:
         'ENSTA Paris is a prestigious engineering school in France. The computer science program is designed to provide students with a strong foundation in computer science and engineering. Focused on advanced AI topics, including machine learning, natural language processing, and robotics. Completed with distinction.',
       highlights: [
-        'Thesis: "Deep Learning for Autonomous Vehicles"',
-        'Relevant Courses: Advanced ML, Computer Vision, AI Ethics',
-        'Dean\'s List for all semesters',
+        'AI Engineering specialization',
+        'Relevant Courses: Computer Vision, AI Ethics, machine learning, control theory, robotics',
       ],
       },
     {
-      degree: 'Master of Science in Artificial Intelligence',
+      degree: '2 Years as an Engineering student in Computer Science',
       institution: 'Ecole Nationale Supérieure Polytechnique de Yaoundé',
       logo: '/images/logo/enspy.png', // Add logo path here
       startDate: 'September 2020',
@@ -41,27 +39,26 @@ const educationBackground = [
       description:
         'ENSPY is a prestigious engineering school in Cameroon. The computer science program is designed to provide students with a strong foundation in computer science and engineering. Focused on advanced AI topics, including machine learning, natural language processing, and robotics. Completed with distinction.',
       highlights: [
-        'Thesis: "Deep Learning for Autonomous Vehicles"',
-        'Relevant Courses: Advanced ML, Computer Vision, AI Ethics',
-        'Dean\'s List for all semesters',
+        'Computer Science Engineering',
+        'Relevant Courses: Web Development, Algorithms, Data Structures, Software Engineering, software engineering, machine learning, network security',,
       ],
     },
     {
-      degree: 'Bachelor of Engineering in Computer Science',
+      degree: 'Preparatory Classes for Engineering Studies in Mathematics, Physical Sciences and Computer Science',
       institution: 'Ecole Nationale Supérieure Polytechnique de Yaoundé',
       logo: '/images/logo/enspy.png', // Add logo path here
       startDate: 'August 2016',
       endDate: 'May 2020',
       description:
-        'Learned foundational computer science, algorithms, and software engineering, with hands-on projects and internships.',
+        'Leading engineering school in Cameroon. The preparatory classes program is designed to provide students with a strong foundation in mathematics, physical sciences and computer science. Completed with honors.',
       highlights: [
-        'Built a full-stack web application for campus events',
-        'Internship at TechCorp: Automated testing pipeline development',
+        'Preparation for Engineering Studies',
+        'Relevant Courses: Mathematics, Physics, Chemistry, Computer Science',
         'Graduated with honors',
       ],
     },
     {
-      degree: 'Mathematics and Physics science baccalaureate',
+      degree: 'Baccalauréat scientifique | Mathematics, Physical Sciences and Computer Science',
       institution: 'Government Bilingual High School of Nylon Ndogpassi',
       logo: '/images/logo/lynyndo.jpeg', // Add logo path here
       startDate: '2019',
@@ -74,6 +71,7 @@ const educationBackground = [
         'Physics',
         'Chemistry',
         'General Knowledge',
+        'Graduated with honors: mention très bien',
       ],
     },
   ]
