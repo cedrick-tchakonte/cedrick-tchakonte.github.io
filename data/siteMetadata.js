@@ -47,15 +47,10 @@ const siteMetadata = {
         },
       ],
     },
-    { 
-      name: 'Projects', 
-      href: '/projects' 
-    },
-
-    {
-      name: 'Experience',
-      href: '/experience',
-    },
+    //{
+      //name: 'Experience',
+      //href: '/experience',
+      //},
     {
       name: 'Expertise',
       href: '/expertise',
@@ -75,10 +70,6 @@ const siteMetadata = {
     {
       name: 'About',
       href: '/about',
-    },
-    {
-      name: 'Education',
-      href: '/education',
     },
     {
       name: 'Certifications',
