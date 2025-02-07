@@ -11,32 +11,44 @@ import { motion } from 'framer-motion'
 // TODO: If you want to include the logo of the company, I suggesting importing the svg from Remix-Design's repo: https://github.com/Remix-Design/RemixIcon/tree/master/icons/Logos
 
 const experiences = [
+  // {
+  //   title: 'Lead',
+  //   company: 'Apple',
+  //   date: '2018 - Present',
+  //   description: [
+  //     'Supervise a team of 100+ employees across all areas of the business, with approximately 60 team members daily',
+  //     'Develop and facilitate daily storewide meetings, workshops, and team training & on-boarding',
+  //     'Created and rolled out business training leading to +50%  business related connections, later being implemented market wide to all retail store',
+  //   ],
+  //   location: 'Vancouver, BC',
+  //   link: { url: 'https://www.apple.com/ca/', label: 'Apple' },
+  //   logo: logoApple,
+  // },
   {
-    title: 'Lead',
-    company: 'Apple',
-    date: '2018 - Present',
+    title: 'Stage',
+    company: 'EUREKA Agency',
+    date: 'Juin 2023 - Août 2023',
     description: [
-      'Supervise a team of 100+ employees across all areas of the business, with approximately 60 team members daily',
-      'Develop and facilitate daily storewide meetings, workshops, and team training & on-boarding',
-      'Created and rolled out business training leading to +50%  business related connections, later being implemented market wide to all retail store',
+      'Eureka Agency is a digital marketing agency which is specialized in web and mobile development and innovative projects.',
+      'Learning and working on web development projects using PHP',
     ],
-    location: 'Vancouver, BC',
-    link: { url: 'https://www.apple.com/ca/', label: 'Apple' },
+    location: 'Yaoundé, Cameroun',
+    link: { url: 'https://', label: 'EUREKA Agency' },
     logo: logoApple,
   },
-  {
-    title: 'Genius',
-    company: 'Apple',
-    date: '2016 - 2018',
-    description: [
-      'Provided technical support to customers, including troubleshooting, diagnosing, and repairing hardware and software issues',
-      'Strong people skills and a knack for problem solving',
-      'Maintain composure, provide empathy and customer focus while troubleshooting and solving technical issues',
-    ],
-    location: 'Vancouver, BC',
-    link: { url: 'https://www.apple.com/ca/', label: 'Apple' },
-    logo: logoApple,
-  },
+  // {
+  //   title: 'Genius',
+  //   company: 'Apple',
+  //   date: '2016 - 2018',
+  //   description: [
+  //     'Provided technical support to customers, including troubleshooting, diagnosing, and repairing hardware and software issues',
+  //     'Strong people skills and a knack for problem solving',
+  //     'Maintain composure, provide empathy and customer focus while troubleshooting and solving technical issues',
+  //   ],
+  //   location: 'Vancouver, BC',
+  //   link: { url: 'https://www.apple.com/ca/', label: 'Apple' },
+  //   logo: logoApple,
+  // },
 ]
 
 export default function Experience() {
