@@ -33,7 +33,7 @@ const experiences = [
       'Learning and working on web development projects using PHP',
     ],
     location: 'Yaoundé, Cameroun',
-    link: { url: 'https://', label: 'EUREKA Agency' },
+    link: { url: 'https://www.eureka-cm.netlify.app', label: 'EUREKA Agency' },
     logo: logoApple,
   },
   // {
