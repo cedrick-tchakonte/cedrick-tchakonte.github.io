@@ -64,14 +64,6 @@ const siteMetadata = {
       href: '/skills',
     },
     {
-      name: 'Contact',
-      href: '/contact',
-    },
-    {
-      name: 'About',
-      href: '/about',
-    },
-    {
       name: 'Certifications',
       href: '/certifications',
     },
@@ -79,7 +71,14 @@ const siteMetadata = {
       name: 'International Mobility',
       href: '/international-mobility',
     },
-
+    {
+      name: 'Contact',
+      href: '/contact',
+    },
+    {
+      name: 'About',
+      href: '/about',
+    },
   ],
   siteRepo: 'https://github.com/myeportfolio',
   expertise: [
