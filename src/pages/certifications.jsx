@@ -11,7 +11,7 @@ const certifications = [
       "description": "A comprehensive certification covering neural networks, deep learning, and their applications in computer vision, natural language processing, and sequence models.",
       "logo": '/images/deepLearning.ai.png',
       "tags": ["AI", "Neural Networks","NLP","Deep Learning", "Computer Vision"],
-      "verificationLink": ""
+      "verificationLink": "https://coursera.org/share/cfca8d6b98c3ddaf10ac87c8971ee486"
     },
     {
       "name": "Project Management",
