@@ -41,25 +41,16 @@ const certifications = [
       "verificationLink": "https://coursera.org/share/57909ae0d46dc914244f165bbb010689"
     },
     {
-      "name": "FCF - Introduction to the Threat Landscape 2.0 Self-Paced",
+      "name": "FCF - Fortinet Certified Fundamentals in Cybersecurity",
       "issuer": "Fortinet",
       "date": "Octobre 2024",
       "description": "This course provides a foundation of cybersecurity knowledge and skills. It covers the latest trends in cybersecurity and how to protect your organization from cyber threats.",
       "logo": "/images/fortinet.png",
       "tags": ["Cybersecurity", "Threat Landscape", "Network Security", "Data Protection"],
-      "verificationLink": "",
+      "verificationLink": "https://training.fortinet.com/local/cert/my/certificate.php?badge=84",
     },
     {
-      "name": "FCF - Getting Started in Cybersecurity 2.0 Self-Paced",
-      "issuer": "Fortinet",
-      "date": "Octobre 2024",
-      "description": "This course provides a foundation of cybersecurity knowledge and skills. It essential cybersecurity concepts, including the importance of cybersecurity, an overview of the most common threats, and how to mitigate them.",
-      "logo": "/images/fortinet.png",
-      "tags": ["Cybersecurity", "Network Security", "Data Protection", "Cryptography"],
-      "verificationLink": "https://training.fortinet.com/local/cert/my/certificate.php?badge=84"
-    },
-    {
-      "name": "FCA - FortiGate 7.4 Operator Self-Paced",
+      "name": "FCA - Fortinet Certified Associate in Cybersecurity",
       "issuer": "Fortinet",
       "date": "Octobre 2024",
       "description": "This course specializes in the configuration and management of FortiGate devices. It covers the basics of FortiGate, including firewall policies, security profiles, and VPNs.",
