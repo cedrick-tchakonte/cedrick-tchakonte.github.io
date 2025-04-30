@@ -28,12 +28,12 @@ const features = [
       'I have a strong background in coding and software development. I enjoy creating efficient and scalable solutions to complex problems. My experience spans various programming languages and frameworks, making me versatile in tackling different challenges.',
     icon: IoCodeWorkingOutline,
   },
-  {
-    name: 'Research and Publications',
-    description:
-      'I have contributed to research in AI and robotics, with publications in academic journals. My research focuses on developing new algorithms and techniques to improve the performance and capabilities of autonomous systems.',
-    icon: RiBarcodeLine,
-  },
+  // {
+  //   name: 'Research and Publications',
+  //   description:
+  //     'I have contributed to research in AI and robotics, with publications in academic journals. My research focuses on developing new algorithms and techniques to improve the performance and capabilities of autonomous systems.',
+  //   icon: RiBarcodeLine,
+  // },
 ]
 const FeatureSection = () => {
   return (
