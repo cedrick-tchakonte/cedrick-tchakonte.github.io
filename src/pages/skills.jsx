@@ -57,7 +57,6 @@ const skills = [
       { name: 'VS Code', icon: SiVisualstudiocode },
       { name: 'Eclipse', icon: SiEclipseide },
       { name: 'IntelliJ IDEA', icon: SiIntellijidea },
-      { name: 'Jenkins', icon: SiJenkins },
       { name: 'Visual Studio', icon: SiVisualstudio },
       { name: 'Pycharm', icon: SiPycharm },
     ],
