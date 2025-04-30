@@ -7,7 +7,7 @@ const certifications = [
     {
       "name": "Deep Learning Specialization",
       "issuer": "deeplearning.ai",
-      "date": "March 2023",
+      "date": "Avril 2025",
       "description": "A comprehensive certification covering neural networks, deep learning, and their applications in computer vision, natural language processing, and sequence models.",
       "logo": '/images/deepLearning.ai.png',
       "tags": ["AI", "Neural Networks","NLP","Deep Learning", "Computer Vision"],
@@ -16,7 +16,7 @@ const certifications = [
     {
       "name": "Project Management",
       "issuer": "Centrale Lille",
-      "date": "March 2023",
+      "date": "Novembre 2024",
       "description": "A comprehensive certification covering the fundamentals of project management, including planning, team coordination, risk management, and Agile methodologies.",
       "logo": "/images/gdp.png",
       "tags": ["Project Management", "Agile", "Team Coordination", "Risk Management", "Planning"],
@@ -43,7 +43,7 @@ const certifications = [
     {
       "name": "FCF - Fortinet Certified Fundamentals in Cybersecurity",
       "issuer": "Fortinet",
-      "date": "Octobre 2024",
+      "date": "Avril 2024",
       "description": "This course provides a foundation of cybersecurity knowledge and skills. It covers the latest trends in cybersecurity and how to protect your organization from cyber threats.",
       "logo": "/images/fortinet.png",
       "tags": ["Cybersecurity", "Threat Landscape", "Network Security", "Data Protection"],
@@ -52,7 +52,7 @@ const certifications = [
     {
       "name": "FCA - Fortinet Certified Associate in Cybersecurity",
       "issuer": "Fortinet",
-      "date": "Octobre 2024",
+      "date": "Avril 2024",
       "description": "This course specializes in the configuration and management of FortiGate devices. It covers the basics of FortiGate, including firewall policies, security profiles, and VPNs.",
       "logo": "/images/fortinet.png",
       "tags": ["FortiGate", "Network Security", "Firewall Policies", "VPN"],
@@ -60,7 +60,6 @@ const certifications = [
     },
 ]
   
-
 export default function Certifications() {
   return (
     <>
