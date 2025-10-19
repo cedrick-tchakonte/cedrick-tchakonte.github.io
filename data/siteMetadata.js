@@ -59,7 +59,7 @@ const siteMetadata = {
       href: '/certifications',
     },
     {
-      name: 'International Mobility',
+      name: 'Mobility',
       href: '/international-mobility',
     },
     {
