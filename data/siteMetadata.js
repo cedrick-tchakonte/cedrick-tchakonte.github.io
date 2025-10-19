@@ -5,13 +5,13 @@ import { IoSchoolOutline } from 'react-icons/io5'
 const siteMetadata = {
   title: 'Portfolio of Cedrick Tchakonte',
   description:
-    'Welcome to my personal portfolio. I am a computer science major with a passion for AI and robotics.',
+    'Welcome to my personal portfolio. I am an engineering student on a gap year with a passion for AI and robotics.',
   author: 'Cedrick Tchakonte',
-  authorHeadline: '2nd Year Engineering Student in AI & Cyber-Physical Systems at ENSTA Paris-Saclay, IP Paris',
+  authorHeadline: 'Engineering Student on Gap Year | AI & Cyber-Physical Systems at ENSTA Paris-Saclay, IP Paris',
   authorAbout:
-    "Hi, I'm Cedrick, a 2nd year engineering student specializing in Artificial Intelligence and Cyber-Physical Systems at ENSTA Campus de Paris-Saclay, part of the Institut Polytechnique de Paris. Currently on a gap year seeking a 6-month internship to strengthen my background in AI and machine learning.",
+    "Hi, I'm Cedrick! After completing my 2A (2nd year) at ENSTA Paris-Saclay specializing in Artificial Intelligence and Cyber-Physical Systems, I'm currently on a gap year. I'm actively seeking a 6-month internship to strengthen my expertise in AI and machine learning while exploring new fields of innovation.",
   authorAboutExtended:
-    "Cedrick is a 2nd year engineering student at ENSTA Campus de Paris-Saclay, specializing in Artificial Intelligence and Cyber-Physical Systems. He is passionate about robotics, artificial intelligence, and their applications. Currently on a gap year, he is seeking a 6-month internship to strengthen his background in AI and machine learning, discover new fields of innovation, and contribute to meaningful projects.",
+    "Cedrick has completed his 2A at ENSTA Campus de Paris-Saclay, specializing in Artificial Intelligence and Cyber-Physical Systems. Passionate about robotics, artificial intelligence, and their real-world applications, he is now on a gap year to gain hands-on experience. He is seeking a 6-month internship to deepen his knowledge in AI and machine learning, discover new fields of innovation, and contribute to impactful projects that push the boundaries of technology.",
   socials: {
     x: 'https://x.com/Cdrick237',
     facebook: 'https://www.facebook.com/profile.php?id=100011695911246',
@@ -23,7 +23,7 @@ const siteMetadata = {
   phoneNumber: '0758744186',
   contactTitle: 'Get in touch',
   contactSubtitle:
-    "I am currently a 2nd year engineering student specializing in AI and Cyber-Physical Systems, on a gap year seeking internship opportunities. If you want to get in touch, please use the form below.",
+    "I have completed my 2A in AI and Cyber-Physical Systems at ENSTA Paris-Saclay and I'm currently on a gap year seeking internship opportunities. If you'd like to discuss potential collaborations or opportunities, please reach out using the form below.",
   analytics: {
     plausibleDataDomain: 'https://cedricktchakonte.com/', // e.g. tailwind-nextjs-starter-blog.vercel.app
     googleAnalyticsId: 'G-XXXXXXX', // e.g. UA-000000-2 or G-XXXXXXX
@@ -35,22 +35,17 @@ const siteMetadata = {
       href: '/',
     },
     {
+      name: 'About',
+      href: '/about',
+    },
+    {
       name: 'Education',
       href: '/education',
-      submenu: [
-        { 
-          name: 'Academic Background', 
-          href: '/education/academic-background' 
-        },
-        { name: 'Certifications', 
-          href: '/education/certifications' 
-        },
-      ],
     },
-    //{
-      //name: 'Experience',
-      //href: '/experience',
-      //},
+    {
+      name: 'Experience',
+      href: '/experience',
+    },
     {
       name: 'Projects',
       href: '/projects',
@@ -68,16 +63,12 @@ const siteMetadata = {
       href: '/international-mobility',
     },
     {
-      name: 'Volunteer Work',
+      name: 'Volunteer',
       href: '/volunteer',
     },
     {
       name: 'Contact',
       href: '/contact',
-    },
-    {
-      name: 'About',
-      href: '/about',
     },
   ],
   siteRepo: 'https://github.com/myeportfolio',
@@ -98,28 +89,28 @@ const siteMetadata = {
   experience: {
     title: 'Things I\'ve done trying to put my dent in the universe.',
     intro:
-      "I am a 2nd year engineering student specializing in AI and Cyber-Physical Systems at ENSTA Campus de Paris-Saclay, part of the Institut Polytechnique de Paris. Currently on a gap year, I have gained valuable experience through internships at Objectware and STMicroelectronics, working on AI-based decision support systems and Digital Twin simulations.",
+      "After completing my 2A at ENSTA Campus de Paris-Saclay (Institut Polytechnique de Paris), specializing in AI and Cyber-Physical Systems, I'm now on a gap year to gain practical experience. I have already worked on impactful projects during internships at Objectware and STMicroelectronics, focusing on AI-based decision support systems and Digital Twin simulations. I'm now seeking new challenges to further develop my skills.",
     //TODO also need to update the experience array in the ExperienceSection component. This is because of the icons used.
     education: [
       {
         schoolName: 'Institut Polytechnique de Paris',
-        degree: '2A Computer Science',
+        degree: '2A Computer Science (Completed) - Currently on Gap Year',
         description:
-        'IP Paris is a prestigious engineering school in France. The computer science program is designed to provide students with a strong foundation in computer science and engineering.',
+        'IP Paris is a prestigious engineering school in France. I completed my 2A specializing in AI and Cyber-Physical Systems. Currently on a gap year to gain professional experience before my 3rd year.',
         startDate: '2023',
-        endDate: '2025',
-        typeofDegree: 'Master of Science',
+        endDate: '2024',
+        typeofDegree: 'Master of Science (In Progress)',
         ImageUrl: '/images/avatar.jpg',
         alt: 'Institut Polytechnique de Paris',
       },
       {
         schoolName: 'Ecole Nationale Supérieure de Techniques Avancées Paris',
-        degree: '2A Computer Science',
+        degree: '2A Computer Science - AI & Cyber-Physical Systems (Completed)',
         description:
-          'ENSTA Paris is a prestigious engineering school in France. The computer science program is designed to provide students with a strong foundation in computer science and engineering.',
+          'ENSTA Paris is a prestigious engineering school in France. I completed my 2A with a specialization in Artificial Intelligence and Cyber-Physical Systems. The rigorous program provided me with strong theoretical foundations and practical skills in AI, robotics, and systems engineering.',
         startDate: '2023',
-        endDate: '2025',
-        typeofDegree: 'Master of Science',
+        endDate: '2024',
+        typeofDegree: 'Engineering Degree (In Progress)',
         ImageUrl: '/images/avatar.jpg',
         alt: 'ENSTA Paris',
       },

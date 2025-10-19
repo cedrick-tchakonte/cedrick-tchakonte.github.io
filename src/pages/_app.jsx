@@ -26,13 +26,13 @@ export default function App({ Component, pageProps, router }) {
       <Preloader />
       <div className="fixed flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
-          <div className="w-full bg-white ring-1 ring-primaryText-100 dark:bg-primaryText-900 dark:ring-primaryText-300/20" />
+          <div className="w-full bg-gradient-to-br from-primaryText-50 to-primaryText-100 ring-1 ring-primaryText-100 dark:from-primaryText-900 dark:to-primaryText-800 dark:ring-primaryText-300/20" />
         </div>
       </div>
-      <div className="flex flex-col justify-between h-screen">
+      <div className="flex flex-col min-h-screen bg-gradient-to-br from-primaryText-50 to-primaryText-100 dark:from-primaryText-900 dark:to-primaryText-800">
         <Header />
 
-        <main>
+        <main className="flex-grow">
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>
         <Footer />

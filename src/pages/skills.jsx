@@ -38,12 +38,6 @@ const skills = [
     ],
   },
   {
-    category: 'Robotics',
-    items: [
-      { name: 'ROS', icon: SiRos },
-    ],
-  },
-  {
     category: 'Databases',
     items: [
       { name: 'PostgreSQL', icon: SiPostgresql },
@@ -103,11 +97,11 @@ export default function Skills() {
               </h2>
               <div className="mt-1 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-6">
                 {skillCategory.items.map((skill) => (
-                  <Card key={skill.name} className="flex items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+                  <Card key={skill.name} className="flex items-center p-6 bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-lg shadow-lg border border-primaryText-200/50 dark:border-primaryText-700/50">
                     <div className="flex items-center justify-center w-12 h-12 text-white rounded-xl bg-accent-500 sm:shrink-0">
                         <skill.icon className="w-8 h-8" aria-hidden="true" />
                     </div>
-                    <div className="text-lg font-medium text-gray-900 dark:text-white">{skill.name}</div>
+                    <div className="text-lg font-medium text-primaryText-900 dark:text-primaryText-100">{skill.name}</div>
                   </Card>
 
                 ))}

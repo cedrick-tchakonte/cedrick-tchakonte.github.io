@@ -87,7 +87,7 @@ export default function Projects() {
             console.log(project)
             return (
               <Card as="li" key={project.title}>
-                <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 dark:border dark:border-primaryText-700/50 dark:bg-primaryText-800 dark:ring-0">
                   <Image
                     src={project.logo}
                     alt=""
@@ -97,7 +97,7 @@ export default function Projects() {
                     height={32}
                   />
                 </div>
-                <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <h2 className="mt-6 text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
                   <Card.Link href={project.href}>{project.title}</Card.Link>
                 </h2>
                 {/* Eyebrow - texte complémentaire */}
@@ -105,7 +105,7 @@ export default function Projects() {
                   {project.category || "Category"}
                 </Card.Eyebrow>
                 <Card.Description>{project.description}</Card.Description>
-                <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-teal-500 dark:text-zinc-200">
+                <p className="relative z-10 flex mt-6 text-sm font-medium transition text-primaryText-400 group-hover:text-accent-500 dark:text-primaryText-200">
                   <LinkIcon className="flex-none w-6 h-6" />
                   <span className="ml-2">{project.title}</span>
                 </p>

@@ -11,6 +11,17 @@ const nextConfig = {
   },
   images: {
     domains: ['images.unsplash.com'],
+    dangerouslyAllowSVG: true,
+  },
+  // Suppress fetchPriority warning in Next.js 13.5.8
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
+    return config;
   },
 }
 

@@ -30,9 +30,9 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium rounded-full shadow-lg group bg-white/90 text-primaryText-800 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur-sm dark:bg-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 dark:hover:ring-white/20 transition-all duration-200 hover:scale-105">
-        <span className="mr-2">Menu</span>
-        <ChevronDownIcon className="w-4 h-4 stroke-primaryText-500 group-hover:stroke-primaryText-700 dark:group-hover:stroke-primaryText-400 transition-transform duration-200 group-data-[headlessui-state~=open]:rotate-180" />
+      <Popover.Button className="flex items-center px-5 py-2.5 text-sm font-semibold rounded-2xl shadow-xl group bg-gradient-to-r from-white/90 to-white/80 text-primaryText-800 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:from-primaryText-900/90 dark:to-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 dark:hover:ring-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-primaryText-200/50 dark:border-primaryText-700/50">
+        <span className="mr-2 font-bold">Menu</span>
+        <ChevronDownIcon className="w-4 h-4 stroke-primaryText-600 group-hover:stroke-accent-600 dark:stroke-primaryText-400 dark:group-hover:stroke-accent-400 transition-all duration-300 group-data-[headlessui-state~=open]:rotate-180" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -57,24 +57,24 @@ function MobileNavigation(props) {
         >
           <Popover.Panel
             focus
-            className="fixed z-50 p-8 origin-top bg-white/95 backdrop-blur-md inset-x-4 top-8 rounded-3xl ring-1 ring-primaryText-900/5 shadow-2xl dark:bg-primaryText-900/95 dark:ring-primaryText-800 border border-primaryText-200/20 dark:border-primaryText-700/20"
+            className="fixed z-50 p-8 origin-top bg-gradient-to-br from-white/98 to-white/95 backdrop-blur-xl inset-x-4 top-8 rounded-3xl ring-1 ring-primaryText-900/10 shadow-2xl dark:from-primaryText-900/98 dark:to-primaryText-800/95 dark:ring-white/10 border-2 border-primaryText-200/50 dark:border-primaryText-700/50"
           >
-            <div className="flex flex-row-reverse items-center justify-between">
-              <Popover.Button aria-label="Close menu" className="p-1 -m-1">
-                <CloseIcon className="w-6 h-6 text-primaryText-500 dark:text-primaryText-400" />
+            <div className="flex flex-row-reverse items-center justify-between mb-6">
+              <Popover.Button aria-label="Close menu" className="p-2 -m-1 rounded-xl hover:bg-primaryText-100 dark:hover:bg-primaryText-800 transition-all duration-200 hover:scale-110">
+                <CloseIcon className="w-6 h-6 text-primaryText-600 dark:text-primaryText-400" />
               </Popover.Button>
-              <h2 className="text-sm font-medium text-primaryText-600 dark:text-primaryText-400">
+              <h2 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-accent-400 dark:from-accent-400 dark:to-accent-300">
                 Navigation
               </h2>
             </div>
-            <nav className="mt-6">
-              <ul className="-my-2 text-base divide-y divide-primaryText-100 text-primaryText-800 dark:divide-primaryText-100/5 dark:text-primaryText-300">
-                {siteMetadata.siteNavLinks.map((link) => {
+            <nav>
+              <ul className="space-y-2 text-base text-primaryText-800 dark:text-primaryText-300">
+                {siteMetadata.siteNavLinks.map((link, index) => {
                   return (
                     <MobileNavItem key={link.href} href={link.href}>
-                      <span className="flex items-center justify-between w-full">
-                        {link.name}
-                        <svg className="w-4 h-4 ml-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span className="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 transition-all duration-300 hover:shadow-md hover:scale-105 group font-medium">
+                        <span>{link.name}</span>
+                        <svg className="w-4 h-4 ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                       </span>
@@ -95,19 +95,22 @@ function NavItem({ href, children }) {
   let isActive = useRouter().pathname === href
 
   return (
-    <li>
+    <li className="relative">
       <Link
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          'relative block transition-all duration-300',
           isActive
-            ? 'text-accent-500 dark:text-accent-400'
-            : 'hover:text-accent-500 dark:hover:text-accent-400'
+            ? 'text-accent-600 dark:text-accent-400 font-semibold'
+            : 'text-primaryText-700 dark:text-primaryText-300 hover:text-accent-600 dark:hover:text-accent-400'
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute h-px inset-x-1 -bottom-px bg-gradient-to-r from-accent-500/0 via-accent-500/40 to-accent-500/0 dark:from-accent-400/0 dark:via-accent-400/40 dark:to-accent-400/0" />
+          <>
+            <span className="absolute inset-0 bg-gradient-to-r from-accent-500/10 via-accent-500/20 to-accent-500/10 dark:from-accent-400/10 dark:via-accent-400/20 dark:to-accent-400/10 rounded-xl -z-10" />
+            <span className="absolute h-0.5 inset-x-2 -bottom-1 bg-gradient-to-r from-transparent via-accent-500 to-transparent dark:via-accent-400 rounded-full" />
+          </>
         )}
       </Link>
     </li>
@@ -118,11 +121,11 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex px-3 text-sm font-medium rounded-full shadow-lg bg-white/90 text-primaryText-800 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur-sm dark:bg-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/20 dark:border-primaryText-700/20">
+      <ul className="flex px-2 py-2 text-sm font-medium rounded-2xl shadow-xl bg-white/80 text-primaryText-800 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:bg-primaryText-900/80 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300">
         {siteMetadata.siteNavLinks.map((link) => {
           return (
             <NavItem key={link.href} href={link.href}>
-              <span className="relative px-3 py-2 rounded-lg transition-all duration-200 hover:bg-accent-50 dark:hover:bg-accent-900/20">
+              <span className="relative px-4 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md hover:scale-105 font-medium">
                 {link.name}
               </span>
             </NavItem>
@@ -160,11 +163,11 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="px-3 py-2 transition-all duration-200 rounded-full shadow-lg group bg-white/90 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur-sm dark:bg-primaryText-800/90 dark:ring-white/10 dark:hover:ring-white/20 border border-primaryText-200/20 dark:border-primaryText-700/20 hover:scale-105 hover:shadow-xl"
+      className="px-3 py-3 transition-all duration-300 rounded-2xl shadow-xl group bg-gradient-to-br from-white/90 to-white/80 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:from-primaryText-900/90 dark:to-primaryText-800/90 dark:ring-white/10 dark:hover:ring-white/20 border border-primaryText-200/50 dark:border-primaryText-700/50 hover:scale-110 hover:shadow-2xl hover:rotate-12 active:scale-95"
       onClick={toggleMode}
     >
-      <SunIcon className="h-6 w-6 fill-primaryText-100 stroke-primaryText-500 transition group-hover:fill-primaryText-200 group-hover:stroke-primaryText-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-accent-50 [@media(prefers-color-scheme:dark)]:stroke-accent-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-accent-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-accent-600" />
-      <MoonIcon className="hidden h-6 w-6 fill-primaryText-700 stroke-primaryText-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-primaryText-400 [@media_not_(prefers-color-scheme:dark)]:fill-accent-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-accent-500" />
+      <SunIcon className="h-6 w-6 fill-amber-100 stroke-amber-500 transition-all duration-300 group-hover:fill-amber-200 group-hover:stroke-amber-600 group-hover:rotate-90 dark:hidden [@media(prefers-color-scheme:dark)]:fill-accent-50 [@media(prefers-color-scheme:dark)]:stroke-accent-500" />
+      <MoonIcon className="hidden h-6 w-6 fill-indigo-700 stroke-indigo-400 transition-all duration-300 dark:block group-hover:fill-indigo-600 group-hover:stroke-indigo-300 group-hover:-rotate-12 [@media_not_(prefers-color-scheme:dark)]:fill-accent-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-accent-500" />
     </button>
   )
 }
@@ -200,6 +203,7 @@ function Avatar({ large = false, className, ...props }) {
         src={avatarImage}
         alt=""
         sizes={large ? '4rem' : '2.25rem'}
+        loading="eager"
         className={clsx(
           'rounded-full bg-primaryText-100 object-cover dark:bg-primaryText-800',
           large ? 'h-16 w-16' : 'h-9 w-9'

@@ -55,10 +55,10 @@ export default function Experience() {
   return (
     <>
       <Head>
-        <title>{'Experience-{siteMetadata.author}'}</title>
+        <title>{`Experience - ${siteMetadata.author}`}</title>
         <meta
-          name={`Work experience of ${siteMetadata.author}`}
-          content={siteMetadata.experience.title}
+          name="description"
+          content={`Work experience of ${siteMetadata.author}`}
         />
       </Head>
       <SimpleLayout

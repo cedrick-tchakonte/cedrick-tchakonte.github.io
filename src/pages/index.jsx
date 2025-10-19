@@ -8,6 +8,7 @@ import Faq from '@/components/Faq'
 import FeatureSection from '@/components/FeatureSection'
 import CallToAction from '@/components/CallToAction'
 import DivideLine from '@/components/DivideLine'
+import GapYearBadge from '@/components/GapYearBadge'
 import siteMetadata from '@/data/siteMetadata'
 import schoolLogo from '@/images/ensta-logo.png'
 
@@ -40,50 +41,53 @@ const Home = () => {
         <meta name="msapplication-TileColor" content="#00aba9" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <Container className="mt-32">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl">
-              {siteMetadata.authorHeadline}
-            </h1>
-            <p className="mt-6 text-base text-primaryText-600 dark:text-primaryText-400">
-              {siteMetadata.authorAbout}
-            </p>
-            {/* div container for social links */}
-            <div className="flex gap-6 mt-6">
-              <SocialLink
-                href={siteMetadata.socials.x}
-                aria-label="Follow on X"
-                icon={XIcon}
-              />
-              <SocialLink
-                href={siteMetadata.socials.github}
-                aria-label="Follow on GitHub"
-                icon={GitHubIcon}
-              />
-              <SocialLink
-                href={siteMetadata.socials.linkedin}
-                aria-label="Follow on LinkedIn"
-                icon={LinkedInIcon}
-              />
-              <SocialLink
-                href={siteMetadata.socials.instagram}
-                aria-label="Follow on Instagram"
-                icon={InstagramIcon}
+      <div className="min-h-screen py-16 sm:py-20">
+        <Container className="mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="max-w-2xl">
+              <GapYearBadge />
+              <h1 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl bg-gradient-to-r from-primaryText-800 to-primaryText-600 dark:from-primaryText-100 dark:to-primaryText-300 bg-clip-text text-transparent">
+                {siteMetadata.authorHeadline}
+              </h1>
+              <p className="mt-6 text-base text-primaryText-600 dark:text-primaryText-400">
+                {siteMetadata.authorAbout}
+              </p>
+              {/* div container for social links */}
+              <div className="flex gap-6 mt-6">
+                <SocialLink
+                  href={siteMetadata.socials.x}
+                  aria-label="Follow on X"
+                  icon={XIcon}
+                />
+                <SocialLink
+                  href={siteMetadata.socials.github}
+                  aria-label="Follow on GitHub"
+                  icon={GitHubIcon}
+                />
+                <SocialLink
+                  href={siteMetadata.socials.linkedin}
+                  aria-label="Follow on LinkedIn"
+                  icon={LinkedInIcon}
+                />
+                <SocialLink
+                  href={siteMetadata.socials.instagram}
+                  aria-label="Follow on Instagram"
+                  icon={InstagramIcon}
+                />
+              </div>
+            </div>
+            <div className="flex justify-center items-center">
+              <Image
+                src={schoolLogo}
+                alt="Ensta Paris Logo"
+                width={400}
+                height={400}
+                className="rounded-xl shadow-lg border-5"
               />
             </div>
           </div>
-          <div className="flex justify-center items-center">
-            <Image
-              src={schoolLogo}
-              alt="Ensta Paris Logo"
-              width={400}
-              height={400}
-              className="rounded-xl shadow-lg border-5"
-            />
-          </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
       <DivideLine />
       <FeatureSection />
       <Testimonial />
