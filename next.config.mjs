@@ -10,7 +10,12 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    domains: ['images.unsplash.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
     dangerouslyAllowSVG: true,
   },
   // Suppress fetchPriority warning in Next.js 13.5.8

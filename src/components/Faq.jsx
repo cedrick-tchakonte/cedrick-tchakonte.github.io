@@ -37,33 +37,33 @@ const faqs = [
 
 const Faq = () => {
   return (
-    <div className="py-12 bg-gray-50 dark:bg-gray-900">
+    <div className="py-16 sm:py-20 bg-primaryText-50 dark:bg-primaryText-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-base text-indigo-600 font-semibold tracking-wide uppercase">FAQ</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          <h2 className="text-base text-accent-600 font-semibold tracking-wide uppercase">FAQ</h2>
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-primaryText-900 dark:text-white sm:text-4xl">
             Frequently Asked Questions
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 lg:mx-auto">
+          <p className="mt-4 max-w-2xl text-xl text-primaryText-600 dark:text-primaryText-400 lg:mx-auto">
             Here are some common questions about my work in AI and robotics.
           </p>
         </div>
 
-        <div className="mt-10">
-          <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
+        <div className="mt-12">
+          <dl className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-8">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: index * 0.2 }}
-                whileHover={{ scale: 1.3 }}
-                className="relative p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg transform transition-transform duration-300"
+                transition={{ duration: 0.2, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className="relative p-6 bg-white dark:bg-primaryText-800 rounded-lg shadow-lg transform transition-transform duration-300 border border-primaryText-200/50 dark:border-primaryText-700/50"
               >
-                <dt className="text-lg leading-6 font-medium text-gray-900 dark:text-white">
+                <dt className="text-lg leading-6 font-medium text-primaryText-900 dark:text-white">
                   {faq.question}
                 </dt>
-                <dd className="mt-2 text-base text-gray-500 dark:text-gray-400">
+                <dd className="mt-2 text-base text-primaryText-600 dark:text-primaryText-400">
                   {faq.answer}
                 </dd>
               </motion.div>

@@ -6,78 +6,85 @@ import Image from 'next/image'
 const CertificationCard = ({ certification }) => {
   return (
     <motion.div
-      className="relative flex flex-col items-start p-6 bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-105 border border-primaryText-200/50 dark:border-primaryText-700/50"
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: 'spring', stiffness: 300 }}
+      className="group relative flex flex-col h-full bg-white dark:bg-primaryText-800 rounded-2xl shadow-lg hover:shadow-2xl transform transition-all duration-300 border border-primaryText-200/50 dark:border-primaryText-700/50 overflow-hidden"
+      whileHover={{ y: -8 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
     >
+      {/* Gradient Top Border */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-500 to-accent-600"></div>
+
       {/* Badge Icon */}
-      <div className="absolute top-4 right-4 bg-accent-500 text-white p-3 rounded-full shadow-md">
-        <FaAward size={20} />
+      <div className="absolute top-4 right-4 bg-gradient-to-br from-accent-500 to-accent-600 text-white p-2.5 rounded-full shadow-lg z-10 group-hover:scale-110 transition-transform duration-300">
+        <FaAward size={18} />
       </div>
 
-      {/* Header Section */}
-      <div className="flex items-center mb-6">
-        <Image 
-          src={certification.logo} 
-          alt={`${certification.name} logo`} 
-          width={100} 
-          height={100} 
-          className="rounded-lg shadow-lg"
-        />
-        <div className="ml-6">
-          <h3 className="text-2xl font-bold text-primaryText-800 dark:text-primaryText-100">
-            {certification.name}
-          </h3>
-          <p className="flex items-center text-lg text-primaryText-600 dark:text-primaryText-400 mt-2">
-            <FaCalendarAlt size={24} className="mr-2 text-accent-500" />
-            {certification.date}
-          </p>
-          <p className="text-md text-primaryText-500 dark:text-primaryText-500">
-            Issued by {certification.issuer}
-          </p>
+      {/* Header Section with Logo */}
+      <div className="p-6 pb-4">
+        <div className="flex items-start gap-4 mb-4">
+          <div className="flex-shrink-0">
+            <Image 
+              src={certification.logo} 
+              alt={`${certification.issuer} logo`} 
+              width={64} 
+              height={64} 
+              className="rounded-lg shadow-md ring-2 ring-primaryText-200/50 dark:ring-primaryText-700/50"
+            />
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg font-bold text-primaryText-800 dark:text-primaryText-100 leading-tight mb-2 line-clamp-2">
+              {certification.name}
+            </h3>
+            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 font-medium mb-1">
+              {certification.issuer}
+            </p>
+            <p className="flex items-center text-sm text-primaryText-500 dark:text-primaryText-500">
+              <FaCalendarAlt size={12} className="mr-1.5 text-accent-500" />
+              {certification.date}
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* Description */}
-      <p className="mt-3 text-base text-primaryText-600 dark:text-primaryText-400 leading-relaxed">
-        {certification.description}
-      </p>
+        {/* Description */}
+        <p className="text-sm text-primaryText-600 dark:text-primaryText-400 leading-relaxed line-clamp-3">
+          {certification.description}
+        </p>
+      </div>
 
       {/* Tags Section */}
-      <div className="mt-5 flex flex-wrap gap-3">
-        {certification.tags?.map((tag, index) => (
-          <motion.span
-            key={index}
-            className="inline-flex items-center px-4 py-1 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-teal-400 rounded-full shadow-sm"
-            whileHover={{ scale: 1.1 }}
-          >
-            <FaTags className="mr-2" />
-            {tag}
-          </motion.span>
-        ))}
+      <div className="px-6 pb-4 flex-1">
+        <div className="flex flex-wrap gap-2">
+          {certification.tags?.slice(0, 4).map((tag, index) => (
+            <span
+              key={index}
+              className="inline-flex items-center px-3 py-1 text-xs font-medium text-accent-700 dark:text-accent-300 bg-accent-100 dark:bg-accent-900/30 rounded-full border border-accent-200 dark:border-accent-800"
+            >
+              {tag}
+            </span>
+          ))}
+          {certification.tags?.length > 4 && (
+            <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-primaryText-600 dark:text-primaryText-400 bg-primaryText-100 dark:bg-primaryText-700/50 rounded-full">
+              +{certification.tags.length - 4}
+            </span>
+          )}
+        </div>
       </div>
 
       {/* Verification Link */}
       {certification.verificationLink && (
-        <VerificationLink url={certification.verificationLink} />
+        <div className="px-6 pb-6 mt-auto">
+          <a
+            href={certification.verificationLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center w-full px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg group-hover:scale-105"
+          >
+            <FaExternalLinkAlt size={14} className="mr-2" />
+            Verify Certification
+          </a>
+        </div>
       )}
-
-      {/* Bottom Gradient Line */}
-      <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-accent-400 to-accent-600 rounded-bl-lg rounded-br-lg"></div>
     </motion.div>
   )
 }
-
-const VerificationLink = ({ url }) => (
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-6 flex items-center text-md text-accent-500 hover:underline transition-colors duration-200"
-  >
-    <FaExternalLinkAlt size={20} className="mr-2" />
-    Verify Certification
-  </a>
-)
 
 export default CertificationCard

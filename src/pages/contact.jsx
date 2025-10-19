@@ -301,7 +301,6 @@ const Contact = () => {
                 <h3 className="text-lg font-medium text-primaryText-800 dark:text-primaryText-100">
                   Send me a message
                 </h3>
-                {/* //TODO handle submit */}
                 <form
                   onSubmit={handleOnSubmit}
                   method="POST"

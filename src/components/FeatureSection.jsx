@@ -1,8 +1,6 @@
-import { RiRobotLine, RiBarcodeLine } from 'react-icons/ri'
-import siteMetadata from '@/data/siteMetadata'
-import { IoSchoolOutline, IoCodeWorkingOutline, IoBulbOutline, IoArrowBackCircleOutline } from 'react-icons/io5'
+import { RiRobotLine } from 'react-icons/ri'
+import { IoSchoolOutline, IoCodeWorkingOutline, IoBulbOutline } from 'react-icons/io5'
 
-// TODO: Add your own features here. Make sure to add the icon from Remix-Design's repo:
 const features = [
   {
     name: 'AI & Cyber-Physical Systems',
@@ -31,7 +29,7 @@ const features = [
 ]
 const FeatureSection = () => {
   return (
-    <div className="pb-24">
+    <div className="py-16 sm:py-20">
       <div className="px-6 mx-auto max-w-7xl lg:px-8">
         <div className="sm:text-center">
           <h2 className="text-lg font-semibold leading-8 text-accent-600">
@@ -45,8 +43,8 @@ const FeatureSection = () => {
           </p>
         </div>
 
-        <div className="max-w-lg mt-20 sm:mx-auto md:max-w-none">
-          <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
+        <div className="max-w-lg mt-12 sm:mx-auto md:max-w-none">
+          <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 md:gap-y-12">
             {features.map((feature) => (
               <div
                 key={feature.name}

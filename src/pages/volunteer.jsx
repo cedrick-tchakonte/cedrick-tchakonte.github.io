@@ -4,6 +4,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
 import { RiLinksLine } from 'react-icons/ri'
+import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
 import logoApple from '@/images/logos/apple.svg'
 
 const volunteerActivities = [
@@ -72,6 +73,19 @@ export default function Volunteer() {
                   {activity.title} at {activity.organization}
                 </Card.Link>
               </h2>
+              
+              {/* Date and Location */}
+              <div className="relative z-30 mt-3 space-y-2">
+                <p className="flex items-center text-sm text-primaryText-600 dark:text-primaryText-400">
+                  <FaCalendarAlt className="flex-none w-4 h-4 mr-2 text-accent-500" />
+                  {activity.date}
+                </p>
+                <p className="flex items-center text-sm text-primaryText-600 dark:text-primaryText-400">
+                  <FaMapMarkerAlt className="flex-none w-4 h-4 mr-2 text-accent-500" />
+                  {activity.location}
+                </p>
+              </div>
+
               <Card.Description>
                 {activity.description.map((item, index) => (
                   <li className="ml-4 list-disc" key={`description-${index}`}>

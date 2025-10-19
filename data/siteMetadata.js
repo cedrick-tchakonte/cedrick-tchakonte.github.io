@@ -84,14 +84,15 @@ const siteMetadata = {
     title: 'Why Choose Me?',
     description:
       'I am a computer science major with a passion for AI and robotics. My projects and workshops reflect my dedication and innovative approach in these fields.',
-    //TODO also need to update the features array in the FeatureSection component
+    href: '/contact',
   },
+  // Professional experience and expertise areas
   experience: {
     title: 'Things I\'ve done trying to put my dent in the universe.',
     intro:
       "After completing my 2A at ENSTA Campus de Paris-Saclay (Institut Polytechnique de Paris), specializing in AI and Cyber-Physical Systems, I'm now on a gap year to gain practical experience. I have already worked on impactful projects during internships at Objectware and STMicroelectronics, focusing on AI-based decision support systems and Digital Twin simulations. I'm now seeking new challenges to further develop my skills.",
-    //TODO also need to update the experience array in the ExperienceSection component. This is because of the icons used.
-    education: [
+  },
+  education: [
       {
         schoolName: 'Institut Polytechnique de Paris',
         degree: '2A Computer Science (Completed) - Currently on Gap Year',
@@ -143,10 +144,8 @@ const siteMetadata = {
         endDate: '2024',
         ImageUrl: '/images/avatar.jpg',
         alt: 'Lycée Bilingue de Nylon Ndogpassi',
-      },
-    ],
-  },
-
+    },
+  ],
 }
 
 export default siteMetadata

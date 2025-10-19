@@ -69,10 +69,30 @@ export default function Certifications() {
       </Head>
       <PageLayout
         title="Certifications"
-        subtitle="Here are the various certifications I have obtained in the field of computer science, with a focus on AI, robotics, and software development."
+        subtitle="Professional certifications demonstrating expertise in AI, deep learning, cybersecurity, and software development."
       >
+        {/* Statistics Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/30 dark:to-accent-800/20 p-6 rounded-xl border border-accent-200 dark:border-accent-800">
+            <p className="text-3xl font-bold text-accent-600 dark:text-accent-400">{certifications.length}</p>
+            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-1">Total Certifications</p>
+          </div>
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
+            <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">4</p>
+            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-1">Platforms</p>
+          </div>
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/20 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
+            <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">2025</p>
+            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-1">Latest Year</p>
+          </div>
+          <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/20 p-6 rounded-xl border border-green-200 dark:border-green-800">
+            <p className="text-3xl font-bold text-green-600 dark:text-green-400">5+</p>
+            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-1">Skill Areas</p>
+          </div>
+        </div>
+
         {/* Grid Layout for Certification Cards */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
           {certifications.map((certification, index) => (
             <CertificationCard key={index} certification={certification} />
           ))}

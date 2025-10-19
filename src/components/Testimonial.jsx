@@ -3,7 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 
 const Testimonial = () => {
   return (
-    <div className="pt-16 lg:py-24 ">
+    <div className="py-16 sm:py-20">
       <div className="pb-16 bg-fixed bg-center bg-cover bg-gradient-to-b from-gradientStart-500 to-gradientEnd-500 dark:from-gradientStart-700 dark:to-gradientEnd-900 lg:relative lg:z-10 lg:pb-0">
         <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-8 lg:px-8">
           <div className="relative lg:-my-8">

@@ -1,14 +1,11 @@
 import Image from 'next/image'
 import Head from 'next/head'
-
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { RiLinksLine } from 'react-icons/ri'
+import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
 import siteMetadata from '@/data/siteMetadata'
 import logoApple from '@/images/logos/apple.svg'
-import { motion } from 'framer-motion'
-
-// TODO: If you want to include the logo of the company, I suggesting importing the svg from Remix-Design's repo: https://github.com/Remix-Design/RemixIcon/tree/master/icons/Logos
 
 const experiences = [
   {
@@ -89,6 +86,19 @@ export default function Experience() {
                   {experience.title} at {experience.company}
                 </Card.Link>
               </h2>
+              
+              {/* Date and Location */}
+              <div className="relative z-30 mt-3 space-y-2">
+                <p className="flex items-center text-sm text-primaryText-600 dark:text-primaryText-400">
+                  <FaCalendarAlt className="flex-none w-4 h-4 mr-2 text-accent-500" />
+                  {experience.date}
+                </p>
+                <p className="flex items-center text-sm text-primaryText-600 dark:text-primaryText-400">
+                  <FaMapMarkerAlt className="flex-none w-4 h-4 mr-2 text-accent-500" />
+                  {experience.location}
+                </p>
+              </div>
+
               <Card.Description>
                 {experience.description.map((item, index) => (
                   <li className="ml-4 list-disc" key={`description-${index}`}>
