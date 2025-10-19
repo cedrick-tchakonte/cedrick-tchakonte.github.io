@@ -48,7 +48,7 @@ export default function Volunteer() {
       </Head>
       <SimpleLayout
         title="Volunteer Work & Community Involvement"
-        intro="I believe in giving back to the community and contributing to meaningful causes. Here are some of the volunteer activities and community initiatives I'm involved in."
+        intro="I believe in giving back to the community and contributing to meaningful causes. Here are some of the volunteer activities and community initiatives I'm actively involved in."
       >
         <h2 className="mb-6 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
           Community Involvement

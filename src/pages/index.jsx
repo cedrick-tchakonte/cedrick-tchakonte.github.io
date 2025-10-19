@@ -10,7 +10,7 @@ import CallToAction from '@/components/CallToAction'
 import DivideLine from '@/components/DivideLine'
 import GapYearBadge from '@/components/GapYearBadge'
 import siteMetadata from '@/data/siteMetadata'
-import schoolLogo from '@/images/ensta-logo.jpg'
+import schoolLogo from '@/images/ensta-logo.png'
 
 
 const Home = () => {

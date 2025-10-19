@@ -1,8 +1,8 @@
-import { Fragment, useEffect, useRef } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Popover, Transition } from '@headlessui/react'
+import { Popover, Transition, Menu } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
@@ -15,12 +15,150 @@ import {
 } from '@/images/icons/NavIcons'
 import siteMetadata from '@/data/siteMetadata'
 
+// Desktop Dropdown Menu Component
+function DropdownMenu({ link }) {
+  const router = useRouter()
+  const isActive = link.submenu?.some(item => router.pathname === item.href)
+
+  return (
+    <li className="relative flex items-center">
+      <Menu as="div" className="relative">
+        {({ open }) => (
+          <>
+            <Menu.Button
+              className={clsx(
+                'relative px-4 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium flex items-center gap-2 whitespace-nowrap group',
+                'border border-transparent hover:border-accent-200 dark:hover:border-accent-700/50',
+                isActive
+                  ? 'text-accent-600 dark:text-accent-400 font-semibold bg-accent-50/50 dark:bg-accent-900/20'
+                  : 'text-primaryText-700 dark:text-primaryText-300 hover:text-accent-600 dark:hover:text-accent-400'
+              )}
+            >
+              <span>{link.name}</span>
+              <svg 
+                className={clsx(
+                  'w-4 h-4 transition-all duration-300 flex-shrink-0',
+                  open && 'rotate-180',
+                  'text-accent-500 dark:text-accent-400 group-hover:text-accent-600 dark:group-hover:text-accent-300 drop-shadow-sm'
+                )}
+                fill="none" 
+                stroke="currentColor" 
+                strokeWidth="2.5" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </Menu.Button>
+
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Menu.Items className="absolute left-0 z-50 mt-3 w-56 origin-top-left rounded-2xl bg-white/95 dark:bg-primaryText-900/95 shadow-2xl ring-1 ring-primaryText-900/10 dark:ring-white/10 focus:outline-none border border-primaryText-200/50 dark:border-primaryText-700/50 backdrop-blur-xl py-2">
+                {link.submenu?.map((item) => {
+                  const isItemActive = router.pathname === item.href
+                  return (
+                    <Menu.Item key={item.href}>
+                      {({ active }) => (
+                        <Link
+                          href={item.href}
+                          className={clsx(
+                            'block px-4 py-2.5 text-sm font-medium transition-all duration-200 mx-2 rounded-lg',
+                            isItemActive
+                              ? 'bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-md'
+                              : active
+                              ? 'bg-gradient-to-r from-accent-50 to-accent-100 dark:from-accent-900/30 dark:to-accent-800/30 text-accent-600 dark:text-accent-400'
+                              : 'text-primaryText-700 dark:text-primaryText-300'
+                          )}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
+                    </Menu.Item>
+                  )
+                })}
+              </Menu.Items>
+            </Transition>
+          </>
+        )}
+      </Menu>
+    </li>
+  )
+}
+
 // used to list items in mobile nav
-function MobileNavItem({ href, children }) {
+function MobileNavItem({ href, children, submenu }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
+
+  if (submenu) {
+    const hasActiveChild = submenu.some(item => router.pathname === item.href)
+    
+    return (
+      <li>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className={clsx(
+            "flex items-center justify-between w-full px-4 py-3 rounded-xl transition-all duration-300 hover:shadow-md font-medium text-left",
+            hasActiveChild
+              ? "bg-gradient-to-r from-accent-100 to-accent-50 dark:from-accent-900/40 dark:to-accent-800/40 text-accent-700 dark:text-accent-300"
+              : "hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30"
+          )}
+        >
+          <span className="flex items-center gap-2">
+            {children}
+            <span className="text-xs opacity-60 font-normal">({submenu.length})</span>
+          </span>
+          <ChevronDownIcon className={clsx('w-5 h-5 transition-transform duration-300 stroke-2', isOpen && 'rotate-180')} />
+        </button>
+        {isOpen && (
+          <ul className="pl-4 mt-2 space-y-1">
+            {submenu.map((item) => {
+              const isActive = router.pathname === item.href
+              return (
+                <li key={item.href}>
+                  <Popover.Button
+                    as={Link}
+                    href={item.href}
+                    className={clsx(
+                      'block px-4 py-2 text-sm rounded-lg transition-all duration-200',
+                      isActive
+                        ? 'bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold shadow-md'
+                        : 'text-primaryText-600 dark:text-primaryText-400 hover:bg-accent-50 dark:hover:bg-accent-900/20'
+                    )}
+                  >
+                    {item.name}
+                  </Popover.Button>
+                </li>
+              )
+            })}
+          </ul>
+        )}
+      </li>
+    )
+  }
+
+  const isActive = router.pathname === href
+
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
-        {children}
+      <Popover.Button as={Link} href={href} className="block">
+        <span className={clsx(
+          "flex items-center justify-between w-full px-4 py-3 rounded-xl transition-all duration-300 hover:shadow-md group font-medium",
+          isActive
+            ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-md"
+            : "hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30"
+        )}>
+          <span>{children}</span>
+          <svg className="w-4 h-4 ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </span>
       </Popover.Button>
     </li>
   )
@@ -71,13 +209,8 @@ function MobileNavigation(props) {
               <ul className="space-y-2 text-base text-primaryText-800 dark:text-primaryText-300">
                 {siteMetadata.siteNavLinks.map((link, index) => {
                   return (
-                    <MobileNavItem key={link.href} href={link.href}>
-                      <span className="flex items-center justify-between w-full px-4 py-3 rounded-xl hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 transition-all duration-300 hover:shadow-md hover:scale-105 group font-medium">
-                        <span>{link.name}</span>
-                        <svg className="w-4 h-4 ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </span>
+                    <MobileNavItem key={link.href || index} href={link.href} submenu={link.submenu}>
+                      {link.name}
                     </MobileNavItem>
                   )
                 })}
@@ -95,23 +228,17 @@ function NavItem({ href, children }) {
   let isActive = useRouter().pathname === href
 
   return (
-    <li className="relative">
+    <li className="relative flex items-center">
       <Link
         href={href}
         className={clsx(
-          'relative block transition-all duration-300',
+          'relative px-4 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium whitespace-nowrap flex items-center',
           isActive
             ? 'text-accent-600 dark:text-accent-400 font-semibold'
             : 'text-primaryText-700 dark:text-primaryText-300 hover:text-accent-600 dark:hover:text-accent-400'
         )}
       >
         {children}
-        {isActive && (
-          <>
-            <span className="absolute inset-0 bg-gradient-to-r from-accent-500/10 via-accent-500/20 to-accent-500/10 dark:from-accent-400/10 dark:via-accent-400/20 dark:to-accent-400/10 rounded-xl -z-10" />
-            <span className="absolute h-0.5 inset-x-2 -bottom-1 bg-gradient-to-r from-transparent via-accent-500 to-transparent dark:via-accent-400 rounded-full" />
-          </>
-        )}
       </Link>
     </li>
   )
@@ -121,13 +248,17 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex px-2 py-2 text-sm font-medium rounded-2xl shadow-xl bg-white/80 text-primaryText-800 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:bg-primaryText-900/80 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300">
-        {siteMetadata.siteNavLinks.map((link) => {
+      <ul className="flex items-center gap-1 px-2 py-2 text-sm font-medium rounded-2xl shadow-xl bg-white/80 text-primaryText-800 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:bg-primaryText-900/80 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300">
+        {siteMetadata.siteNavLinks.map((link, index) => {
+          // If link has a submenu, render DropdownMenu
+          if (link.submenu) {
+            return <DropdownMenu key={link.name || index} link={link} />
+          }
+          
+          // Otherwise, render regular NavItem
           return (
             <NavItem key={link.href} href={link.href}>
-              <span className="relative px-4 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md hover:scale-105 font-medium">
-                {link.name}
-              </span>
+              {link.name}
             </NavItem>
           )
         })}

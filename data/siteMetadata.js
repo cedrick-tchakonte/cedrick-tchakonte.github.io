@@ -28,7 +28,7 @@ const siteMetadata = {
     plausibleDataDomain: 'https://cedricktchakonte.com/', // e.g. tailwind-nextjs-starter-blog.vercel.app
     googleAnalyticsId: 'G-XXXXXXX', // e.g. UA-000000-2 or G-XXXXXXX
   },
-  // TODO: Add the name of the navbar items and the corresponding page. Used in the Header and Footer components.
+  // Navigation structure with dropdown menus
   siteNavLinks: [
     {
       name: 'Home',
@@ -39,32 +39,30 @@ const siteMetadata = {
       href: '/about',
     },
     {
-      name: 'Education',
-      href: '/education',
+      name: 'Academic',
+      href: '#',
+      submenu: [
+        { name: 'Education', href: '/education' },
+        { name: 'Certifications', href: '/certifications' },
+        { name: 'International Mobility', href: '/international-mobility' },
+      ],
     },
     {
-      name: 'Experience',
-      href: '/experience',
+      name: 'Professional',
+      href: '#',
+      submenu: [
+        { name: 'Experience', href: '/experience' },
+        { name: 'Projects', href: '/projects' },
+        { name: 'Skills', href: '/skills' },
+      ],
     },
     {
-      name: 'Projects',
-      href: '/projects',
-    },
-    {
-      name: 'Skills',
-      href: '/skills',
-    },
-    {
-      name: 'Certifications',
-      href: '/certifications',
-    },
-    {
-      name: 'Mobility',
-      href: '/international-mobility',
-    },
-    {
-      name: 'Volunteer',
-      href: '/volunteer',
+      name: 'Community',
+      href: '#',
+      submenu: [
+        { name: 'Volunteer', href: '/volunteer' },
+        { name: 'Hobbies', href: '/hobbies' },
+      ],
     },
     {
       name: 'Contact',
