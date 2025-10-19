@@ -5,35 +5,29 @@ import { IoSchoolOutline, IoCodeWorkingOutline, IoBulbOutline, IoArrowBackCircle
 // TODO: Add your own features here. Make sure to add the icon from Remix-Design's repo:
 const features = [
   {
-    name: 'AI and Robotics Expertise',
+    name: 'AI & Cyber-Physical Systems',
     description:
-      'With a strong foundation in AI and robotics, I have worked on numerous projects that demonstrate my skills and passion. From developing autonomous systems to implementing machine learning algorithms, I bring innovative solutions to complex problems.',
+      'Currently specializing in AI and Cyber-Physical Systems at ENSTA Paris-Saclay. Working on advanced machine learning algorithms, computer vision, and robotic navigation systems. Experience with TensorFlow, PyTorch, and ROS.',
     icon: RiRobotLine,
   },
   {
-    name: 'Workshops and Tutorials',
+    name: 'Professional Experience',
     description:
-      'I conduct workshops and tutorials to share my knowledge and experience in AI and robotics. These sessions cover the basics of AI, machine learning, and robotics, providing hands-on experience with real-world applications. Participants gain practical skills to advance their careers in these exciting fields.',
+      'Gained valuable industry experience through internships at Objectware (AI-based decision support systems) and STMicroelectronics (Digital Twin simulations). Working with cross-functional teams to integrate AI solutions and improve productivity.',
     icon: IoSchoolOutline,
   },
   {
-    name: 'Innovative Projects',
+    name: 'Research & Innovation',
     description:
-      'I am always eager to explore new technologies and work on cutting-edge projects. My portfolio includes innovative projects that push the boundaries of AI and robotics, showcasing my ability to think creatively and solve challenging problems.',
+      'Passionate about pushing the boundaries of AI and technology. Developed retinal vessel segmentation systems, computer vision algorithms, and 4D GPS navigation for VTOL aircraft. Always exploring new technologies and innovative solutions.',
     icon: IoBulbOutline,
   },
   {
-    name: 'Coding and Development',
+    name: 'Full-Stack Development',
     description:
-      'I have a strong background in coding and software development. I enjoy creating efficient and scalable solutions to complex problems. My experience spans various programming languages and frameworks, making me versatile in tackling different challenges.',
+      'Proficient in multiple programming languages including Python, C++, Java, JavaScript, and R. Experience with web development (React, Next.js), cloud platforms (AWS, Azure), and development tools (Docker, Git). Strong foundation in software engineering and system design.',
     icon: IoCodeWorkingOutline,
   },
-  // {
-  //   name: 'Research and Publications',
-  //   description:
-  //     'I have contributed to research in AI and robotics, with publications in academic journals. My research focuses on developing new algorithms and techniques to improve the performance and capabilities of autonomous systems.',
-  //   icon: RiBarcodeLine,
-  // },
 ]
 const FeatureSection = () => {
   return (
@@ -41,13 +35,13 @@ const FeatureSection = () => {
       <div className="px-6 mx-auto max-w-7xl lg:px-8">
         <div className="sm:text-center">
           <h2 className="text-lg font-semibold leading-8 text-accent-600">
-            Expertise in AI and Robotics
+            Engineering Student & AI Specialist
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
-            {siteMetadata.featureSection.title}
+            Why Choose Me?
           </p>
           <p className="max-w-2xl mx-auto mt-6 text-lg leading-8 text-primaryText-600 dark:text-primaryText-400">
-            {siteMetadata.featureSection.description}
+            I am a 2nd year engineering student specializing in AI and Cyber-Physical Systems, currently on a gap year seeking internship opportunities. My projects and professional experiences reflect my dedication and innovative approach in AI and technology.
           </p>
         </div>
 

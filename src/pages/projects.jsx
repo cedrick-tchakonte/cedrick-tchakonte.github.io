@@ -14,16 +14,37 @@ import { ChevronRightIcon } from '@/images/icons/NavIcons'
 // TODO: Add your own projects here. Logo images from https://heroicons.com/
 const projectsData = [
   {
+    title: "Retinal Vessel Segmentation in SLO Ophthalmoscopy",
+    description: "Developed automated retinal vessel segmentation system using image derivation operators and specialized vascular filters for Scanning Laser Ophthalmoscopy (SLO) retinal images. Implemented two segmentation approaches against IOSTAR database ground truth, applying advanced image processing techniques including gradient operators and morphological filtering for precise vascular structure detection.",
+    logo: ecomLogo,
+    href: "https://github.com/CeGeek23/retinal-vessel-segmentation",
+    category: "Computer Vision & Biomedical Imaging",
+  },
+  {
+    title: "Computer Vision and Feature Detection Projects",
+    description: "Implemented comprehensive computer vision solutions including Bayesian classification and K-means clustering for skin detection using Essex dataset, achieving robust pixel-level classification. Developed feature detection pipeline using Harris corner detection, ORB, and KAZE algorithms with OpenCV, applying gradient analysis and morphological operations for robust point matching across scales and transformations.",
+    logo: bananaLogo,
+    href: "https://github.com/CeGeek23/computer-vision-projects",
+    category: "Computer Vision & Image Processing",
+  },
+  {
+    title: "4D GPS Navigation System for VTOL Aircraft",
+    description: "Developed trajectory optimization algorithms for vertical takeoff and landing aircraft in collaboration with Technoplane company, using 3D mapping and dynamic weather modeling as a 4th dimension. Simulated and analyzed real-time path planning strategies for autonomous flight systems.",
+    logo: supaSnacksLogo,
+    href: "https://github.com/CeGeek23/vtol-navigation-system",
+    category: "Aerospace & Navigation Systems",
+  },
+  {
     title: "Chatbot with PyQt5",
     description: "This is a simple chatbot that I built using PyQt5. I wanted to learn more about PyQt5 and how to build desktop applications. The chatbot is a simple application that allows you to chat with a bot. The bot can answer simple questions and provide information about the weather. The chatbot uses the OpenWeatherMap API to get the weather information.",
-    logo: ecomLogo,
+    logo: payByFonieLogo,
     href: "https://github.com/CeGeek23/chatbot",
     category: "Desktop Application",
   },
   {
     title: "Intrusion Detection System",
     description: "This project is a simple intrusion detection system composed of a mobile application, arduino cards, micro cameras and a server. The system is designed to detect intruders in a room and send an alert to the user's mobile phone. The system uses a combination of motion sensors, cameras and a server to detect intruders and send an alert to the user's mobile phone. The system is built using Arduino, Python, Flask and React Native.",
-    logo: bananaLogo,
+    logo: ecomLogo,
     href: "https://github.com/CeGeek23/Syst-me_detection_d_intrusion",
     category: "Security System",
   },

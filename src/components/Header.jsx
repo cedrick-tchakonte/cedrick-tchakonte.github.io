@@ -30,9 +30,9 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium rounded-full shadow-lg group bg-white/90 text-primaryText-800 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur dark:bg-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 dark:hover:ring-white/20">
-        Menu
-        <ChevronDownIcon className="w-2 h-auto ml-3 stroke-primaryText-500 group-hover:stroke-primaryText-700 dark:group-hover:stroke-primaryText-400" />
+      <Popover.Button className="flex items-center px-4 py-2 text-sm font-medium rounded-full shadow-lg group bg-white/90 text-primaryText-800 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur-sm dark:bg-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 dark:hover:ring-white/20 transition-all duration-200 hover:scale-105">
+        <span className="mr-2">Menu</span>
+        <ChevronDownIcon className="w-4 h-4 stroke-primaryText-500 group-hover:stroke-primaryText-700 dark:group-hover:stroke-primaryText-400 transition-transform duration-200 group-data-[headlessui-state~=open]:rotate-180" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
@@ -57,7 +57,7 @@ function MobileNavigation(props) {
         >
           <Popover.Panel
             focus
-            className="fixed z-50 p-8 origin-top bg-white inset-x-4 top-8 rounded-3xl ring-1 ring-primaryText-900/5 dark:bg-primaryText-900 dark:ring-primaryText-800"
+            className="fixed z-50 p-8 origin-top bg-white/95 backdrop-blur-md inset-x-4 top-8 rounded-3xl ring-1 ring-primaryText-900/5 shadow-2xl dark:bg-primaryText-900/95 dark:ring-primaryText-800 border border-primaryText-200/20 dark:border-primaryText-700/20"
           >
             <div className="flex flex-row-reverse items-center justify-between">
               <Popover.Button aria-label="Close menu" className="p-1 -m-1">
@@ -72,7 +72,12 @@ function MobileNavigation(props) {
                 {siteMetadata.siteNavLinks.map((link) => {
                   return (
                     <MobileNavItem key={link.href} href={link.href}>
-                      {link.name}
+                      <span className="flex items-center justify-between w-full">
+                        {link.name}
+                        <svg className="w-4 h-4 ml-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
                     </MobileNavItem>
                   )
                 })}
@@ -113,11 +118,13 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex px-3 text-sm font-medium rounded-full shadow-lg bg-white/90 text-primaryText-800 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur dark:bg-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10">
+      <ul className="flex px-3 text-sm font-medium rounded-full shadow-lg bg-white/90 text-primaryText-800 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur-sm dark:bg-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/20 dark:border-primaryText-700/20">
         {siteMetadata.siteNavLinks.map((link) => {
           return (
             <NavItem key={link.href} href={link.href}>
-              {link.name}
+              <span className="relative px-3 py-2 rounded-lg transition-all duration-200 hover:bg-accent-50 dark:hover:bg-accent-900/20">
+                {link.name}
+              </span>
             </NavItem>
           )
         })}
@@ -153,7 +160,7 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="px-3 py-2 transition rounded-full shadow-lg group bg-white/90 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur dark:bg-primaryText-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className="px-3 py-2 transition-all duration-200 rounded-full shadow-lg group bg-white/90 shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur-sm dark:bg-primaryText-800/90 dark:ring-white/10 dark:hover:ring-white/20 border border-primaryText-200/20 dark:border-primaryText-700/20 hover:scale-105 hover:shadow-xl"
       onClick={toggleMode}
     >
       <SunIcon className="h-6 w-6 fill-primaryText-100 stroke-primaryText-500 transition group-hover:fill-primaryText-200 group-hover:stroke-primaryText-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-accent-50 [@media(prefers-color-scheme:dark)]:stroke-accent-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-accent-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-accent-600" />

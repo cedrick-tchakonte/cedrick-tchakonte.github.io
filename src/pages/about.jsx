@@ -4,7 +4,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import siteMetadata from '@/data/siteMetadata'
 
-import { Container } from '@/components/Container'
+import { PageLayout } from '@/components/PageLayout'
 import {
   xIcon,
   InstagramIcon,
@@ -32,10 +32,13 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About-{siteMetadata.author}</title>
+        <title>About - {siteMetadata.author}</title>
         <meta name="description" content={siteMetadata.description} />
       </Head>
-      <Container className="mt-16 sm:mt-32">
+      <PageLayout 
+        title="About Me"
+        subtitle="Learn more about my journey, passion, and professional background"
+      >
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
             <div className="max-w-xs px-2.5 lg:max-w-none">
@@ -43,7 +46,7 @@ const About = () => {
                 src={avatarImage}
                 alt="picture of the author"
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="object-cover aspect-square rounded-2xl bg-primaryText-100 dark:bg-primaryText-800"
+                className="object-cover aspect-square rounded-2xl bg-primaryText-100 dark:bg-primaryText-800 shadow-xl border-4 border-white dark:border-primaryText-700"
               />
             </div>
           </div>
@@ -52,45 +55,50 @@ const About = () => {
               {siteMetadata.authorHeadline}
             </h1>
             <div className="mt-6 text-base space-y-7 text-primaryText-600 dark:text-primaryText-400">
-              <p className="whitespace-pre-wrap">
+              <p className="whitespace-pre-wrap leading-relaxed">
                 {siteMetadata.authorAboutExtended}
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
-            <ul role="list">
-              <SocialLink
-                href={siteMetadata.socials.instagram}
-                icon={InstagramIcon}
-                className="mt-4"
-              >
-                Follow on Instagram
-              </SocialLink>
-              <SocialLink
-                href={siteMetadata.socials.github}
-                icon={GitHubIcon}
-                className="mt-4"
-              >
-                Follow on GitHub
-              </SocialLink>
-              <SocialLink
-                href={siteMetadata.socials.linkedin}
-                icon={LinkedInIcon}
-                className="mt-4"
-              >
-                Follow on LinkedIn
-              </SocialLink>
-              <SocialLink
-                href={`mailto:${siteMetadata.email}`}
-                icon={MailIcon}
-                className="pt-8 mt-8 border-t border-primaryText-100 dark:border-primaryText-700/40"
-              >
-                {siteMetadata.email}
-              </SocialLink>
-            </ul>
+            <div className="bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-2xl p-8 border border-primaryText-200/50 dark:border-primaryText-700/50">
+              <h3 className="text-lg font-semibold text-primaryText-800 dark:text-primaryText-100 mb-6">
+                Connect with me
+              </h3>
+              <ul role="list" className="space-y-4">
+                <SocialLink
+                  href={siteMetadata.socials.instagram}
+                  icon={InstagramIcon}
+                  className="group"
+                >
+                  <span className="group-hover:text-accent-500 transition-colors">Follow on Instagram</span>
+                </SocialLink>
+                <SocialLink
+                  href={siteMetadata.socials.github}
+                  icon={GitHubIcon}
+                  className="group"
+                >
+                  <span className="group-hover:text-accent-500 transition-colors">Follow on GitHub</span>
+                </SocialLink>
+                <SocialLink
+                  href={siteMetadata.socials.linkedin}
+                  icon={LinkedInIcon}
+                  className="group"
+                >
+                  <span className="group-hover:text-accent-500 transition-colors">Follow on LinkedIn</span>
+                </SocialLink>
+                <SocialLink
+                  href={`mailto:${siteMetadata.email}`}
+                  icon={MailIcon}
+                  className="pt-6 mt-6 border-t border-primaryText-100 dark:border-primaryText-700/40 group"
+                >
+                  <span className="group-hover:text-accent-500 transition-colors">{siteMetadata.email}</span>
+                </SocialLink>
+              </ul>
+            </div>
           </div>
         </div>
-      </Container>
+      </PageLayout>
     </>
   )
 }

@@ -90,7 +90,7 @@ const Contact = () => {
           <h1 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl lg:text-6xl">
             {siteMetadata.contactTitle}
           </h1>
-          <p className="max-w-3xl mt-6 text-xl text-primaryText-500">
+          <p className="max-w-3xl mt-6 text-xl text-primaryText-600 dark:text-primaryText-400">
             {siteMetadata.contactSubtitle}
           </p>
         </div>
@@ -99,7 +99,7 @@ const Contact = () => {
       {/* Contact section */}
       <section className="relative" aria-labelledby="contact-heading">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="relative bg-white rounded-lg shadow-xl dark:bg-slate-900">
+          <div className="relative bg-white/95 dark:bg-primaryText-900/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-primaryText-200/50 dark:border-primaryText-700/50">
             <h2 id="contact-heading" className="sr-only">
               Contact us
             </h2>
@@ -296,7 +296,7 @@ const Contact = () => {
               </div>
 
               {/* Contact form */}
-              <div className="px-6 py-10 bg-white rounded-lg dark:bg-slate-900 sm:px-10 lg:col-span-2 xl:p-12">
+              <div className="px-6 py-10 bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-2xl sm:px-10 lg:col-span-2 xl:p-12">
                 <h3 className="text-lg font-medium text-primaryText-800 dark:text-primaryText-100">
                   Send me a message
                 </h3>

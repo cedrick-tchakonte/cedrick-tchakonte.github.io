@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { PageLayout } from '@/components/PageLayout'
 import CertificationCard from '@/components/CertificationCard'
 import siteMetadata from '@/data/siteMetadata'
 
@@ -67,9 +67,9 @@ export default function Certifications() {
         <title>Certifications - {siteMetadata.author}</title>
         <meta name="description" content={`Certifications obtained by ${siteMetadata.author}`} />
       </Head>
-      <SimpleLayout
+      <PageLayout
         title="Certifications"
-        intro="Here are the various certifications I have obtained in the field of computer science, with a focus on AI, robotics, and software development."
+        subtitle="Here are the various certifications I have obtained in the field of computer science, with a focus on AI, robotics, and software development."
       >
         {/* Grid Layout for Certification Cards */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -77,7 +77,7 @@ export default function Certifications() {
             <CertificationCard key={index} certification={certification} />
           ))}
         </div>
-      </SimpleLayout>
+      </PageLayout>
     </>
   )
 }

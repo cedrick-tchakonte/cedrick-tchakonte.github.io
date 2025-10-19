@@ -11,44 +11,44 @@ import { motion } from 'framer-motion'
 // TODO: If you want to include the logo of the company, I suggesting importing the svg from Remix-Design's repo: https://github.com/Remix-Design/RemixIcon/tree/master/icons/Logos
 
 const experiences = [
-  // {
-  //   title: 'Lead',
-  //   company: 'Apple',
-  //   date: '2018 - Present',
-  //   description: [
-  //     'Supervise a team of 100+ employees across all areas of the business, with approximately 60 team members daily',
-  //     'Develop and facilitate daily storewide meetings, workshops, and team training & on-boarding',
-  //     'Created and rolled out business training leading to +50%  business related connections, later being implemented market wide to all retail store',
-  //   ],
-  //   location: 'Vancouver, BC',
-  //   link: { url: 'https://www.apple.com/ca/', label: 'Apple' },
-  //   logo: logoApple,
-  // },
   {
-    title: 'Stage',
+    title: 'Junior Research Engineer Intern',
+    company: 'Objectware',
+    date: 'Sept 2025 - Present',
+    description: [
+      'Conducted R&D on an AI-based decision support system for enterprise applications, designing ML models for predictive analytics to improve decision accuracy and efficiency.',
+      'Developed AI algorithms for business intelligence, supporting enterprise clients with advanced analytics and decision-making tools.',
+      'Worked with cross-functional teams (market directors, HR, consultants, CEO) to integrate AI solutions, improving efficiency and streamlining workflows.',
+    ],
+    location: 'Paris, France',
+    link: { url: 'https://www.objectware.fr/', label: 'Objectware' },
+    logo: logoApple,
+  },
+  {
+    title: 'Research and Development Intern',
+    company: 'STMicroelectronics',
+    date: 'May 2025 - Aug 2025',
+    description: [
+      'Worked within the System Level Modeling team (MDRF division) on C++-based "Digital Twin" simulations enabling virtual execution of embedded software for multiple ST divisions (automotive, RF, secure MCUs, etc.).',
+      'Developed AI-assisted workflows for documentation analysis and model generation, using LLMs, RAG, and vector databases to process complex simulation codebases.',
+      'Benchmarked and integrated the solution into SOC Digital Twin development, improving documentation retrieval efficiency and enhancing productivity in simulation-driven validation.',
+    ],
+    location: 'Grenoble, France',
+    link: { url: 'https://www.st.com/', label: 'STMicroelectronics' },
+    logo: logoApple,
+  },
+  {
+    title: 'Intern',
     company: 'EUREKA Agency',
-    date: 'Juin 2023 - Août 2023',
+    date: 'June 2023 - August 2023',
     description: [
       'Eureka Agency is a digital marketing agency which is specialized in web and mobile development and innovative projects.',
       'Learning and working on web development projects using PHP',
     ],
-    location: 'Yaoundé, Cameroun',
+    location: 'Yaoundé, Cameroon',
     link: { url: 'https://www.eureka-cm.netlify.app', label: 'EUREKA Agency' },
     logo: logoApple,
   },
-  // {
-  //   title: 'Genius',
-  //   company: 'Apple',
-  //   date: '2016 - 2018',
-  //   description: [
-  //     'Provided technical support to customers, including troubleshooting, diagnosing, and repairing hardware and software issues',
-  //     'Strong people skills and a knack for problem solving',
-  //     'Maintain composure, provide empathy and customer focus while troubleshooting and solving technical issues',
-  //   ],
-  //   location: 'Vancouver, BC',
-  //   link: { url: 'https://www.apple.com/ca/', label: 'Apple' },
-  //   logo: logoApple,
-  // },
 ]
 
 export default function Experience() {

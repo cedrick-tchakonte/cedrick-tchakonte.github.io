@@ -7,11 +7,11 @@ const siteMetadata = {
   description:
     'Welcome to my personal portfolio. I am a computer science major with a passion for AI and robotics.',
   author: 'Cedrick Tchakonte',
-  authorHeadline: '2nd Year Computer Science Major at ENSTA Paris, IP Paris',
+  authorHeadline: '2nd Year Engineering Student in AI & Cyber-Physical Systems at ENSTA Paris-Saclay, IP Paris',
   authorAbout:
-    "Hi, I'm Cedrick, a 2nd year computer science major at ENSTA Paris, part of the Institut Polytechnique de Paris. I am passionate about robotics, artificial intelligence, and their applications.",
+    "Hi, I'm Cedrick, a 2nd year engineering student specializing in Artificial Intelligence and Cyber-Physical Systems at ENSTA Campus de Paris-Saclay, part of the Institut Polytechnique de Paris. Currently on a gap year seeking a 6-month internship to strengthen my background in AI and machine learning.",
   authorAboutExtended:
-    "Cedrick is a student at ENSTA Paris, a member of the Institut Polytechnique de Paris. He is passionate about robotics and artificial intelligence and their applications. In his personal life, Cedrick enjoys exploring new technologies and working on innovative projects.",
+    "Cedrick is a 2nd year engineering student at ENSTA Campus de Paris-Saclay, specializing in Artificial Intelligence and Cyber-Physical Systems. He is passionate about robotics, artificial intelligence, and their applications. Currently on a gap year, he is seeking a 6-month internship to strengthen his background in AI and machine learning, discover new fields of innovation, and contribute to meaningful projects.",
   socials: {
     x: 'https://x.com/Cdrick237',
     facebook: 'https://www.facebook.com/profile.php?id=100011695911246',
@@ -23,7 +23,7 @@ const siteMetadata = {
   phoneNumber: '0758744186',
   contactTitle: 'Get in touch',
   contactSubtitle:
-    "I am currently studying computer science and working on exciting projects in robotics and AI. If you want to get in touch, please use the form below.",
+    "I am currently a 2nd year engineering student specializing in AI and Cyber-Physical Systems, on a gap year seeking internship opportunities. If you want to get in touch, please use the form below.",
   analytics: {
     plausibleDataDomain: 'https://cedricktchakonte.com/', // e.g. tailwind-nextjs-starter-blog.vercel.app
     googleAnalyticsId: 'G-XXXXXXX', // e.g. UA-000000-2 or G-XXXXXXX
@@ -52,10 +52,6 @@ const siteMetadata = {
       //href: '/experience',
       //},
     {
-      name: 'Expertise',
-      href: '/expertise',
-    },
-    {
       name: 'Projects',
       href: '/projects',
     },
@@ -72,6 +68,10 @@ const siteMetadata = {
       href: '/international-mobility',
     },
     {
+      name: 'Volunteer Work',
+      href: '/volunteer',
+    },
+    {
       name: 'Contact',
       href: '/contact',
     },
@@ -81,29 +81,6 @@ const siteMetadata = {
     },
   ],
   siteRepo: 'https://github.com/myeportfolio',
-  expertise: [
-    {
-      title: 'AI and Robotics Projects',
-      description:
-        'I will guide you through my AI and robotics projects, showcasing my skills and passion in these fields. From conceptualization to implementation, I will share my journey and the challenges I overcame. Whether you are a beginner or an enthusiast, you will find valuable insights and inspiration.',
-      testimonial:
-        '“Cedrick is an exceptional talent in AI and robotics. His dedication and innovative approach have greatly impressed me. I highly recommend him for any project in these domains.”',
-      testimonialAuthor: 'M. John Doe',
-      testimonialAuthorTitle: 'Professor at ENSTA Paris',
-      imgUrl: '/images/avatar.jpg',
-      imageAttribution: 'TODO',
-    },
-    {
-      title: 'AI and Robotics Workshops',
-      description:
-        'Join my workshops to learn about AI and robotics. These sessions will cover the basics of AI, machine learning, and robotics, providing hands-on experience with real-world applications. Participants will gain practical knowledge and skills to kickstart their journey in these exciting fields.',
-      testimonial: '“Cedrick is an exceptional talent in AI and robotics. His dedication and innovative approach have greatly impressed me. I highly recommend him for any project in these domains.”',
-      testimonialAuthor: 'My Professor',
-      testimonialAuthorTitle: 'Professor at ENSTA Paris',
-      imgUrl: '/images/avatar.jpg',
-      imageAttribution: 'TODO',
-    },
-  ],
   testimonial: {
     comment:
       '“Cedrick is an exceptional talent in AI and robotics. His dedication and innovative approach have greatly impressed me. I highly recommend him for any project in these domains.”',
@@ -119,9 +96,9 @@ const siteMetadata = {
     //TODO also need to update the features array in the FeatureSection component
   },
   experience: {
-    title: 'Things I’ve done trying to put my dent in the universe.',
+    title: 'Things I\'ve done trying to put my dent in the universe.',
     intro:
-      "I am a 2nd year computer science major at ENSTA Paris, part of the Institut Polytechnique de Paris. I have worked on various AI and robotics projects, and I am always eager to explore new technologies and innovative projects.",
+      "I am a 2nd year engineering student specializing in AI and Cyber-Physical Systems at ENSTA Campus de Paris-Saclay, part of the Institut Polytechnique de Paris. Currently on a gap year, I have gained valuable experience through internships at Objectware and STMicroelectronics, working on AI-based decision support systems and Digital Twin simulations.",
     //TODO also need to update the experience array in the ExperienceSection component. This is because of the icons used.
     education: [
       {

@@ -3,7 +3,8 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
 import { FaPython, FaJava, FaDocker, FaGitAlt, FaLinux, FaHtml5, FaJs, FaCss3Alt, FaAws, FaNodeJs, FaReact } from 'react-icons/fa'
-import { SiSpringboot, SiNextdotjs, SiApachecassandra, SiScylladb, SiPycharm, SiVisualstudio, SiCplusplus, SiTensorflow, SiPytorch, SiJupyter, SiMongodb, SiPostgresql, SiRos, SiKeras, SiScikitlearn, SiNumpy, SiPandas, SiMatlab, SiOpencv, SiAnaconda, SiVisualstudiocode, SiEclipseide, SiIntellijidea, SiJenkins, SiAzuredevops, SiGooglecloud, SiSpringsecurity } from 'react-icons/si'
+import { SiSpringboot, SiNextdotjs, SiApachecassandra, SiScylladb, SiPycharm, SiVisualstudio, SiCplusplus, SiTensorflow, SiPytorch, SiJupyter, SiMongodb, SiPostgresql, SiRos, SiKeras, SiScikitlearn, SiNumpy, SiPandas, SiOpencv, SiAnaconda, SiVisualstudiocode, SiEclipseide, SiIntellijidea, SiJenkins, SiAzuredevops, SiGooglecloud, SiSpringsecurity, SiR } from 'react-icons/si'
+import { FaTerminal, FaCode, FaRobot } from 'react-icons/fa'
 
 const skills = [
   {
@@ -13,6 +14,9 @@ const skills = [
       { name: 'C++', icon: SiCplusplus },
       { name: 'Java', icon: FaJava },
       { name: 'JavaScript', icon: FaJs },
+      { name: 'R', icon: SiR },
+      { name: 'Bash', icon: FaTerminal },
+      { name: 'MATLAB', icon: FaCode },
       { name: 'HTML5', icon: FaHtml5 },
       { name: 'CSS3', icon: FaCss3Alt },
     ],
@@ -27,8 +31,10 @@ const skills = [
       { name: 'Scikit-Learn', icon: SiScikitlearn },
       { name: 'NumPy', icon: SiNumpy },
       { name: 'Pandas', icon: SiPandas },
-      { name: 'Jupyter', icon: SiJupyter },
       { name: 'OpenCV', icon: SiOpencv },
+      { name: 'Hugging Face', icon: FaRobot },
+      { name: 'Transformers', icon: FaRobot },
+      { name: 'LangChain', icon: FaCode },
     ],
   },
   {

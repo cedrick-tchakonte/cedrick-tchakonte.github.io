@@ -6,7 +6,7 @@ import Image from 'next/image'
 const CertificationCard = ({ certification }) => {
   return (
     <motion.div
-      className="relative flex flex-col items-start p-6 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-150 dark:to-gray-200 rounded-2xl shadow-lg hover:shadow-2xl transform transition-transform duration-300 hover:scale-105"
+      className="relative flex flex-col items-start p-6 bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-2xl transform transition-all duration-300 hover:scale-105 border border-primaryText-200/50 dark:border-primaryText-700/50"
       whileHover={{ scale: 1.05 }}
       transition={{ type: 'spring', stiffness: 300 }}
     >
@@ -25,21 +25,21 @@ const CertificationCard = ({ certification }) => {
           className="rounded-lg shadow-lg"
         />
         <div className="ml-6">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+          <h3 className="text-2xl font-bold text-primaryText-800 dark:text-primaryText-100">
             {certification.name}
           </h3>
-          <p className="flex items-center text-lg text-gray-600 dark:text-gray-400 mt-2">
+          <p className="flex items-center text-lg text-primaryText-600 dark:text-primaryText-400 mt-2">
             <FaCalendarAlt size={24} className="mr-2 text-accent-500" />
             {certification.date}
           </p>
-          <p className="text-md text-gray-500 dark:text-gray-400">
+          <p className="text-md text-primaryText-500 dark:text-primaryText-500">
             Issued by {certification.issuer}
           </p>
         </div>
       </div>
 
       {/* Description */}
-      <p className="mt-3 text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+      <p className="mt-3 text-base text-primaryText-600 dark:text-primaryText-400 leading-relaxed">
         {certification.description}
       </p>
 

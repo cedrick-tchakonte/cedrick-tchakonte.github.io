@@ -5,58 +5,33 @@ import siteMetadata from '@/data/siteMetadata'
 
 const educationBackground = [
     {
-      degree: 'Engineering student in Computer Science',
-      institution: 'Institut Polytechnique de Paris',
+      degree: '2nd Year Engineering Student in Artificial Intelligence and Cyber-Physical Systems',
+      institution: 'ENSTA Campus de Paris-Saclay, Institut Polytechnique de Paris',
       logo: '/images/logo/ip-paris.png', // Add logo path here
-      startDate: 'Juillet 2024',
-      endDate: 'Now',
+      startDate: 'August 2024',
+      endDate: 'Present (Gap Year)',
       description:
-        'IP Paris is a prestigious engineering school in France. The computer science program is designed to provide students with a strong foundation in computer science and engineering. Focused on advanced AI topics, including machine learning, natural language processing, and robotics. Completed with distinction.',
+        'ENSTA Campus de Paris-Saclay is a prestigious engineering school in France, part of the Institut Polytechnique de Paris. Currently in 2nd year specializing in Artificial Intelligence and Cyber-Physical Systems, with a focus on machine learning, image recognition, microprocessor architecture, and robotic navigation.',
       highlights: [
-        'AI Engineering specialization',
-        'Relevant Courses: Advanced ML, Computer Vision, AI Ethics',
+        'AI and Cyber-Physical Systems specialization',
+        'Relevant Courses: Machine Learning, Image Recognition, Microprocessor Architecture, Parallel Systems, Statistical Learning, Control Theory, Robotic Navigation',
+        'Currently on gap year seeking 6-month internship',
       ],
     },
     {
-      degree: '2A Computer Science',
-      institution: 'ENSTA Paris',
-      logo: '/images/logo/ensta.png', // Add logo path here
+      degree: 'Intensive Preparatory Program in Mathematics and Physical Sciences',
+      institution: 'National Advanced School of Engineering, Yaoundé, Cameroon',
+      logo: '/images/logo/enspy.png', // Add logo path here
       startDate: 'September 2020',
-      endDate: 'June 2022',
+      endDate: 'July 2024',
       description:
-        'ENSTA Paris is a prestigious engineering school in France. The computer science program is designed to provide students with a strong foundation in computer science and engineering. Focused on advanced AI topics, including machine learning, natural language processing, and robotics. Completed with distinction.',
+        'ENSPY is a prestigious engineering school in Cameroon. Completed intensive preparatory program in mathematics and physical sciences for competitive engineering entrance examinations, providing strong foundation in advanced mathematics and physics.',
       highlights: [
-        'AI Engineering specialization',
-        'Relevant Courses: Computer Vision, AI Ethics, machine learning, control theory, robotics',
+        'Preparatory program for competitive engineering entrance examinations',
+        'Relevant Courses: Linear Algebra, Electromagnetism, Mechanics, Differential Equations, Probability and Statistics, Thermodynamics',
+        'Strong foundation in mathematics and physical sciences',
       ],
       },
-    {
-      degree: '2 Years as an Engineering student in Computer Science',
-      institution: 'Ecole Nationale Supérieure Polytechnique de Yaoundé',
-      logo: '/images/logo/enspy.png', // Add logo path here
-      startDate: 'September 2020',
-      endDate: 'June 2022',
-      description:
-        'ENSPY is a prestigious engineering school in Cameroon. The computer science program is designed to provide students with a strong foundation in computer science and engineering. Focused on advanced AI topics, including machine learning, natural language processing, and robotics. Completed with distinction.',
-      highlights: [
-        'Computer Science Engineering',
-        'Relevant Courses: Web Development, Algorithms, Data Structures, Software Engineering, software engineering, machine learning, network security',,
-      ],
-    },
-    {
-      degree: 'Preparatory Classes for Engineering Studies in Mathematics, Physical Sciences and Computer Science',
-      institution: 'Ecole Nationale Supérieure Polytechnique de Yaoundé',
-      logo: '/images/logo/enspy.png', // Add logo path here
-      startDate: 'August 2016',
-      endDate: 'May 2020',
-      description:
-        'Leading engineering school in Cameroon. The preparatory classes program is designed to provide students with a strong foundation in mathematics, physical sciences and computer science. Completed with honors.',
-      highlights: [
-        'Preparation for Engineering Studies',
-        'Relevant Courses: Mathematics, Physics, Chemistry, Computer Science',
-        'Graduated with honors',
-      ],
-    },
     {
       degree: 'Baccalauréat scientifique | Mathematics, Physical Sciences and Computer Science',
       institution: 'Government Bilingual High School of Nylon Ndogpassi',
@@ -64,13 +39,10 @@ const educationBackground = [
       startDate: '2019',
       endDate: '2020',
       description:
-        'National examination in Cameroon. The program is designed to provide students with a strong foundation in mathematics, physical sciences and computer science. I obtain my diploma in order to prepare me integrating great engineering studies in my country',
+        'National examination in Cameroon. The program is designed to provide students with a strong foundation in mathematics, physical sciences and computer science. I obtained my diploma to prepare for integrating great engineering studies in my country.',
       highlights: [
-        'Prepare my future',
-        'Mathematics',
-        'Physics',
-        'Chemistry',
-        'General Knowledge',
+        'National examination preparation',
+        'Mathematics, Physics, Chemistry, Computer Science',
         'Graduated with honors: mention très bien',
       ],
     },
