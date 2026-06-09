@@ -12,7 +12,7 @@ const GapYearBadge = () => {
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
         <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
       </span>
-      <span>Currently on Gap Year - Seeking Internship Opportunities</span>
+      <span>On a Gap Year · ML Research Intern @ Stellantis</span>
     </motion.div>
   )
 }

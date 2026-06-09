@@ -136,9 +136,9 @@ const siteMetadata: SiteMetadata = {
   siteRepo: 'https://github.com/CeGeek23/myeportfolio',
   testimonial: {
     comment:
-      '“Cedrick is an exceptional talent in AI and robotics. His dedication and innovative approach have greatly impressed me. I highly recommend him for any project in these domains.”',
-    author: 'Professor John Doe',
-    authorTitle: 'Professor at ENSTA Paris',
+      '“I build AI systems that bridge research and real-world impact — from surrogate models for vehicle safety to Graph RAG for complex regulation. I care about rigor, clarity, and technology that genuinely helps people.”',
+    author: 'Cedrick Tchakonte',
+    authorTitle: 'AI & Cyber-Physical Systems Engineer in training — ENSTA Paris (IP Paris)',
     imgUrl: '/images/avatar.jpg',
     imageAttribution: 'Photo by Cedrick Tchakonte',
   },

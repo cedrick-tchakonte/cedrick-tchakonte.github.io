@@ -1,19 +1,12 @@
-import Image, { type StaticImageData } from 'next/image'
 import Head from 'next/head'
-import { Card } from '@/components/Card'
+import type { StaticImageData } from 'next/image'
+import { EntryCard } from '@/components/EntryCard'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { RiLinksLine } from 'react-icons/ri'
-import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
 import siteMetadata from '@/data/siteMetadata'
 import stellantisLogo from '@/images/logos/stellantis.svg'
 import taepLogo from '@/images/logos/taep.jpg'
 import objectwareLogo from '@/images/logos/objectware.svg'
 import stMicroLogo from '@/images/logos/stmicroelectronics.svg'
-
-interface ExperienceLink {
-  url: string
-  label: string
-}
 
 interface ExperienceItem {
   title: string
@@ -21,7 +14,7 @@ interface ExperienceItem {
   date: string
   description: string[]
   location: string
-  link: ExperienceLink
+  link: { url: string; label: string }
   logo: StaticImageData
 }
 
@@ -102,47 +95,17 @@ export default function Experience() {
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
         >
           {experiences.map((experience, index) => (
-            <Card key={index}>
-              <div className="relative z-10 flex items-center justify-center w-12 h-12 p-2 bg-white rounded-full shadow-md shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 dark:border dark:border-primaryText-700/50 dark:bg-white dark:ring-0">
-                <Image
-                  src={experience.logo}
-                  alt={experience.company}
-                  className="object-contain w-8 h-8"
-                  unoptimized
-                  width={32}
-                  height={32}
-                />
-              </div>
-              <h2 className="mt-6 text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
-                <Card.Link href={experience.link.url}>
-                  {experience.title} at {experience.company}
-                </Card.Link>
-              </h2>
-
-              {/* Date and Location */}
-              <div className="relative z-30 mt-3 space-y-2">
-                <p className="flex items-center text-sm text-primaryText-600 dark:text-primaryText-400">
-                  <FaCalendarAlt className="flex-none w-4 h-4 mr-2 text-accent-500" />
-                  {experience.date}
-                </p>
-                <p className="flex items-center text-sm text-primaryText-600 dark:text-primaryText-400">
-                  <FaMapMarkerAlt className="flex-none w-4 h-4 mr-2 text-accent-500" />
-                  {experience.location}
-                </p>
-              </div>
-
-              <Card.Description>
-                {experience.description.map((item, descIndex) => (
-                  <li className="ml-4 list-disc" key={`description-${descIndex}`}>
-                    {item}
-                  </li>
-                ))}
-              </Card.Description>
-              <div className="relative z-10 flex mt-6 text-sm font-medium transition text-primaryText-400 group-hover:text-accent-500 dark:text-primaryText-200">
-                <RiLinksLine className="flex-none w-6 h-6" />
-                <span className="ml-2">{experience.link.label}</span>
-              </div>
-            </Card>
+            <li key={index}>
+              <EntryCard
+                logo={experience.logo}
+                logoAlt={experience.company}
+                title={`${experience.title} at ${experience.company}`}
+                date={experience.date}
+                location={experience.location}
+                bullets={experience.description}
+                link={experience.link}
+              />
+            </li>
           ))}
         </ul>
       </SimpleLayout>

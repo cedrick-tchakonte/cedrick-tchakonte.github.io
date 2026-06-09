@@ -22,8 +22,9 @@ const InternationalMobilityCard = ({ location }: InternationalMobilityCardProps)
         <Image
           src={location.image}
           alt={location.city}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          layout="fill" // Remplit toute la div
+          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          fill
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         />
       </div>
 

@@ -18,7 +18,7 @@ const features: Feature[] = [
   {
     name: 'Professional Experience',
     description:
-      'Gained valuable industry experience through internships at Objectware (AI-based decision support systems) and STMicroelectronics (Digital Twin simulations). Working with cross-functional teams to integrate AI solutions and improve productivity.',
+      'Gaining hands-on industry experience as a Machine Learning Research Intern at Stellantis, and through internships at TAEP, Objectware and STMicroelectronics — spanning surrogate modeling, Graph RAG, LLM-based decision support and Digital Twin simulations.',
     icon: IoSchoolOutline,
   },
   {
@@ -46,7 +46,7 @@ const FeatureSection = () => {
             Why Choose Me?
           </p>
           <p className="max-w-2xl mx-auto mt-6 text-lg leading-8 text-primaryText-600 dark:text-primaryText-400">
-            I am a 2nd year engineering student specializing in AI and Cyber-Physical Systems, currently on a gap year seeking internship opportunities. My projects and professional experiences reflect my dedication and innovative approach in AI and technology.
+            I am an engineering student specializing in AI and Cyber-Physical Systems at ENSTA Paris-Saclay, currently on a gap year gaining hands-on industry experience. My projects and professional experiences reflect my dedication and innovative approach in AI and technology.
           </p>
         </div>
 

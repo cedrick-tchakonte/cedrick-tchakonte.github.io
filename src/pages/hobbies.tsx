@@ -9,8 +9,6 @@ type Hobby = {
   name: string
   description: string
   icon: IconType
-  color: string
-  bgColor: string
 }
 
 const hobbies: Hobby[] = [
@@ -18,57 +16,41 @@ const hobbies: Hobby[] = [
     name: 'Music & Audio',
     description: 'Passionate about various music genres and audio production',
     icon: FaMusic,
-    color: 'from-purple-500 to-pink-500',
-    bgColor: 'bg-purple-100 dark:bg-purple-900/30',
   },
   {
     name: 'Cinema & Series',
     description: 'Film enthusiast and series binge-watcher',
     icon: FaFilm,
-    color: 'from-red-500 to-orange-500',
-    bgColor: 'bg-red-100 dark:bg-red-900/30',
   },
   {
     name: 'Gaming',
     description: 'PC and console gaming, strategy and adventure games',
     icon: FaGamepad,
-    color: 'from-blue-500 to-cyan-500',
-    bgColor: 'bg-blue-100 dark:bg-blue-900/30',
   },
   {
     name: 'Reading',
     description: 'Tech books, sci-fi novels, and AI research papers',
     icon: FaBook,
-    color: 'from-green-500 to-emerald-500',
-    bgColor: 'bg-green-100 dark:bg-green-900/30',
   },
   {
     name: 'Sports & Fitness',
     description: 'Running, gym workouts, and outdoor activities',
     icon: FaRunning,
-    color: 'from-orange-500 to-yellow-500',
-    bgColor: 'bg-orange-100 dark:bg-orange-900/30',
   },
   {
     name: 'Coding Projects',
     description: 'Building side projects and contributing to open source',
     icon: FaCode,
-    color: 'from-indigo-500 to-purple-500',
-    bgColor: 'bg-indigo-100 dark:bg-indigo-900/30',
   },
   {
     name: 'Photography',
     description: 'Capturing moments and exploring visual creativity',
     icon: FaCamera,
-    color: 'from-pink-500 to-rose-500',
-    bgColor: 'bg-pink-100 dark:bg-pink-900/30',
   },
   {
     name: 'Travel',
     description: 'Exploring new cultures and destinations',
     icon: FaPlane,
-    color: 'from-cyan-500 to-blue-500',
-    bgColor: 'bg-cyan-100 dark:bg-cyan-900/30',
   },
 ]
 
@@ -94,14 +76,14 @@ export default function Hobbies() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="group relative overflow-hidden rounded-2xl bg-white dark:bg-primaryText-800 p-6 shadow-lg border border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300"
+              className="group relative overflow-hidden rounded-2xl bg-white dark:bg-primaryText-800 p-6 shadow-lg border border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300 hover:border-accent-300 dark:hover:border-accent-600"
             >
-              {/* Background gradient on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${hobby.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+              {/* Background tint on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-400 to-accent-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
 
               {/* Icon container */}
-              <div className={`relative mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl ${hobby.bgColor} transition-transform duration-300 group-hover:scale-110`}>
-                <hobby.icon className={`w-7 h-7 bg-gradient-to-br ${hobby.color} bg-clip-text text-transparent`} />
+              <div className="relative mb-4 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent-100 dark:bg-accent-900/30 transition-transform duration-300 group-hover:scale-110">
+                <hobby.icon className="w-7 h-7 text-accent-600 dark:text-accent-400" />
               </div>
 
               {/* Content */}
@@ -113,7 +95,7 @@ export default function Hobbies() {
               </p>
 
               {/* Bottom accent line */}
-              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${hobby.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`} />
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-400 to-accent-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </motion.div>
           ))}
         </div>

@@ -25,7 +25,7 @@ const mobilityData: MobilityLocation[] = [
       city: 'Paris',
       country: 'France',
       image: '/images/paris.jpg',
-      description: 'Currently studying at ENSTA Campus de Paris-Saclay, specializing in AI and Cyber-Physical Systems. Also working as Junior Research Engineer Intern at Objectware.',
+      description: 'Studied at ENSTA Campus de Paris-Saclay, specializing in AI and Cyber-Physical Systems, and now based in the Paris region for my gap year — including AI roles at TAEP, Objectware and Stellantis.',
       startDate: '2024',
       endDate: 'Present',
       university: 'ENSTA Campus de Paris-Saclay',

@@ -16,7 +16,7 @@ const CallToAction = () => {
           <div className="inline-flex rounded-md shadow">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white border border-transparent rounded-md bg-accent-500 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 dark:text-slate-800 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white border border-transparent rounded-md bg-accent-500 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105"
             >
               Discuss with me now!
             </Link>

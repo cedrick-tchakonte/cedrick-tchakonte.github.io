@@ -446,7 +446,6 @@ export function Header() {
 
       let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale
       scale = scrollHeight(scale, fromScale, toScale)
-      console.log({ scale })
 
       let x = (scrollY * (fromX - toX)) / downDelay + toX
       x = scrollHeight(x, fromX, toX)
