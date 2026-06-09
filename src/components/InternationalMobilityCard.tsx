@@ -8,6 +8,7 @@ type Location = {
   description: string;
   startDate: string;
   endDate: string;
+  university?: string;
 };
 
 type InternationalMobilityCardProps = {
@@ -16,7 +17,7 @@ type InternationalMobilityCardProps = {
 
 const InternationalMobilityCard = ({ location }: InternationalMobilityCardProps) => {
   return (
-    <div className="relative w-full h-80 bg-primaryText-100 dark:bg-primaryText-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group border border-primaryText-200/50 dark:border-primaryText-700/50">
+    <div className="relative w-full h-80 bg-white dark:bg-primaryText-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group border border-primaryText-200/50 dark:border-primaryText-700/50">
       {/* Image */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <Image
@@ -34,6 +35,9 @@ const InternationalMobilityCard = ({ location }: InternationalMobilityCardProps)
           <h3 className="text-2xl font-semibold text-white drop-shadow-lg">
             {location.city}, {location.country}
           </h3>
+          {location.university && (
+            <p className="mt-1 text-sm text-white/90 drop-shadow">{location.university}</p>
+          )}
         </div>
         <div className="absolute top-4 right-4 text-sm text-white bg-black/60 px-2 py-1 rounded-lg backdrop-blur-sm">
           {location.startDate} - {location.endDate}

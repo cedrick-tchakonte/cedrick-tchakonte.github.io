@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import type { IconType } from 'react-icons'
-import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
 import {
@@ -137,24 +136,29 @@ export default function Skills() {
   return (
     <>
       <Head>
-        <title>Skills-{siteMetadata.author}</title>
+        <title>Skills - {siteMetadata.author}</title>
         <meta name="description" content={`Skills and expertise of ${siteMetadata.author}`} />
       </Head>
       <SimpleLayout title="Skills" intro="Here are the various skills and tools I have mastered in the field of computer science, with a focus on AI and robotics.">
         <div className="space-y-20">
           {skills.map((skillCategory) => (
             <section key={skillCategory.category}>
-              <h2 className="text-lg font-semibold leading-8 text-accent-600">
+              <h2 className="text-lg font-semibold leading-8 text-accent-600 dark:text-accent-400">
                 {skillCategory.category}
               </h2>
-              <div className="mt-1 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-6">
+              <div className="grid grid-cols-2 gap-4 mt-4 sm:grid-cols-3 lg:grid-cols-6">
                 {skillCategory.items.map((skill) => (
-                  <Card key={skill.name} className="flex items-center p-6 bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-lg shadow-lg border border-primaryText-200/50 dark:border-primaryText-700/50">
-                    <div className="flex items-center justify-center w-12 h-12 text-white rounded-xl bg-accent-500 sm:shrink-0">
-                      <skill.icon className="w-8 h-8" aria-hidden="true" />
+                  <div
+                    key={skill.name}
+                    className="flex items-center gap-3 p-4 bg-white border shadow-sm dark:bg-primaryText-800 rounded-xl border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300 hover:shadow-md hover:border-accent-300 dark:hover:border-accent-600"
+                  >
+                    <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white rounded-lg bg-accent-500">
+                      <skill.icon className="w-6 h-6" aria-hidden="true" />
                     </div>
-                    <div className="text-lg font-medium text-primaryText-900 dark:text-primaryText-100">{skill.name}</div>
-                  </Card>
+                    <div className="text-sm font-medium text-primaryText-900 dark:text-primaryText-100">
+                      {skill.name}
+                    </div>
+                  </div>
                 ))}
               </div>
             </section>

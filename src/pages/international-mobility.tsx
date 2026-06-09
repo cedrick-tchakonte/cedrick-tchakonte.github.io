@@ -26,10 +26,10 @@ const mobilityData: MobilityLocation[] = [
       city: 'Paris',
       country: 'France',
       image: '/images/paris.jpg',
-      description: 'Studied at ENSTA Campus de Paris-Saclay, specializing in AI and Cyber-Physical Systems, and now based in the Paris region for my gap year, with AI roles at TAEP, Objectware and Stellantis.',
+      description: 'Studied at ENSTA Paris, specializing in AI and Cyber-Physical Systems, and now based in the Paris region for my gap year, with AI roles at TAEP, Objectware and Stellantis.',
       startDate: '2024',
       endDate: 'Present',
-      university: 'ENSTA Campus de Paris-Saclay',
+      university: 'ENSTA Paris',
     },
     {
       city: 'Grenoble',
@@ -134,9 +134,10 @@ export default function InternationalMobility() {
                       <Image
                         src={location.image}
                         alt={location.city}
-                        className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110"
                         width={800}
                         height={256}
+                        sizes="(min-width: 1024px) 56rem, 100vw"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-white">

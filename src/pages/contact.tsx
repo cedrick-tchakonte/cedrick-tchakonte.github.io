@@ -84,7 +84,7 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Contact-{siteMetadata.author}</title>
+        <title>Contact - {siteMetadata.author}</title>
         <meta name="description" content="Contact" />
       </Head>
       <div className="min-h-screen py-16 sm:py-20">

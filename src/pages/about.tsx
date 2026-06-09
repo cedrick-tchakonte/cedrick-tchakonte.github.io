@@ -57,9 +57,9 @@ const About = () => {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl">
               {siteMetadata.authorHeadline}
-            </h1>
+            </h2>
             <div className="mt-6 text-base space-y-7 text-primaryText-600 dark:text-primaryText-400">
               <p className="whitespace-pre-wrap leading-relaxed">
                 {siteMetadata.authorAboutExtended}

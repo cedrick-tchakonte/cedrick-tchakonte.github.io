@@ -92,7 +92,7 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects-{siteMetadata.author}</title>
+        <title>Projects - {siteMetadata.author}</title>
         <meta name="description" content="Personal projects by Cedrick Tchakonte" />
       </Head>
       <SimpleLayout
@@ -105,25 +105,25 @@ export default function Projects() {
         >
           {projectsData.map((project) => (
             <Card as="li" key={project.title}>
-              <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 dark:border dark:border-primaryText-700/50 dark:bg-primaryText-800 dark:ring-0">
+              <div className="relative z-10 flex items-center justify-center w-12 h-12 p-2 overflow-hidden bg-white rounded-full shadow-md shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 dark:bg-white dark:ring-0">
                 <Image
                   src={project.logo}
                   alt=""
-                  className="w-8 h-8"
+                  className="object-contain w-8 h-8"
                   unoptimized
                   width={32}
                   height={32}
                 />
               </div>
-              <h2 className="mt-6 text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
+              <h3 className="mt-6 text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
                 <Card.Link href={project.href}>{project.title}</Card.Link>
-              </h2>
+              </h3>
               {/* Eyebrow - texte complémentaire */}
               <Card.Eyebrow decorate>{project.category || 'Category'}</Card.Eyebrow>
               <Card.Description>{project.description}</Card.Description>
               <p className="relative z-10 flex mt-6 text-sm font-medium transition text-primaryText-400 group-hover:text-accent-500 dark:text-primaryText-200">
                 <LinkIcon className="flex-none w-6 h-6" />
-                <span className="ml-2">{project.title}</span>
+                <span className="ml-2">View on GitHub</span>
               </p>
             </Card>
           ))}

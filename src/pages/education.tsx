@@ -15,13 +15,13 @@ interface EducationBackground {
 
 const educationBackground: EducationBackground[] = [
   {
-    degree: '2nd Year Engineering Student in Artificial Intelligence and Cyber-Physical Systems',
-    institution: 'ENSTA Paris-Saclay (Institut Polytechnique de Paris)',
+    degree: 'Engineering Degree in AI & Cyber-Physical Systems (2A Completed)',
+    institution: 'ENSTA Paris (Institut Polytechnique de Paris)',
     logo: '/images/logo/ensta.png',
     startDate: 'August 2024',
     endDate: 'August 2025',
     description:
-      'ENSTA Campus de Paris-Saclay is a prestigious engineering school in France, part of the Institut Polytechnique de Paris. Specialized in Artificial Intelligence and Cyber-Physical Systems, with a focus on machine learning, image recognition, microprocessor architecture, and robotic navigation.',
+      'ENSTA Paris is a prestigious engineering school in France, part of the Institut Polytechnique de Paris. Specialized in Artificial Intelligence and Cyber-Physical Systems, with a focus on machine learning, image recognition, microprocessor architecture, and robotic navigation.',
     highlights: [
       'AI and Cyber-Physical Systems specialization',
       'Relevant Courses: Machine Learning, Image Recognition, Microprocessor Architecture, Statistical Learning, Control Theory, Robotic Navigation',

@@ -19,7 +19,7 @@ export function PageLayout({
   headerClassName = '',
 }: PageLayoutProps) {
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-primaryText-50 to-primaryText-100 dark:from-primaryText-900 dark:to-primaryText-800 ${className}`}>
+    <div className={`min-h-screen ${className}`}>
       {showHeader && (
         <motion.header
           className={`py-16 sm:py-20 ${headerClassName}`}

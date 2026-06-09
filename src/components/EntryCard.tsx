@@ -43,9 +43,9 @@ export function EntryCard({
         />
       </div>
 
-      <h2 className="mt-6 text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
+      <h3 className="mt-6 text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
         <Card.Link href={link.url}>{title}</Card.Link>
-      </h2>
+      </h3>
 
       {/* Date and location */}
       <div className="relative z-30 mt-3 space-y-2">

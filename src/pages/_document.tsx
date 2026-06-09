@@ -1,5 +1,4 @@
 import { Head, Html, Main, NextScript } from 'next/document'
-import Preloader from '@/components/Preloader'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')

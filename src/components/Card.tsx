@@ -2,19 +2,6 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
 
-function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M6.75 5.75 9.25 8l-2.5 2.25"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
-
 type CardProps = {
   as?: React.ElementType
   className?: string
@@ -31,7 +18,7 @@ function CardRoot({ as: Component = 'div', className, children }: CardProps) {
         className={clsx(
           className,
           'group relative flex flex-col items-start p-8 overflow-hidden',
-          'bg-white dark:bg-primaryText-900/40',
+          'bg-white dark:bg-primaryText-800',
           'rounded-2xl backdrop-blur-sm',
           'border border-primaryText-200/50 dark:border-primaryText-700/50',
           'shadow-[0_0_0_1px_rgba(0,0,0,0.03),0_2px_4px_rgba(0,0,0,0.05),0_12px_24px_rgba(0,0,0,0.05)]',
@@ -66,44 +53,11 @@ function CardLink({ children, ...props }: CardLinkProps) {
   )
 }
 
-type CardTitleProps = {
-  as?: React.ElementType
-  href?: string
-  children?: React.ReactNode
-}
-
-function CardTitle({ as: Component = 'h2', href, children }: CardTitleProps) {
-  return (
-    <Component className="relative text-xl font-bold tracking-tight text-primaryText-900 dark:text-primaryText-100 transition-colors duration-300 group-hover:text-accent-500 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-accent-500 after:transition-all after:duration-300 group-hover:after:w-full">
-      {href ? <CardLink href={href}>{children}</CardLink> : children}
-    </Component>
-  )
-}
-
 function CardDescription({ children }: { children?: React.ReactNode }) {
   return (
     <p className="relative z-10 mt-4 text-base leading-7 text-primaryText-600 dark:text-primaryText-400 transition-colors duration-300 group-hover:text-primaryText-700 dark:group-hover:text-primaryText-300">
       {children}
     </p>
-  )
-}
-
-function CardCta({ children }: { children?: React.ReactNode }) {
-  return (
-    <motion.div
-      aria-hidden="true"
-      className="relative z-10 flex items-center mt-6 text-sm font-semibold text-accent-500 dark:text-accent-400"
-      whileHover={{ x: 10 }}
-      transition={{ type: 'spring', stiffness: 400 }}
-    >
-      {children}
-      <motion.div
-        whileHover={{ x: 5 }}
-        transition={{ type: 'spring', stiffness: 400 }}
-      >
-        <ChevronRightIcon className="w-4 h-4 ml-1 stroke-current transition-all duration-300 group-hover:stroke-2" />
-      </motion.div>
-    </motion.div>
   )
 }
 
@@ -151,27 +105,8 @@ function CardEyebrow({
   )
 }
 
-// Ajout d'un nouveau composant pour les images
-function CardImage({ src, alt }: { src: string; alt?: string }) {
-  return (
-    <div className="relative w-full h-48 mb-6 overflow-hidden rounded-xl">
-      <motion.img
-        src={src}
-        alt={alt}
-        className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: 'spring', stiffness: 300 }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-    </div>
-  )
-}
-
 export const Card = Object.assign(CardRoot, {
   Link: CardLink,
-  Title: CardTitle,
   Description: CardDescription,
-  Cta: CardCta,
   Eyebrow: CardEyebrow,
-  Image: CardImage,
 })

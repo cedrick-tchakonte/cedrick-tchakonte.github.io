@@ -31,7 +31,7 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex gap-6 text-sm font-medium text-primaryText-800 dark:text-primaryText-200">
-                {siteMetadata.siteNavLinks.map((link: FooterNavLink, index: number) => (
+                {siteMetadata.siteNavLinks.map((link: FooterNavLink) => (
                   <NavLink key={link.href} href={link.href}>
                     {link.name}
                   </NavLink>

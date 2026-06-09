@@ -13,7 +13,7 @@ const features: Feature[] = [
   {
     name: 'AI & Cyber-Physical Systems',
     description:
-      'Currently specializing in AI and Cyber-Physical Systems at ENSTA Paris-Saclay. Working on advanced machine learning algorithms, computer vision, and robotic navigation systems. Experience with TensorFlow, PyTorch, and ROS.',
+      'Currently specializing in AI and Cyber-Physical Systems at ENSTA Paris. Working on advanced machine learning algorithms, computer vision, and robotic navigation systems. Experience with TensorFlow, PyTorch, and ROS.',
     icon: RiRobotLine,
   },
   {
@@ -43,7 +43,7 @@ const FeatureSection = () => {
           align="center"
           eyebrow="Engineering Student & AI Specialist"
           title="Why Choose Me?"
-          subtitle="I am an engineering student specializing in AI and Cyber-Physical Systems at ENSTA Paris-Saclay, currently on a gap year gaining hands-on industry experience. My projects and professional experiences reflect my dedication and innovative approach in AI and technology."
+          subtitle="I am an engineering student specializing in AI and Cyber-Physical Systems at ENSTA Paris, currently on a gap year gaining hands-on industry experience. My projects and professional experiences reflect my dedication and innovative approach in AI and technology."
         />
 
         <div className="max-w-lg mt-12 sm:mx-auto md:max-w-none">

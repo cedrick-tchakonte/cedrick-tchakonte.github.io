@@ -27,7 +27,7 @@ const volunteerActivities: VolunteerActivity[] = [
       'Coordination of cultural events and activities for the ENSTA community.',
       'Working with diverse teams to organize events that promote African culture and community engagement.',
     ],
-    location: 'ENSTA Campus de Paris-Saclay, France',
+    location: 'ENSTA Paris, France',
     link: { url: 'https://www.ensta-paris.fr/', label: 'ENSTAFRIK Association' },
     logo: enstafrikLogo,
   },
