@@ -75,7 +75,7 @@ const siteMetadata: SiteMetadata = {
   authorAbout:
     "Hi, I'm Cedrick! I completed my 2A (2nd year) at ENSTA Paris-Saclay specializing in Artificial Intelligence and Cyber-Physical Systems. I'm currently doing a gap year (césure) as a Machine Learning Research Intern at Stellantis, applying AI to real-world engineering and safety challenges.",
   authorAboutExtended:
-    "Cedrick completed his 2A at ENSTA Campus de Paris-Saclay (Institut Polytechnique de Paris), specializing in Artificial Intelligence and Cyber-Physical Systems. Passionate about machine learning, robotics, and their real-world applications, he is using his gap year to gain hands-on experience — currently as a Machine Learning Research Intern at Stellantis, and previously at STMicroelectronics, Objectware, and TAEP (ENSTA's Junior Enterprise). He is driven to contribute to impactful projects that push the boundaries of AI and technology.",
+    "Cedrick completed his 2A at ENSTA Campus de Paris-Saclay (Institut Polytechnique de Paris), specializing in Artificial Intelligence and Cyber-Physical Systems. Passionate about machine learning, robotics, and their real-world applications, he is using his gap year to gain hands-on experience. He is currently a Machine Learning Research Intern at Stellantis, and has previously worked at STMicroelectronics, Objectware, and TAEP (ENSTA's Junior Enterprise). He is driven to contribute to impactful projects that push the boundaries of AI and technology.",
   socials: {
     x: 'https://x.com/Cdrick237',
     facebook: 'https://www.facebook.com/profile.php?id=100011695911246',
@@ -136,9 +136,9 @@ const siteMetadata: SiteMetadata = {
   siteRepo: 'https://github.com/CeGeek23/myeportfolio',
   testimonial: {
     comment:
-      '“I build AI systems that bridge research and real-world impact — from surrogate models for vehicle safety to Graph RAG for complex regulation. I care about rigor, clarity, and technology that genuinely helps people.”',
+      '“I build AI systems that bridge research and real-world impact, from surrogate models for vehicle safety to Graph RAG for complex regulation. I care about rigor, clarity, and technology that genuinely helps people.”',
     author: 'Cedrick Tchakonte',
-    authorTitle: 'AI & Cyber-Physical Systems Engineer in training — ENSTA Paris (IP Paris)',
+    authorTitle: 'AI & Cyber-Physical Systems Engineer in training, ENSTA Paris (IP Paris)',
     imgUrl: '/images/avatar.jpg',
     imageAttribution: 'Photo by Cedrick Tchakonte',
   },
@@ -152,7 +152,7 @@ const siteMetadata: SiteMetadata = {
   experience: {
     title: "Things I've done trying to put my dent in the universe.",
     intro:
-      "After completing my 2A at ENSTA Campus de Paris-Saclay (Institut Polytechnique de Paris), specializing in AI and Cyber-Physical Systems, I'm using my gap year to gain practical experience. I'm currently a Machine Learning Research Intern at Stellantis, and I've worked on impactful AI projects at STMicroelectronics, Objectware, and TAEP — ranging from Digital Twin simulation and embedded AI to LLM-based decision support and Graph RAG systems.",
+      "After completing my 2A at ENSTA Campus de Paris-Saclay (Institut Polytechnique de Paris), specializing in AI and Cyber-Physical Systems, I'm using my gap year to gain practical experience. I'm currently a Machine Learning Research Intern at Stellantis, and I've worked on impactful AI projects at STMicroelectronics, Objectware, and TAEP, ranging from Digital Twin simulation and embedded AI to LLM-based decision support and Graph RAG systems.",
   },
   education: [
     {

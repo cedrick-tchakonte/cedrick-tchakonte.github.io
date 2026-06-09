@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import type { StaticImageData } from 'next/image'
 import { EntryCard } from '@/components/EntryCard'
+import { SectionHeading } from '@/components/SectionHeading'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
 import stellantisLogo from '@/images/logos/stellantis.svg'
@@ -87,9 +88,7 @@ export default function Experience() {
         title={siteMetadata.experience.title}
         intro={siteMetadata.experience.intro}
       >
-        <h2 className="mb-6 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
-          Work Experience
-        </h2>
+        <SectionHeading title="Work Experience" className="mb-10" />
         <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"

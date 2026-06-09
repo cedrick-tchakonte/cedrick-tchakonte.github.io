@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import type { StaticImageData } from 'next/image'
 import { EntryCard } from '@/components/EntryCard'
+import { SectionHeading } from '@/components/SectionHeading'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
 import enstafrikLogo from '@/images/logos/enstafrik.png'
@@ -59,9 +60,7 @@ export default function Volunteer() {
         title="Volunteer Work & Community Involvement"
         intro="I believe in giving back to the community and contributing to meaningful causes. Here are some of the volunteer activities and community initiatives I'm actively involved in."
       >
-        <h2 className="mb-6 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
-          Community Involvement
-        </h2>
+        <SectionHeading title="Community Involvement" className="mb-10" />
         <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"

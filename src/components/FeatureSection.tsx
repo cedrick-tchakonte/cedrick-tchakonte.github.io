@@ -1,6 +1,7 @@
 import { RiRobotLine } from 'react-icons/ri'
 import { IoSchoolOutline, IoCodeWorkingOutline, IoBulbOutline } from 'react-icons/io5'
 import type { IconType } from 'react-icons'
+import { SectionHeading } from '@/components/SectionHeading'
 
 type Feature = {
   name: string
@@ -18,7 +19,7 @@ const features: Feature[] = [
   {
     name: 'Professional Experience',
     description:
-      'Gaining hands-on industry experience as a Machine Learning Research Intern at Stellantis, and through internships at TAEP, Objectware and STMicroelectronics — spanning surrogate modeling, Graph RAG, LLM-based decision support and Digital Twin simulations.',
+      'Gaining hands-on industry experience as a Machine Learning Research Intern at Stellantis, and through internships at TAEP, Objectware and STMicroelectronics. My work spans surrogate modeling, Graph RAG, LLM-based decision support and Digital Twin simulations.',
     icon: IoSchoolOutline,
   },
   {
@@ -38,17 +39,12 @@ const FeatureSection = () => {
   return (
     <div className="py-16 sm:py-20">
       <div className="px-6 mx-auto max-w-7xl lg:px-8">
-        <div className="sm:text-center">
-          <h2 className="text-lg font-semibold leading-8 text-accent-600">
-            Engineering Student & AI Specialist
-          </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
-            Why Choose Me?
-          </p>
-          <p className="max-w-2xl mx-auto mt-6 text-lg leading-8 text-primaryText-600 dark:text-primaryText-400">
-            I am an engineering student specializing in AI and Cyber-Physical Systems at ENSTA Paris-Saclay, currently on a gap year gaining hands-on industry experience. My projects and professional experiences reflect my dedication and innovative approach in AI and technology.
-          </p>
-        </div>
+        <SectionHeading
+          align="center"
+          eyebrow="Engineering Student & AI Specialist"
+          title="Why Choose Me?"
+          subtitle="I am an engineering student specializing in AI and Cyber-Physical Systems at ENSTA Paris-Saclay, currently on a gap year gaining hands-on industry experience. My projects and professional experiences reflect my dedication and innovative approach in AI and technology."
+        />
 
         <div className="max-w-lg mt-12 sm:mx-auto md:max-w-none">
           <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 md:gap-y-12">

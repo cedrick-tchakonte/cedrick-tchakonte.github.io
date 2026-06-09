@@ -1,5 +1,6 @@
 import siteMetadata from '@/data/siteMetadata'
 import { motion } from 'framer-motion'
+import { SectionHeading } from '@/components/SectionHeading'
 
 type FaqItem = {
   question: string
@@ -44,15 +45,12 @@ const Faq = () => {
   return (
     <div className="py-16 sm:py-20 bg-primaryText-50 dark:bg-primaryText-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:text-center">
-          <h2 className="text-base text-accent-600 font-semibold tracking-wide uppercase">FAQ</h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-primaryText-900 dark:text-white sm:text-4xl">
-            Frequently Asked Questions
-          </p>
-          <p className="mt-4 max-w-2xl text-xl text-primaryText-600 dark:text-primaryText-400 lg:mx-auto">
-            Here are some common questions about my work in AI and robotics.
-          </p>
-        </div>
+        <SectionHeading
+          align="center"
+          eyebrow="FAQ"
+          title="Frequently Asked Questions"
+          subtitle="Here are some common questions about my work in AI and robotics."
+        />
 
         <div className="mt-12">
           <dl className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-8">

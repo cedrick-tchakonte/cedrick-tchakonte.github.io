@@ -1,7 +1,11 @@
 {
-  "name": "tailwindui-template",
+  "name": "cedrick-tchakonte-portfolio",
   "version": "0.1.0",
   "private": true,
+  "description": "Personal portfolio of Cedrick Tchakonte, AI & Cyber-Physical Systems engineering student at ENSTA Paris (IP Paris).",
+  "author": "Cedrick Tchakonte",
+  "license": "MIT",
+  "homepage": "https://eportfolio-cedrick-tchakonte.vercel.app",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

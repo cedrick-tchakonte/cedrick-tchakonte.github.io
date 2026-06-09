@@ -3,6 +3,7 @@ import Slider from 'react-slick';
 import InternationalMobilityCard from '@/components/InternationalMobilityCard';
 import Head from 'next/head';
 import { PageLayout } from '@/components/PageLayout';
+import { SectionHeading } from '@/components/SectionHeading';
 import Image from 'next/image';
 import siteMetadata from '@/data/siteMetadata';
 
@@ -25,7 +26,7 @@ const mobilityData: MobilityLocation[] = [
       city: 'Paris',
       country: 'France',
       image: '/images/paris.jpg',
-      description: 'Studied at ENSTA Campus de Paris-Saclay, specializing in AI and Cyber-Physical Systems, and now based in the Paris region for my gap year — including AI roles at TAEP, Objectware and Stellantis.',
+      description: 'Studied at ENSTA Campus de Paris-Saclay, specializing in AI and Cyber-Physical Systems, and now based in the Paris region for my gap year, with AI roles at TAEP, Objectware and Stellantis.',
       startDate: '2024',
       endDate: 'Present',
       university: 'ENSTA Campus de Paris-Saclay',
@@ -103,7 +104,7 @@ export default function InternationalMobility() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h2 className="text-3xl font-bold text-primaryText-800 dark:text-primaryText-100 mb-6">
+            <h2 className="mb-6 text-3xl font-bold tracking-tight text-primaryText-900 dark:text-primaryText-100 sm:text-4xl">
               My Global Journey
             </h2>
             <p className="text-lg text-primaryText-600 dark:text-primaryText-400 leading-relaxed max-w-3xl mx-auto">
@@ -118,14 +119,13 @@ export default function InternationalMobility() {
 
           {/* Carrousel amélioré */}
           <div className="relative mb-16">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-semibold text-primaryText-800 dark:text-primaryText-100 mb-2">
-                Places I&apos;ve Lived & Worked
-              </h3>
-              <p className="text-primaryText-600 dark:text-primaryText-400">
-                Discover the cities that have shaped my journey
-              </p>
-            </div>
+            <SectionHeading
+              align="center"
+              level={3}
+              title="Places I've Lived & Worked"
+              subtitle="Discover the cities that have shaped my journey"
+              className="mb-8"
+            />
             <div className="max-w-4xl mx-auto">
               <Slider {...sliderSettings}>
                 {mobilityData.map((location, index) => (
@@ -154,14 +154,13 @@ export default function InternationalMobility() {
 
         {/* Cartes de mobilité détaillées */}
         <div className="mx-auto max-w-7xl px-4 py-8">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl font-semibold text-primaryText-800 dark:text-primaryText-100 mb-4">
-              Detailed Experience
-            </h3>
-            <p className="text-primaryText-600 dark:text-primaryText-400 max-w-2xl mx-auto">
-              Learn more about my experiences in each city and the valuable lessons I&apos;ve gained along the way.
-            </p>
-          </div>
+          <SectionHeading
+            align="center"
+            level={3}
+            title="Detailed Experience"
+            subtitle="Learn more about my experiences in each city and the valuable lessons I've gained along the way."
+            className="mb-12"
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mobilityData.map((location, index) => (
               <div key={index} className="group">
