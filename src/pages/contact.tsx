@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { useState } from 'react'
 import { RiPhoneLine, RiMailLine } from 'react-icons/ri'
+import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
 
 const Contact = () => {
@@ -87,22 +88,11 @@ const Contact = () => {
         <title>Contact - {siteMetadata.author}</title>
         <meta name="description" content="Contact" />
       </Head>
-      <div className="min-h-screen py-16 sm:py-20">
-        {/* Header */}
-        <div className="pb-8">
-          <div className="relative z-10 pl-4 pr-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <h1 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl lg:text-6xl">
-              {siteMetadata.contactTitle}
-            </h1>
-            <p className="max-w-3xl mt-6 text-xl text-primaryText-600 dark:text-primaryText-400">
-              {siteMetadata.contactSubtitle}
-            </p>
-          </div>
-        </div>
-
-        {/* Contact section */}
+      <SimpleLayout
+        title={siteMetadata.contactTitle}
+        intro={siteMetadata.contactSubtitle}
+      >
         <section className="relative" aria-labelledby="contact-heading">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="relative bg-white/95 dark:bg-primaryText-900/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-primaryText-200/50 dark:border-primaryText-700/50">
             <h2 id="contact-heading" className="sr-only">
               Contact us
@@ -465,9 +455,8 @@ const Contact = () => {
               </div>
             </div>
           </div>
-        </div>
         </section>
-      </div>
+      </SimpleLayout>
     </>
   )
 }
