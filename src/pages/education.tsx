@@ -16,8 +16,8 @@ interface EducationBackground {
 const educationBackground: EducationBackground[] = [
   {
     degree: '2nd Year Engineering Student in Artificial Intelligence and Cyber-Physical Systems',
-    institution: 'ENSTA Campus de Paris-Saclay, Institut Polytechnique de Paris',
-    logo: '/images/logo/ip-paris.png',
+    institution: 'ENSTA Paris-Saclay (Institut Polytechnique de Paris)',
+    logo: '/images/logo/ensta.png',
     startDate: 'August 2024',
     endDate: 'August 2025',
     description:
