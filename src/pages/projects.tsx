@@ -23,8 +23,14 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - {siteMetadata.author}</title>
-        <meta name="description" content="Personal projects by Cedrick Tchakonte" />
+        <title>{`${t({ en: 'Projects', fr: 'Projets' })} - ${siteMetadata.author}`}</title>
+        <meta
+          name="description"
+          content={t({
+            en: 'Personal projects by Cedrick Tchakonte',
+            fr: 'Projets personnels de Cedrick Tchakonte',
+          })}
+        />
       </Head>
       <SimpleLayout
         title={t({

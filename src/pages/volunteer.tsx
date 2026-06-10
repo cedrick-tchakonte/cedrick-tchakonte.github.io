@@ -12,10 +12,13 @@ export default function Volunteer() {
   return (
     <>
       <Head>
-        <title>Volunteer Work - {siteMetadata.author}</title>
+        <title>{`${t({ en: 'Volunteer Work', fr: 'Bénévolat' })} - ${siteMetadata.author}`}</title>
         <meta
           name="description"
-          content={`Volunteer activities and community involvement of ${siteMetadata.author}`}
+          content={t({
+            en: `Volunteer activities and community involvement of ${siteMetadata.author}`,
+            fr: `Activités bénévoles et engagement associatif de ${siteMetadata.author}`,
+          })}
         />
       </Head>
       <SimpleLayout

@@ -11,8 +11,14 @@ export default function Education() {
   return (
     <>
       <Head>
-        <title>Education - {siteMetadata.author}</title>
-        <meta name="description" content={`The academic background of ${siteMetadata.author}`} />
+        <title>{`${t({ en: 'Education', fr: 'Formation' })} - ${siteMetadata.author}`}</title>
+        <meta
+          name="description"
+          content={t({
+            en: `The academic background of ${siteMetadata.author}`,
+            fr: `Le parcours académique de ${siteMetadata.author}`,
+          })}
+        />
       </Head>
       <SimpleLayout
         title={t({ en: 'Education Background', fr: 'Parcours académique' })}

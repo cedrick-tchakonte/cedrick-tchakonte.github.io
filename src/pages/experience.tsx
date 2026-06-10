@@ -12,10 +12,13 @@ export default function Experience() {
   return (
     <>
       <Head>
-        <title>{`Experience - ${siteMetadata.author}`}</title>
+        <title>{`${t({ en: 'Experience', fr: 'Expérience professionnelle' })} - ${siteMetadata.author}`}</title>
         <meta
           name="description"
-          content={`Work experience of ${siteMetadata.author}`}
+          content={t({
+            en: `Work experience of ${siteMetadata.author}`,
+            fr: `Expérience professionnelle de ${siteMetadata.author}`,
+          })}
         />
       </Head>
       <SimpleLayout

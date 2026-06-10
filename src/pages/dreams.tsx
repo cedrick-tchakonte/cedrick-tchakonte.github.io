@@ -16,10 +16,13 @@ export default function Dreams() {
   return (
     <>
       <Head>
-        <title>My Dreams - {siteMetadata.author}</title>
+        <title>{`${t({ en: 'My Dreams', fr: 'Mes rêves' })} - ${siteMetadata.author}`}</title>
         <meta
           name="description"
-          content={`The AI labs, technologies and goals ${siteMetadata.author} is aiming for.`}
+          content={t({
+            en: `The AI labs, technologies and goals ${siteMetadata.author} is aiming for.`,
+            fr: `Les laboratoires d'IA, les technologies et les objectifs que vise ${siteMetadata.author}.`,
+          })}
         />
       </Head>
       <SimpleLayout

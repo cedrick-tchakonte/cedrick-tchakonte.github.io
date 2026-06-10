@@ -18,10 +18,13 @@ export default function InternationalMobility() {
   return (
     <>
       <Head>
-        <title>International Mobility - {siteMetadata.author}</title>
+        <title>{`${t({ en: 'International Mobility', fr: 'Mobilité internationale' })} - ${siteMetadata.author}`}</title>
         <meta
           name="description"
-          content="Explore Cedrick Tchakonte's international academic experiences."
+          content={t({
+            en: "Explore Cedrick Tchakonte's international academic experiences.",
+            fr: 'Découvrez les expériences académiques internationales de Cedrick Tchakonte.',
+          })}
         />
       </Head>
       <PageLayout

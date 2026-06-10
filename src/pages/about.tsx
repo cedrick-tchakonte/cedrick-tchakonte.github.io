@@ -41,7 +41,7 @@ const About = () => {
   return (
     <>
       <Head>
-        <title>About - {siteMetadata.author}</title>
+        <title>{`${t({ en: 'About', fr: 'À propos' })} - ${siteMetadata.author}`}</title>
         <meta name="description" content={t(siteMetadata.description)} />
       </Head>
       <PageLayout

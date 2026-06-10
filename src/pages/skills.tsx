@@ -10,8 +10,14 @@ export default function Skills() {
   return (
     <>
       <Head>
-        <title>Skills - {siteMetadata.author}</title>
-        <meta name="description" content={`Skills and expertise of ${siteMetadata.author}`} />
+        <title>{`${t({ en: 'Skills', fr: 'Compétences' })} - ${siteMetadata.author}`}</title>
+        <meta
+          name="description"
+          content={t({
+            en: `Skills and expertise of ${siteMetadata.author}`,
+            fr: `Compétences et expertise de ${siteMetadata.author}`,
+          })}
+        />
       </Head>
       <SimpleLayout
         title={t({ en: 'Skills', fr: 'Compétences' })}

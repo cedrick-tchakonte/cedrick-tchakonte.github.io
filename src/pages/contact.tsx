@@ -87,8 +87,8 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Contact - {siteMetadata.author}</title>
-        <meta name="description" content="Contact" />
+        <title>{`${t({ en: 'Contact', fr: 'Contact' })} - ${siteMetadata.author}`}</title>
+        <meta name="description" content={t({ en: 'Contact', fr: 'Contact' })} />
       </Head>
       <SimpleLayout
         title={t(siteMetadata.contactTitle)}

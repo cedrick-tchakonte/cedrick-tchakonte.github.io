@@ -37,8 +37,14 @@ export default function Certifications() {
   return (
     <>
       <Head>
-        <title>Certifications - {siteMetadata.author}</title>
-        <meta name="description" content={`Certifications obtained by ${siteMetadata.author}`} />
+        <title>{`${t({ en: 'Certifications', fr: 'Certifications' })} - ${siteMetadata.author}`}</title>
+        <meta
+          name="description"
+          content={t({
+            en: `Certifications obtained by ${siteMetadata.author}`,
+            fr: `Certifications obtenues par ${siteMetadata.author}`,
+          })}
+        />
       </Head>
       <PageLayout
         title={t({ en: 'Certifications', fr: 'Certifications' })}

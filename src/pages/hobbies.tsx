@@ -20,10 +20,13 @@ export default function Hobbies() {
   return (
     <>
       <Head>
-        <title>Hobbies & Interests - {siteMetadata.author}</title>
+        <title>{`${t({ en: 'Hobbies & Interests', fr: "Loisirs & centres d'intérêt" })} - ${siteMetadata.author}`}</title>
         <meta
           name="description"
-          content={`Personal hobbies and interests of ${siteMetadata.author}`}
+          content={t({
+            en: `Personal hobbies and interests of ${siteMetadata.author}`,
+            fr: `Loisirs et centres d'intérêt de ${siteMetadata.author}`,
+          })}
         />
       </Head>
       <SimpleLayout
