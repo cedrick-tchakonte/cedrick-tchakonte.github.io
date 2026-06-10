@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document'
+import type { DocumentProps } from 'next/document'
 
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
@@ -35,9 +36,10 @@ const modeScript = `
   }
 `
 
-export default function Document() {
+export default function Document(props: DocumentProps) {
+  const locale = props.__NEXT_DATA__?.locale ?? 'en'
   return (
-    <Html className="h-full scroll-smooth antialiased" lang="en">
+    <Html className="h-full scroll-smooth antialiased" lang={locale}>
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link

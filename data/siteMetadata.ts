@@ -33,6 +33,7 @@ interface SiteMetadata {
     linkedin: string
     instagram: string
   }
+  siteUrl: string
   email: string
   phoneNumber: string
   contactTitle: I18n<string>
@@ -79,6 +80,7 @@ const siteMetadata: SiteMetadata = {
     linkedin: 'https://www.linkedin.com/in/cedrick-tchakonte',
     instagram: 'https://www.instagram.com/cedrick_frame',
   },
+  siteUrl: 'https://eportfolio-cedrick-tchakonte.vercel.app',
   email: 'cedrick.tchakonte@ensta.fr',
   phoneNumber: '0758744186',
   contactTitle: { en: 'Get in touch', fr: 'Me contacter' },

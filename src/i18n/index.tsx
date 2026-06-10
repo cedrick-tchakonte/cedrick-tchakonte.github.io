@@ -4,9 +4,9 @@ import {
   useContext,
   useEffect,
   useMemo,
-  useState,
   type ReactNode,
 } from 'react'
+import { useRouter } from 'next/router'
 
 export type Locale = 'en' | 'fr'
 
@@ -15,6 +15,10 @@ export const DEFAULT_LOCALE: Locale = 'en'
 
 /** A value provided in both supported languages. */
 export type I18n<T> = { en: T; fr: T }
+
+function normalizeLocale(locale?: string): Locale {
+  return locale === 'fr' ? 'fr' : 'en'
+}
 
 type LanguageContextValue = {
   locale: Locale
@@ -28,36 +32,32 @@ const LanguageContext = createContext<LanguageContextValue>({
   toggleLocale: () => {},
 })
 
-const STORAGE_KEY = 'locale'
-
+/**
+ * Language state is driven by the URL locale (Next.js i18n routing): the English
+ * site lives at `/` and the French site at `/fr/...`. Switching language simply
+ * navigates to the same page in the other locale, so it stays a one-click toggle
+ * while giving each language its own shareable, indexable URLs.
+ */
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE)
-
-  // Restore the saved language on mount (client only, avoids hydration mismatch).
-  useEffect(() => {
-    const stored = window.localStorage.getItem(STORAGE_KEY)
-    if (stored === 'en' || stored === 'fr') {
-      setLocaleState(stored)
-    }
-  }, [])
+  const router = useRouter()
+  const locale = normalizeLocale(router.locale)
 
   // Keep <html lang> in sync for accessibility / SEO.
   useEffect(() => {
     document.documentElement.lang = locale
   }, [locale])
 
-  const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next)
-    window.localStorage.setItem(STORAGE_KEY, next)
-  }, [])
+  const setLocale = useCallback(
+    (next: Locale) => {
+      router.push(router.asPath, router.asPath, { locale: next, scroll: false })
+    },
+    [router]
+  )
 
   const toggleLocale = useCallback(() => {
-    setLocaleState((prev) => {
-      const next: Locale = prev === 'en' ? 'fr' : 'en'
-      window.localStorage.setItem(STORAGE_KEY, next)
-      return next
-    })
-  }, [])
+    const next: Locale = locale === 'en' ? 'fr' : 'en'
+    router.push(router.asPath, router.asPath, { locale: next, scroll: false })
+  }, [router, locale])
 
   const value = useMemo(
     () => ({ locale, setLocale, toggleLocale }),

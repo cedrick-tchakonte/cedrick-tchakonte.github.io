@@ -6,6 +6,11 @@ import rehypePrism from '@mapbox/rehype-prism'
 const nextConfig = {
   pageExtensions: ['tsx', 'ts', 'mdx'],
   reactStrictMode: true,
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'en',
+    localeDetection: false,
+  },
   experimental: {
     scrollRestoration: true,
   },
