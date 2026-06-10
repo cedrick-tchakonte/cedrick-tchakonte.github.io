@@ -5,53 +5,77 @@ import { FaVolleyballBall, FaChess, FaFutbol, FaBicycle, FaCode, FaBook, FaPlane
 import { GiSoccerField } from 'react-icons/gi'
 import { motion } from 'framer-motion'
 import type { IconType } from 'react-icons'
-import { useT } from '@/i18n'
+import { useT, type I18n } from '@/i18n'
 
 type Hobby = {
-  name: string
-  description: string
+  name: I18n<string>
+  description: I18n<string>
   icon: IconType
 }
 
 const hobbies: Hobby[] = [
   {
-    name: 'Volleyball',
-    description: 'Played for a year with the volleyball team at ENSTA.',
+    name: { en: 'Volleyball', fr: 'Volleyball' },
+    description: {
+      en: 'Played for a year with the volleyball team at ENSTA.',
+      fr: "Un an passé avec l'équipe de volley de l'ENSTA.",
+    },
     icon: FaVolleyballBall,
   },
   {
-    name: 'Chess',
-    description: 'Strategy, tactics and the occasional online game.',
+    name: { en: 'Chess', fr: 'Échecs' },
+    description: {
+      en: 'Strategy, tactics and the occasional online game.',
+      fr: "Stratégie, tactique et une partie en ligne de temps en temps.",
+    },
     icon: FaChess,
   },
   {
-    name: 'Football',
-    description: 'Casual matches with friends and following the game.',
+    name: { en: 'Football', fr: 'Football' },
+    description: {
+      en: 'Casual matches with friends and following the game.',
+      fr: "Des matchs entre amis et le plaisir de suivre le jeu.",
+    },
     icon: FaFutbol,
   },
   {
-    name: 'Babyfoot',
-    description: 'Competitive table football, a campus favorite.',
+    name: { en: 'Babyfoot', fr: 'Babyfoot' },
+    description: {
+      en: 'Competitive table football, a campus favorite.',
+      fr: "Du baby-foot en mode compétition, un incontournable du campus.",
+    },
     icon: GiSoccerField,
   },
   {
-    name: 'Cycling',
-    description: 'Long rides to explore, stay active and unwind.',
+    name: { en: 'Cycling', fr: 'Vélo' },
+    description: {
+      en: 'Long rides to explore, stay active and unwind.',
+      fr: "De longues sorties pour explorer, rester actif et décompresser.",
+    },
     icon: FaBicycle,
   },
   {
-    name: 'Coding Projects',
-    description: 'Building side projects and contributing to open source.',
+    name: { en: 'Coding Projects', fr: 'Projets perso' },
+    description: {
+      en: 'Building side projects and contributing to open source.',
+      fr: "Développer des projets perso et contribuer à l'open source.",
+    },
     icon: FaCode,
   },
   {
-    name: 'Reading',
-    description: 'Tech books, sci-fi novels and AI research papers.',
+    name: { en: 'Reading', fr: 'Lecture' },
+    description: {
+      en: 'Tech books, sci-fi novels and AI research papers.',
+      fr: "Livres techniques, romans de science-fiction et articles de recherche en IA.",
+    },
     icon: FaBook,
   },
   {
-    name: 'Travel',
-    description: 'Exploring new cultures and destinations.',
+    name: { en: 'Travel', fr: 'Voyages' },
+    description: {
+      en: 'Exploring new cultures and destinations.',
+      fr: "Découvrir de nouvelles cultures et destinations.",
+    },
     icon: FaPlane,
   },
 ]
@@ -77,13 +101,16 @@ export default function Hobbies() {
         />
       </Head>
       <SimpleLayout
-        title="Hobbies & Interests"
-        intro="Beyond my professional pursuits, I enjoy a variety of activities that keep me balanced, creative, and continuously learning. Here are some of my passions and hobbies."
+        title={t({ en: 'Hobbies & Interests', fr: "Loisirs & centres d'intérêt" })}
+        intro={t({
+          en: 'Beyond my professional pursuits, I enjoy a variety of activities that keep me balanced, creative, and continuously learning. Here are some of my passions and hobbies.',
+          fr: "Au-delà de mes activités professionnelles, je m'adonne à diverses activités qui me gardent équilibré, créatif et toujours en apprentissage. Voici quelques-unes de mes passions et de mes loisirs.",
+        })}
       >
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {hobbies.map((hobby, index) => (
             <motion.div
-              key={hobby.name}
+              key={hobby.name.en}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -100,10 +127,10 @@ export default function Hobbies() {
 
               {/* Content */}
               <h3 className="relative text-lg font-bold text-primaryText-800 dark:text-primaryText-100 mb-2">
-                {hobby.name}
+                {t(hobby.name)}
               </h3>
               <p className="relative text-sm text-primaryText-600 dark:text-primaryText-400 leading-relaxed">
-                {hobby.description}
+                {t(hobby.description)}
               </p>
 
               {/* Bottom accent line */}

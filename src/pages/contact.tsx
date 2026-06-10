@@ -97,7 +97,7 @@ const Contact = () => {
         <section className="relative" aria-labelledby="contact-heading">
           <div className="relative bg-white/95 dark:bg-primaryText-900/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-primaryText-200/50 dark:border-primaryText-700/50">
             <h2 id="contact-heading" className="sr-only">
-              Contact us
+              {t({ en: 'Contact us', fr: 'Nous contacter' })}
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-3">
               {/* Contact information */}
@@ -203,15 +203,19 @@ const Contact = () => {
                   </svg>
                 </div>
                 <h3 className="text-lg font-medium text-white">
-                  Contact information
+                  {t({ en: 'Contact information', fr: 'Coordonnées' })}
                 </h3>
                 <p className="max-w-3xl mt-6 text-base text-white">
-                  Please contact me with any questions or comments you may have.
-                  You can also schedule a service through the form below.
+                  {t({
+                    en: 'Please contact me with any questions or comments you may have. You can also schedule a service through the form below.',
+                    fr: "N'hésitez pas à me contacter pour toute question ou remarque. Vous pouvez également me solliciter via le formulaire ci-dessous.",
+                  })}
                 </p>
                 <dl className="mt-8 space-y-6">
                   <dt>
-                    <span className="sr-only">Phone number</span>
+                    <span className="sr-only">
+                      {t({ en: 'Phone number', fr: 'Numéro de téléphone' })}
+                    </span>
                   </dt>
                   <dd className="flex text-base text-white">
                     <RiPhoneLine
@@ -221,7 +225,7 @@ const Contact = () => {
                     <span className="ml-3">{siteMetadata.phoneNumber}</span>
                   </dd>
                   <dt>
-                    <span className="sr-only">Email</span>
+                    <span className="sr-only">{t({ en: 'Email', fr: 'Adresse e-mail' })}</span>
                   </dt>
                   <dd className="flex text-base text-white">
                     <RiMailLine
@@ -294,7 +298,7 @@ const Contact = () => {
               {/* Contact form */}
               <div className="px-6 py-10 bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-2xl sm:px-10 lg:col-span-2 xl:p-12">
                 <h3 className="text-lg font-medium text-primaryText-800 dark:text-primaryText-100">
-                  Send me a message
+                  {t({ en: 'Send me a message', fr: 'Envoyez-moi un message' })}
                 </h3>
                 <form
                   onSubmit={handleOnSubmit}
@@ -306,7 +310,7 @@ const Contact = () => {
                       htmlFor="first-name"
                       className="block text-sm font-medium text-primaryText-800 dark:text-primaryText-100"
                     >
-                      First name
+                      {t({ en: 'First name', fr: 'Prénom' })}
                     </label>
                     <div className="mt-1">
                       <input
@@ -325,7 +329,7 @@ const Contact = () => {
                       htmlFor="last-name"
                       className="block text-sm font-medium text-primaryText-800 dark:text-primaryText-100"
                     >
-                      Last name
+                      {t({ en: 'Last name', fr: 'Nom' })}
                     </label>
                     <div className="mt-1">
                       <input
@@ -344,7 +348,7 @@ const Contact = () => {
                       htmlFor="email"
                       className="block text-sm font-medium text-primaryText-800 dark:text-primaryText-100"
                     >
-                      Email
+                      {t({ en: 'Email', fr: 'E-mail' })}
                     </label>
                     <div className="mt-1">
                       <input
@@ -364,13 +368,13 @@ const Contact = () => {
                         htmlFor="phone"
                         className="block text-sm font-medium text-primaryText-800 dark:text-primaryText-100"
                       >
-                        Phone
+                        {t({ en: 'Phone', fr: 'Téléphone' })}
                       </label>
                       <span
                         id="phone-optional"
                         className="text-sm text-primaryText-500"
                       >
-                        Optional
+                        {t({ en: 'Optional', fr: 'Optionnel' })}
                       </span>
                     </div>
                     <div className="mt-1">
@@ -391,7 +395,7 @@ const Contact = () => {
                       htmlFor="subject"
                       className="block text-sm font-medium text-primaryText-800 dark:text-primaryText-100"
                     >
-                      Subject
+                      {t({ en: 'Subject', fr: 'Objet' })}
                     </label>
                     <div className="mt-1">
                       <input
@@ -410,13 +414,13 @@ const Contact = () => {
                         htmlFor="message"
                         className="block text-sm font-medium text-primaryText-800 dark:text-primaryText-100"
                       >
-                        Message
+                        {t({ en: 'Message', fr: 'Message' })}
                       </label>
                       <span
                         id="message-max"
                         className="text-sm text-primaryText-500"
                       >
-                        Max. 500 characters
+                        {t({ en: 'Max. 500 characters', fr: 'Max. 500 caractères' })}
                       </span>
                     </div>
                     <div className="mt-1">
@@ -442,15 +446,25 @@ const Contact = () => {
                         (status === 'idle' || status === 'sending') && 'text-primaryText-500'
                       )}
                     >
-                      {status === 'success' && 'Thanks! Your message has been sent.'}
-                      {status === 'error' && 'Something went wrong. Please try again or email me directly.'}
+                      {status === 'success' &&
+                        t({
+                          en: 'Thanks! Your message has been sent.',
+                          fr: 'Merci ! Votre message a bien été envoyé.',
+                        })}
+                      {status === 'error' &&
+                        t({
+                          en: 'Something went wrong. Please try again or email me directly.',
+                          fr: "Une erreur est survenue. Veuillez réessayer ou m'écrire directement par e-mail.",
+                        })}
                     </p>
                     <button
                       type="submit"
                       disabled={status === 'sending'}
                       className="inline-flex items-center justify-center w-full px-6 py-3 mt-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-accent-500 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 disabled:opacity-60 disabled:cursor-not-allowed sm:mt-0 sm:w-auto"
                     >
-                      {status === 'sending' ? 'Sending…' : 'Submit'}
+                      {status === 'sending'
+                        ? t({ en: 'Sending…', fr: 'Envoi…' })
+                        : t({ en: 'Submit', fr: 'Envoyer' })}
                     </button>
                   </div>
                 </form>

@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
+import { useT } from '@/i18n'
 
 const GapYearBadge = () => {
+  const t = useT()
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -12,7 +15,12 @@ const GapYearBadge = () => {
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
         <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
       </span>
-      <span>On a Gap Year · ML Research Intern @ Stellantis</span>
+      <span>
+        {t({
+          en: 'On a Gap Year · ML Research Intern @ Stellantis',
+          fr: 'En année de césure · Stagiaire chercheur ML @ Stellantis',
+        })}
+      </span>
     </motion.div>
   )
 }

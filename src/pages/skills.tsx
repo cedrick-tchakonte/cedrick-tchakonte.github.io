@@ -45,6 +45,7 @@ import {
 } from 'react-icons/si'
 import { SiAzuredevops } from 'react-icons/si'
 import { FaTerminal, FaCode, FaRobot } from 'react-icons/fa'
+import { useT, type I18n } from '@/i18n'
 
 interface Skill {
   name: string
@@ -52,13 +53,13 @@ interface Skill {
 }
 
 interface SkillCategory {
-  category: string
+  category: I18n<string>
   items: Skill[]
 }
 
 const skills: SkillCategory[] = [
   {
-    category: 'Programming Languages',
+    category: { en: 'Programming Languages', fr: 'Langages de programmation' },
     items: [
       { name: 'Python', icon: FaPython },
       { name: 'C++', icon: SiCplusplus },
@@ -72,7 +73,7 @@ const skills: SkillCategory[] = [
     ],
   },
   {
-    category: 'AI and Machine Learning',
+    category: { en: 'AI and Machine Learning', fr: 'IA et machine learning' },
     items: [
       { name: 'TensorFlow', icon: SiTensorflow },
       { name: 'PyTorch', icon: SiPytorch },
@@ -88,7 +89,7 @@ const skills: SkillCategory[] = [
     ],
   },
   {
-    category: 'Databases',
+    category: { en: 'Databases', fr: 'Bases de données' },
     items: [
       { name: 'PostgreSQL', icon: SiPostgresql },
       { name: 'MongoDB', icon: SiMongodb },
@@ -98,7 +99,7 @@ const skills: SkillCategory[] = [
     ],
   },
   {
-    category: 'Development Tools',
+    category: { en: 'Development Tools', fr: 'Outils de développement' },
     items: [
       { name: 'Docker', icon: FaDocker },
       { name: 'Git', icon: FaGitAlt },
@@ -113,7 +114,7 @@ const skills: SkillCategory[] = [
     ],
   },
   {
-    category: 'Cloud Platforms',
+    category: { en: 'Cloud Platforms', fr: 'Plateformes cloud' },
     items: [
       { name: 'AWS', icon: FaAws },
       { name: 'Azure', icon: SiAzuredevops },
@@ -121,7 +122,7 @@ const skills: SkillCategory[] = [
     ],
   },
   {
-    category: 'Web Development',
+    category: { en: 'Web Development', fr: 'Développement web' },
     items: [
       { name: 'Node.JS', icon: FaNodeJs },
       { name: 'React', icon: FaReact },
@@ -133,18 +134,26 @@ const skills: SkillCategory[] = [
 ]
 
 export default function Skills() {
+  const t = useT()
+
   return (
     <>
       <Head>
         <title>Skills - {siteMetadata.author}</title>
         <meta name="description" content={`Skills and expertise of ${siteMetadata.author}`} />
       </Head>
-      <SimpleLayout title="Skills" intro="Here are the various skills and tools I have mastered in the field of computer science, with a focus on AI and robotics.">
+      <SimpleLayout
+        title={t({ en: 'Skills', fr: 'Compétences' })}
+        intro={t({
+          en: 'Here are the various skills and tools I have mastered in the field of computer science, with a focus on AI and robotics.',
+          fr: "Voici les différentes compétences et outils que je maîtrise dans le domaine de l'informatique, avec un accent sur l'IA et la robotique.",
+        })}
+      >
         <div className="space-y-20">
           {skills.map((skillCategory) => (
-            <section key={skillCategory.category}>
+            <section key={skillCategory.category.en}>
               <h2 className="text-lg font-semibold leading-8 text-accent-600 dark:text-accent-400">
-                {skillCategory.category}
+                {t(skillCategory.category)}
               </h2>
               <div className="grid grid-cols-2 gap-4 mt-4 sm:grid-cols-3 lg:grid-cols-6">
                 {skillCategory.items.map((skill) => (
