@@ -112,6 +112,10 @@ const siteMetadata: SiteMetadata = {
       ],
     },
     {
+      name: 'Dreams',
+      href: '/dreams',
+    },
+    {
       name: 'Contact',
       href: '/contact',
     },
