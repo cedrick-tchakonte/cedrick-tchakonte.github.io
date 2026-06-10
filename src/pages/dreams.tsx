@@ -7,12 +7,18 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { SectionHeading } from '@/components/SectionHeading'
 import siteMetadata from '@/data/siteMetadata'
+import amiLogo from '@/images/dreams/ami.png'
 import metaLogo from '@/images/dreams/meta.png'
 import deepmindLogo from '@/images/dreams/deepmind.png'
 import openaiLogo from '@/images/dreams/openai.png'
 import anthropicLogo from '@/images/dreams/anthropic.png'
 import mistralLogo from '@/images/dreams/mistral.png'
 import nvidiaLogo from '@/images/dreams/nvidia.png'
+import milaLogo from '@/images/dreams/mila.png'
+import huggingfaceLogo from '@/images/dreams/huggingface.png'
+import xaiLogo from '@/images/dreams/xai.png'
+import microsoftLogo from '@/images/dreams/microsoft.png'
+import kyutaiLogo from '@/images/dreams/kyutai.png'
 
 interface DreamLab {
   name: string
@@ -23,6 +29,14 @@ interface DreamLab {
 }
 
 const dreamLabs: DreamLab[] = [
+  {
+    name: 'AMI Labs',
+    focus: 'World Models (Paris)',
+    description:
+      "Yann LeCun's Paris-based frontier lab building world models: AI that learns abstract representations of the real world to predict, plan and act reliably. Advanced Machine Intelligence with safety and real-world impact at its core.",
+    href: 'https://amilabs.xyz/',
+    logo: amiLogo,
+  },
   {
     name: 'Google DeepMind',
     focus: 'AGI & Scientific Discovery',
@@ -70,6 +84,46 @@ const dreamLabs: DreamLab[] = [
       'Where AI meets accelerated computing: GPUs, generative models, simulation and robotics. The hardware and software that power the entire field are invented here.',
     href: 'https://www.nvidia.com/en-us/research/',
     logo: nvidiaLogo,
+  },
+  {
+    name: 'Microsoft Research',
+    focus: 'AI & Fundamental Research',
+    description:
+      'One of the largest industrial research organizations in the world, advancing AI, systems and theory, and turning research into technology used by billions of people.',
+    href: 'https://www.microsoft.com/en-us/research/',
+    logo: microsoftLogo,
+  },
+  {
+    name: 'Mila',
+    focus: 'Academic AI Research (Montreal)',
+    description:
+      "Founded by Yoshua Bengio, Mila is one of the world's leading academic AI institutes, a dream place to pursue a PhD at the deep-learning frontier.",
+    href: 'https://mila.quebec/en',
+    logo: milaLogo,
+  },
+  {
+    name: 'Hugging Face',
+    focus: 'Open-Source AI',
+    description:
+      'The home of open-source machine learning, from the Transformers library to a hub of shared models and datasets. French-founded and beloved by the whole ML community.',
+    href: 'https://huggingface.co/',
+    logo: huggingfaceLogo,
+  },
+  {
+    name: 'xAI',
+    focus: 'Frontier AI',
+    description:
+      'A frontier AI company building advanced general-purpose models (Grok) with massive compute, racing at the leading edge of the field.',
+    href: 'https://x.ai/',
+    logo: xaiLogo,
+  },
+  {
+    name: 'Kyutai',
+    focus: 'Open-Science AI (Paris)',
+    description:
+      'A Paris-based open-science AI lab releasing models and research in the open, including real-time speech systems, pushing European AI at the cutting edge.',
+    href: 'https://kyutai.org/',
+    logo: kyutaiLogo,
   },
 ]
 
@@ -206,8 +260,9 @@ export default function Dreams() {
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-base leading-relaxed text-white/90 sm:text-lg">
             Whether you&apos;re hiring for one of these labs, building something at the frontier of
-            AI, or you simply believe you can help me reach these goals, feel free to reach out. If
-            you can help me get there, come join me on the journey. I&apos;d love to connect.
+            AI, you believe you can help me reach these goals, or you simply believe in the human
+            behind them, feel free to reach out. If you can help me get there, come join me on the
+            journey. I&apos;d love to connect.
           </p>
           <Link
             href="/contact"
