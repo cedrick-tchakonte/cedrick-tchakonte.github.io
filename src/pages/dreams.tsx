@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Image, { type StaticImageData } from 'next/image'
 import type { IconType } from 'react-icons'
 import { FaRocket, FaGraduationCap, FaFlask, FaSquareRootAlt } from 'react-icons/fa'
@@ -197,6 +198,24 @@ export default function Dreams() {
             </li>
           ))}
         </ol>
+
+        {/* Call to action */}
+        <div className="max-w-3xl p-8 mx-auto mt-20 text-center text-white shadow-lg sm:p-12 rounded-2xl bg-gradient-to-br from-accent-500 to-accent-600">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            Think you can help me get there?
+          </h2>
+          <p className="max-w-2xl mx-auto mt-4 text-base leading-relaxed text-white/90 sm:text-lg">
+            Whether you&apos;re hiring for one of these labs, building something at the frontier of
+            AI, or you simply believe you can help me reach these goals, feel free to reach out. If
+            you can help me get there, come join me on the journey. I&apos;d love to connect.
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center px-6 py-3 mt-8 text-base font-semibold transition rounded-md shadow-sm bg-white text-accent-600 hover:bg-accent-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-accent-600"
+          >
+            Let&apos;s talk
+          </Link>
+        </div>
       </SimpleLayout>
     </>
   )
