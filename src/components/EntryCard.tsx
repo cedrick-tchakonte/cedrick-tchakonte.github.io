@@ -32,14 +32,15 @@ export function EntryCard({
 }: EntryCardProps) {
   return (
     <Card>
-      <div className="relative z-10 flex items-center justify-center w-12 h-12 p-2 overflow-hidden bg-white rounded-full shadow-md shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 dark:bg-white dark:ring-0">
+      <div className="relative z-10 inline-flex items-center h-16 px-4 bg-white shadow-md rounded-xl shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 dark:bg-white dark:ring-0">
         <Image
           src={logo}
           alt={logoAlt}
-          className="object-contain w-8 h-8"
+          width={240}
+          height={64}
           unoptimized
-          width={32}
-          height={32}
+          className="object-contain"
+          style={{ height: '2.75rem', width: 'auto', maxWidth: '180px' }}
         />
       </div>
 
