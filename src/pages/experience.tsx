@@ -4,6 +4,7 @@ import { EntryCard } from '@/components/EntryCard'
 import { SectionHeading } from '@/components/SectionHeading'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
+import { useT } from '@/i18n'
 import stellantisLogo from '@/images/logos/stellantis.svg'
 import taepLogo from '@/images/logos/taep.png'
 import objectwareLogo from '@/images/logos/objectware.svg'
@@ -75,6 +76,8 @@ const experiences: ExperienceItem[] = [
 ]
 
 export default function Experience() {
+  const t = useT()
+
   return (
     <>
       <Head>
@@ -85,10 +88,13 @@ export default function Experience() {
         />
       </Head>
       <SimpleLayout
-        title={siteMetadata.experience.title}
-        intro={siteMetadata.experience.intro}
+        title={t(siteMetadata.experience.title)}
+        intro={t(siteMetadata.experience.intro)}
       >
-        <SectionHeading title="Work Experience" className="mb-10" />
+        <SectionHeading
+          title={t({ en: 'Work Experience', fr: 'Expérience professionnelle' })}
+          className="mb-10"
+        />
         <ul
           role="list"
           className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"

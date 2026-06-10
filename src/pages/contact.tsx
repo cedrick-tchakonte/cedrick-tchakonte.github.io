@@ -6,8 +6,10 @@ import { useState } from 'react'
 import { RiPhoneLine, RiMailLine } from 'react-icons/ri'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
+import { useT } from '@/i18n'
 
 const Contact = () => {
+  const t = useT()
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -89,8 +91,8 @@ const Contact = () => {
         <meta name="description" content="Contact" />
       </Head>
       <SimpleLayout
-        title={siteMetadata.contactTitle}
-        intro={siteMetadata.contactSubtitle}
+        title={t(siteMetadata.contactTitle)}
+        intro={t(siteMetadata.contactSubtitle)}
       >
         <section className="relative" aria-labelledby="contact-heading">
           <div className="relative bg-white/95 dark:bg-primaryText-900/95 backdrop-blur-sm rounded-2xl shadow-2xl border border-primaryText-200/50 dark:border-primaryText-700/50">

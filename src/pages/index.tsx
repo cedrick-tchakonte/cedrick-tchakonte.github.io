@@ -10,15 +10,18 @@ import CallToAction from '@/components/CallToAction'
 import DivideLine from '@/components/DivideLine'
 import GapYearBadge from '@/components/GapYearBadge'
 import siteMetadata from '@/data/siteMetadata'
+import { useT } from '@/i18n'
 import schoolLogo from '@/images/ensta-logo.png'
 
 
 const Home = () => {
+  const t = useT()
+
   return (
     <>
       <Head>
-        <title>{siteMetadata.title}</title>
-        <meta name="description" content={siteMetadata.description} />
+        <title>{t(siteMetadata.title)}</title>
+        <meta name="description" content={t(siteMetadata.description)} />
         <link
           rel="apple-touch-icon"
           sizes="76x76"
@@ -45,10 +48,10 @@ const Home = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl bg-gradient-to-r from-primaryText-800 to-primaryText-600 dark:from-primaryText-100 dark:to-primaryText-300 bg-clip-text text-transparent">
-              {siteMetadata.authorHeadline}
+              {t(siteMetadata.authorHeadline)}
             </h1>
             <p className="mt-6 text-base text-primaryText-600 dark:text-primaryText-400">
-              {siteMetadata.authorAbout}
+              {t(siteMetadata.authorAbout)}
             </p>
             {/* div container for social links */}
             <div className="flex gap-6 mt-6">

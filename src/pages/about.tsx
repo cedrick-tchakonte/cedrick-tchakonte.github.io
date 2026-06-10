@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
 import siteMetadata from '@/data/siteMetadata'
+import { useT } from '@/i18n'
 
 import { PageLayout } from '@/components/PageLayout'
 import {
@@ -35,15 +36,20 @@ function SocialLink({ className, href, children, icon: Icon }: SocialLinkProps) 
 }
 
 const About = () => {
+  const t = useT()
+
   return (
     <>
       <Head>
         <title>About - {siteMetadata.author}</title>
-        <meta name="description" content={siteMetadata.description} />
+        <meta name="description" content={t(siteMetadata.description)} />
       </Head>
       <PageLayout
-        title="About Me"
-        subtitle="Learn more about my journey, passion, and professional background"
+        title={t({ en: 'About Me', fr: 'À propos de moi' })}
+        subtitle={t({
+          en: 'Learn more about my journey, passion, and professional background',
+          fr: 'Découvrez mon parcours, mes passions et mon expérience professionnelle.',
+        })}
       >
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
@@ -58,18 +64,18 @@ const About = () => {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h2 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl">
-              {siteMetadata.authorHeadline}
+              {t(siteMetadata.authorHeadline)}
             </h2>
             <div className="mt-6 text-base space-y-7 text-primaryText-600 dark:text-primaryText-400">
               <p className="whitespace-pre-wrap leading-relaxed">
-                {siteMetadata.authorAboutExtended}
+                {t(siteMetadata.authorAboutExtended)}
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <div className="bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-2xl p-8 border border-primaryText-200/50 dark:border-primaryText-700/50">
               <h3 className="text-lg font-semibold text-primaryText-800 dark:text-primaryText-100 mb-6">
-                Connect with me
+                {t({ en: 'Connect with me', fr: 'Restons en contact' })}
               </h3>
               <ul role="list" className="space-y-4">
                 <SocialLink
@@ -77,21 +83,21 @@ const About = () => {
                   icon={InstagramIcon}
                   className="group"
                 >
-                  <span className="group-hover:text-accent-500 transition-colors">Follow on Instagram</span>
+                  <span className="group-hover:text-accent-500 transition-colors">{t({ en: 'Follow on Instagram', fr: 'Suivre sur Instagram' })}</span>
                 </SocialLink>
                 <SocialLink
                   href={siteMetadata.socials.github}
                   icon={GitHubIcon}
                   className="group"
                 >
-                  <span className="group-hover:text-accent-500 transition-colors">Follow on GitHub</span>
+                  <span className="group-hover:text-accent-500 transition-colors">{t({ en: 'Follow on GitHub', fr: 'Suivre sur GitHub' })}</span>
                 </SocialLink>
                 <SocialLink
                   href={siteMetadata.socials.linkedin}
                   icon={LinkedInIcon}
                   className="group"
                 >
-                  <span className="group-hover:text-accent-500 transition-colors">Follow on LinkedIn</span>
+                  <span className="group-hover:text-accent-500 transition-colors">{t({ en: 'Follow on LinkedIn', fr: 'Suivre sur LinkedIn' })}</span>
                 </SocialLink>
                 <SocialLink
                   href={`mailto:${siteMetadata.email}`}
