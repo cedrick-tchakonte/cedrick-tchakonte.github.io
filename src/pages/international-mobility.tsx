@@ -26,6 +26,16 @@ const mobilityData: MobilityLocation[] = [
       university: 'ENSTA Paris',
     },
     {
+      city: 'Palaiseau',
+      country: 'France',
+      image: '/images/palaiseau.jpg',
+      description:
+        'Studying Artificial Intelligence and Cyber-Physical Systems at ENSTA Paris, on the Plateau de Saclay campus of the Institut Polytechnique de Paris.',
+      startDate: '2024',
+      endDate: 'Present',
+      university: 'ENSTA Paris (IP Paris)',
+    },
+    {
       city: 'Poissy',
       country: 'France',
       image: '/images/poissy.jpg',
