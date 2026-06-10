@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
-import { FaMusic, FaFilm, FaGamepad, FaBook, FaRunning, FaCode, FaCamera, FaPlane } from 'react-icons/fa'
+import { FaVolleyballBall, FaChess, FaFutbol, FaBicycle, FaCode, FaBook, FaPlane } from 'react-icons/fa'
+import { GiSoccerField } from 'react-icons/gi'
 import { motion } from 'framer-motion'
 import type { IconType } from 'react-icons'
 
@@ -13,43 +14,43 @@ type Hobby = {
 
 const hobbies: Hobby[] = [
   {
-    name: 'Music & Audio',
-    description: 'Passionate about various music genres and audio production',
-    icon: FaMusic,
+    name: 'Volleyball',
+    description: 'Played for a year with the volleyball team at ENSTA.',
+    icon: FaVolleyballBall,
   },
   {
-    name: 'Cinema & Series',
-    description: 'Film enthusiast and series binge-watcher',
-    icon: FaFilm,
+    name: 'Chess',
+    description: 'Strategy, tactics and the occasional online game.',
+    icon: FaChess,
   },
   {
-    name: 'Gaming',
-    description: 'PC and console gaming, strategy and adventure games',
-    icon: FaGamepad,
+    name: 'Football',
+    description: 'Casual matches with friends and following the game.',
+    icon: FaFutbol,
   },
   {
-    name: 'Reading',
-    description: 'Tech books, sci-fi novels, and AI research papers',
-    icon: FaBook,
+    name: 'Babyfoot',
+    description: 'Competitive table football, a campus favorite.',
+    icon: GiSoccerField,
   },
   {
-    name: 'Sports & Fitness',
-    description: 'Running, gym workouts, and outdoor activities',
-    icon: FaRunning,
+    name: 'Cycling',
+    description: 'Long rides to explore, stay active and unwind.',
+    icon: FaBicycle,
   },
   {
     name: 'Coding Projects',
-    description: 'Building side projects and contributing to open source',
+    description: 'Building side projects and contributing to open source.',
     icon: FaCode,
   },
   {
-    name: 'Photography',
-    description: 'Capturing moments and exploring visual creativity',
-    icon: FaCamera,
+    name: 'Reading',
+    description: 'Tech books, sci-fi novels and AI research papers.',
+    icon: FaBook,
   },
   {
     name: 'Travel',
-    description: 'Exploring new cultures and destinations',
+    description: 'Exploring new cultures and destinations.',
     icon: FaPlane,
   },
 ]

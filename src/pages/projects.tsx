@@ -1,19 +1,23 @@
-import Image, { type StaticImageData } from 'next/image'
 import Head from 'next/head'
+import type { IconType } from 'react-icons'
+import {
+  FaEye,
+  FaShieldAlt,
+  FaCamera,
+  FaPlaneDeparture,
+  FaRobot,
+  FaVideo,
+  FaTrafficLight,
+} from 'react-icons/fa'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
 
-import ecomLogo from '@/images/projects/ecom.svg'
-import bananaLogo from '@/images/projects/bananaApp.svg'
-import supaSnacksLogo from '@/images/projects/supaSnacks.svg'
-import payByFonieLogo from '@/images/projects/payByFonie.svg'
-
 interface Project {
   title: string
   description: string
-  logo: StaticImageData
+  icon: IconType
   href: string
   category: string
 }
@@ -23,7 +27,7 @@ const projectsData: Project[] = [
     title: 'Retinal Vessel Segmentation in SLO Ophthalmoscopy',
     description:
       'Developed automated retinal vessel segmentation system using image derivation operators and specialized vascular filters for Scanning Laser Ophthalmoscopy (SLO) retinal images. Implemented two segmentation approaches against IOSTAR database ground truth, applying advanced image processing techniques including gradient operators and morphological filtering for precise vascular structure detection.',
-    logo: ecomLogo,
+    icon: FaEye,
     href: 'https://github.com/CeGeek23/retinal-vessel-segmentation',
     category: 'Computer Vision & Biomedical Imaging',
   },
@@ -31,7 +35,7 @@ const projectsData: Project[] = [
     title: 'Adversarial Attacks on Segmentation Models',
     description:
       'Implemented FGSM-based targeted and untargeted adversarial attacks on DeepLabV3 and FCN segmentation models (MS-COCO, PyTorch). Evaluated cross-architecture transferability and the impact of perturbations on segmentation robustness, highlighting the vulnerability of deep vision models to adversarial perturbations.',
-    logo: payByFonieLogo,
+    icon: FaShieldAlt,
     href: 'https://github.com/CeGeek23/adversarial-attacks-segmentation',
     category: 'Deep Learning & Adversarial ML',
   },
@@ -39,7 +43,7 @@ const projectsData: Project[] = [
     title: 'Computer Vision and Feature Detection Projects',
     description:
       'Implemented comprehensive computer vision solutions including Bayesian classification and K-means clustering for skin detection using Essex dataset, achieving robust pixel-level classification. Developed feature detection pipeline using Harris corner detection, ORB, and KAZE algorithms with OpenCV, applying gradient analysis and morphological operations for robust point matching across scales and transformations.',
-    logo: bananaLogo,
+    icon: FaCamera,
     href: 'https://github.com/CeGeek23/computer-vision-projects',
     category: 'Computer Vision & Image Processing',
   },
@@ -47,7 +51,7 @@ const projectsData: Project[] = [
     title: '4D GPS Navigation System for VTOL Aircraft',
     description:
       'Developed trajectory optimization algorithms for vertical takeoff and landing aircraft in collaboration with Technoplane company, using 3D mapping and dynamic weather modeling as a 4th dimension. Simulated and analyzed real-time path planning strategies for autonomous flight systems.',
-    logo: supaSnacksLogo,
+    icon: FaPlaneDeparture,
     href: 'https://github.com/CeGeek23/vtol-navigation-system',
     category: 'Aerospace & Navigation Systems',
   },
@@ -55,7 +59,7 @@ const projectsData: Project[] = [
     title: 'Chatbot with PyQt5',
     description:
       'This is a simple chatbot that I built using PyQt5. I wanted to learn more about PyQt5 and how to build desktop applications. The chatbot is a simple application that allows you to chat with a bot. The bot can answer simple questions and provide information about the weather. The chatbot uses the OpenWeatherMap API to get the weather information.',
-    logo: payByFonieLogo,
+    icon: FaRobot,
     href: 'https://github.com/CeGeek23/chatbot',
     category: 'Desktop Application',
   },
@@ -63,7 +67,7 @@ const projectsData: Project[] = [
     title: 'Intrusion Detection System',
     description:
       "This project is a simple intrusion detection system composed of a mobile application, arduino cards, micro cameras and a server. The system is designed to detect intruders in a room and send an alert to the user's mobile phone. The system uses a combination of motion sensors, cameras and a server to detect intruders and send an alert to the user's mobile phone. The system is built using Arduino, Python, Flask and React Native.",
-    logo: ecomLogo,
+    icon: FaVideo,
     href: 'https://github.com/CeGeek23/Syst-me_detection_d_intrusion',
     category: 'Security System',
   },
@@ -71,7 +75,7 @@ const projectsData: Project[] = [
     title: 'Traffic prediction app in the city of Yaoundé (Cameroon)',
     description:
       'This project is a simple traffic prediction application for the city of Yaoundé in Cameroon. The application uses historical traffic data to predict traffic conditions in the city. The application uses a machine learning model to predict traffic conditions based on historical data. The application is built using Python, Flask and React.',
-    logo: supaSnacksLogo,
+    icon: FaTrafficLight,
     href: 'https://github.com/CeGeek23/traffic-prediction-yaounde',
     category: 'Machine Learning Model',
   },
@@ -105,15 +109,8 @@ export default function Projects() {
         >
           {projectsData.map((project) => (
             <Card as="li" key={project.title}>
-              <div className="relative z-10 flex items-center justify-center w-12 h-12 p-2 overflow-hidden bg-white rounded-full shadow-md shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 dark:bg-white dark:ring-0">
-                <Image
-                  src={project.logo}
-                  alt=""
-                  className="object-contain w-8 h-8"
-                  unoptimized
-                  width={32}
-                  height={32}
-                />
+              <div className="relative z-10 flex items-center justify-center w-12 h-12 text-white shadow-md rounded-xl bg-gradient-to-br from-accent-500 to-accent-600">
+                <project.icon className="w-6 h-6" aria-hidden="true" />
               </div>
               <h3 className="mt-6 text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
                 <Card.Link href={project.href}>{project.title}</Card.Link>

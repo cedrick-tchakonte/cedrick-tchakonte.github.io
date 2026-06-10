@@ -56,7 +56,7 @@ const siteMetadata: SiteMetadata = {
   authorHeadline:
     'Machine Learning & AI Engineering Student | Cyber-Physical Systems at ENSTA Paris (IP Paris)',
   authorAbout:
-    "Hi, I'm Cedrick! I completed my 2A (2nd year) at ENSTA Paris specializing in Artificial Intelligence and Cyber-Physical Systems. I'm currently doing a gap year (césure) as a Machine Learning Research Intern at Stellantis, applying AI to real-world engineering and safety challenges.",
+    "Hi, I'm Cedrick! I completed my 2A (2nd year) at ENSTA Paris specializing in Artificial Intelligence and Cyber-Physical Systems. I'm currently doing a gap year (césure) as a Machine Learning Research Intern at Stellantis, applying AI to real-world engineering and safety challenges. I'm now looking for an end-of-studies internship (with the possibility of continuing into a PhD) in a world-class AI lab such as Google DeepMind, OpenAI, Meta FAIR, Mistral AI or Anthropic, where I can work at the very heart of AI innovation.",
   authorAboutExtended:
     "Cedrick completed his 2A at ENSTA Paris (Institut Polytechnique de Paris), specializing in Artificial Intelligence and Cyber-Physical Systems. Passionate about machine learning, robotics, and their real-world applications, he is using his gap year to gain hands-on experience. He is currently a Machine Learning Research Intern at Stellantis and a Junior AI Engineer at TAEP (ENSTA's Junior Enterprise), and has previously worked at STMicroelectronics and Objectware. He is driven to contribute to impactful projects that push the boundaries of AI and technology.",
   socials: {
@@ -70,7 +70,7 @@ const siteMetadata: SiteMetadata = {
   phoneNumber: '0758744186',
   contactTitle: 'Get in touch',
   contactSubtitle:
-    "I completed my 2A in AI and Cyber-Physical Systems at ENSTA Paris and I'm currently on a gap year, working as a Machine Learning Research Intern at Stellantis. If you'd like to discuss potential collaborations or opportunities, please reach out using the form below.",
+    "I completed my 2A in AI and Cyber-Physical Systems at ENSTA Paris and I'm currently on a gap year, working as a Machine Learning Research Intern at Stellantis. I'm looking for an end-of-studies internship (with the possibility of pursuing a PhD) in a leading AI lab where I can be at the heart of innovation. If you'd like to discuss potential collaborations or opportunities, please reach out using the form below.",
   analytics: {
     plausibleDataDomain: 'cedricktchakonte.com', // e.g. tailwind-nextjs-starter-blog.vercel.app
     googleAnalyticsId: 'G-XXXXXXX', // e.g. UA-000000-2 or G-XXXXXXX

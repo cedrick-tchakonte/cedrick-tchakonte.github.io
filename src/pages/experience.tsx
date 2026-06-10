@@ -5,9 +5,9 @@ import { SectionHeading } from '@/components/SectionHeading'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
 import stellantisLogo from '@/images/logos/stellantis.svg'
-import taepLogo from '@/images/logos/taep.jpg'
+import taepLogo from '@/images/logos/taep.png'
 import objectwareLogo from '@/images/logos/objectware.svg'
-import stMicroLogo from '@/images/logos/stmicroelectronics.svg'
+import stMicroLogo from '@/images/logos/stmicroelectronics.png'
 
 interface ExperienceItem {
   title: string

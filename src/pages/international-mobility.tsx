@@ -1,15 +1,9 @@
-import React from 'react';
-import Slider from 'react-slick';
 import InternationalMobilityCard from '@/components/InternationalMobilityCard';
 import Head from 'next/head';
 import { PageLayout } from '@/components/PageLayout';
 import { SectionHeading } from '@/components/SectionHeading';
-import Image from 'next/image';
+import { LocationCarousel } from '@/components/LocationCarousel';
 import siteMetadata from '@/data/siteMetadata';
-
-// Import des styles slick-carousel
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 type MobilityLocation = {
   city: string;
@@ -30,6 +24,16 @@ const mobilityData: MobilityLocation[] = [
       startDate: '2024',
       endDate: 'Present',
       university: 'ENSTA Paris',
+    },
+    {
+      city: 'Poissy',
+      country: 'France',
+      image: '/images/poissy.jpg',
+      description:
+        'Machine Learning Research Intern at the Stellantis grEEn-Campus, building multimodal datasets and 3D CNN/GNN surrogate models to predict pedestrian protection metrics for vehicle safety.',
+      startDate: '2026',
+      endDate: 'Present',
+      university: 'Stellantis grEEn-Campus',
     },
     {
       city: 'Grenoble',
@@ -68,17 +72,6 @@ const mobilityData: MobilityLocation[] = [
       university: 'Lycée Bilingue de Nylon Ndogpassi',
     },
   ];
-
-const sliderSettings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3000,
-  arrows: true,
-};
 
 export default function InternationalMobility() {
   return (
@@ -127,28 +120,7 @@ export default function InternationalMobility() {
               className="mb-8"
             />
             <div className="max-w-4xl mx-auto">
-              <Slider {...sliderSettings}>
-                {mobilityData.map((location, index) => (
-                  <div key={index} className="px-4">
-                    <div className="relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 group">
-                      <Image
-                        src={location.image}
-                        alt={location.city}
-                        className="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110"
-                        width={800}
-                        height={256}
-                        sizes="(min-width: 1024px) 56rem, 100vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                        <h4 className="text-2xl font-bold mb-2">{location.city}, {location.country}</h4>
-                        <p className="text-sm opacity-90 mb-1">{location.startDate} - {location.endDate}</p>
-                        <p className="text-sm opacity-90">{location.university}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </Slider>
+              <LocationCarousel slides={mobilityData} />
             </div>
           </div>
         </div>
