@@ -40,7 +40,7 @@ function DropdownMenu({ link }: { link: NavLink }) {
           <>
             <Menu.Button
               className={clsx(
-                'relative px-4 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium flex items-center gap-2 whitespace-nowrap group',
+                'relative px-3 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium flex items-center gap-2 whitespace-nowrap group',
                 'border border-transparent hover:border-accent-200 dark:hover:border-accent-700/50',
                 isActive
                   ? 'text-accent-600 dark:text-accent-400 font-semibold bg-accent-50/50 dark:bg-accent-900/20'
@@ -256,7 +256,7 @@ function NavItem({ href, children }: NavItemProps) {
       <Link
         href={href}
         className={clsx(
-          'relative px-4 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium whitespace-nowrap flex items-center',
+          'relative px-3 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium whitespace-nowrap flex items-center',
           isActive
             ? 'text-accent-600 dark:text-accent-400 font-semibold'
             : 'text-primaryText-700 dark:text-primaryText-300 hover:text-accent-600 dark:hover:text-accent-400'
