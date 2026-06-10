@@ -1,7 +1,10 @@
 import Head from 'next/head'
+import type { IconType } from 'react-icons'
+import { FaAward, FaLayerGroup, FaCalendarAlt, FaBrain } from 'react-icons/fa'
 import { PageLayout } from '@/components/PageLayout'
 import CertificationCard from '@/components/CertificationCard'
 import siteMetadata from '@/data/siteMetadata'
+import { useT, type I18n } from '@/i18n'
 
 interface Certification {
   name: string
@@ -93,6 +96,30 @@ const certifications: Certification[] = [
 
 export default function Certifications() {
   const platformCount = new Set(certifications.map((c) => c.issuer)).size
+  const t = useT()
+
+  const stats: { icon: IconType; value: string | number; label: I18n<string> }[] = [
+    {
+      icon: FaAward,
+      value: certifications.length,
+      label: { en: 'Certifications', fr: 'Certifications' },
+    },
+    {
+      icon: FaLayerGroup,
+      value: platformCount,
+      label: { en: 'Platforms', fr: 'Plateformes' },
+    },
+    {
+      icon: FaCalendarAlt,
+      value: '2025',
+      label: { en: 'Latest year', fr: 'Dernière année' },
+    },
+    {
+      icon: FaBrain,
+      value: '5+',
+      label: { en: 'Skill areas', fr: 'Domaines' },
+    },
+  ]
 
   return (
     <>
@@ -105,23 +132,23 @@ export default function Certifications() {
         subtitle="Professional certifications demonstrating expertise in AI, deep learning, cybersecurity, and software development."
       >
         {/* Statistics Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-          <div className="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/30 dark:to-accent-800/20 p-6 rounded-xl border border-accent-200 dark:border-accent-800">
-            <p className="text-3xl font-bold text-accent-600 dark:text-accent-400">{certifications.length}</p>
-            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-1">Total Certifications</p>
-          </div>
-          <div className="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/30 dark:to-accent-800/20 p-6 rounded-xl border border-accent-200 dark:border-accent-800">
-            <p className="text-3xl font-bold text-accent-600 dark:text-accent-400">{platformCount}</p>
-            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-1">Platforms</p>
-          </div>
-          <div className="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/30 dark:to-accent-800/20 p-6 rounded-xl border border-accent-200 dark:border-accent-800">
-            <p className="text-3xl font-bold text-accent-600 dark:text-accent-400">2025</p>
-            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-1">Latest Year</p>
-          </div>
-          <div className="bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/30 dark:to-accent-800/20 p-6 rounded-xl border border-accent-200 dark:border-accent-800">
-            <p className="text-3xl font-bold text-accent-600 dark:text-accent-400">5+</p>
-            <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-1">Skill Areas</p>
-          </div>
+        <div className="grid grid-cols-2 gap-4 mb-12 md:grid-cols-4">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center p-6 text-center transition-shadow bg-white border shadow-sm rounded-2xl dark:bg-primaryText-800 border-primaryText-200/60 dark:border-primaryText-700/50 hover:shadow-md"
+            >
+              <div className="flex items-center justify-center mb-3 text-white shadow-md w-11 h-11 rounded-xl bg-gradient-to-br from-accent-500 to-accent-600">
+                <stat.icon className="w-5 h-5" aria-hidden="true" />
+              </div>
+              <p className="text-3xl font-bold text-primaryText-900 dark:text-primaryText-100">
+                {stat.value}
+              </p>
+              <p className="mt-1 text-sm text-primaryText-500 dark:text-primaryText-400">
+                {t(stat.label)}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Grid Layout for Certification Cards */}

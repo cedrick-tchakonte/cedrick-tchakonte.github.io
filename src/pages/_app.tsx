@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { LanguageProvider } from '@/i18n'
 
 import Preloader from '@/components/Preloader'
 
@@ -23,7 +24,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   let previousPathname = usePrevious(router.pathname)
 
   return (
-    <>
+    <LanguageProvider>
       <Preloader />
       <div className="fixed flex justify-center sm:px-8">
         <div className="flex w-full max-w-7xl lg:px-8">
@@ -38,6 +39,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
         </main>
         <Footer />
       </div>
-    </>
+    </LanguageProvider>
   )
 }

@@ -4,8 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Popover, Transition, Menu } from '@headlessui/react'
 import clsx from 'clsx'
+import { FaGlobe } from 'react-icons/fa'
 
 import { Container } from '@/components/Container'
+import { useLocale } from '@/i18n'
 import avatarImage from '@/images/avatar.jpg'
 import {
   CloseIcon,
@@ -327,6 +329,23 @@ function ModeToggle() {
   )
 }
 
+// language switcher (English / French)
+function LanguageToggle() {
+  let { locale, toggleLocale } = useLocale()
+
+  return (
+    <button
+      type="button"
+      onClick={toggleLocale}
+      aria-label={locale === 'en' ? 'Passer en français' : 'Switch to English'}
+      className="flex items-center gap-2 px-3.5 py-3 text-sm font-bold transition-all duration-300 rounded-2xl shadow-xl group bg-gradient-to-br from-white/90 to-white/80 text-primaryText-700 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:from-primaryText-900/90 dark:to-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/50 dark:border-primaryText-700/50 hover:scale-110 hover:shadow-2xl active:scale-95 hover:text-accent-600 dark:hover:text-accent-400"
+    >
+      <FaGlobe className="w-4 h-4 transition-colors group-hover:text-accent-500" aria-hidden="true" />
+      <span>{locale.toUpperCase()}</span>
+    </button>
+  )
+}
+
 // helper to help with scaling of avatar when user scrolls down
 function scrollHeight(number: number, a: number, b: number) {
   let min = Math.min(a, b)
@@ -541,7 +560,10 @@ export function Header() {
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="hidden pointer-events-auto md:block" />
               </div>
-              <div className="flex justify-end md:flex-1">
+              <div className="flex justify-end gap-2 sm:gap-3 md:flex-1">
+                <div className="pointer-events-auto">
+                  <LanguageToggle />
+                </div>
                 <div className="pointer-events-auto">
                   <ModeToggle />
                 </div>

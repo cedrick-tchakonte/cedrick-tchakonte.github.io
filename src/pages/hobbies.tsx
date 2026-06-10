@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import siteMetadata from '@/data/siteMetadata'
-import { FaVolleyballBall, FaChess, FaFutbol, FaBicycle, FaCode, FaBook, FaPlane } from 'react-icons/fa'
+import { FaVolleyballBall, FaChess, FaFutbol, FaBicycle, FaCode, FaBook, FaPlane, FaSeedling } from 'react-icons/fa'
 import { GiSoccerField } from 'react-icons/gi'
 import { motion } from 'framer-motion'
 import type { IconType } from 'react-icons'
+import { useT } from '@/i18n'
 
 type Hobby = {
   name: string
@@ -56,6 +57,16 @@ const hobbies: Hobby[] = [
 ]
 
 export default function Hobbies() {
+  const t = useT()
+
+  const closing = {
+    title: { en: 'Keeping it balanced', fr: "Garder l'équilibre" },
+    text: {
+      en: 'Outside of work I like to move and compete a little. Volleyball, football and babyfoot keep me social and on my feet, chess and a good book keep my head busy, and the odd side project is just me being curious. It keeps me balanced, and honestly a bit sharper for the work that matters.',
+      fr: "En dehors du travail, j'aime bouger et avoir un peu de compétition. Le volley, le foot et le babyfoot me gardent sociable et en mouvement, les échecs et un bon livre occupent ma tête, et un petit projet perso de temps en temps, c'est juste ma curiosité. Ça m'équilibre et, franchement, ça me rend un peu plus affûté pour ce qui compte vraiment.",
+    },
+  }
+
   return (
     <>
       <Head>
@@ -101,14 +112,25 @@ export default function Hobbies() {
           ))}
         </div>
 
-        {/* Additional info section */}
-        <div className="mt-16 p-8 rounded-2xl bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20 border border-accent-200 dark:border-accent-700/50">
-          <h3 className="text-2xl font-bold text-primaryText-800 dark:text-primaryText-100 mb-4">
-            Continuous Learning
-          </h3>
-          <p className="text-primaryText-600 dark:text-primaryText-400 leading-relaxed">
-            I believe in maintaining a healthy work-life balance and exploring diverse interests. These hobbies not only provide relaxation and enjoyment but also contribute to my personal growth, creativity, and problem-solving skills. Whether it&apos;s through music, sports, or coding side projects, I&apos;m always seeking new experiences and ways to expand my horizons.
-          </p>
+        {/* Closing note */}
+        <div className="relative p-8 mt-16 overflow-hidden bg-white border shadow-lg sm:p-10 rounded-3xl dark:bg-primaryText-800 border-primaryText-200/60 dark:border-primaryText-700/50">
+          <div
+            className="absolute rounded-full pointer-events-none -top-16 -right-16 w-44 h-44 bg-accent-400/10 blur-3xl"
+            aria-hidden="true"
+          />
+          <div className="relative flex flex-col gap-5 sm:flex-row sm:items-start">
+            <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 text-white shadow-md rounded-xl bg-gradient-to-br from-accent-500 to-accent-600">
+              <FaSeedling className="w-6 h-6" aria-hidden="true" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-primaryText-900 dark:text-primaryText-100">
+                {t(closing.title)}
+              </h3>
+              <p className="mt-2 text-base leading-relaxed text-primaryText-600 dark:text-primaryText-400">
+                {t(closing.text)}
+              </p>
+            </div>
+          </div>
         </div>
       </SimpleLayout>
     </>
