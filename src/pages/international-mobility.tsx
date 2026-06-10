@@ -13,6 +13,7 @@ type MobilityLocation = {
   startDate: string;
   endDate: string;
   university: string;
+  credit?: string;
 };
 
 const mobilityData: MobilityLocation[] = [
@@ -34,6 +35,7 @@ const mobilityData: MobilityLocation[] = [
       startDate: '2024',
       endDate: 'Present',
       university: 'ENSTA Paris (IP Paris)',
+      credit: 'Photo: RutoSu / Wikimedia, CC BY-SA 4.0',
     },
     {
       city: 'Poissy',
@@ -44,6 +46,7 @@ const mobilityData: MobilityLocation[] = [
       startDate: '2026',
       endDate: 'Present',
       university: 'Stellantis grEEn-Campus',
+      credit: 'Photo: Akiry / Wikimedia, CC BY-SA 3.0',
     },
     {
       city: 'Grenoble',

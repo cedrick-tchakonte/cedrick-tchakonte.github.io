@@ -10,6 +10,7 @@ export type CarouselSlide = {
   startDate: string
   endDate: string
   university?: string
+  credit?: string
 }
 
 /**
@@ -70,6 +71,11 @@ export function LocationCarousel({
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            {slide.credit && (
+              <p className="absolute z-10 px-1.5 py-0.5 text-[10px] rounded top-3 left-3 text-white/70 bg-black/30 backdrop-blur-sm">
+                {slide.credit}
+              </p>
+            )}
             <div className="absolute bottom-0 left-0 right-0 p-6 pr-24 sm:p-8 sm:pr-28 text-white">
               <p className="text-sm font-semibold text-accent-300">
                 {slide.startDate} - {slide.endDate}

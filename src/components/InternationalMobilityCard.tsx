@@ -9,6 +9,7 @@ type Location = {
   startDate: string;
   endDate: string;
   university?: string;
+  credit?: string;
 };
 
 type InternationalMobilityCardProps = {
@@ -52,6 +53,11 @@ const InternationalMobilityCard = ({ location }: InternationalMobilityCardProps)
         <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-2 leading-relaxed">
           {location.description}
         </p>
+        {location.credit && (
+          <p className="mt-2 text-[10px] text-primaryText-400 dark:text-primaryText-500">
+            {location.credit}
+          </p>
+        )}
       </div>
     </div>
   );
