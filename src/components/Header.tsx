@@ -7,7 +7,7 @@ import clsx from 'clsx'
 import { FaGlobe } from 'react-icons/fa'
 
 import { Container } from '@/components/Container'
-import { useLocale } from '@/i18n'
+import { useLocale, useT, type I18n } from '@/i18n'
 import avatarImage from '@/images/avatar.jpg'
 import {
   CloseIcon,
@@ -18,21 +18,22 @@ import {
 import siteMetadata from '@/data/siteMetadata'
 
 type SubmenuItem = {
-  name: string
+  name: I18n<string>
   href: string
 }
 
 type NavLink = {
-  name: string
+  name: I18n<string>
   href: string
   submenu?: SubmenuItem[]
 }
 
-const siteNavLinks = siteMetadata.siteNavLinks as NavLink[]
+const siteNavLinks: NavLink[] = siteMetadata.siteNavLinks
 
 // Desktop Dropdown Menu Component
 function DropdownMenu({ link }: { link: NavLink }) {
   const router = useRouter()
+  const t = useT()
   const isActive = link.submenu?.some(item => router.pathname === item.href)
 
   return (
@@ -49,7 +50,7 @@ function DropdownMenu({ link }: { link: NavLink }) {
                   : 'text-primaryText-700 dark:text-primaryText-300 hover:text-accent-600 dark:hover:text-accent-400'
               )}
             >
-              <span>{link.name}</span>
+              <span>{t(link.name)}</span>
               <svg
                 className={clsx(
                   'w-4 h-4 transition-all duration-300 flex-shrink-0',
@@ -91,7 +92,7 @@ function DropdownMenu({ link }: { link: NavLink }) {
                               : 'text-primaryText-700 dark:text-primaryText-300'
                           )}
                         >
-                          {item.name}
+                          {t(item.name)}
                         </Link>
                       )}
                     </Menu.Item>
@@ -116,6 +117,7 @@ type MobileNavItemProps = {
 function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
   const [isOpen, setIsOpen] = useState(false)
   const router = useRouter()
+  const t = useT()
 
   if (submenu) {
     const hasActiveChild = submenu.some(item => router.pathname === item.href)
@@ -153,7 +155,7 @@ function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
                         : 'text-primaryText-600 dark:text-primaryText-400 hover:bg-accent-50 dark:hover:bg-accent-900/20'
                     )}
                   >
-                    {item.name}
+                    {t(item.name)}
                   </Popover.Button>
                 </li>
               )
@@ -187,6 +189,7 @@ function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
 
 // mobile nav on small screens
 function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>) {
+  const t = useT()
   return (
     <Popover {...props}>
       <Popover.Button className="flex items-center px-5 py-2.5 text-sm font-semibold rounded-2xl shadow-xl group bg-gradient-to-r from-white/90 to-white/80 text-primaryText-800 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:from-primaryText-900/90 dark:to-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 dark:hover:ring-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-primaryText-200/50 dark:border-primaryText-700/50">
@@ -228,10 +231,10 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
             </div>
             <nav>
               <ul className="space-y-2 text-base text-primaryText-800 dark:text-primaryText-300">
-                {siteNavLinks.map((link, index) => {
+                {siteNavLinks.map((link) => {
                   return (
-                    <MobileNavItem key={link.href || index} href={link.href} submenu={link.submenu}>
-                      {link.name}
+                    <MobileNavItem key={link.name.en} href={link.href} submenu={link.submenu}>
+                      {t(link.name)}
                     </MobileNavItem>
                   )
                 })}
@@ -272,19 +275,20 @@ function NavItem({ href, children }: NavItemProps) {
 
 // desktop nav on large screens
 function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
+  const t = useT()
   return (
     <nav {...props}>
       <ul className="flex items-center gap-1 px-2 py-2 text-sm font-medium rounded-2xl shadow-xl bg-white/80 text-primaryText-800 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:bg-primaryText-900/80 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300">
-        {siteNavLinks.map((link, index) => {
+        {siteNavLinks.map((link) => {
           // If link has a submenu, render DropdownMenu
           if (link.submenu) {
-            return <DropdownMenu key={link.name || index} link={link} />
+            return <DropdownMenu key={link.name.en} link={link} />
           }
 
           // Otherwise, render regular NavItem
           return (
             <NavItem key={link.href} href={link.href}>
-              {link.name}
+              {t(link.name)}
             </NavItem>
           )
         })}

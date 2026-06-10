@@ -1,10 +1,12 @@
+import type { I18n } from '@/i18n'
+
 interface NavSubLink {
-  name: string
+  name: I18n<string>
   href: string
 }
 
 interface NavLink {
-  name: string
+  name: I18n<string>
   href: string
   submenu?: NavSubLink[]
 }
@@ -78,45 +80,45 @@ const siteMetadata: SiteMetadata = {
   // Navigation structure with dropdown menus
   siteNavLinks: [
     {
-      name: 'Home',
+      name: { en: 'Home', fr: 'Accueil' },
       href: '/',
     },
     {
-      name: 'About',
+      name: { en: 'About', fr: 'À propos' },
       href: '/about',
     },
     {
-      name: 'Academic',
+      name: { en: 'Academic', fr: 'Études' },
       href: '#',
       submenu: [
-        { name: 'Education', href: '/education' },
-        { name: 'Certifications', href: '/certifications' },
-        { name: 'International Mobility', href: '/international-mobility' },
+        { name: { en: 'Education', fr: 'Formation' }, href: '/education' },
+        { name: { en: 'Certifications', fr: 'Certifications' }, href: '/certifications' },
+        { name: { en: 'International Mobility', fr: 'Mobilité internationale' }, href: '/international-mobility' },
       ],
     },
     {
-      name: 'Professional',
+      name: { en: 'Professional', fr: 'Professionnel' },
       href: '#',
       submenu: [
-        { name: 'Experience', href: '/experience' },
-        { name: 'Projects', href: '/projects' },
-        { name: 'Skills', href: '/skills' },
+        { name: { en: 'Experience', fr: 'Expérience' }, href: '/experience' },
+        { name: { en: 'Projects', fr: 'Projets' }, href: '/projects' },
+        { name: { en: 'Skills', fr: 'Compétences' }, href: '/skills' },
       ],
     },
     {
-      name: 'Community',
+      name: { en: 'Community', fr: 'Communauté' },
       href: '#',
       submenu: [
-        { name: 'Volunteer', href: '/volunteer' },
-        { name: 'Hobbies', href: '/hobbies' },
+        { name: { en: 'Volunteer', fr: 'Bénévolat' }, href: '/volunteer' },
+        { name: { en: 'Hobbies', fr: 'Loisirs' }, href: '/hobbies' },
       ],
     },
     {
-      name: 'Dreams',
+      name: { en: 'Dreams', fr: 'Rêves' },
       href: '/dreams',
     },
     {
-      name: 'Contact',
+      name: { en: 'Contact', fr: 'Contact' },
       href: '/contact',
     },
   ],
