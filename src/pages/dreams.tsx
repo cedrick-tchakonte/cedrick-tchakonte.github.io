@@ -2,11 +2,12 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image, { type StaticImageData } from 'next/image'
 import type { IconType } from 'react-icons'
-import { FaRocket, FaGraduationCap, FaFlask, FaSquareRootAlt } from 'react-icons/fa'
+import { FaRocket, FaGraduationCap, FaFlask, FaSquareRootAlt, FaQuoteLeft } from 'react-icons/fa'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { SectionHeading } from '@/components/SectionHeading'
 import siteMetadata from '@/data/siteMetadata'
+import avatarImage from '@/images/avatar.jpg'
 import amiLogo from '@/images/dreams/ami.png'
 import metaLogo from '@/images/dreams/meta.png'
 import deepmindLogo from '@/images/dreams/deepmind.png'
@@ -128,8 +129,8 @@ const dreamLabs: DreamLab[] = [
 ]
 
 const vision: string[] = [
-  "I'm driven by the frontier of artificial intelligence, the place where rigorous mathematics meets engineering to build systems that learn, reason and create. I'm fascinated by foundation models, multimodal learning, reinforcement learning and AI for science, and I want to spend my career where these ideas are invented, not just applied.",
-  'Maths and technology have always been my playground. My dream is to bring that curiosity to a world-class research lab and help push the boundaries of what AI can do.',
+  "It comes down to one thing: I love maths, and AI is where maths starts to think. I'm the kind of person who gets pulled into a research paper late at night, then spends the next morning trying to rebuild it just to see if it really works.",
+  "I don't want to only use these models, I want to understand how they work and help build the next ones. My goal is to do genuine research, surrounded by people who push me, on problems that actually matter.",
 ]
 
 interface Goal {
@@ -179,16 +180,39 @@ export default function Dreams() {
         title="My Dreams"
         intro="The labs I dream of joining, the technologies that fascinate me, and the goals I'm working towards."
       >
-        {/* Vision / passion */}
-        <div className="max-w-3xl p-8 mx-auto border sm:p-10 rounded-2xl bg-gradient-to-br from-accent-50 to-accent-100 dark:from-accent-900/20 dark:to-accent-800/20 border-accent-200 dark:border-accent-700/50">
-          {vision.map((paragraph, index) => (
-            <p
-              key={index}
-              className={`text-lg leading-relaxed text-primaryText-700 dark:text-primaryText-300 ${index > 0 ? 'mt-4' : ''}`}
-            >
-              {paragraph}
+        {/* Vision / why */}
+        <div className="relative max-w-3xl mx-auto overflow-hidden bg-white border shadow-xl rounded-3xl dark:bg-primaryText-800 border-primaryText-200/60 dark:border-primaryText-700/50">
+          <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-accent-400 via-accent-500 to-accent-600" />
+          <div
+            className="absolute rounded-full pointer-events-none -top-20 -right-20 w-56 h-56 bg-accent-400/15 blur-3xl"
+            aria-hidden="true"
+          />
+          <div className="relative p-8 sm:p-12">
+            <FaQuoteLeft className="text-accent-500/25 w-9 h-9" aria-hidden="true" />
+            <p className="mt-6 text-xl font-medium leading-relaxed text-primaryText-800 dark:text-primaryText-100">
+              {vision[0]}
             </p>
-          ))}
+            <p className="mt-5 text-lg leading-relaxed text-primaryText-600 dark:text-primaryText-300">
+              {vision[1]}
+            </p>
+            <div className="flex items-center gap-3 mt-8">
+              <Image
+                src={avatarImage}
+                alt="Cedrick Tchakonte"
+                width={44}
+                height={44}
+                className="object-cover rounded-full w-11 h-11 ring-2 ring-accent-200 dark:ring-accent-700/50"
+              />
+              <div>
+                <p className="text-sm font-semibold text-primaryText-800 dark:text-primaryText-100">
+                  Cedrick Tchakonte
+                </p>
+                <p className="text-xs text-primaryText-500 dark:text-primaryText-400">
+                  AI &amp; Cyber-Physical Systems · ENSTA Paris
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Dream labs */}

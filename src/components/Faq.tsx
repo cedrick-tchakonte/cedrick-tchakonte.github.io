@@ -1,5 +1,6 @@
 import siteMetadata from '@/data/siteMetadata'
-import { motion } from 'framer-motion'
+import { Disclosure, Transition } from '@headlessui/react'
+import { FaChevronDown } from 'react-icons/fa'
 import { SectionHeading } from '@/components/SectionHeading'
 
 type FaqItem = {
@@ -40,11 +41,10 @@ const faqs: FaqItem[] = [
   },
 ]
 
-
 const Faq = () => {
   return (
     <div className="py-16 sm:py-20 bg-primaryText-50 dark:bg-primaryText-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-3xl px-4 mx-auto sm:px-6 lg:px-8">
         <SectionHeading
           align="center"
           eyebrow="FAQ"
@@ -52,40 +52,55 @@ const Faq = () => {
           subtitle="Here are some common questions about my work in AI and robotics."
         />
 
-        <div className="mt-12">
-          <dl className="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-8">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.2, delay: index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                className="relative p-6 bg-white dark:bg-primaryText-800 rounded-lg shadow-lg transform transition-transform duration-300 border border-primaryText-200/50 dark:border-primaryText-700/50"
-              >
-                <dt className="text-lg leading-6 font-medium text-primaryText-900 dark:text-white">
-                  {faq.question}
-                </dt>
-                <dd className="mt-2 text-base text-primaryText-600 dark:text-primaryText-400">
-                  {faq.answer}
-                </dd>
-              </motion.div>
-            ))}
-          </dl>
-        </div>
+        <dl className="mt-10 overflow-hidden bg-white border divide-y shadow-sm rounded-2xl divide-primaryText-200/70 border-primaryText-200/60 dark:divide-primaryText-700/50 dark:border-primaryText-700/50 dark:bg-primaryText-800">
+          {faqs.map((faq, index) => (
+            <Disclosure as="div" key={index} defaultOpen={index === 0}>
+              {({ open }) => (
+                <>
+                  <dt>
+                    <Disclosure.Button className="flex items-center justify-between w-full gap-4 px-6 py-5 text-left transition-colors hover:bg-accent-50/50 dark:hover:bg-accent-900/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-inset">
+                      <span className="text-base font-semibold text-primaryText-900 dark:text-primaryText-100">
+                        {faq.question}
+                      </span>
+                      <FaChevronDown
+                        className={`h-4 w-4 flex-shrink-0 text-accent-500 transition-transform duration-300 ${
+                          open ? 'rotate-180' : ''
+                        }`}
+                        aria-hidden="true"
+                      />
+                    </Disclosure.Button>
+                  </dt>
+                  <Transition
+                    enter="transition duration-200 ease-out"
+                    enterFrom="opacity-0 -translate-y-1"
+                    enterTo="opacity-100 translate-y-0"
+                    leave="transition duration-150 ease-in"
+                    leaveFrom="opacity-100 translate-y-0"
+                    leaveTo="opacity-0 -translate-y-1"
+                  >
+                    <Disclosure.Panel
+                      as="dd"
+                      className="px-6 pb-5 -mt-1 text-base leading-relaxed text-primaryText-600 dark:text-primaryText-400"
+                    >
+                      {faq.answer}
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
+          ))}
+        </dl>
 
-        <div className="lg:text-center">
-          <p className="mt-4 text-lg text-primaryText-600 dark:text-primaryText-400">
-            Can’t find the answer you’re looking for? Reach out to{' '}
-            <a
-              href={`mailto:${siteMetadata.email}`}
-              className="font-medium text-accent-600 hover:text-accent-500"
-            >
-              me
-            </a>
-            .
-          </p>
-        </div>
+        <p className="mt-8 text-center text-primaryText-600 dark:text-primaryText-400">
+          Can&apos;t find the answer you&apos;re looking for? Reach out to{' '}
+          <a
+            href={`mailto:${siteMetadata.email}`}
+            className="font-medium text-accent-600 hover:text-accent-500"
+          >
+            me
+          </a>
+          .
+        </p>
       </div>
     </div>
   )
