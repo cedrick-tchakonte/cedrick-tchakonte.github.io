@@ -20,8 +20,8 @@ const AvailabilityBadge = () => {
       />
       <span>
         {t({
-          en: '6-month ML research internship · early 2027 · France or abroad',
-          fr: 'Stage de recherche ML de 6 mois · début 2027 · France ou étranger',
+          en: '6-month ML internship · early 2027 · France or abroad',
+          fr: 'Stage ML de 6 mois · début 2027 · France ou étranger',
         })}
       </span>
     </motion.div>

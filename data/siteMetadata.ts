@@ -66,8 +66,8 @@ const siteMetadata: SiteMetadata = {
     fr: 'Élève ingénieur en dernière année – Intelligence Artificielle | ENSTA Paris (IP Paris)',
   },
   authorAbout: {
-    en: "Hi, I'm Cedrick! I'm a final-year engineering student in AI at ENSTA Paris (IP Paris), also enrolled in IP Paris's Master's in Data Science & AI. I'm looking for a 6-month end-of-studies ML research internship in a top AI lab, in France or abroad, from early 2027, possibly continuing into a PhD.",
-    fr: "Salut, moi c'est Cedrick ! Je suis élève ingénieur en dernière année en IA à l'ENSTA Paris (IP Paris), et aussi inscrit au master Data Science & IA de l'IP Paris. Je cherche un stage de recherche de fin d'études de 6 mois en ML dans un laboratoire d'IA de premier plan, en France ou à l'étranger, dès début 2027, avec une suite possible en doctorat.",
+    en: "Hi, I'm Cedrick! I'm a final-year engineering student in AI at ENSTA Paris (IP Paris), also enrolled in IP Paris's Master's in Data Science & AI. I'm looking for a 6-month end-of-studies internship in machine learning from early 2027, in France or abroad, ideally research-oriented, and I'm open to continuing into a PhD.",
+    fr: "Salut, moi c'est Cedrick ! Je suis élève ingénieur en dernière année en IA à l'ENSTA Paris (IP Paris), et aussi inscrit au master Data Science & IA de l'IP Paris. Je cherche un stage de fin d'études de 6 mois en machine learning dès début 2027, en France ou à l'étranger, idéalement orienté recherche, et je suis ouvert à une poursuite en doctorat.",
   },
   authorAboutExtended: {
     en: "Cedrick is a final-year engineering student at ENSTA Paris (IP Paris), following a specialization track in Artificial Intelligence. Passionate about ML research, especially deep learning and computer vision, he is a Junior AI Engineer at RagLogic. He previously worked at Stellantis (ML research), Objectware and STMicroelectronics (R&D).",
@@ -85,8 +85,8 @@ const siteMetadata: SiteMetadata = {
   phoneNumber: '0758744186',
   contactTitle: { en: 'Get in touch', fr: 'Me contacter' },
   contactSubtitle: {
-    en: "I'm looking for a 6-month end-of-studies ML research internship from early 2027 (possibly leading to a PhD) in a leading AI lab, in France or abroad. For collaborations or opportunities, reach out via the form below.",
-    fr: "Je cherche un stage de recherche de fin d'études de 6 mois en ML dès début 2027 (avec une suite possible en doctorat) dans un laboratoire d'IA de premier plan, en France ou à l'étranger. Pour une collaboration ou une opportunité, écris-moi via le formulaire ci-dessous.",
+    en: "I'm looking for a 6-month end-of-studies internship in machine learning from early 2027, in France or abroad, ideally research-oriented and open to a PhD afterwards. For collaborations or opportunities, reach out via the form below.",
+    fr: "Je cherche un stage de fin d'études de 6 mois en machine learning dès début 2027, en France ou à l'étranger, idéalement orienté recherche, avec une ouverture au doctorat. Pour une collaboration ou une opportunité, écris-moi via le formulaire ci-dessous.",
   },
   analytics: {
     plausibleDataDomain: 'cedricktchakonte.com', // e.g. tailwind-nextjs-starter-blog.vercel.app
