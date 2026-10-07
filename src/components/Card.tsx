@@ -1,6 +1,7 @@
-import Link from 'next/link'
 import clsx from 'clsx'
 import { motion } from 'framer-motion'
+
+import { LocaleLink } from '@/components/LocaleLink'
 
 type CardProps = {
   as?: React.ElementType
@@ -33,13 +34,13 @@ function CardRoot({ as: Component = 'div', className, children }: CardProps) {
   )
 }
 
-type CardLinkProps = React.ComponentPropsWithoutRef<typeof Link>
+type CardLinkProps = React.ComponentPropsWithoutRef<typeof LocaleLink>
 
 function CardLink({ children, ...props }: CardLinkProps) {
   return (
     <>
       <div className="absolute z-0 transition-all duration-500 ease-out scale-95 opacity-0 -inset-y-6 -inset-x-4 bg-gradient-to-br from-accent-500/5 via-accent-500/10 to-accent-500/20 group-hover:scale-100 group-hover:opacity-100 dark:from-accent-400/10 dark:via-accent-400/15 dark:to-accent-400/25 sm:-inset-x-6 sm:rounded-2xl" />
-      <Link {...props}>
+      <LocaleLink {...props}>
         <span className="absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
         <motion.span
           className="relative z-10"
@@ -48,7 +49,7 @@ function CardLink({ children, ...props }: CardLinkProps) {
         >
           {children}
         </motion.span>
-      </Link>
+      </LocaleLink>
     </>
   )
 }

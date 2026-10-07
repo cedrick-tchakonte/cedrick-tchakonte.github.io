@@ -8,7 +8,7 @@ import Faq from '@/components/Faq'
 import FeatureSection from '@/components/FeatureSection'
 import CallToAction from '@/components/CallToAction'
 import DivideLine from '@/components/DivideLine'
-import GapYearBadge from '@/components/GapYearBadge'
+import AvailabilityBadge from '@/components/AvailabilityBadge'
 import siteMetadata from '@/data/siteMetadata'
 import { useT } from '@/i18n'
 import schoolLogo from '@/images/ensta-logo.png'
@@ -78,8 +78,8 @@ const Home = () => {
             </div>
           </div>
           <div className="flex flex-col items-center lg:items-end gap-4">
-            {/* Gap Year Badge à côté de la photo */}
-            <GapYearBadge />
+            {/* Badge de disponibilité à côté de la photo */}
+            <AvailabilityBadge />
 
             <div className="relative group">
               {/* Effet de glow derrière l'image */}

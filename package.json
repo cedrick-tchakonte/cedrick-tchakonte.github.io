@@ -5,11 +5,11 @@
   "description": "Personal portfolio of Cedrick Tchakonte, AI & Cyber-Physical Systems engineering student at ENSTA Paris (IP Paris).",
   "author": "Cedrick Tchakonte",
   "license": "MIT",
-  "homepage": "https://eportfolio-cedrick-tchakonte.vercel.app",
+  "homepage": "https://cedrick-tchakonte.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve out",
     "lint": "next lint"
   },
   "browserslist": "defaults, not ie <= 11",
@@ -22,7 +22,6 @@
     "@next/mdx": "^13.5.8",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/typography": "^0.5.15",
-    "@vercel/analytics": "^1.5.0",
     "autoprefixer": "^10.4.20",
     "clsx": "^1.2.1",
     "fast-glob": "^3.3.2",

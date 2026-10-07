@@ -4,15 +4,20 @@ import { PageLayout } from '@/components/PageLayout';
 import { SectionHeading } from '@/components/SectionHeading';
 import { LocationCarousel } from '@/components/LocationCarousel';
 import siteMetadata from '@/data/siteMetadata';
-import { useT } from '@/i18n';
+import { useT, type I18n } from '@/i18n';
 import { mobilityData } from '@/content/mobility';
 
 export default function InternationalMobility() {
   const t = useT();
 
+  const resolve = (value: string | I18n<string>) =>
+    typeof value === 'string' ? value : t(value);
+
   const localizedMobilityData = mobilityData.map((location) => ({
     ...location,
     description: t(location.description),
+    startDate: resolve(location.startDate),
+    endDate: resolve(location.endDate),
   }));
 
   return (
@@ -55,8 +60,8 @@ export default function InternationalMobility() {
             </p>
             <p className="text-base text-primaryText-500 dark:text-primaryText-500 mt-4 max-w-2xl mx-auto">
               {t({
-                en: 'From my birthplace in Douala, Cameroon, to my current studies in Paris and internship experiences in Grenoble, I continue to explore new horizons while contributing to meaningful projects in AI and technology.',
-                fr: "De ma ville natale de Douala, au Cameroun, à mes études actuelles à Paris et à mes expériences de stage à Grenoble, je continue d'explorer de nouveaux horizons tout en contribuant à des projets porteurs de sens en IA et en technologie.",
+                en: 'From my birthplace in Douala, Cameroon, to my current studies in Paris and internship experiences in Grenoble and Poissy, I continue to explore new horizons while contributing to meaningful projects in AI and technology.',
+                fr: "De ma ville natale de Douala, au Cameroun, à mes études actuelles à Paris et à mes expériences de stage à Grenoble et Poissy, je continue d'explorer de nouveaux horizons tout en contribuant à des projets porteurs de sens en IA et en technologie.",
               })}
             </p>
           </div>

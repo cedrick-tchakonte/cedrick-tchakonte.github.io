@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { Container } from '@/components/Container'
+import { LocaleLink } from '@/components/LocaleLink'
 import siteMetadata from '@/data/siteMetadata'
 import { useT, type I18n } from '@/i18n'
 
@@ -10,12 +10,12 @@ type NavLinkProps = {
 
 function NavLink({ href, children }: NavLinkProps) {
   return (
-    <Link
+    <LocaleLink
       href={href}
       className="transition hover:text-accent-500 dark:hover:text-accent-400"
     >
       {children}
-    </Link>
+    </LocaleLink>
   )
 }
 

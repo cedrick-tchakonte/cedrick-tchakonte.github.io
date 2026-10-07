@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import Image from 'next/image'
 import { FaQuoteLeft } from 'react-icons/fa'
 import { Card } from '@/components/Card'
+import { LocaleLink } from '@/components/LocaleLink'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { SectionHeading } from '@/components/SectionHeading'
 import siteMetadata from '@/data/siteMetadata'
@@ -149,12 +149,12 @@ export default function Dreams() {
               fr: "Que vous recrutiez pour l'un de ces laboratoires, que vous construisiez quelque chose à la frontière de l'IA, que vous pensiez pouvoir m'aider à atteindre ces objectifs ou que vous croyiez simplement en la personne qui les porte, n'hésitez pas à me contacter. Si vous pouvez m'aider à y arriver, rejoignez-moi dans l'aventure. J'adorerais échanger avec vous.",
             })}
           </p>
-          <Link
+          <LocaleLink
             href="/contact"
             className="inline-flex items-center justify-center px-6 py-3 mt-8 text-base font-semibold transition rounded-md shadow-sm bg-white text-accent-600 hover:bg-accent-50 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-accent-600"
           >
             {t({ en: "Let's talk", fr: 'Discutons-en' })}
-          </Link>
+          </LocaleLink>
         </div>
       </SimpleLayout>
     </>

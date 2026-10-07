@@ -13,8 +13,39 @@ export interface EducationBackground {
 export const educationBackground: EducationBackground[] = [
   {
     degree: {
-      en: 'Engineering Degree in AI & Cyber-Physical Systems (2A Completed)',
-      fr: "Diplôme d'ingénieur en IA et systèmes cyber-physiques (2A validée)",
+      en: "Master's Degree, Data Science and Artificial Intelligence",
+      fr: 'Master Data Science et Intelligence Artificielle',
+    },
+    institution: {
+      en: 'Institut Polytechnique de Paris',
+      fr: 'Institut Polytechnique de Paris',
+    },
+    logo: '/images/logo/ip-paris.png',
+    startDate: { en: 'September 2026', fr: 'Septembre 2026' },
+    endDate: { en: 'December 2027', fr: 'Décembre 2027' },
+    description: {
+      en: "Master's program at the Institut Polytechnique de Paris, pursued alongside my final year at ENSTA Paris. I take graduate courses from the IP Paris master's programs in Data Science and Data & AI, as well as from the MVA master (ENS Paris-Saclay).",
+      fr: "Master de l'Institut Polytechnique de Paris, suivi en parallèle de ma dernière année à l'ENSTA Paris. Je suis des cours des masters Data Science et Data & IA de l'IP Paris, ainsi que du master MVA (ENS Paris-Saclay).",
+    },
+    highlights: {
+      en: [
+        '2nd in France and 41st worldwide (QS World University Rankings 2026)',
+        'M2 Data Science (École Polytechnique): Convex Analysis and Optimization Theory',
+        'M2 Data & AI (IP Paris): Kernel Machines, Deep Learning',
+        'MVA (ENS Paris-Saclay): Point Clouds and 3D Modeling',
+      ],
+      fr: [
+        '2ᵉ en France et 41ᵉ mondial (QS World University Rankings 2026)',
+        "M2 Data Science (École polytechnique) : Analyse convexe et théorie de l'optimisation",
+        'M2 Data & IA (IP Paris) : Méthodes à noyaux, Deep Learning',
+        'MVA (ENS Paris-Saclay) : Nuages de points et modélisation 3D',
+      ],
+    },
+  },
+  {
+    degree: {
+      en: 'M.Eng. in Artificial Intelligence & Cyber-Physical Systems (Final Year)',
+      fr: "Diplôme d'ingénieur, spécialité Intelligence Artificielle & Systèmes Cyber-Physiques (dernière année)",
     },
     institution: {
       en: 'ENSTA Paris (Institut Polytechnique de Paris)',
@@ -22,21 +53,21 @@ export const educationBackground: EducationBackground[] = [
     },
     logo: '/images/logo/ensta.png',
     startDate: { en: 'August 2024', fr: 'Août 2024' },
-    endDate: { en: 'August 2025', fr: 'Août 2025' },
+    endDate: { en: 'December 2027', fr: 'Décembre 2027' },
     description: {
-      en: 'ENSTA Paris is a prestigious engineering school in France, part of the Institut Polytechnique de Paris. Specialized in Artificial Intelligence and Cyber-Physical Systems, with a focus on machine learning, image recognition, microprocessor architecture, and robotic navigation.',
-      fr: "ENSTA Paris est une grande école d'ingénieurs prestigieuse en France, membre de l'Institut Polytechnique de Paris. Spécialisation en intelligence artificielle et systèmes cyber-physiques, avec un accent sur l'apprentissage automatique, la reconnaissance d'images, l'architecture des microprocesseurs et la navigation robotique.",
+      en: 'ENSTA Paris is a prestigious engineering school in France, part of the Institut Polytechnique de Paris. Now in my final year, specializing in Artificial Intelligence and Cyber-Physical Systems, with a focus on machine learning, image recognition, microprocessor architecture, and robotic navigation.',
+      fr: "ENSTA Paris est une grande école d'ingénieurs prestigieuse en France, membre de l'Institut Polytechnique de Paris. J'y suis en dernière année, spécialisé en intelligence artificielle et systèmes cyber-physiques, avec un accent sur l'apprentissage automatique, la reconnaissance d'images, l'architecture des microprocesseurs et la navigation robotique.",
     },
     highlights: {
       en: [
-        'AI and Cyber-Physical Systems specialization',
-        'Relevant Courses: Machine Learning, Image Recognition, Microprocessor Architecture, Statistical Learning, Control Theory, Robotic Navigation',
-        'Currently on a gap year (césure), gaining industry experience through AI/ML internships',
+        "2nd among French engineering schools (L'Étudiant ranking, 2025)",
+        'Relevant Courses: Machine Learning, Image Recognition, Statistical Learning, Control Theory, Robotic Navigation',
+        'Admissible to École Polytechnique; admitted to ENSTA Paris, Télécom Paris and ENSAE (international entrance exam)',
       ],
       fr: [
-        'Spécialisation en IA et systèmes cyber-physiques',
-        "Cours pertinents : apprentissage automatique, reconnaissance d'images, architecture des microprocesseurs, apprentissage statistique, théorie du contrôle, navigation robotique",
-        "Actuellement en année de césure, acquérant une expérience en entreprise grâce à des stages en IA/ML",
+        "2ᵉ école d'ingénieurs française (classement L'Étudiant 2025)",
+        "Cours pertinents : machine learning, reconnaissance d'images, apprentissage statistique, automatique, navigation robotique",
+        "Admissible à l'École polytechnique ; admis à l'ENSTA Paris, Télécom Paris et l'ENSAE (concours international)",
       ],
     },
   },
@@ -60,12 +91,10 @@ export const educationBackground: EducationBackground[] = [
       en: [
         'Preparatory program for competitive engineering entrance examinations',
         'Relevant Courses: Linear Algebra, Data Analysis, Mechanics, Differential Equations, Probability and Statistics',
-        'Admissible at the École Polytechnique entrance exam; admitted to IP Paris (ENSTA Paris, Télécom Paris, ENSAE)',
       ],
       fr: [
         "Programme préparatoire aux concours d'entrée aux écoles d'ingénieurs",
         'Cours pertinents : algèbre linéaire, analyse de données, mécanique, équations différentielles, probabilités et statistiques',
-        "Admissible au concours d'entrée de l'École Polytechnique ; admis à IP Paris (ENSTA Paris, Télécom Paris, ENSAE)",
       ],
     },
   },

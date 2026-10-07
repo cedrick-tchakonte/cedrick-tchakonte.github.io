@@ -30,7 +30,7 @@ export const projectsData: Project[] = [
       fr: "Développement d'un système automatisé de segmentation des vaisseaux rétiniens à l'aide d'opérateurs de dérivation d'image et de filtres vasculaires spécialisés pour des images rétiniennes acquises en ophtalmoscopie laser à balayage (SLO). Mise en œuvre de deux approches de segmentation évaluées sur les vérités terrain de la base IOSTAR, en appliquant des techniques avancées de traitement d'images, notamment des opérateurs de gradient et un filtrage morphologique, pour une détection précise des structures vasculaires.",
     },
     icon: FaEye,
-    href: 'https://github.com/CeGeek23/retinal-vessel-segmentation',
+    href: 'https://github.com/cedrick-tchakonte/retinal-vessel-segmentation',
     category: {
       en: 'Computer Vision & Biomedical Imaging',
       fr: 'Vision par ordinateur et imagerie biomédicale',
@@ -46,7 +46,7 @@ export const projectsData: Project[] = [
       fr: "Mise en œuvre d'attaques adverses ciblées et non ciblées fondées sur FGSM contre les modèles de segmentation DeepLabV3 et FCN (MS-COCO, PyTorch). Évaluation de la transférabilité entre architectures et de l'impact des perturbations sur la robustesse de la segmentation, mettant en évidence la vulnérabilité des modèles de vision profonds aux perturbations adverses.",
     },
     icon: FaShieldAlt,
-    href: 'https://github.com/CeGeek23/adversarial-attacks-segmentation',
+    href: 'https://github.com/cedrick-tchakonte/adversarial-attacks-segmentation',
     category: {
       en: 'Deep Learning & Adversarial ML',
       fr: 'Apprentissage profond et ML adverse',
@@ -62,7 +62,7 @@ export const projectsData: Project[] = [
       fr: "Mise en œuvre de solutions complètes de vision par ordinateur, dont une classification bayésienne et un partitionnement par K-means pour la détection de la peau sur le jeu de données Essex, atteignant une classification robuste au niveau du pixel. Développement d'un pipeline de détection de caractéristiques à l'aide des algorithmes Harris, ORB et KAZE avec OpenCV, en appliquant une analyse de gradient et des opérations morphologiques pour un appariement de points robuste à différentes échelles et transformations.",
     },
     icon: FaCamera,
-    href: 'https://github.com/CeGeek23/computer-vision-projects',
+    href: 'https://github.com/cedrick-tchakonte/computer-vision-projects',
     category: {
       en: 'Computer Vision & Image Processing',
       fr: "Vision par ordinateur et traitement d'images",
@@ -78,7 +78,7 @@ export const projectsData: Project[] = [
       fr: "Développement d'algorithmes d'optimisation de trajectoire pour des aéronefs à décollage et atterrissage verticaux, en collaboration avec l'entreprise Technoplane, en utilisant la cartographie 3D et la modélisation météorologique dynamique comme 4e dimension. Simulation et analyse de stratégies de planification de trajectoire en temps réel pour des systèmes de vol autonomes.",
     },
     icon: FaPlaneDeparture,
-    href: 'https://github.com/CeGeek23/vtol-navigation-system',
+    href: 'https://github.com/cedrick-tchakonte/vtol-navigation-system',
     category: {
       en: 'Aerospace & Navigation Systems',
       fr: 'Aérospatiale et systèmes de navigation',
@@ -91,7 +91,7 @@ export const projectsData: Project[] = [
       fr: "Un chatbot simple que j'ai réalisé avec PyQt5. Je voulais approfondir PyQt5 et apprendre à développer des applications de bureau. Le chatbot est une application simple qui permet de discuter avec un bot. Celui-ci peut répondre à des questions simples et fournir des informations sur la météo. Le chatbot utilise l'API OpenWeatherMap pour récupérer les informations météorologiques.",
     },
     icon: FaRobot,
-    href: 'https://github.com/CeGeek23/chatbot',
+    href: 'https://github.com/cedrick-tchakonte/chatbot',
     category: { en: 'Desktop Application', fr: 'Application de bureau' },
   },
   {
@@ -104,7 +104,7 @@ export const projectsData: Project[] = [
       fr: "Ce projet est un système simple de détection d'intrusion composé d'une application mobile, de cartes Arduino, de micro-caméras et d'un serveur. Le système est conçu pour détecter des intrus dans une pièce et envoyer une alerte sur le téléphone mobile de l'utilisateur. Il combine des capteurs de mouvement, des caméras et un serveur pour détecter les intrus et envoyer une alerte sur le téléphone de l'utilisateur. Le système est développé avec Arduino, Python, Flask et React Native.",
     },
     icon: FaVideo,
-    href: 'https://github.com/CeGeek23/Syst-me_detection_d_intrusion',
+    href: 'https://github.com/cedrick-tchakonte/Syst-me_detection_d_intrusion',
     category: { en: 'Security System', fr: 'Système de sécurité' },
   },
   {
@@ -117,7 +117,7 @@ export const projectsData: Project[] = [
       fr: "Ce projet est une application simple de prévision du trafic pour la ville de Yaoundé, au Cameroun. L'application s'appuie sur des données de trafic historiques pour prédire les conditions de circulation dans la ville. Elle utilise un modèle de machine learning pour prédire ces conditions à partir des données historiques. L'application est développée avec Python, Flask et React.",
     },
     icon: FaTrafficLight,
-    href: 'https://github.com/CeGeek23/traffic-prediction-yaounde',
+    href: 'https://github.com/cedrick-tchakonte/traffic-prediction-yaounde',
     category: {
       en: 'Machine Learning Model',
       fr: 'Modèle de machine learning',

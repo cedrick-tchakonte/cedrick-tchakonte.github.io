@@ -1,13 +1,13 @@
 # ⚡️ Bienvenue sur mon ePortfolio  
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Ftonsite.vercel.app&up_color=green)](https://eportfolio-cedrick-tchakonte.vercel.app/)
-![Vercel](https://img.shields.io/badge/Hébergé%20sur-Vercel-black?logo=vercel)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fcedrick-tchakonte.github.io&up_color=green)](https://cedrick-tchakonte.github.io/)
+![GitHub Pages](https://img.shields.io/badge/Hébergé%20sur-GitHub%20Pages-black?logo=github)
 ![Next.js](https://img.shields.io/badge/Framework-Next.js-blue?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/Code-TypeScript-informational?logo=typescript)
 ![Status](https://img.shields.io/badge/Statut-En%20cours%20de%20développement-yellow)
-![Stars](https://img.shields.io/github/stars/CeGeek23/myeportfolio?style=social)
-![Forks](https://img.shields.io/github/forks/CeGeek23/myeportfolio?style=social)
-![License](https://img.shields.io/github/license/CeGeek23/myeportfolio?color=blue)
+![Stars](https://img.shields.io/github/stars/cedrick-tchakonte/cedrick-tchakonte.github.io?style=social)
+![Forks](https://img.shields.io/github/forks/cedrick-tchakonte/cedrick-tchakonte.github.io?style=social)
+![License](https://img.shields.io/github/license/cedrick-tchakonte/cedrick-tchakonte.github.io?color=blue)
 
 ---
 
@@ -43,10 +43,10 @@ Ce site est **fait maison**, avec beaucoup d’amour et un peu de café :
 
 | 🧩 Tech          | 💡 Rôle                              |
 |------------------|--------------------------------------|
-| **Next.js**      | Framework principal (React & SSR)    |
+| **Next.js**      | Framework principal (export statique) |
 | **Tailwind CSS** | Styling moderne, responsive et clean |
 | **TypeScript**   | Typage solide pour coder sereinement |
-| **Vercel**       | Déploiement facile et rapide         |
+| **GitHub Pages** | Hébergement statique, déployé par GitHub Actions |
 | **Markdown**     | Pour les contenus dynamiques          |
 
 ---
@@ -67,7 +67,7 @@ Ce site est **fait maison**, avec beaucoup d’amour et un peu de café :
 ## 🤝 Ce que je cherche
 
 Je suis **ouvert aux collaborations, aux discussions, aux idées.**  
-Si tu veux parler IA, startup, stage de césure ou de PFE, ou juste prendre un café virtuel pour échanger : [->écris-moi !<-](https://eportfolio-cedrick-tchakonte.vercel.app/contact)
+Si tu veux parler IA, startup, stage de césure ou de PFE, ou juste prendre un café virtuel pour échanger : [->écris-moi !<-](https://cedrick-tchakonte.github.io/contact/)
 
 > Je suis à la recherche de stages / projets pour approfondir mes compétences, découvrir de nouveaux univers et faire de la tech **utile** et **humaine**.
 
@@ -77,7 +77,17 @@ Si tu veux parler IA, startup, stage de césure ou de PFE, ou juste prendre un c
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profil-blue?logo=linkedin&style=flat-square)](www.linkedin.com/in/cedrick-tchakonte)
 [![Gmail](https://img.shields.io/badge/Email-Me%20contacter-D14836?logo=gmail&logoColor=white)](mailto:tchakontecedrick@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Mon%20site-black?style=flat-square)](https://eportfolio-cedrick-tchakonte.vercel.app/contact)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Mon%20site-black?style=flat-square)](https://cedrick-tchakonte.github.io/contact/)
+
+---
+
+## 🚀 Déploiement
+
+Le site est exporté en statique (`next build` → `out/`) et publié sur **GitHub Pages** : https://cedrick-tchakonte.github.io (anglais à `/`, français à `/fr/`).
+
+- **Déployer** : un simple `git push` sur `master` déclenche le workflow GitHub Actions `.github/workflows/deploy.yml` (build + publication).
+- **Configuration (une seule fois)** : *Settings → Pages → Source : GitHub Actions*, puis *Settings → Secrets and variables → Actions* : ajouter `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` et `NEXT_PUBLIC_EMAILJS_PUBLIC_USER_ID` (formulaire de contact).
+- **En local** : `npm run dev`, ou `npm run build && npm start` pour servir l'export `out/`.
 
 ---
 

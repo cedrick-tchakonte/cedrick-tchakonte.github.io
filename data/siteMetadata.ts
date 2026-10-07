@@ -57,36 +57,36 @@ const siteMetadata: SiteMetadata = {
     fr: 'Portfolio de Cedrick Tchakonte',
   },
   description: {
-    en: 'Welcome to my personal portfolio. I am an engineering student in AI and Cyber-Physical Systems, passionate about machine learning, robotics and their real-world applications.',
-    fr: "Bienvenue sur mon portfolio. Je suis étudiant ingénieur en IA et Systèmes Cyber-Physiques, passionné de machine learning, de robotique et de leurs applications concrètes.",
+    en: 'Welcome to my personal portfolio. I am a final-year engineering student in Artificial Intelligence at ENSTA Paris (IP Paris), passionate about machine learning research, deep learning and computer vision.',
+    fr: "Bienvenue sur mon portfolio. Je suis élève ingénieur en dernière année à l'ENSTA Paris (IP Paris), spécialisé en intelligence artificielle et passionné de recherche en machine learning, de deep learning et de vision par ordinateur.",
   },
   author: 'Cedrick Tchakonte',
   authorHeadline: {
-    en: 'Machine Learning & AI Engineering Student | Cyber-Physical Systems at ENSTA Paris (IP Paris)',
-    fr: 'Étudiant Ingénieur en Machine Learning & IA | Systèmes Cyber-Physiques à ENSTA Paris (IP Paris)',
+    en: 'Final-Year Engineering Student in Artificial Intelligence | ENSTA Paris (IP Paris)',
+    fr: 'Élève ingénieur en dernière année – Intelligence Artificielle | ENSTA Paris (IP Paris)',
   },
   authorAbout: {
-    en: "Hi, I'm Cedrick! I completed my 2A (2nd year) at ENSTA Paris specializing in Artificial Intelligence and Cyber-Physical Systems. I'm currently doing a gap year (césure) as a Machine Learning Research Intern at Stellantis, applying AI to real-world engineering and safety challenges. I'm now looking for an end-of-studies internship (with the possibility of continuing into a PhD) in a world-class AI lab such as Google DeepMind, OpenAI, Meta FAIR, Mistral AI or Anthropic, where this kind of research actually happens.",
-    fr: "Salut, moi c'est Cedrick ! J'ai validé ma 2A à ENSTA Paris, spécialisé en Intelligence Artificielle et Systèmes Cyber-Physiques. Je suis actuellement en année de césure comme Machine Learning Research Intern chez Stellantis, où j'applique l'IA à des problèmes concrets d'ingénierie et de sécurité. Je recherche désormais un stage de fin d'études (avec la possibilité d'enchaîner sur un doctorat) dans un laboratoire d'IA de premier plan comme Google DeepMind, OpenAI, Meta FAIR, Mistral AI ou Anthropic, là où ce type de recherche se fait vraiment.",
+    en: "Hi, I'm Cedrick! I'm a final-year engineering student at ENSTA Paris (Institut Polytechnique de Paris), specializing in Artificial Intelligence, and I'm also enrolled in IP Paris's Master's in Data Science and AI. I recently completed a Machine Learning Research internship at Stellantis and I'm currently a Junior AI Engineer at RagLogic. I'm now looking for a six-month end-of-studies machine learning research internship starting in early 2027 (with the possibility of continuing into a PhD) in a world-class AI lab such as Google DeepMind, OpenAI, Meta FAIR, Mistral AI or Anthropic, where this kind of research actually happens.",
+    fr: "Salut, moi c'est Cedrick ! Je suis élève ingénieur en dernière année à l'ENSTA Paris (Institut Polytechnique de Paris), spécialisé en Intelligence Artificielle, et je suis aussi inscrit au master Data Science et Intelligence Artificielle de l'IP Paris. Je viens de terminer un stage de recherche en machine learning chez Stellantis et je suis actuellement ingénieur IA junior chez RagLogic. Je recherche désormais un stage de recherche de fin d'études de six mois en machine learning, dès début 2027 (avec la possibilité d'enchaîner sur un doctorat), dans un laboratoire d'IA de premier plan comme Google DeepMind, OpenAI, Meta FAIR, Mistral AI ou Anthropic, là où ce type de recherche se fait vraiment.",
   },
   authorAboutExtended: {
-    en: "Cedrick completed his 2A at ENSTA Paris (Institut Polytechnique de Paris), specializing in Artificial Intelligence and Cyber-Physical Systems. Passionate about machine learning, robotics, and their real-world applications, he is using his gap year to gain hands-on experience. He is currently a Machine Learning Research Intern at Stellantis and a Junior AI Engineer at TAEP (ENSTA's Junior Enterprise), and has previously worked at STMicroelectronics and Objectware. He is driven to contribute to impactful projects that push the boundaries of AI and technology.",
-    fr: "Cedrick a validé sa 2A à ENSTA Paris (Institut Polytechnique de Paris), spécialisé en Intelligence Artificielle et Systèmes Cyber-Physiques. Passionné de machine learning, de robotique et de leurs applications concrètes, il profite de son année de césure pour acquérir de l'expérience de terrain. Il est actuellement Machine Learning Research Intern chez Stellantis et Junior AI Engineer à la TAEP (la Junior-Entreprise de l'ENSTA), après être passé par STMicroelectronics et Objectware. Il aime contribuer à des projets à fort impact qui repoussent les limites de l'IA et de la technologie.",
+    en: "Cedrick is a final-year engineering student at ENSTA Paris (Institut Polytechnique de Paris), specializing in Artificial Intelligence and Cyber-Physical Systems, and is also enrolled in IP Paris's Master's in Data Science and AI. Passionate about machine learning research, especially deep learning and computer vision, he is currently a Junior AI Engineer at RagLogic (with TAEP, ENSTA's Junior Enterprise), and has previously worked as a Machine Learning Research Intern at Stellantis and as an R&D intern at STMicroelectronics. He is driven to contribute to impactful projects that push the boundaries of AI and technology.",
+    fr: "Cedrick est élève ingénieur en dernière année à l'ENSTA Paris (Institut Polytechnique de Paris), spécialisé en Intelligence Artificielle et Systèmes Cyber-Physiques, et également inscrit au master Data Science et Intelligence Artificielle de l'IP Paris. Passionné de recherche en machine learning, en particulier de deep learning et de vision par ordinateur, il est actuellement ingénieur IA junior chez RagLogic (avec la TAEP, la Junior-Entreprise de l'ENSTA), et a auparavant travaillé chez Stellantis comme stagiaire de recherche en machine learning et chez STMicroelectronics comme stagiaire R&D. Il aime contribuer à des projets à fort impact qui repoussent les limites de l'IA et de la technologie.",
   },
   socials: {
     x: 'https://x.com/Cdrick237',
     facebook: 'https://www.facebook.com/profile.php?id=100011695911246',
-    github: 'https://github.com/CeGeek23',
+    github: 'https://github.com/cedrick-tchakonte',
     linkedin: 'https://www.linkedin.com/in/cedrick-tchakonte',
     instagram: 'https://www.instagram.com/cedrick_frame',
   },
-  siteUrl: 'https://eportfolio-cedrick-tchakonte.vercel.app',
+  siteUrl: 'https://cedrick-tchakonte.github.io',
   email: 'cedrick.tchakonte@ensta.fr',
   phoneNumber: '0758744186',
   contactTitle: { en: 'Get in touch', fr: 'Me contacter' },
   contactSubtitle: {
-    en: "I completed my 2A in AI and Cyber-Physical Systems at ENSTA Paris and I'm currently on a gap year, working as a Machine Learning Research Intern at Stellantis. I'm looking for an end-of-studies internship (with the possibility of pursuing a PhD) in a leading AI lab where I can be at the heart of innovation. If you'd like to discuss potential collaborations or opportunities, please reach out using the form below.",
-    fr: "J'ai validé ma 2A en IA et Systèmes Cyber-Physiques à ENSTA Paris et je suis en année de césure comme Machine Learning Research Intern chez Stellantis. Je recherche un stage de fin d'études (avec la possibilité d'enchaîner sur un doctorat) dans un laboratoire d'IA de premier plan, au cœur de l'innovation. Pour échanger sur une collaboration ou une opportunité, écris-moi via le formulaire ci-dessous.",
+    en: "I'm a final-year engineering student at ENSTA Paris (IP Paris), specializing in Artificial Intelligence, and currently a Junior AI Engineer at RagLogic. I'm looking for a six-month end-of-studies machine learning research internship starting in early 2027 (with the possibility of pursuing a PhD) in a leading AI lab where I can be at the heart of innovation. If you'd like to discuss potential collaborations or opportunities, please reach out using the form below.",
+    fr: "Je suis élève ingénieur en dernière année à l'ENSTA Paris (IP Paris), spécialisé en Intelligence Artificielle, et actuellement ingénieur IA junior chez RagLogic. Je recherche un stage de recherche de fin d'études de six mois en machine learning, dès début 2027 (avec la possibilité d'enchaîner sur un doctorat), dans un laboratoire d'IA de premier plan, au cœur de l'innovation. Pour échanger sur une collaboration ou une opportunité, écris-moi via le formulaire ci-dessous.",
   },
   analytics: {
     plausibleDataDomain: 'cedricktchakonte.com', // e.g. tailwind-nextjs-starter-blog.vercel.app
@@ -137,7 +137,7 @@ const siteMetadata: SiteMetadata = {
       href: '/contact',
     },
   ],
-  siteRepo: 'https://github.com/CeGeek23/myeportfolio',
+  siteRepo: 'https://github.com/cedrick-tchakonte/cedrick-tchakonte.github.io',
   testimonial: {
     comment: {
       en: '“I build AI systems that bridge research and real-world impact, from surrogate models for vehicle safety to Graph RAG for complex regulation. I care about rigor, clarity, and technology that genuinely helps people.”',
@@ -145,8 +145,8 @@ const siteMetadata: SiteMetadata = {
     },
     author: 'Cedrick Tchakonte',
     authorTitle: {
-      en: 'AI & Cyber-Physical Systems Engineering Student, ENSTA Paris (IP Paris)',
-      fr: 'Étudiant Ingénieur en IA & Systèmes Cyber-Physiques, ENSTA Paris (IP Paris)',
+      en: 'Final-Year Engineering Student in Artificial Intelligence, ENSTA Paris (IP Paris)',
+      fr: 'Élève ingénieur en dernière année – Intelligence Artificielle, ENSTA Paris (IP Paris)',
     },
     imgUrl: '/images/avatar.jpg',
     imageAttribution: 'Photo by Cedrick Tchakonte',
@@ -158,8 +158,8 @@ const siteMetadata: SiteMetadata = {
       fr: "Ce que j'ai fait pour laisser ma trace.",
     },
     intro: {
-      en: "After completing my 2A at ENSTA Paris (Institut Polytechnique de Paris), specializing in AI and Cyber-Physical Systems, I'm using my gap year to gain practical experience. I'm currently a Machine Learning Research Intern at Stellantis, and I've worked on impactful AI projects at STMicroelectronics, Objectware, and TAEP, ranging from Digital Twin simulation and embedded AI to LLM-based decision support and Graph RAG systems.",
-      fr: "Après avoir validé ma 2A à ENSTA Paris (Institut Polytechnique de Paris), spécialisé en IA et Systèmes Cyber-Physiques, je profite de mon année de césure pour acquérir de l'expérience concrète. Je suis actuellement Machine Learning Research Intern chez Stellantis, et j'ai mené des projets d'IA à fort impact chez STMicroelectronics, Objectware et la TAEP, de la simulation de jumeaux numériques et l'IA embarquée à l'aide à la décision par LLM et aux systèmes de Graph RAG.",
+      en: "Now in my final year at ENSTA Paris (Institut Polytechnique de Paris), specializing in AI and Cyber-Physical Systems, I've gained hands-on experience through research and engineering roles in industry. I'm currently a Junior AI Engineer at RagLogic, and I've also worked at Stellantis and STMicroelectronics. My projects range from 3D surrogate models for pedestrian safety and Digital Twin generation for embedded systems to LLM-based decision support and Graph RAG systems.",
+      fr: "Désormais en dernière année à l'ENSTA Paris (Institut Polytechnique de Paris), spécialisé en IA et Systèmes Cyber-Physiques, j'ai acquis une expérience concrète au fil de missions de recherche et d'ingénierie en entreprise. Je suis actuellement ingénieur IA junior chez RagLogic, et j'ai également travaillé chez Stellantis et STMicroelectronics. Mes projets vont des modèles de substitution 3D pour la sécurité des piétons et de la génération de jumeaux numériques pour les systèmes embarqués à l'aide à la décision par LLM et aux systèmes de Graph RAG.",
     },
   },
 }

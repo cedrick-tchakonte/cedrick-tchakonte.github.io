@@ -15,17 +15,17 @@ export interface VolunteerActivity {
 
 export const volunteerActivities: VolunteerActivity[] = [
   {
-    title: { en: 'Finance Officer', fr: 'Responsable des finances' },
+    title: { en: 'Treasurer', fr: 'Trésorier' },
     organization: 'ENSTAFRIK Association',
     date: { en: 'April 2025 - Present', fr: 'Avril 2025 - Présent' },
     description: {
       en: [
-        'Management of financial operations and preparation of budgets for the association.',
+        'Budget management and sponsorship of cultural events for the association.',
         'Coordination of cultural events and activities for the ENSTA community.',
         'Working with diverse teams to organize events that promote African culture and community engagement.',
       ],
       fr: [
-        "Gestion des opérations financières et préparation des budgets de l'association.",
+        "Gestion du budget et recherche de sponsors pour les événements culturels de l'association.",
         "Coordination d'événements et d'activités culturels pour la communauté de l'ENSTA.",
         "Collaboration avec des équipes variées pour organiser des événements valorisant la culture africaine et l'engagement communautaire.",
       ],

@@ -16,8 +16,8 @@ export const features: Feature[] = [
       fr: 'IA et systèmes cyber-physiques',
     },
     description: {
-      en: 'Currently specializing in AI and Cyber-Physical Systems at ENSTA Paris. Working on advanced machine learning algorithms, computer vision, and robotic navigation systems. Experience with TensorFlow, PyTorch, and ROS.',
-      fr: "Actuellement en spécialisation en IA et systèmes cyber-physiques à l'ENSTA Paris. Je travaille sur des algorithmes avancés de machine learning, la vision par ordinateur et les systèmes de navigation robotique. Expérience avec TensorFlow, PyTorch et ROS.",
+      en: 'In my final year at ENSTA Paris, specializing in AI and Cyber-Physical Systems. Working on advanced machine learning algorithms, computer vision, and robotic navigation systems. Experience with TensorFlow, PyTorch, and ROS.',
+      fr: "En dernière année à l'ENSTA Paris, spécialisé en IA et systèmes cyber-physiques. Je travaille sur des algorithmes avancés de machine learning, la vision par ordinateur et les systèmes de navigation robotique. Expérience avec TensorFlow, PyTorch et ROS.",
     },
     icon: RiRobotLine,
   },
@@ -27,8 +27,8 @@ export const features: Feature[] = [
       fr: 'Expérience professionnelle',
     },
     description: {
-      en: 'Gaining hands-on industry experience as a Machine Learning Research Intern at Stellantis, and through internships at TAEP, Objectware and STMicroelectronics. My work spans surrogate modeling, Graph RAG, LLM-based decision support and Digital Twin simulations.',
-      fr: "J'acquiers une expérience concrète en entreprise en tant que stagiaire chercheur en machine learning chez Stellantis, ainsi que lors de stages chez TAEP, Objectware et STMicroelectronics. Mes travaux couvrent la modélisation de substitution, le Graph RAG, l'aide à la décision fondée sur les LLM et les simulations de jumeaux numériques.",
+      en: "Gaining hands-on industry experience as a Junior AI Engineer at RagLogic (with TAEP, ENSTA's Junior Enterprise), and through research and R&D internships at Stellantis and STMicroelectronics. My work spans surrogate modeling, Graph RAG, LLM-based decision support and Digital Twin generation.",
+      fr: "J'acquiers une expérience concrète en entreprise en tant qu'ingénieur IA junior chez RagLogic (avec la TAEP, la Junior-Entreprise de l'ENSTA), ainsi que lors de stages de recherche et de R&D chez Stellantis et STMicroelectronics. Mes travaux couvrent la modélisation de substitution, le Graph RAG, l'aide à la décision fondée sur les LLM et la génération de jumeaux numériques.",
     },
     icon: IoSchoolOutline,
   },

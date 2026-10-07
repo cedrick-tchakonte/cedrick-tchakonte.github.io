@@ -37,7 +37,8 @@ const modeScript = `
 `
 
 export default function Document(props: DocumentProps) {
-  const locale = props.__NEXT_DATA__?.locale ?? 'en'
+  const page = props.__NEXT_DATA__?.page ?? '/'
+  const locale = page === '/fr' || page.startsWith('/fr/') ? 'fr' : 'en'
   return (
     <Html className="h-full scroll-smooth antialiased" lang={locale}>
       <Head>

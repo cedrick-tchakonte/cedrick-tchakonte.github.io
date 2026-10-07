@@ -5,8 +5,8 @@ export type MobilityLocation = {
   country: string;
   image: string;
   description: I18n<string>;
-  startDate: string;
-  endDate: string;
+  startDate: string | I18n<string>;
+  endDate: string | I18n<string>;
   university: string;
   credit?: string;
 };
@@ -17,11 +17,11 @@ export const mobilityData: MobilityLocation[] = [
       country: 'France',
       image: '/images/paris.jpg',
       description: {
-        en: 'Studied at ENSTA Paris, specializing in AI and Cyber-Physical Systems, and now based in the Paris region for my gap year, with AI roles at TAEP, Objectware and Stellantis.',
-        fr: "J'ai étudié à ENSTA Paris, en me spécialisant en IA et systèmes cyber-physiques, et je suis désormais basé en région parisienne pour mon année de césure, avec des missions en IA chez TAEP, Objectware et Stellantis.",
+        en: 'Based in the Paris region since 2024 for my engineering studies at ENSTA Paris (AI and Cyber-Physical Systems), and currently working as a Junior AI Engineer at RagLogic, at Station F in Paris.',
+        fr: "Basé en région parisienne depuis 2024 pour mes études d'ingénieur à l'ENSTA Paris (IA et systèmes cyber-physiques), je travaille actuellement comme ingénieur IA junior chez RagLogic, à Station F, à Paris.",
       },
       startDate: '2024',
-      endDate: 'Present',
+      endDate: { en: 'Present', fr: 'Présent' },
       university: 'ENSTA Paris',
     },
     {
@@ -29,11 +29,11 @@ export const mobilityData: MobilityLocation[] = [
       country: 'France',
       image: '/images/palaiseau.jpg',
       description: {
-        en: 'Studying Artificial Intelligence and Cyber-Physical Systems at ENSTA Paris, on the Plateau de Saclay campus of the Institut Polytechnique de Paris.',
-        fr: "J'étudie l'intelligence artificielle et les systèmes cyber-physiques à ENSTA Paris, sur le campus du Plateau de Saclay de l'Institut Polytechnique de Paris.",
+        en: "Final year at ENSTA Paris, specializing in Artificial Intelligence and Cyber-Physical Systems, alongside IP Paris's Master's in Data Science and AI, on the Plateau de Saclay campus of the Institut Polytechnique de Paris.",
+        fr: "Dernière année à l'ENSTA Paris, en intelligence artificielle et systèmes cyber-physiques, en parallèle du master Data Science et Intelligence Artificielle de l'IP Paris, sur le campus du Plateau de Saclay de l'Institut Polytechnique de Paris.",
       },
       startDate: '2024',
-      endDate: 'Present',
+      endDate: { en: 'Present', fr: 'Présent' },
       university: 'ENSTA Paris (IP Paris)',
       credit: 'Photo: RutoSu / Wikimedia, CC BY-SA 4.0',
     },
@@ -42,12 +42,12 @@ export const mobilityData: MobilityLocation[] = [
       country: 'France',
       image: '/images/poissy.jpg',
       description: {
-        en: 'Machine Learning Research Intern at the Stellantis grEEn-Campus, building multimodal datasets and 3D CNN/GNN surrogate models to predict pedestrian protection metrics for vehicle safety.',
-        fr: "Stagiaire chercheur en apprentissage automatique au grEEn-Campus de Stellantis, où je construis des jeux de données multimodaux et des modèles substituts CNN/GNN 3D pour prédire les métriques de protection des piétons liées à la sécurité des véhicules.",
+        en: 'Machine Learning Research internship at the Stellantis GrEEn Campus, where I built a multimodal dataset and 3D CNN/GNN surrogate models to predict pedestrian-protection metrics for vehicle safety.',
+        fr: "Stage de recherche en machine learning au GrEEn Campus de Stellantis, où j'ai constitué un jeu de données multimodal et conçu des modèles de substitution 3D CNN/GNN pour prédire les critères de protection des piétons liés à la sécurité des véhicules.",
       },
       startDate: '2026',
-      endDate: 'Present',
-      university: 'Stellantis grEEn-Campus',
+      endDate: '2026',
+      university: 'Stellantis GrEEn Campus',
       credit: 'Photo: Akiry / Wikimedia, CC BY-SA 3.0',
     },
     {
@@ -94,7 +94,7 @@ export const mobilityData: MobilityLocation[] = [
         en: "My birthplace and hometown where I spent most of my childhood and completed my secondary studies, obtaining my Baccalaureate diploma with honors before continuing my studies in Yaoundé.",
         fr: "Ma ville natale, où j'ai passé la majeure partie de mon enfance et terminé mes études secondaires, obtenant mon baccalauréat avec mention avant de poursuivre mes études à Yaoundé.",
       },
-      startDate: 'Birth',
+      startDate: { en: 'Birth', fr: 'Naissance' },
       endDate: '2020',
       university: 'Lycée Bilingue de Nylon Ndogpassi',
     },

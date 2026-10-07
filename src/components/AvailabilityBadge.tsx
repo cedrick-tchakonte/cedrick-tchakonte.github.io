@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useT } from '@/i18n'
 
-const GapYearBadge = () => {
+const AvailabilityBadge = () => {
   const t = useT()
 
   return (
@@ -17,12 +17,12 @@ const GapYearBadge = () => {
       </span>
       <span>
         {t({
-          en: 'On a Gap Year · ML Research Intern @ Stellantis',
-          fr: 'En année de césure · Stagiaire chercheur ML @ Stellantis',
+          en: 'Open to a 6-month ML research internship · early 2027',
+          fr: 'Disponible pour un stage de recherche ML de 6 mois · début 2027',
         })}
       </span>
     </motion.div>
   )
 }
 
-export default GapYearBadge
+export default AvailabilityBadge

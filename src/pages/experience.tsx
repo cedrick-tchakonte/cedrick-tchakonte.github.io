@@ -37,8 +37,8 @@ export default function Experience() {
             <li key={index}>
               <EntryCard
                 logo={experience.logo}
-                logoAlt={experience.company}
-                title={`${t(experience.title)} ${t({ en: 'at', fr: 'chez' })} ${experience.company}`}
+                logoAlt={t(experience.company)}
+                title={`${t(experience.title)} ${t({ en: 'at', fr: 'chez' })} ${t(experience.company)}`}
                 date={t(experience.date)}
                 location={t(experience.location)}
                 bullets={t(experience.description)}

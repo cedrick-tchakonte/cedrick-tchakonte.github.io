@@ -9,6 +9,7 @@ import { certifications } from '@/content/certifications'
 
 export default function Certifications() {
   const platformCount = new Set(certifications.map((c) => c.issuer)).size
+  const latestYear = Math.max(...certifications.map((c) => Number(c.date.en.slice(-4))))
   const t = useT()
 
   const stats: { icon: IconType; value: string | number; label: I18n<string> }[] = [
@@ -24,7 +25,7 @@ export default function Certifications() {
     },
     {
       icon: FaCalendarAlt,
-      value: '2025',
+      value: latestYear,
       label: { en: 'Latest year', fr: 'Dernière année' },
     },
     {
@@ -84,6 +85,7 @@ export default function Certifications() {
                   typeof certification.name === 'string'
                     ? certification.name
                     : t(certification.name),
+                date: t(certification.date),
                 description: t(certification.description),
               }}
             />

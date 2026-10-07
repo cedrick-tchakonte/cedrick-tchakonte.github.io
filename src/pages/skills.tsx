@@ -35,14 +35,14 @@ export default function Skills() {
               <div className="grid grid-cols-2 gap-4 mt-4 sm:grid-cols-3 lg:grid-cols-6">
                 {skillCategory.items.map((skill) => (
                   <div
-                    key={skill.name}
+                    key={typeof skill.name === 'string' ? skill.name : skill.name.en}
                     className="flex items-center gap-3 p-4 bg-white border shadow-sm dark:bg-primaryText-800 rounded-xl border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300 hover:shadow-md hover:border-accent-300 dark:hover:border-accent-600"
                   >
                     <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-white rounded-lg bg-accent-500">
                       <skill.icon className="w-6 h-6" aria-hidden="true" />
                     </div>
                     <div className="text-sm font-medium text-primaryText-900 dark:text-primaryText-100">
-                      {skill.name}
+                      {typeof skill.name === 'string' ? skill.name : t(skill.name)}
                     </div>
                   </div>
                 ))}

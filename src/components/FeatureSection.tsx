@@ -16,8 +16,8 @@ const FeatureSection = () => {
           })}
           title={t({ en: 'Why Choose Me?', fr: 'Pourquoi me choisir ?' })}
           subtitle={t({
-            en: 'I am an engineering student specializing in AI and Cyber-Physical Systems at ENSTA Paris, currently on a gap year gaining hands-on industry experience. My projects and professional experiences reflect my dedication and innovative approach in AI and technology.',
-            fr: "Je suis un étudiant ingénieur spécialisé en IA et systèmes cyber-physiques à l'ENSTA Paris, actuellement en année de césure pour acquérir une expérience concrète en entreprise. Mes projets et mes expériences professionnelles reflètent mon engagement et mon approche innovante en IA et en technologie.",
+            en: 'I am a final-year engineering student specializing in AI and Cyber-Physical Systems at ENSTA Paris, with hands-on industry experience in machine learning research and AI engineering. My projects and professional experiences reflect my dedication and innovative approach in AI and technology.',
+            fr: "Je suis élève ingénieur en dernière année à l'ENSTA Paris, spécialisé en IA et systèmes cyber-physiques, avec une expérience concrète en entreprise en recherche en machine learning et en ingénierie IA. Mes projets et mes expériences professionnelles reflètent mon engagement et mon approche innovante en IA et en technologie.",
           })}
         />
 

@@ -1,12 +1,11 @@
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Popover, Transition, Menu } from '@headlessui/react'
 import clsx from 'clsx'
 import { FaGlobe } from 'react-icons/fa'
 
 import { Container } from '@/components/Container'
+import { LocaleLink } from '@/components/LocaleLink'
 import { useLocale, useT, type I18n } from '@/i18n'
 import avatarImage from '@/images/avatar.jpg'
 import {
@@ -32,9 +31,9 @@ const siteNavLinks: NavLink[] = siteMetadata.siteNavLinks
 
 // Desktop Dropdown Menu Component
 function DropdownMenu({ link }: { link: NavLink }) {
-  const router = useRouter()
+  const { pathname } = useLocale()
   const t = useT()
-  const isActive = link.submenu?.some(item => router.pathname === item.href)
+  const isActive = link.submenu?.some(item => pathname === item.href)
 
   return (
     <li className="relative flex items-center">
@@ -77,11 +76,11 @@ function DropdownMenu({ link }: { link: NavLink }) {
             >
               <Menu.Items className="absolute left-0 z-50 mt-3 w-56 origin-top-left rounded-2xl bg-white/95 dark:bg-primaryText-900/95 shadow-2xl ring-1 ring-primaryText-900/10 dark:ring-white/10 focus:outline-none border border-primaryText-200/50 dark:border-primaryText-700/50 backdrop-blur-xl py-2">
                 {link.submenu?.map((item) => {
-                  const isItemActive = router.pathname === item.href
+                  const isItemActive = pathname === item.href
                   return (
                     <Menu.Item key={item.href}>
                       {({ active }) => (
-                        <Link
+                        <LocaleLink
                           href={item.href}
                           className={clsx(
                             'block px-4 py-2.5 text-sm font-medium transition-all duration-200 mx-2 rounded-lg',
@@ -93,7 +92,7 @@ function DropdownMenu({ link }: { link: NavLink }) {
                           )}
                         >
                           {t(item.name)}
-                        </Link>
+                        </LocaleLink>
                       )}
                     </Menu.Item>
                   )
@@ -116,11 +115,11 @@ type MobileNavItemProps = {
 // used to list items in mobile nav
 function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const router = useRouter()
+  const { pathname } = useLocale()
   const t = useT()
 
   if (submenu) {
-    const hasActiveChild = submenu.some(item => router.pathname === item.href)
+    const hasActiveChild = submenu.some(item => pathname === item.href)
 
     return (
       <li>
@@ -142,11 +141,11 @@ function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
         {isOpen && (
           <ul className="pl-4 mt-2 space-y-1">
             {submenu.map((item) => {
-              const isActive = router.pathname === item.href
+              const isActive = pathname === item.href
               return (
                 <li key={item.href}>
                   <Popover.Button
-                    as={Link}
+                    as={LocaleLink}
                     href={item.href}
                     className={clsx(
                       'block px-4 py-2 text-sm rounded-lg transition-all duration-200',
@@ -166,11 +165,11 @@ function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
     )
   }
 
-  const isActive = router.pathname === href
+  const isActive = pathname === href
 
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block">
+      <Popover.Button as={LocaleLink} href={href} className="block">
         <span className={clsx(
           "flex items-center justify-between w-full px-4 py-3 rounded-xl transition-all duration-300 hover:shadow-md group font-medium",
           isActive
@@ -254,11 +253,11 @@ type NavItemProps = {
 
 // used to list items in desktop nav
 function NavItem({ href, children }: NavItemProps) {
-  let isActive = useRouter().pathname === href
+  let isActive = useLocale().pathname === href
 
   return (
     <li className="relative flex items-center">
-      <Link
+      <LocaleLink
         href={href}
         className={clsx(
           'relative px-3 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium whitespace-nowrap flex items-center',
@@ -268,7 +267,7 @@ function NavItem({ href, children }: NavItemProps) {
         )}
       >
         {children}
-      </Link>
+      </LocaleLink>
     </li>
   )
 }
@@ -369,13 +368,13 @@ function AvatarContainer({ className, ...props }: React.ComponentPropsWithoutRef
   )
 }
 
-type AvatarProps = Omit<React.ComponentPropsWithoutRef<typeof Link>, 'href'> & {
+type AvatarProps = Omit<React.ComponentPropsWithoutRef<typeof LocaleLink>, 'href'> & {
   large?: boolean
 }
 
 function Avatar({ large = false, className, ...props }: AvatarProps) {
   return (
-    <Link
+    <LocaleLink
       href="/"
       aria-label="Home"
       className={clsx(className, 'pointer-events-auto')}
@@ -391,12 +390,12 @@ function Avatar({ large = false, className, ...props }: AvatarProps) {
           large ? 'h-16 w-16' : 'h-9 w-9'
         )}
       />
-    </Link>
+    </LocaleLink>
   )
 }
 
 export function Header() {
-  let isHomePage = useRouter().pathname === '/'
+  let isHomePage = useLocale().pathname === '/'
 
   let headerRef = useRef<HTMLDivElement>(null)
   let avatarRef = useRef<HTMLDivElement>(null)

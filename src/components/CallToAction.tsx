@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { LocaleLink } from '@/components/LocaleLink'
 import { useT } from '@/i18n'
 
 const CallToAction = () => {
@@ -20,12 +20,12 @@ const CallToAction = () => {
         </h2>
         <div className="flex mt-8 lg:mt-0 lg:flex-shrink-0">
           <div className="inline-flex rounded-md shadow">
-            <Link
+            <LocaleLink
               href="/contact"
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white border border-transparent rounded-md bg-accent-500 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105"
             >
               {t({ en: 'Discuss with me now!', fr: 'Discutons-en !' })}
-            </Link>
+            </LocaleLink>
           </div>
         </div>
       </div>
