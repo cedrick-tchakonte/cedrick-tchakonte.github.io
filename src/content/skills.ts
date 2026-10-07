@@ -8,12 +8,10 @@ import {
   FaHtml5,
   FaJs,
   FaCss3Alt,
-  FaAws,
   FaNodeJs,
   FaReact,
 } from 'react-icons/fa'
 import {
-  SiSpringboot,
   SiNextdotjs,
   SiPycharm,
   SiVisualstudio,
@@ -25,21 +23,16 @@ import {
   SiPostgresql,
   SiKeras,
   SiScikitlearn,
-  SiNumpy,
-  SiPandas,
   SiOpencv,
   SiAnaconda,
   SiVisualstudiocode,
   SiEclipseide,
   SiIntellijidea,
-  SiGooglecloud,
-  SiSpringsecurity,
   SiR,
   SiNeo4J,
   SiLatex,
   SiC,
 } from 'react-icons/si'
-import { SiAzuredevops } from 'react-icons/si'
 import {
   FaTerminal,
   FaCode,
@@ -90,8 +83,6 @@ export const skills: SkillCategory[] = [
       { name: 'Jupyter', icon: SiJupyter },
       { name: 'Keras', icon: SiKeras },
       { name: 'Scikit-Learn', icon: SiScikitlearn },
-      { name: 'NumPy', icon: SiNumpy },
-      { name: 'Pandas', icon: SiPandas },
       { name: 'OpenCV', icon: SiOpencv },
       { name: 'Hugging Face', icon: FaRobot },
       { name: 'Transformers', icon: FaRobot },
@@ -134,21 +125,11 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: { en: 'Cloud Platforms', fr: 'Plateformes cloud' },
-    items: [
-      { name: 'AWS', icon: FaAws },
-      { name: 'Azure', icon: SiAzuredevops },
-      { name: 'Google-Cloud', icon: SiGooglecloud },
-    ],
-  },
-  {
     category: { en: 'Web Development', fr: 'Développement web' },
     items: [
       { name: 'Node.JS', icon: FaNodeJs },
       { name: 'React', icon: FaReact },
       { name: 'Next.JS', icon: SiNextdotjs },
-      { name: 'SpringBoot', icon: SiSpringboot },
-      { name: 'Spring-Security', icon: SiSpringsecurity },
     ],
   },
   {

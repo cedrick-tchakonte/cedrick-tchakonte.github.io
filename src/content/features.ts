@@ -49,8 +49,8 @@ export const features: Feature[] = [
       fr: 'Développement full-stack',
     },
     description: {
-      en: 'Proficient in Python, R and MATLAB, as well as Java, JavaScript and C++, with experience in React, Next.js, AWS, Azure, Docker and Git, and solid software engineering foundations.',
-      fr: "Maîtrise de Python, R et MATLAB, ainsi que Java, JavaScript et C++, avec une expérience de React, Next.js, AWS, Azure, Docker et Git, et de solides bases en génie logiciel.",
+      en: 'Proficient in Python, R and MATLAB, as well as Java, JavaScript and C++, with experience in React, Next.js, Docker and Git, and solid software engineering foundations.',
+      fr: "Maîtrise de Python, R et MATLAB, ainsi que Java, JavaScript et C++, avec une expérience de React, Next.js, Docker et Git, et de solides bases en génie logiciel.",
     },
     icon: IoCodeWorkingOutline,
   },
