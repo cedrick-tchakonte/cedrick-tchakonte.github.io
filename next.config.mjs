@@ -1,10 +1,6 @@
-import nextMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
-import rehypePrism from '@mapbox/rehype-prism'
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['tsx', 'ts', 'mdx'],
+  pageExtensions: ['tsx', 'ts'],
   reactStrictMode: true,
   // Fully static export for GitHub Pages. French pages live under src/pages/fr.
   output: 'export',
@@ -34,12 +30,4 @@ const nextConfig = {
   },
 }
 
-const withMDX = nextMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypePrism],
-  },
-})
-
-export default withMDX(nextConfig)
+export default nextConfig

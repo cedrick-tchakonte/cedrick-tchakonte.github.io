@@ -1,99 +1,64 @@
-# ⚡️ Bienvenue sur mon ePortfolio  
+# Portfolio de Cedrick Tchakonte
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fcedrick-tchakonte.github.io&up_color=green)](https://cedrick-tchakonte.github.io/)
-![GitHub Pages](https://img.shields.io/badge/Hébergé%20sur-GitHub%20Pages-black?logo=github)
-![Next.js](https://img.shields.io/badge/Framework-Next.js-blue?logo=next.js)
-![TypeScript](https://img.shields.io/badge/Code-TypeScript-informational?logo=typescript)
-![Status](https://img.shields.io/badge/Statut-En%20cours%20de%20développement-yellow)
-![Stars](https://img.shields.io/github/stars/cedrick-tchakonte/cedrick-tchakonte.github.io?style=social)
-![Forks](https://img.shields.io/github/forks/cedrick-tchakonte/cedrick-tchakonte.github.io?style=social)
+[![Site](https://img.shields.io/website?url=https%3A%2F%2Fcedrick-tchakonte.github.io&label=site&up_color=green)](https://cedrick-tchakonte.github.io/)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-informational?logo=typescript)
 ![License](https://img.shields.io/github/license/cedrick-tchakonte/cedrick-tchakonte.github.io?color=blue)
 
----
+Code source de mon portfolio, en ligne en [anglais](https://cedrick-tchakonte.github.io/) et en [français](https://cedrick-tchakonte.github.io/fr/).
 
-## 👋 Moi c’est Cedrick !
+> « Pas besoin d'être un génie, il suffit d'être curieux. »
 
-> "*Pas besoin d’être un génie, il suffit d’être curieux.*"
+## Qui je suis
 
-🎓 Je suis actuellement en 2ᵉ année à l’**ENSTA Paris**, une grande école d’ingénieurs, où je me spécialise progressivement dans les domaines qui me passionnent : **l’intelligence artificielle**, **la robotique**, et **les domaines de la tech** au sens large.  
+Élève ingénieur en dernière année à l'**ENSTA Paris** (Institut Polytechnique de Paris), spécialisé en intelligence artificielle, et inscrit au master **Data Science et Intelligence Artificielle** de l'IP Paris. J'ai travaillé sur des modèles de substitution 3D chez Stellantis, sur la génération de jumeaux numériques chez STMicroelectronics, et je suis aujourd'hui ingénieur IA junior chez RagLogic (Station F).
 
-🧠 Mon parcours est celui d’un jeune curieux, qui cherche à comprendre le monde, à le rendre un peu plus simple, plus juste.
+Je cherche un **stage de recherche de fin d'études de 6 mois en machine learning, à partir de début 2027**.
 
----
+## Contenu du site
 
-## 🗺️ Pourquoi ce site ?
+| Page | Contenu |
+| ---- | ------- |
+| À propos | Mon parcours et ce qui m'anime |
+| Formation, Certifications | Études à l'ENSTA Paris et à l'IP Paris, certifications |
+| Mobilité | Les villes où j'ai étudié et travaillé |
+| Expérience, Projets, Compétences | Stages, projets de vision par ordinateur et de ML, outils |
+| Bénévolat, Loisirs | Engagement associatif et centres d'intérêt |
+| Rêves | Les laboratoires d'IA que je vise et mes prochains objectifs |
+| Contact | Formulaire (EmailJS) et coordonnées |
 
-J’ai voulu créer ce portfolio comme une **extension numérique de moi-même** :  
-une vitrine honnête, vivante, évolutive — un espace où je raconte ce que je fais, ce que j’apprends, et pourquoi je le fais.
+## Stack technique
 
-### ✨ Vous y trouverez :
+- **Next.js 15** (pages router) en export statique, **TypeScript**
+- **Tailwind CSS** et **Framer Motion** pour le style et les animations
+- Site bilingue : les pages anglaises sont à la racine, les pages françaises dans `src/pages/fr/`, et chaque texte est défini en `{ en, fr }`
+- Contenu séparé du code : `data/siteMetadata.ts` et `src/content/*.ts`
+- **GitHub Pages**, déployé par GitHub Actions
 
-- 🧬 **Des bouts de moi** – mon parcours, mes valeurs, mes intérêts
-- 🎓 **Mon chemin académique** – de l’école à l’ingénierie
-- 🚀 **Une roadmap** – mes objectifs à court et long terme
-- 🛠 **Mes projets** – personnels, associatifs, pro, etc.
-- 🌍 **Mes voyages** – car découvrir le monde, c’est aussi grandir
-- 🤖 **Un coin IA** – articles, idées, réflexions et expérimentations
+## Développement
 
----
+```sh
+npm install
+npm run dev       # serveur de développement sur http://localhost:3000
+npm run build     # export statique dans out/
+npm start         # sert le dossier out/
+```
 
-## 🧰 Stack Technique
+Le formulaire de contact a besoin de trois variables (voir `.env.example`) : `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` et `NEXT_PUBLIC_EMAILJS_PUBLIC_USER_ID`.
 
-Ce site est **fait maison**, avec beaucoup d’amour et un peu de café :
+## Déploiement
 
-| 🧩 Tech          | 💡 Rôle                              |
-|------------------|--------------------------------------|
-| **Next.js**      | Framework principal (export statique) |
-| **Tailwind CSS** | Styling moderne, responsive et clean |
-| **TypeScript**   | Typage solide pour coder sereinement |
-| **GitHub Pages** | Hébergement statique, déployé par GitHub Actions |
-| **Markdown**     | Pour les contenus dynamiques          |
+Un `git push` sur `master` lance le workflow `.github/workflows/deploy.yml`, qui construit le site et le publie sur GitHub Pages.
 
----
+Configuration à faire une seule fois dans les réglages du dépôt :
 
-## 👀 Aperçu rapide
+- *Settings → Pages → Source* : **GitHub Actions** ;
+- *Settings → Secrets and variables → Actions* : les trois variables EmailJS ci-dessus.
 
-| Section        | Description rapide                                            |
-|----------------|--------------------------------------------------------------|
-| **À propos**   | Qui je suis, ce qui m’anime                                   |
-| **Formation**  | Mes études, mes choix d’orientation                          |
-| **Projets**    | Ce que j’ai construit, en solo ou en équipe                  |
-| **Roadmap**    | Mes objectifs d’évolution (et mes rêves un peu fous)         |
-| **Blog IA**    | Ma passion pour l’IA expliquée de façon accessible           |
-| **Voyages**    | Carnets de bord de mes déplacements (échanges, stages, etc.) |
+## Contact
 
----
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-cedrick--tchakonte-blue?logo=linkedin)](https://www.linkedin.com/in/cedrick-tchakonte)
+[![Email](https://img.shields.io/badge/Email-tchakontecedrick%40gmail.com-D14836?logo=gmail&logoColor=white)](mailto:tchakontecedrick@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-cedrick--tchakonte.github.io-black)](https://cedrick-tchakonte.github.io/)
 
-## 🤝 Ce que je cherche
-
-Je suis **ouvert aux collaborations, aux discussions, aux idées.**  
-Si tu veux parler IA, startup, stage de césure ou de PFE, ou juste prendre un café virtuel pour échanger : [->écris-moi !<-](https://cedrick-tchakonte.github.io/contact/)
-
-> Je suis à la recherche de stages / projets pour approfondir mes compétences, découvrir de nouveaux univers et faire de la tech **utile** et **humaine**.
-
----
-
-## 📫 Me contacter
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profil-blue?logo=linkedin&style=flat-square)](www.linkedin.com/in/cedrick-tchakonte)
-[![Gmail](https://img.shields.io/badge/Email-Me%20contacter-D14836?logo=gmail&logoColor=white)](mailto:tchakontecedrick@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Mon%20site-black?style=flat-square)](https://cedrick-tchakonte.github.io/contact/)
-
----
-
-## 🚀 Déploiement
-
-Le site est exporté en statique (`next build` → `out/`) et publié sur **GitHub Pages** : https://cedrick-tchakonte.github.io (anglais à `/`, français à `/fr/`).
-
-- **Déployer** : un simple `git push` sur `master` déclenche le workflow GitHub Actions `.github/workflows/deploy.yml` (build + publication).
-- **Configuration (une seule fois)** : *Settings → Pages → Source : GitHub Actions*, puis *Settings → Secrets and variables → Actions* : ajouter `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` et `NEXT_PUBLIC_EMAILJS_PUBLIC_USER_ID` (formulaire de contact).
-- **En local** : `npm run dev`, ou `npm run build && npm start` pour servir l'export `out/`.
-
----
-
-## 🌟 Merci !
-
-Merci d’avoir pris le temps de visiter mon petit coin du web.  
-Si quelque chose vous a interpellé, touché, inspiré — même un détail — n’hésitez pas à me le dire 🙏
-
-Et si vous aimez le projet, laissez une ⭐ sur le repo ! Ça fait toujours plaisir 😄
+Pour parler IA, recherche ou stage, le plus simple est le [formulaire de contact](https://cedrick-tchakonte.github.io/contact/) du site.
