@@ -55,8 +55,8 @@ export const educationBackground: EducationBackground[] = [
     startDate: { en: 'August 2024', fr: 'Août 2024' },
     endDate: { en: 'December 2027', fr: 'Décembre 2027' },
     description: {
-      en: 'Prestigious French engineering school. Final year in AI and Cyber-Physical Systems: machine learning, image recognition, microprocessor architecture, robotic navigation.',
-      fr: "Grande école d'ingénieurs prestigieuse en France. Dernière année en IA et systèmes cyber-physiques : apprentissage automatique, reconnaissance d'images, architecture des microprocesseurs, navigation robotique.",
+      en: 'Prestigious French engineering school. Final year on a specialization track in Artificial Intelligence: machine learning, image recognition, microprocessor architecture, robotic navigation.',
+      fr: "Grande école d'ingénieurs prestigieuse en France. Dernière année en parcours de spécialisation en intelligence artificielle : apprentissage automatique, reconnaissance d'images, architecture des microprocesseurs, navigation robotique.",
     },
     highlights: {
       en: [

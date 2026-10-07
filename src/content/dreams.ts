@@ -168,8 +168,8 @@ export const goals: Goal[] = [
     icon: FaRocket,
     title: { en: 'End-of-studies internship (PFE)', fr: "Stage de fin d'études (PFE)" },
     description: {
-      en: 'Join a world-class AI lab for my final-year internship and work shoulder to shoulder with researchers building the next generation of models.',
-      fr: "Rejoindre un laboratoire d'IA de classe mondiale pour mon stage de fin d'études et travailler côte à côte avec des chercheurs qui construisent la prochaine génération de modèles.",
+      en: 'Join a world-class AI lab, in France or abroad, for my final-year internship and work shoulder to shoulder with researchers building the next generation of models.',
+      fr: "Rejoindre un laboratoire d'IA de classe mondiale, en France ou à l'étranger, pour mon stage de fin d'études et travailler côte à côte avec des chercheurs qui construisent la prochaine génération de modèles.",
     },
   },
   {

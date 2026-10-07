@@ -56,7 +56,7 @@ export default function Dreams() {
                 Cedrick Tchakonte
               </p>
               <p className="text-sm text-primaryText-500">
-                AI &amp; Cyber-Physical Systems · ENSTA Paris
+                {t({ en: 'AI specialization track', fr: 'Parcours de spécialisation en IA' })} · ENSTA Paris
               </p>
             </div>
           </div>

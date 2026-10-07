@@ -12,12 +12,12 @@ export type Feature = {
 export const features: Feature[] = [
   {
     name: {
-      en: 'AI & Cyber-Physical Systems',
-      fr: 'IA et systèmes cyber-physiques',
+      en: 'AI Specialization',
+      fr: 'Spécialisation en IA',
     },
     description: {
-      en: 'Final year at ENSTA Paris in AI and Cyber-Physical Systems: machine learning, computer vision and robotic navigation, with TensorFlow, PyTorch and ROS.',
-      fr: "Dernière année à l'ENSTA Paris en IA et systèmes cyber-physiques : machine learning, vision par ordinateur et navigation robotique, avec TensorFlow, PyTorch et ROS.",
+      en: 'Final year at ENSTA Paris on a specialization track in Artificial Intelligence: machine learning, computer vision and robotic navigation, with TensorFlow, PyTorch and ROS.',
+      fr: "Dernière année à l'ENSTA Paris en parcours de spécialisation en intelligence artificielle : machine learning, vision par ordinateur et navigation robotique, avec TensorFlow, PyTorch et ROS.",
     },
     icon: RiRobotLine,
   },
@@ -27,8 +27,8 @@ export const features: Feature[] = [
       fr: 'Expérience professionnelle',
     },
     description: {
-      en: "Junior AI Engineer at RagLogic, after internships at Stellantis and STMicroelectronics. My work spans surrogate modeling, Graph RAG, LLM decision support and Digital Twins.",
-      fr: "Ingénieur IA junior chez RagLogic, après des stages chez Stellantis et STMicroelectronics. Mes travaux couvrent la modélisation de substitution, le Graph RAG, l'aide à la décision par LLM et les jumeaux numériques.",
+      en: "Junior AI Engineer at RagLogic, after Stellantis, Objectware and STMicroelectronics. My work spans surrogate modeling, Graph RAG, LLM decision support and Digital Twins.",
+      fr: "Ingénieur IA junior chez RagLogic, après Stellantis, Objectware et STMicroelectronics. Mes travaux couvrent la modélisation de substitution, le Graph RAG, l'aide à la décision par LLM et les jumeaux numériques.",
     },
     icon: IoSchoolOutline,
   },

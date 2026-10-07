@@ -2,6 +2,7 @@ import type { StaticImageData } from 'next/image'
 import type { I18n } from '@/i18n'
 import stellantisLogo from '@/images/logos/stellantis.svg'
 import taepLogo from '@/images/logos/taep.png'
+import objectwareLogo from '@/images/logos/objectware.svg'
 import stMicroLogo from '@/images/logos/stmicroelectronics.png'
 
 export interface ExperienceItem {
@@ -46,16 +47,39 @@ export const experiences: ExperienceItem[] = [
     description: {
       en: [
         'Co-developed an AI assistant for financial regulatory analysis, focusing on the AI layer: a Graph RAG pipeline building knowledge graphs from regulatory corpora via LLM-based entity and relation extraction.',
-        'Built LLM/NLP decision-support systems for regulatory compliance; fine-tuned small language models with LoRA/QLoRA to cut compute cost.',
+        'Combined vector search with graph traversal for hybrid retrieval, improving relevance over standard RAG.',
       ],
       fr: [
         "Co-développement d'un assistant IA d'analyse réglementaire financière, centré sur la couche IA : pipeline Graph RAG bâtissant des graphes de connaissances depuis des corpus réglementaires (extraction d'entités et de relations par LLM).",
-        "Développement de systèmes d'aide à la décision LLM/NLP pour la conformité réglementaire ; fine-tuning de petits modèles de langage avec LoRA/QLoRA pour réduire le coût de calcul.",
+        "Combinaison de la recherche vectorielle et du parcours de graphe pour une recherche hybride, améliorant la pertinence par rapport au RAG classique.",
       ],
     },
     location: { en: 'Station F, Paris, France', fr: 'Station F, Paris, France' },
     link: { url: 'https://www.taep.fr/', label: 'TAEP' },
     logo: taepLogo,
+  },
+  {
+    title: {
+      en: 'Junior AI Research Engineer',
+      fr: 'Ingénieur de recherche IA junior',
+    },
+    company: { en: 'Objectware', fr: 'Objectware' },
+    date: { en: 'Sept 2025 - Jan 2026', fr: 'Sept. 2025 - Janv. 2026' },
+    description: {
+      en: [
+        'Created AI-based decision support systems using LLMs and NLP for predictive analytics and enterprise automation.',
+        'Fine-tuned small language models using LoRA/QLoRA for domain-specific tasks with reduced compute cost.',
+        'Collaborated with cross-functional teams to integrate AI solutions into enterprise workflows.',
+      ],
+      fr: [
+        "Conception de systèmes d'aide à la décision fondés sur l'IA, à l'aide de LLM et de NLP, pour l'analyse prédictive et l'automatisation en entreprise.",
+        "Fine-tuning de petits modèles de langage avec LoRA/QLoRA pour des tâches métier spécifiques, à coût de calcul réduit.",
+        "Collaboration avec des équipes pluridisciplinaires pour intégrer les solutions d'IA dans les processus métier de l'entreprise.",
+      ],
+    },
+    location: { en: 'Paris, France', fr: 'Paris, France' },
+    link: { url: 'https://www.objectware.fr/', label: 'Objectware' },
+    logo: objectwareLogo,
   },
   {
     title: {

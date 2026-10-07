@@ -115,12 +115,12 @@ const Contact = () => {
             {t({ en: 'Contact us', fr: 'Nous contacter' })}
           </h2>
           <motion.div
-            className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-8"
+            className="grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-8"
             variants={stagger}
             {...reveal}
           >
             {/* Contact information */}
-            <motion.div variants={fadeUp} className={surfaceClass}>
+            <motion.div variants={fadeUp} className={clsx(surfaceClass, 'lg:col-span-2')}>
               <h3 className="text-lg font-semibold text-primaryText-900 dark:text-primaryText-50">
                 {t({ en: 'Contact information', fr: 'Coordonnées' })}
               </h3>
@@ -147,7 +147,7 @@ const Contact = () => {
                     <span className="sr-only">{t({ en: 'Email', fr: 'Adresse e-mail' })}</span>
                     <RiMailLine className="h-5 w-5" aria-hidden="true" />
                   </dt>
-                  <dd className="min-w-0 break-words text-base text-primaryText-700 dark:text-primaryText-300">
+                  <dd className="whitespace-nowrap text-base text-primaryText-700 dark:text-primaryText-300">
                     {siteMetadata.email}
                   </dd>
                 </div>
@@ -204,7 +204,7 @@ const Contact = () => {
             </motion.div>
 
             {/* Contact form */}
-            <motion.div variants={fadeUp} className={clsx(surfaceClass, 'lg:col-span-2')}>
+            <motion.div variants={fadeUp} className={clsx(surfaceClass, 'lg:col-span-3')}>
               <h3 className="text-lg font-semibold text-primaryText-900 dark:text-primaryText-50">
                 {t({ en: 'Send me a message', fr: 'Envoyez-moi un message' })}
               </h3>

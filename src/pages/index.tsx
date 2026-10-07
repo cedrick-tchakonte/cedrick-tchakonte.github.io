@@ -47,7 +47,7 @@ const Home = () => {
       </Head>
       <Container className="pt-16 sm:pt-20">
         <motion.div
-          className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16"
+          className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16"
           variants={stagger}
           initial="hidden"
           animate="visible"

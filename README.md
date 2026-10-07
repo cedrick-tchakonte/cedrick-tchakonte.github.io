@@ -13,7 +13,7 @@ Code source de mon portfolio, en ligne en [anglais](https://cedrick-tchakonte.gi
 
 Élève ingénieur en dernière année à l'**ENSTA Paris** (Institut Polytechnique de Paris), spécialisé en intelligence artificielle, et inscrit au master **Data Science et Intelligence Artificielle** de l'IP Paris. J'ai travaillé sur des modèles de substitution 3D chez Stellantis, sur la génération de jumeaux numériques chez STMicroelectronics, et je suis aujourd'hui ingénieur IA junior chez RagLogic (Station F).
 
-Je cherche un **stage de recherche de fin d'études de 6 mois en machine learning, à partir de début 2027**.
+Je cherche un **stage de recherche de fin d'études de 6 mois en machine learning, à partir de début 2027**, en France ou à l'étranger.
 
 ## Contenu du site
 

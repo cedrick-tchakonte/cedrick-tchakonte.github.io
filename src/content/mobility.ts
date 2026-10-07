@@ -29,8 +29,8 @@ export const mobilityData: MobilityLocation[] = [
       country: 'France',
       image: '/images/palaiseau.jpg',
       description: {
-        en: "Final year at ENSTA Paris in AI and Cyber-Physical Systems, alongside IP Paris's Master's in Data Science and AI, on the Plateau de Saclay campus.",
-        fr: "Dernière année à l'ENSTA Paris en IA et systèmes cyber-physiques, en parallèle du master Data Science et Intelligence Artificielle de l'IP Paris, sur le campus du Plateau de Saclay.",
+        en: "Final year at ENSTA Paris on a specialization track in AI, alongside IP Paris's Master's in Data Science and AI, on the Plateau de Saclay campus.",
+        fr: "Dernière année à l'ENSTA Paris en parcours de spécialisation en IA, en parallèle du master Data Science et Intelligence Artificielle de l'IP Paris, sur le campus du Plateau de Saclay.",
       },
       startDate: '2024',
       endDate: { en: 'Present', fr: 'Présent' },

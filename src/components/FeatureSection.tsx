@@ -22,8 +22,8 @@ const FeatureSection = () => {
             })}
             title={t({ en: 'Why Choose Me?', fr: 'Pourquoi me choisir ?' })}
             subtitle={t({
-              en: "I'm a final-year engineering student in AI and Cyber-Physical Systems at ENSTA Paris, with hands-on industry experience in machine learning research and AI engineering.",
-              fr: "Je suis élève ingénieur en dernière année en IA et systèmes cyber-physiques à l'ENSTA Paris, avec une expérience concrète en entreprise en recherche en machine learning et en ingénierie IA.",
+              en: "I'm a final-year engineering student at ENSTA Paris, following a specialization track in AI, with hands-on industry experience in machine learning research and AI engineering.",
+              fr: "Je suis élève ingénieur en dernière année à l'ENSTA Paris, en parcours de spécialisation en IA, avec une expérience concrète en entreprise en recherche en machine learning et en ingénierie IA.",
             })}
           />
         </motion.div>
