@@ -5,9 +5,6 @@ import {
   FaDocker,
   FaGitAlt,
   FaLinux,
-  FaHtml5,
-  FaJs,
-  FaCss3Alt,
   FaNodeJs,
   FaReact,
 } from 'react-icons/fa'
@@ -63,16 +60,13 @@ export const skills: SkillCategory[] = [
     category: { en: 'Programming Languages', fr: 'Langages de programmation' },
     items: [
       { name: 'Python', icon: FaPython },
+      { name: 'R', icon: SiR },
+      { name: 'MATLAB', icon: FaCode },
       { name: 'C', icon: SiC },
       { name: 'C++', icon: SiCplusplus },
       { name: 'Java', icon: FaJava },
-      { name: 'JavaScript', icon: FaJs },
-      { name: 'R', icon: SiR },
       { name: 'Bash', icon: FaTerminal },
-      { name: 'MATLAB', icon: FaCode },
       { name: 'SQL', icon: FaDatabase },
-      { name: 'HTML5', icon: FaHtml5 },
-      { name: 'CSS3', icon: FaCss3Alt },
     ],
   },
   {
