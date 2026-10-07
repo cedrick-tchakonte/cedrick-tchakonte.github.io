@@ -15,8 +15,6 @@ import {
 import {
   SiSpringboot,
   SiNextdotjs,
-  SiApachecassandra,
-  SiScylladb,
   SiPycharm,
   SiVisualstudio,
   SiCplusplus,
@@ -118,8 +116,6 @@ export const skills: SkillCategory[] = [
       { name: 'PostgreSQL', icon: SiPostgresql },
       { name: 'MongoDB', icon: SiMongodb },
       { name: 'Neo4j', icon: SiNeo4J },
-      { name: 'Scylla DB', icon: SiScylladb },
-      { name: 'Cassandra', icon: SiApachecassandra },
     ],
   },
   {
