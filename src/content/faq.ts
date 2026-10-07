@@ -32,8 +32,8 @@ export const faqs: FaqItem[] = [
       fr: 'Quels langages de programmation et outils utilisez-vous ?',
     },
     answer: {
-      en: 'I mainly use Python for its ML and data libraries, C++ for performance-critical code and Java for some projects, plus TensorFlow, PyTorch and ROS (Robot Operating System).',
-      fr: "J'utilise surtout Python pour ses bibliothèques de ML et de données, le C++ pour le code critique en performance et Java pour certains projets, ainsi que TensorFlow, PyTorch et ROS (Robot Operating System).",
+      en: 'Mostly Python and its AI ecosystem (PyTorch, TensorFlow, scikit-learn, Hugging Face, LangChain), plus MATLAB and R for scientific computing and statistics.',
+      fr: "Surtout Python et son écosystème IA (PyTorch, TensorFlow, scikit-learn, Hugging Face, LangChain), ainsi que MATLAB et R pour le calcul scientifique et les statistiques.",
     },
   },
   {

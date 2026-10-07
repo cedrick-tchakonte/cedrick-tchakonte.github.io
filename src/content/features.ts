@@ -16,8 +16,8 @@ export const features: Feature[] = [
       fr: 'Spécialisation en IA',
     },
     description: {
-      en: 'Final year at ENSTA Paris on a specialization track in Artificial Intelligence: machine learning, computer vision and robotic navigation, with TensorFlow, PyTorch and ROS.',
-      fr: "Dernière année à l'ENSTA Paris en parcours de spécialisation en intelligence artificielle : machine learning, vision par ordinateur et navigation robotique, avec TensorFlow, PyTorch et ROS.",
+      en: 'Final year at ENSTA Paris on a specialization track in Artificial Intelligence: machine learning, computer vision and robotic navigation, with PyTorch and TensorFlow.',
+      fr: "Dernière année à l'ENSTA Paris en parcours de spécialisation en intelligence artificielle : machine learning, vision par ordinateur et navigation robotique, avec PyTorch et TensorFlow.",
     },
     icon: RiRobotLine,
   },
@@ -49,8 +49,8 @@ export const features: Feature[] = [
       fr: 'Développement full-stack',
     },
     description: {
-      en: 'Proficient in Python, C++, Java, JavaScript and R, with experience in React, Next.js, AWS, Azure, Docker and Git, and solid software engineering foundations.',
-      fr: "Maîtrise de Python, C++, Java, JavaScript et R, avec une expérience de React, Next.js, AWS, Azure, Docker et Git, et de solides bases en génie logiciel.",
+      en: 'Proficient in Python, R and MATLAB, as well as Java, JavaScript and C++, with experience in React, Next.js, AWS, Azure, Docker and Git, and solid software engineering foundations.',
+      fr: "Maîtrise de Python, R et MATLAB, ainsi que Java, JavaScript et C++, avec une expérience de React, Next.js, AWS, Azure, Docker et Git, et de solides bases en génie logiciel.",
     },
     icon: IoCodeWorkingOutline,
   },
