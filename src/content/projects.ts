@@ -6,6 +6,7 @@ import {
   FaPlaneDeparture,
   FaRobot,
   FaVideo,
+  FaBookOpen,
 } from 'react-icons/fa'
 
 import { type I18n } from '@/i18n'
@@ -14,7 +15,8 @@ export interface Project {
   title: I18n<string>
   description: I18n<string>
   icon: IconType
-  href: string
+  /** Public GitHub repository; omitted when the code isn't published. */
+  href?: string
   category: I18n<string>
 }
 
@@ -29,7 +31,6 @@ export const projectsData: Project[] = [
       fr: "Automatisation de la segmentation des vaisseaux rétiniens sur des images SLO à l'aide d'opérateurs de dérivation et de filtres vasculaires et morphologiques ; deux approches évaluées sur les vérités terrain IOSTAR.",
     },
     icon: FaEye,
-    href: 'https://github.com/cedrick-tchakonte/retinal-vessel-segmentation',
     category: {
       en: 'Computer Vision & Biomedical Imaging',
       fr: 'Vision par ordinateur et imagerie biomédicale',
@@ -45,7 +46,7 @@ export const projectsData: Project[] = [
       fr: "Mise en œuvre d'attaques FGSM ciblées et non ciblées contre DeepLabV3 et FCN (MS-COCO, PyTorch), avec évaluation de la transférabilité entre architectures, révélant leur vulnérabilité.",
     },
     icon: FaShieldAlt,
-    href: 'https://github.com/cedrick-tchakonte/adversarial-attacks-segmentation',
+    href: 'https://github.com/cedrick-tchakonte/attack_segmentation',
     category: {
       en: 'Deep Learning & Adversarial ML',
       fr: 'Apprentissage profond et ML adverse',
@@ -61,7 +62,7 @@ export const projectsData: Project[] = [
       fr: "Mise en œuvre d'une détection de peau au niveau du pixel (classification bayésienne, K-means ; jeu de données Essex) et d'un pipeline d'appariement de caractéristiques OpenCV (Harris, ORB, KAZE) robuste aux changements d'échelle.",
     },
     icon: FaCamera,
-    href: 'https://github.com/cedrick-tchakonte/computer-vision-projects',
+    href: 'https://github.com/cedrick-tchakonte/Reconnaissance_images',
     category: {
       en: 'Computer Vision & Image Processing',
       fr: "Vision par ordinateur et traitement d'images",
@@ -77,11 +78,21 @@ export const projectsData: Project[] = [
       fr: "Optimisation de trajectoire pour VTOL avec Technoplane, en utilisant la cartographie 3D et la météo dynamique comme 4e dimension ; simulation de planification de trajectoire en temps réel pour le vol autonome.",
     },
     icon: FaPlaneDeparture,
-    href: 'https://github.com/cedrick-tchakonte/vtol-navigation-system',
+    href: 'https://github.com/cedrick-tchakonte/nextjs-ts-gps-4d',
     category: {
       en: 'Aerospace & Navigation Systems',
       fr: 'Aérospatiale et systèmes de navigation',
     },
+  },
+  {
+    title: { en: 'Comic Book Reader', fr: 'Liseuse de bandes dessinées' },
+    description: {
+      en: 'Desktop comic reader in C++ and Qt 6 for CBZ, CBR and PDF files, with a page cache, image filters, tags and tables of contents, built as a team.',
+      fr: "Liseuse de BD de bureau en C++ et Qt 6 pour les fichiers CBZ, CBR et PDF, avec cache de pages, filtres d'image, tags et tables des matières, réalisée en équipe.",
+    },
+    icon: FaBookOpen,
+    href: 'https://github.com/cedrick-tchakonte/Comic-Book-Reader',
+    category: { en: 'Software Engineering', fr: 'Génie logiciel' },
   },
   {
     title: { en: 'Chatbot with PyQt5', fr: 'Chatbot avec PyQt5' },

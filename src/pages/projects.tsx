@@ -40,7 +40,7 @@ export default function Projects() {
           {...reveal}
         >
           {projectsData.map((project) => (
-            <motion.li key={project.href} variants={fadeUp} className="grid">
+            <motion.li key={project.title.en} variants={fadeUp} className="grid">
               <Card className="h-full">
                 <div className="relative z-10 flex h-11 w-11 items-center justify-center rounded-xl bg-accent-500/10 text-accent-600 ring-1 ring-inset ring-accent-500/20 dark:bg-accent-400/10 dark:text-accent-400 dark:ring-accent-400/20">
                   <project.icon className="h-5 w-5" aria-hidden="true" />
@@ -52,9 +52,11 @@ export default function Projects() {
                   {t(project.title)}
                 </Card.Title>
                 <Card.Description>{t(project.description)}</Card.Description>
-                <Card.Cta className="mt-auto pt-6">
-                  {t({ en: 'View on GitHub', fr: 'Voir sur GitHub' })}
-                </Card.Cta>
+                {project.href && (
+                  <Card.Cta className="mt-auto pt-6">
+                    {t({ en: 'View on GitHub', fr: 'Voir sur GitHub' })}
+                  </Card.Cta>
+                )}
               </Card>
             </motion.li>
           ))}
