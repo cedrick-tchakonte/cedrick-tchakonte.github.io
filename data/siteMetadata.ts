@@ -140,8 +140,8 @@ const siteMetadata: SiteMetadata = {
   siteRepo: 'https://github.com/cedrick-tchakonte/cedrick-tchakonte.github.io',
   testimonial: {
     comment: {
-      en: '“I build AI systems that bridge research and real-world impact, from surrogate models for vehicle safety to Graph RAG for complex regulation. I care about rigor, clarity, and technology that genuinely helps people.”',
-      fr: "« Je construis des systèmes d'IA qui relient la recherche à l'impact réel, des modèles surrogates pour la sécurité des véhicules au Graph RAG pour la réglementation complexe. Je tiens à la rigueur, à la clarté, et à une technologie qui aide vraiment les gens. »",
+      en: '“I want to build AI that carries research all the way to real-world impact: models that learn, reason and help us understand the world a little better. I care about rigor, clarity, and technology that genuinely helps people.”',
+      fr: "« Je veux construire une IA qui mène la recherche jusqu'à l'impact réel : des modèles qui apprennent, raisonnent et nous aident à mieux comprendre le monde. Je tiens à la rigueur, à la clarté, et à une technologie qui aide vraiment les gens. »",
     },
     author: 'Cedrick Tchakonte',
     authorTitle: {
