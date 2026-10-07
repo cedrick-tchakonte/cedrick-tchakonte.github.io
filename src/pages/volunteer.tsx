@@ -1,10 +1,12 @@
 import Head from 'next/head'
+import { motion } from 'framer-motion'
 import { EntryCard } from '@/components/EntryCard'
 import { SectionHeading } from '@/components/SectionHeading'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { volunteerActivities } from '@/content/volunteer'
 import siteMetadata from '@/data/siteMetadata'
 import { useT } from '@/i18n'
+import { fadeUp, reveal, stagger } from '@/lib/motion'
 
 export default function Volunteer() {
   const t = useT()
@@ -27,20 +29,17 @@ export default function Volunteer() {
           fr: 'Engagement associatif',
         })}
         intro={t({
-          en: "I believe in giving back to the community and contributing to meaningful causes. Here are some of the volunteer activities and community initiatives I'm actively involved in.",
-          fr: "Je crois en l'importance de rendre à la communauté et de contribuer à des causes qui ont du sens. Voici quelques-unes des activités bénévoles et des initiatives communautaires dans lesquelles je m'investis activement.",
+          en: "I believe in giving back to the community. Here are some of the volunteer activities and initiatives I'm involved in.",
+          fr: "Je crois en l'importance de rendre à la communauté. Voici quelques-unes des activités bénévoles et initiatives dans lesquelles je m'investis.",
         })}
       >
         <SectionHeading
           title={t({ en: 'Community Involvement', fr: 'Mon engagement' })}
-          className="mb-10"
+          className="mb-8"
         />
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-        >
+        <motion.ul role="list" className="space-y-6" variants={stagger} {...reveal}>
           {volunteerActivities.map((activity, index) => (
-            <li key={index}>
+            <motion.li key={index} variants={fadeUp}>
               <EntryCard
                 logo={activity.logo}
                 logoAlt={activity.organization}
@@ -50,9 +49,9 @@ export default function Volunteer() {
                 bullets={t(activity.description)}
                 link={activity.link}
               />
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </SimpleLayout>
     </>
   )

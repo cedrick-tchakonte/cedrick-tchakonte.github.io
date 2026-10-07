@@ -28,20 +28,20 @@ export function SectionHeading({
   const Heading = level === 2 ? 'h2' : 'h3'
   const titleClass =
     level === 2
-      ? 'text-3xl font-bold tracking-tight sm:text-4xl'
-      : 'text-xl font-semibold tracking-tight sm:text-2xl'
+      ? 'text-2xl font-semibold tracking-tight sm:text-3xl'
+      : 'text-xl font-semibold tracking-tight'
 
   return (
     <div className={clsx(align === 'center' && 'text-center', className)}>
       {eyebrow && (
-        <p className="text-sm font-semibold tracking-wider uppercase text-accent-600 dark:text-accent-400">
+        <p className="text-sm font-semibold text-accent-600 dark:text-accent-400">
           {eyebrow}
         </p>
       )}
       <Heading
         className={clsx(
           titleClass,
-          'text-primaryText-900 dark:text-primaryText-100',
+          'text-primaryText-900 dark:text-primaryText-50',
           eyebrow && 'mt-2'
         )}
       >
@@ -50,8 +50,8 @@ export function SectionHeading({
       {subtitle && (
         <p
           className={clsx(
-            'text-base leading-7 text-primaryText-600 dark:text-primaryText-400',
-            align === 'center' ? 'mx-auto mt-4 max-w-2xl' : 'mt-3 max-w-2xl'
+            'mt-4 max-w-2xl text-base text-primaryText-600 dark:text-primaryText-400',
+            align === 'center' && 'mx-auto'
           )}
         >
           {subtitle}

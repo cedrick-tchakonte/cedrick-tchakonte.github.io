@@ -2,8 +2,10 @@ import Image from 'next/image'
 import Head from 'next/head'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 import siteMetadata from '@/data/siteMetadata'
 import { useT } from '@/i18n'
+import { fadeUp, reveal } from '@/lib/motion'
 
 import { PageLayout } from '@/components/PageLayout'
 import {
@@ -26,10 +28,10 @@ function SocialLink({ className, href, children, icon: Icon }: SocialLinkProps) 
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="flex text-sm font-medium transition group text-primaryText-800 hover:text-accent-500 dark:text-primaryText-200 dark:hover:text-accent-500"
+        className="group flex items-center gap-4 rounded-lg py-2 text-sm font-medium text-primaryText-800 transition-colors duration-200 ease-smooth hover:text-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 dark:text-primaryText-200 dark:hover:text-accent-400"
       >
-        <Icon className="flex-none w-6 h-6 transition fill-primaryText-500 group-hover:fill-accent-500" />
-        <span className="ml-4">{children}</span>
+        <Icon className="h-6 w-6 flex-none fill-primaryText-500 transition-colors duration-200 ease-smooth group-hover:fill-accent-600 dark:fill-primaryText-400 dark:group-hover:fill-accent-400" />
+        <span>{children}</span>
       </Link>
     </li>
   )
@@ -58,56 +60,48 @@ const About = () => {
                 src={avatarImage}
                 alt="picture of the author"
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="object-cover aspect-square rounded-2xl bg-primaryText-100 dark:bg-primaryText-800 shadow-xl border-4 border-white dark:border-primaryText-700"
+                className="aspect-square rounded-2xl bg-primaryText-100 object-cover ring-1 ring-primaryText-900/5 dark:bg-primaryText-800 dark:ring-white/10"
               />
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h2 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-primaryText-900 dark:text-primaryText-50 sm:text-3xl">
               {t(siteMetadata.authorHeadline)}
             </h2>
-            <div className="mt-6 text-base space-y-7 text-primaryText-600 dark:text-primaryText-400">
-              <p className="whitespace-pre-wrap leading-relaxed">
+            <div className="mt-6 space-y-7 text-base leading-7 text-primaryText-600 dark:text-primaryText-400">
+              <p className="whitespace-pre-wrap">
                 {t(siteMetadata.authorAboutExtended)}
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
-            <div className="bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-2xl p-8 border border-primaryText-200/50 dark:border-primaryText-700/50">
-              <h3 className="text-lg font-semibold text-primaryText-800 dark:text-primaryText-100 mb-6">
+            <motion.div
+              variants={fadeUp}
+              {...reveal}
+              className="rounded-2xl border border-primaryText-200/70 bg-white p-6 shadow-sm dark:border-primaryText-800 dark:bg-primaryText-900 sm:p-8"
+            >
+              <h3 className="text-lg font-semibold text-primaryText-900 dark:text-primaryText-50">
                 {t({ en: 'Connect with me', fr: 'Restons en contact' })}
               </h3>
-              <ul role="list" className="space-y-4">
-                <SocialLink
-                  href={siteMetadata.socials.instagram}
-                  icon={InstagramIcon}
-                  className="group"
-                >
-                  <span className="group-hover:text-accent-500 transition-colors">{t({ en: 'Follow on Instagram', fr: 'Suivre sur Instagram' })}</span>
+              <ul role="list" className="mt-4 -mb-2">
+                <SocialLink href={siteMetadata.socials.instagram} icon={InstagramIcon}>
+                  {t({ en: 'Follow on Instagram', fr: 'Suivre sur Instagram' })}
                 </SocialLink>
-                <SocialLink
-                  href={siteMetadata.socials.github}
-                  icon={GitHubIcon}
-                  className="group"
-                >
-                  <span className="group-hover:text-accent-500 transition-colors">{t({ en: 'Follow on GitHub', fr: 'Suivre sur GitHub' })}</span>
+                <SocialLink href={siteMetadata.socials.github} icon={GitHubIcon}>
+                  {t({ en: 'Follow on GitHub', fr: 'Suivre sur GitHub' })}
                 </SocialLink>
-                <SocialLink
-                  href={siteMetadata.socials.linkedin}
-                  icon={LinkedInIcon}
-                  className="group"
-                >
-                  <span className="group-hover:text-accent-500 transition-colors">{t({ en: 'Follow on LinkedIn', fr: 'Suivre sur LinkedIn' })}</span>
+                <SocialLink href={siteMetadata.socials.linkedin} icon={LinkedInIcon}>
+                  {t({ en: 'Follow on LinkedIn', fr: 'Suivre sur LinkedIn' })}
                 </SocialLink>
                 <SocialLink
                   href={`mailto:${siteMetadata.email}`}
                   icon={MailIcon}
-                  className="pt-6 mt-6 border-t border-primaryText-100 dark:border-primaryText-700/40 group"
+                  className="mt-4 border-t border-primaryText-100 pt-4 dark:border-primaryText-800"
                 >
-                  <span className="group-hover:text-accent-500 transition-colors">{siteMetadata.email}</span>
+                  {siteMetadata.email}
                 </SocialLink>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </PageLayout>

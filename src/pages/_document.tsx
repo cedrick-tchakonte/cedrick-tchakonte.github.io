@@ -40,7 +40,7 @@ export default function Document(props: DocumentProps) {
   const page = props.__NEXT_DATA__?.page ?? '/'
   const locale = page === '/fr' || page.startsWith('/fr/') ? 'fr' : 'en'
   return (
-    <Html className="h-full scroll-smooth antialiased" lang={locale}>
+    <Html className="h-full antialiased motion-safe:scroll-smooth" lang={locale}>
       <Head>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
@@ -62,10 +62,20 @@ export default function Document(props: DocumentProps) {
         />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#000000" />
-        <meta name="theme-color" content="#000000" />
+        {/* Browser UI color matches the page background (zinc-50 / zinc-950). */}
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#fafafa"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#09090b"
+        />
       </Head>
 
-      <body className="flex h-full flex-col bg-primaryText-50 dark:bg-black">
+      <body className="flex h-full flex-col bg-primaryText-50 text-primaryText-900 dark:bg-primaryText-950 dark:text-primaryText-50">
         <Main />
         <NextScript />
       </body>

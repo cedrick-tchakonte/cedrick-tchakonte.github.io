@@ -1,5 +1,13 @@
-import { Container } from '@/components/Container'
+import clsx from 'clsx'
 import { motion } from 'framer-motion'
+
+import { Container } from '@/components/Container'
+import { fadeUp, stagger } from '@/lib/motion'
+
+const pageTitleClass =
+  'text-4xl font-bold tracking-tight text-primaryText-900 sm:text-5xl dark:text-primaryText-50'
+const pageSubtitleClass =
+  'mx-auto mt-4 max-w-2xl text-lg text-primaryText-600 dark:text-primaryText-400'
 
 type PageLayoutProps = {
   title: React.ReactNode
@@ -10,6 +18,11 @@ type PageLayoutProps = {
   headerClassName?: string
 }
 
+/**
+ * Page shell with a centered title (H1) and subtitle; SimpleLayout reuses it.
+ * The page enters once: title, subtitle, then content fade up in sequence
+ * (see src/lib/motion.ts).
+ */
 export function PageLayout({
   title,
   subtitle,
@@ -19,50 +32,31 @@ export function PageLayout({
   headerClassName = '',
 }: PageLayoutProps) {
   return (
-    <div className={`min-h-screen ${className}`}>
+    <motion.div
+      className={clsx('py-16 sm:py-20', className)}
+      variants={stagger}
+      initial="hidden"
+      animate="visible"
+    >
       {showHeader && (
-        <motion.header
-          className={`py-16 sm:py-20 ${headerClassName}`}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <Container>
-            <div className="text-center max-w-4xl mx-auto">
-              <motion.h1
-                className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl lg:text-6xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                {title}
-              </motion.h1>
-              {subtitle && (
-                <motion.p
-                  className="mt-6 text-lg text-primaryText-600 dark:text-primaryText-400 max-w-2xl mx-auto"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  {subtitle}
-                </motion.p>
-              )}
-            </div>
-          </Container>
-        </motion.header>
+        <Container>
+          <header className={clsx('mx-auto max-w-3xl text-center', headerClassName)}>
+            <motion.h1 variants={fadeUp} className={pageTitleClass}>
+              {title}
+            </motion.h1>
+            {subtitle && (
+              <motion.p variants={fadeUp} className={pageSubtitleClass}>
+                {subtitle}
+              </motion.p>
+            )}
+          </header>
+        </Container>
       )}
 
-      <motion.main
-        className="pb-16 sm:pb-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-      >
-        <Container>
-          {children}
-        </Container>
-      </motion.main>
-    </div>
+      <motion.div variants={fadeUp} className={clsx(showHeader && 'mt-12 sm:mt-16')}>
+        <Container>{children}</Container>
+      </motion.div>
+    </motion.div>
   )
 }
 
@@ -82,12 +76,12 @@ export function SectionLayout({
   id = '',
 }: SectionLayoutProps) {
   return (
-    <section id={id} className={`py-16 sm:py-20 ${className}`}>
+    <section id={id || undefined} className={clsx('py-16 sm:py-20', className)}>
       <Container>
         {(title || subtitle) && (
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
             {title && (
-              <h2 className="text-3xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-4xl">
+              <h2 className="text-2xl font-semibold tracking-tight text-primaryText-900 sm:text-3xl dark:text-primaryText-50">
                 {title}
               </h2>
             )}
@@ -111,7 +105,7 @@ type CardGridProps = {
 
 export function CardGrid({ children, className = '' }: CardGridProps) {
   return (
-    <div className={`grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ${className}`}>
+    <div className={clsx('grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8', className)}>
       {children}
     </div>
   )
@@ -132,17 +126,19 @@ export function FeatureCard({
 }: FeatureCardProps) {
   return (
     <motion.div
-      className={`group relative bg-white/50 dark:bg-primaryText-800/50 backdrop-blur-sm rounded-2xl p-8 border border-primaryText-200/50 dark:border-primaryText-700/50 hover:border-accent-300 dark:hover:border-accent-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${className}`}
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.2 }}
+      variants={fadeUp}
+      className={clsx(
+        'group relative rounded-2xl border border-primaryText-200/70 bg-white p-6 shadow-sm sm:p-8 dark:border-primaryText-800 dark:bg-primaryText-900',
+        className
+      )}
     >
-      <div className="flex items-center justify-center w-12 h-12 text-white rounded-xl bg-gradient-to-br from-accent-500 to-accent-600 group-hover:from-accent-600 group-hover:to-accent-700 transition-all duration-300">
-        <Icon className="w-6 h-6" />
+      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-500/10 text-accent-600 ring-1 ring-inset ring-accent-500/20 dark:bg-accent-400/10 dark:text-accent-400 dark:ring-accent-400/20">
+        <Icon className="h-5 w-5" />
       </div>
-      <h3 className="mt-6 text-lg font-semibold text-primaryText-800 dark:text-primaryText-100">
+      <h3 className="mt-6 text-lg font-semibold text-primaryText-900 dark:text-primaryText-50">
         {title}
       </h3>
-      <p className="mt-4 text-base text-primaryText-600 dark:text-primaryText-400">
+      <p className="mt-2 text-base text-primaryText-600 dark:text-primaryText-400">
         {description}
       </p>
     </motion.div>

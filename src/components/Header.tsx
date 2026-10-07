@@ -2,7 +2,6 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { Popover, Transition, Menu } from '@headlessui/react'
 import clsx from 'clsx'
-import { FaGlobe } from 'react-icons/fa'
 
 import { Container } from '@/components/Container'
 import { LocaleLink } from '@/components/LocaleLink'
@@ -29,6 +28,40 @@ type NavLink = {
 
 const siteNavLinks: NavLink[] = siteMetadata.siteNavLinks
 
+// Shared nav styles: one pill surface, items that only change text color on hover.
+const navPillSurface =
+  'rounded-full bg-white/90 shadow-sm ring-1 ring-primaryText-900/5 backdrop-blur dark:bg-primaryText-900/90 dark:ring-white/10'
+
+const navItemBase =
+  'flex items-center whitespace-nowrap rounded-full px-2.5 py-1 text-sm font-medium transition-colors duration-200 ease-smooth focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 xl:px-3'
+
+const navItemActive =
+  'bg-accent-500/10 text-accent-600 dark:bg-accent-400/10 dark:text-accent-400'
+
+const navItemIdle =
+  'text-primaryText-700 hover:text-accent-600 dark:text-primaryText-300 dark:hover:text-accent-400'
+
+// Floating panel used by the desktop dropdowns and the mobile menu.
+const panelSurface =
+  'bg-white shadow-lg ring-1 ring-primaryText-900/5 dark:bg-primaryText-900 dark:ring-white/10'
+
+// Rows inside a panel (dropdown entries, mobile menu entries).
+const panelItemBase =
+  'rounded-xl px-3 py-2 font-medium transition-colors duration-200 ease-smooth focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500'
+
+const panelItemCurrent =
+  'bg-accent-500/10 text-accent-700 dark:bg-accent-400/10 dark:text-accent-300'
+
+const panelItemHover =
+  'bg-primaryText-100 text-primaryText-900 dark:bg-primaryText-800 dark:text-primaryText-50'
+
+const panelItemIdle =
+  'text-primaryText-700 hover:bg-primaryText-100 hover:text-primaryText-900 dark:text-primaryText-300 dark:hover:bg-primaryText-800 dark:hover:text-primaryText-50'
+
+// Round icon buttons in the header (theme + language toggles).
+const iconButton =
+  'group flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-primaryText-700 shadow-sm ring-1 ring-primaryText-900/5 backdrop-blur transition-[color,box-shadow] duration-200 ease-smooth hover:text-accent-600 hover:ring-primaryText-900/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 dark:bg-primaryText-900/90 dark:text-primaryText-300 dark:ring-white/10 dark:hover:text-accent-400 dark:hover:ring-white/20'
+
 // Desktop Dropdown Menu Component
 function DropdownMenu({ link }: { link: NavLink }) {
   const { pathname } = useLocale()
@@ -42,39 +75,39 @@ function DropdownMenu({ link }: { link: NavLink }) {
           <>
             <Menu.Button
               className={clsx(
-                'relative px-3 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium flex items-center gap-2 whitespace-nowrap group',
-                'border border-transparent hover:border-accent-200 dark:hover:border-accent-700/50',
+                navItemBase,
+                'gap-1.5',
                 isActive
-                  ? 'text-accent-600 dark:text-accent-400 font-semibold bg-accent-50/50 dark:bg-accent-900/20'
-                  : 'text-primaryText-700 dark:text-primaryText-300 hover:text-accent-600 dark:hover:text-accent-400'
+                  ? navItemActive
+                  : open
+                  ? 'text-accent-600 dark:text-accent-400'
+                  : navItemIdle
               )}
             >
               <span>{t(link.name)}</span>
-              <svg
+              <ChevronDownIcon
                 className={clsx(
-                  'w-4 h-4 transition-all duration-300 flex-shrink-0',
-                  open && 'rotate-180',
-                  'text-accent-500 dark:text-accent-400 group-hover:text-accent-600 dark:group-hover:text-accent-300 drop-shadow-sm'
+                  'h-auto w-2 flex-shrink-0 stroke-current opacity-70 transition-transform duration-200 ease-smooth',
+                  open && 'rotate-180'
                 )}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
+              />
             </Menu.Button>
 
             <Transition
               as={Fragment}
-              enter="transition ease-out duration-200"
-              enterFrom="opacity-0 translate-y-1"
+              enter="transition-[opacity,transform] duration-200 ease-smooth"
+              enterFrom="opacity-0 motion-safe:translate-y-1"
               enterTo="opacity-100 translate-y-0"
-              leave="transition ease-in duration-150"
+              leave="transition-[opacity,transform] duration-150 ease-smooth"
               leaveFrom="opacity-100 translate-y-0"
-              leaveTo="opacity-0 translate-y-1"
+              leaveTo="opacity-0 motion-safe:translate-y-1"
             >
-              <Menu.Items className="absolute left-0 z-50 mt-3 w-56 origin-top-left rounded-2xl bg-white/95 dark:bg-primaryText-900/95 shadow-2xl ring-1 ring-primaryText-900/10 dark:ring-white/10 focus:outline-none border border-primaryText-200/50 dark:border-primaryText-700/50 backdrop-blur-xl py-2">
+              <Menu.Items
+                className={clsx(
+                  'absolute left-0 z-50 mt-3 w-56 origin-top-left space-y-0.5 rounded-2xl p-2 focus:outline-none',
+                  panelSurface
+                )}
+              >
                 {link.submenu?.map((item) => {
                   const isItemActive = pathname === item.href
                   return (
@@ -82,12 +115,14 @@ function DropdownMenu({ link }: { link: NavLink }) {
                       {({ active }) => (
                         <LocaleLink
                           href={item.href}
+                          aria-current={isItemActive ? 'page' : undefined}
                           className={clsx(
-                            'block px-4 py-2.5 text-sm font-medium transition-all duration-200 mx-2 rounded-lg',
+                            panelItemBase,
+                            'block text-sm',
                             isItemActive
-                              ? 'bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-md'
+                              ? panelItemCurrent
                               : active
-                              ? 'bg-gradient-to-r from-accent-50 to-accent-100 dark:from-accent-900/30 dark:to-accent-800/30 text-accent-600 dark:text-accent-400'
+                              ? panelItemHover
                               : 'text-primaryText-700 dark:text-primaryText-300'
                           )}
                         >
@@ -124,22 +159,28 @@ function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
     return (
       <li>
         <button
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
           className={clsx(
-            "flex items-center justify-between w-full px-4 py-3 rounded-xl transition-all duration-300 hover:shadow-md font-medium text-left",
-            hasActiveChild
-              ? "bg-gradient-to-r from-accent-100 to-accent-50 dark:from-accent-900/40 dark:to-accent-800/40 text-accent-700 dark:text-accent-300"
-              : "hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30"
+            panelItemBase,
+            'flex w-full items-center justify-between py-2.5 text-left',
+            hasActiveChild ? panelItemCurrent : panelItemIdle
           )}
         >
           <span className="flex items-center gap-2">
             {children}
-            <span className="text-xs opacity-60 font-normal">({submenu.length})</span>
+            <span className="text-xs font-normal text-primaryText-500">({submenu.length})</span>
           </span>
-          <ChevronDownIcon className={clsx('w-5 h-5 transition-transform duration-300 stroke-2', isOpen && 'rotate-180')} />
+          <ChevronDownIcon
+            className={clsx(
+              'h-auto w-2.5 stroke-current opacity-70 transition-transform duration-200 ease-smooth',
+              isOpen && 'rotate-180'
+            )}
+          />
         </button>
         {isOpen && (
-          <ul className="pl-4 mt-2 space-y-1">
+          <ul className="mb-1 ml-3 mt-1 space-y-0.5 border-l border-primaryText-200/70 pl-3 dark:border-primaryText-800">
             {submenu.map((item) => {
               const isActive = pathname === item.href
               return (
@@ -147,11 +188,11 @@ function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
                   <Popover.Button
                     as={LocaleLink}
                     href={item.href}
+                    aria-current={isActive ? 'page' : undefined}
                     className={clsx(
-                      'block px-4 py-2 text-sm rounded-lg transition-all duration-200',
-                      isActive
-                        ? 'bg-gradient-to-r from-accent-500 to-accent-600 text-white font-semibold shadow-md'
-                        : 'text-primaryText-600 dark:text-primaryText-400 hover:bg-accent-50 dark:hover:bg-accent-900/20'
+                      panelItemBase,
+                      'block text-sm',
+                      isActive ? panelItemCurrent : panelItemIdle
                     )}
                   >
                     {t(item.name)}
@@ -169,18 +210,26 @@ function MobileNavItem({ href, children, submenu }: MobileNavItemProps) {
 
   return (
     <li>
-      <Popover.Button as={LocaleLink} href={href} className="block">
-        <span className={clsx(
-          "flex items-center justify-between w-full px-4 py-3 rounded-xl transition-all duration-300 hover:shadow-md group font-medium",
-          isActive
-            ? "bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-md"
-            : "hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30"
-        )}>
-          <span>{children}</span>
-          <svg className="w-4 h-4 ml-2 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
+      <Popover.Button
+        as={LocaleLink}
+        href={href}
+        aria-current={isActive ? 'page' : undefined}
+        className={clsx(
+          panelItemBase,
+          'group flex w-full items-center justify-between py-2.5',
+          isActive ? panelItemCurrent : panelItemIdle
+        )}
+      >
+        <span>{children}</span>
+        <svg
+          className="ml-2 h-4 w-4 opacity-50 transition-transform duration-200 ease-smooth motion-safe:group-hover:translate-x-0.5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
       </Popover.Button>
     </li>
   )
@@ -191,45 +240,56 @@ function MobileNavigation(props: React.ComponentPropsWithoutRef<typeof Popover>)
   const t = useT()
   return (
     <Popover {...props}>
-      <Popover.Button className="flex items-center px-5 py-2.5 text-sm font-semibold rounded-2xl shadow-xl group bg-gradient-to-r from-white/90 to-white/80 text-primaryText-800 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:from-primaryText-900/90 dark:to-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 dark:hover:ring-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-primaryText-200/50 dark:border-primaryText-700/50">
-        <span className="mr-2 font-bold">Menu</span>
-        <ChevronDownIcon className="w-4 h-4 stroke-primaryText-600 group-hover:stroke-accent-600 dark:stroke-primaryText-400 dark:group-hover:stroke-accent-400 transition-all duration-300 group-data-[headlessui-state~=open]:rotate-180" />
+      <Popover.Button
+        className={clsx(
+          navPillSurface,
+          'group flex h-10 items-center gap-2 px-4 text-sm font-medium text-primaryText-800 transition-[color,box-shadow] duration-200 ease-smooth hover:text-accent-600 hover:ring-primaryText-900/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 dark:text-primaryText-200 dark:hover:text-accent-400 dark:hover:ring-white/20'
+        )}
+      >
+        Menu
+        <ChevronDownIcon className="h-auto w-2 stroke-current opacity-70 transition-transform duration-200 ease-smooth group-data-[headlessui-state~=open]:rotate-180" />
       </Popover.Button>
       <Transition.Root>
         <Transition.Child
           as={Fragment}
-          enter="duration-150 ease-out"
+          enter="transition-opacity duration-200 ease-smooth"
           enterFrom="opacity-0"
           enterTo="opacity-100"
-          leave="duration-150 ease-in"
+          leave="transition-opacity duration-150 ease-smooth"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <Popover.Overlay className="fixed inset-0 z-50 bg-primaryText-800/40 backdrop-blur-sm dark:bg-black/80" />
+          <Popover.Overlay className="fixed inset-0 z-50 bg-primaryText-900/40 backdrop-blur-sm dark:bg-black/60" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
-          enter="duration-150 ease-out"
-          enterFrom="opacity-0 scale-95"
-          enterTo="opacity-100 scale-100"
-          leave="duration-150 ease-in"
-          leaveFrom="opacity-100 scale-100"
-          leaveTo="opacity-0 scale-95"
+          enter="transition-[opacity,transform] duration-200 ease-smooth"
+          enterFrom="opacity-0 motion-safe:translate-y-1"
+          enterTo="opacity-100 translate-y-0"
+          leave="transition-[opacity,transform] duration-150 ease-smooth"
+          leaveFrom="opacity-100 translate-y-0"
+          leaveTo="opacity-0 motion-safe:translate-y-1"
         >
           <Popover.Panel
             focus
-            className="fixed z-50 p-8 origin-top bg-gradient-to-br from-white/98 to-white/95 backdrop-blur-xl inset-x-4 top-8 rounded-3xl ring-1 ring-primaryText-900/10 shadow-2xl dark:from-primaryText-900/98 dark:to-primaryText-800/95 dark:ring-white/10 border-2 border-primaryText-200/50 dark:border-primaryText-700/50"
+            className={clsx(
+              'fixed inset-x-4 top-8 z-50 max-h-[calc(100dvh-4rem)] origin-top overflow-y-auto rounded-2xl p-6',
+              panelSurface
+            )}
           >
-            <div className="flex flex-row-reverse items-center justify-between mb-6">
-              <Popover.Button aria-label="Close menu" className="p-2 -m-1 rounded-xl hover:bg-primaryText-100 dark:hover:bg-primaryText-800 transition-all duration-200 hover:scale-110">
-                <CloseIcon className="w-6 h-6 text-primaryText-600 dark:text-primaryText-400" />
+            <div className="mb-4 flex flex-row-reverse items-center justify-between">
+              <Popover.Button
+                aria-label="Close menu"
+                className="-m-2 flex h-10 w-10 items-center justify-center rounded-full text-primaryText-500 transition-colors duration-200 ease-smooth hover:bg-primaryText-100 hover:text-primaryText-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 dark:text-primaryText-400 dark:hover:bg-primaryText-800 dark:hover:text-primaryText-50"
+              >
+                <CloseIcon className="h-6 w-6" />
               </Popover.Button>
-              <h2 className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent-600 to-accent-400 dark:from-accent-400 dark:to-accent-300">
+              <h2 className="text-sm font-medium text-primaryText-600 dark:text-primaryText-400">
                 Navigation
               </h2>
             </div>
             <nav>
-              <ul className="space-y-2 text-base text-primaryText-800 dark:text-primaryText-300">
+              <ul className="-mx-3 space-y-0.5 text-base">
                 {siteNavLinks.map((link) => {
                   return (
                     <MobileNavItem key={link.name.en} href={link.href} submenu={link.submenu}>
@@ -259,12 +319,8 @@ function NavItem({ href, children }: NavItemProps) {
     <li className="relative flex items-center">
       <LocaleLink
         href={href}
-        className={clsx(
-          'relative px-3 py-2.5 rounded-xl transition-all duration-300 hover:bg-gradient-to-r hover:from-accent-50 hover:to-accent-100 dark:hover:from-accent-900/30 dark:hover:to-accent-800/30 hover:shadow-md font-medium whitespace-nowrap flex items-center',
-          isActive
-            ? 'text-accent-600 dark:text-accent-400 font-semibold'
-            : 'text-primaryText-700 dark:text-primaryText-300 hover:text-accent-600 dark:hover:text-accent-400'
-        )}
+        aria-current={isActive ? 'page' : undefined}
+        className={clsx(navItemBase, isActive ? navItemActive : navItemIdle)}
       >
         {children}
       </LocaleLink>
@@ -277,7 +333,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   const t = useT()
   return (
     <nav {...props}>
-      <ul className="flex items-center gap-1 px-2 py-2 text-sm font-medium rounded-2xl shadow-xl bg-white/80 text-primaryText-800 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:bg-primaryText-900/80 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/50 dark:border-primaryText-700/50 transition-all duration-300">
+      <ul className={clsx(navPillSurface, 'flex h-10 items-center gap-0.5 px-1')}>
         {siteNavLinks.map((link) => {
           // If link has a submenu, render DropdownMenu
           if (link.submenu) {
@@ -323,11 +379,11 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="px-3 py-3 transition-all duration-300 rounded-2xl shadow-xl group bg-gradient-to-br from-white/90 to-white/80 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:from-primaryText-900/90 dark:to-primaryText-800/90 dark:ring-white/10 dark:hover:ring-white/20 border border-primaryText-200/50 dark:border-primaryText-700/50 hover:scale-110 hover:shadow-2xl hover:rotate-12 active:scale-95"
+      className={iconButton}
       onClick={toggleMode}
     >
-      <SunIcon className="h-6 w-6 fill-amber-100 stroke-amber-500 transition-all duration-300 group-hover:fill-amber-200 group-hover:stroke-amber-600 group-hover:rotate-90 dark:hidden [@media(prefers-color-scheme:dark)]:fill-accent-50 [@media(prefers-color-scheme:dark)]:stroke-accent-500" />
-      <MoonIcon className="hidden h-6 w-6 fill-indigo-700 stroke-indigo-400 transition-all duration-300 dark:block group-hover:fill-indigo-600 group-hover:stroke-indigo-300 group-hover:-rotate-12 [@media_not_(prefers-color-scheme:dark)]:fill-accent-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-accent-500" />
+      <SunIcon className="h-5 w-5 fill-primaryText-100 stroke-primaryText-500 transition-colors duration-200 ease-smooth group-hover:fill-accent-50 group-hover:stroke-accent-600 dark:hidden [@media(prefers-color-scheme:dark)]:fill-accent-50 [@media(prefers-color-scheme:dark)]:stroke-accent-500 [@media(prefers-color-scheme:dark)]:group-hover:stroke-accent-600" />
+      <MoonIcon className="hidden h-5 w-5 fill-primaryText-700 stroke-primaryText-400 transition-colors duration-200 ease-smooth group-hover:fill-accent-400/10 group-hover:stroke-accent-400 dark:block [@media_not_(prefers-color-scheme:dark)]:fill-accent-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-accent-400" />
     </button>
   )
 }
@@ -335,15 +391,16 @@ function ModeToggle() {
 // language switcher (English / French)
 function LanguageToggle() {
   let { locale, toggleLocale } = useLocale()
+  const label = locale === 'en' ? 'Passer en français' : 'Switch to English'
 
   return (
     <button
       type="button"
       onClick={toggleLocale}
-      aria-label={locale === 'en' ? 'Passer en français' : 'Switch to English'}
-      className="flex items-center gap-2 px-3.5 py-3 text-sm font-bold transition-all duration-300 rounded-2xl shadow-xl group bg-gradient-to-br from-white/90 to-white/80 text-primaryText-700 shadow-primaryText-800/10 ring-1 ring-primaryText-900/10 backdrop-blur-md dark:from-primaryText-900/90 dark:to-primaryText-800/90 dark:text-primaryText-200 dark:ring-white/10 border border-primaryText-200/50 dark:border-primaryText-700/50 hover:scale-110 hover:shadow-2xl active:scale-95 hover:text-accent-600 dark:hover:text-accent-400"
+      aria-label={label}
+      title={label}
+      className={clsx(iconButton, 'text-xs font-semibold tracking-wide')}
     >
-      <FaGlobe className="w-4 h-4 transition-colors group-hover:text-accent-500" aria-hidden="true" />
       <span>{locale.toUpperCase()}</span>
     </button>
   )
@@ -361,7 +418,7 @@ function AvatarContainer({ className, ...props }: React.ComponentPropsWithoutRef
     <div
       className={clsx(
         className,
-        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-lg shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 backdrop-blur dark:bg-primaryText-800/90 dark:ring-white/10'
+        'h-10 w-10 rounded-full bg-white/90 p-0.5 shadow-sm ring-1 ring-primaryText-900/5 backdrop-blur dark:bg-primaryText-900/90 dark:ring-white/10'
       )}
       {...props}
     />
@@ -377,7 +434,10 @@ function Avatar({ large = false, className, ...props }: AvatarProps) {
     <LocaleLink
       href="/"
       aria-label="Home"
-      className={clsx(className, 'pointer-events-auto')}
+      className={clsx(
+        className,
+        'pointer-events-auto rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500'
+      )}
       {...props}
     >
       <Image
@@ -559,11 +619,11 @@ export function Header() {
                   </AvatarContainer>
                 )}
               </div>
-              <div className="flex justify-end flex-1 md:justify-center">
-                <MobileNavigation className="pointer-events-auto md:hidden" />
-                <DesktopNavigation className="hidden pointer-events-auto md:block" />
+              <div className="flex flex-1 justify-end lg:justify-center">
+                <MobileNavigation className="pointer-events-auto lg:hidden" />
+                <DesktopNavigation className="pointer-events-auto hidden lg:block" />
               </div>
-              <div className="flex justify-end gap-2 sm:gap-3 md:flex-1">
+              <div className="flex justify-end gap-2 lg:flex-1">
                 <div className="pointer-events-auto">
                   <LanguageToggle />
                 </div>

@@ -12,8 +12,8 @@ export const faqs: FaqItem[] = [
       fr: "Qu'est-ce qui vous a poussé à vous orienter vers l'IA et la robotique ?",
     },
     answer: {
-      en: 'My passion for AI and robotics was sparked by the potential these technologies have to revolutionize various industries and improve lives. The ability to create intelligent systems that can learn and adapt fascinates me, and I am driven by the challenge of solving complex problems.',
-      fr: "Ma passion pour l'IA et la robotique est née du potentiel de ces technologies à révolutionner de nombreux secteurs et à améliorer le quotidien. La possibilité de créer des systèmes intelligents capables d'apprendre et de s'adapter me fascine, et je suis animé par le défi de résoudre des problèmes complexes.",
+      en: 'My passion was sparked by their potential to transform industries and improve lives. Building systems that learn and adapt fascinates me, and I love tackling complex problems.',
+      fr: "Ma passion est née de leur potentiel à transformer de nombreux secteurs et à améliorer le quotidien. Créer des systèmes qui apprennent et s'adaptent me fascine, et j'aime m'attaquer à des problèmes complexes.",
     },
   },
   {
@@ -22,8 +22,8 @@ export const faqs: FaqItem[] = [
       fr: 'Pouvez-vous décrire un projet dont vous êtes particulièrement fier ?',
     },
     answer: {
-      en: 'One of the projects I am most proud of is developing an autonomous navigation system for a robotic vehicle. This project involved implementing machine learning algorithms for object recognition and path planning.',
-      fr: "L'un des projets dont je suis le plus fier est le développement d'un système de navigation autonome pour un véhicule robotique. Ce projet impliquait la mise en œuvre d'algorithmes de machine learning pour la reconnaissance d'objets et la planification de trajectoire.",
+      en: 'An autonomous navigation system for a robotic vehicle, using machine learning for object recognition and path planning.',
+      fr: "Un système de navigation autonome pour un véhicule robotique, avec du machine learning pour la reconnaissance d'objets et la planification de trajectoire.",
     },
   },
   {
@@ -32,8 +32,8 @@ export const faqs: FaqItem[] = [
       fr: 'Quels langages de programmation et outils utilisez-vous ?',
     },
     answer: {
-      en: 'I primarily use Python for its simplicity and extensive libraries for machine learning and data analysis. I also use C++ for performance-critical applications and Java for certain projects. Additionally, I am proficient with tools such as TensorFlow, PyTorch, and ROS (Robot Operating System).',
-      fr: "J'utilise principalement Python pour sa simplicité et sa richesse de bibliothèques dédiées au machine learning et à l'analyse de données. J'emploie aussi le C++ pour les applications critiques en performance et Java pour certains projets. Je maîtrise par ailleurs des outils tels que TensorFlow, PyTorch et ROS (Robot Operating System).",
+      en: 'I mainly use Python for its ML and data libraries, C++ for performance-critical code and Java for some projects, plus TensorFlow, PyTorch and ROS (Robot Operating System).',
+      fr: "J'utilise surtout Python pour ses bibliothèques de ML et de données, le C++ pour le code critique en performance et Java pour certains projets, ainsi que TensorFlow, PyTorch et ROS (Robot Operating System).",
     },
   },
   {
@@ -52,8 +52,8 @@ export const faqs: FaqItem[] = [
       fr: "Quels sont vos objectifs futurs en IA et en robotique ?",
     },
     answer: {
-      en: 'My future goals include contributing to cutting-edge research, developing innovative solutions for real-world problems, and sharing my knowledge through teaching and mentoring. I aim to make a significant impact in the fields of AI and robotics and help drive technological advancements.',
-      fr: "Mes objectifs futurs incluent la contribution à des recherches de pointe, le développement de solutions innovantes pour des problèmes concrets et le partage de mes connaissances par l'enseignement et le mentorat. Je souhaite avoir un impact significatif dans les domaines de l'IA et de la robotique et contribuer à faire avancer la technologie.",
+      en: 'Contributing to cutting-edge research, solving real-world problems, and sharing my knowledge through teaching and mentoring, to help move AI and robotics forward.',
+      fr: "Contribuer à la recherche de pointe, résoudre des problèmes concrets et partager mes connaissances par l'enseignement et le mentorat, pour faire avancer l'IA et la robotique.",
     },
   },
   {
@@ -62,8 +62,8 @@ export const faqs: FaqItem[] = [
       fr: 'Comment gérez-vous les difficultés et les revers dans vos projets ?',
     },
     answer: {
-      en: 'I view challenges and setbacks as opportunities to learn and grow. When faced with a difficult problem, I analyze the situation, seek feedback from peers, and explore alternative approaches.',
-      fr: "Je considère les difficultés et les revers comme des occasions d'apprendre et de progresser. Face à un problème complexe, j'analyse la situation, je sollicite les retours de mes pairs et j'explore d'autres approches.",
+      en: 'I see challenges and setbacks as chances to learn. Faced with a hard problem, I analyze the situation, seek feedback from peers and explore other approaches.',
+      fr: "Je vois les difficultés et les revers comme des occasions d'apprendre. Face à un problème complexe, j'analyse la situation, je sollicite l'avis de mes pairs et j'explore d'autres approches.",
     },
   },
 ]

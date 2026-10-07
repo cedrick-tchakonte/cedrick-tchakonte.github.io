@@ -1,35 +1,54 @@
-import { LocaleLink } from '@/components/LocaleLink'
+import { motion } from 'framer-motion'
+
+import { Button } from '@/components/Button'
+import { Container } from '@/components/Container'
 import { useT } from '@/i18n'
+import { fadeUp, reveal } from '@/lib/motion'
 
 const CallToAction = () => {
   const t = useT()
 
   return (
-    <div className="bg-accent-50 dark:bg-accent-900/30">
-      <div className="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-20 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-primaryText-900 md:text-4xl">
-          <span className="block text-primaryText-800 dark:text-primaryText-100">
-            {t({ en: 'Hiring me?', fr: 'Vous recrutez ?' })}
-          </span>
-          <span className="block text-accent-600 dark:text-accent-400">
-            {t({
-              en: 'This is an invitation to explore.',
-              fr: "C'est une invitation à découvrir mon profil.",
-            })}
-          </span>
-        </h2>
-        <div className="flex mt-8 lg:mt-0 lg:flex-shrink-0">
-          <div className="inline-flex rounded-md shadow">
-            <LocaleLink
-              href="/contact"
-              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-white border border-transparent rounded-md bg-accent-500 hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent-500 focus:ring-offset-2 transition-all duration-300 hover:scale-105"
-            >
+    <section className="py-16 sm:py-20">
+      <Container>
+        <motion.div
+          variants={fadeUp}
+          {...reveal}
+          className="rounded-2xl border border-primaryText-200/70 bg-white p-6 shadow-sm sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-8 lg:p-10 dark:border-primaryText-800 dark:bg-primaryText-900"
+        >
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <span className="block text-primaryText-900 dark:text-primaryText-50">
+              {t({ en: 'Hiring me?', fr: 'Vous recrutez ?' })}
+            </span>
+            <span className="block text-accent-600 dark:text-accent-400">
+              {t({
+                en: 'This is an invitation to explore.',
+                fr: "C'est une invitation à découvrir mon profil.",
+              })}
+            </span>
+          </h2>
+          <div className="mt-6 flex lg:mt-0 lg:flex-shrink-0">
+            <Button href="/contact">
               {t({ en: 'Discuss with me now!', fr: 'Discutons-en !' })}
-            </LocaleLink>
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                aria-hidden="true"
+                className="h-4 w-4 transition-transform duration-200 ease-smooth motion-safe:group-hover:translate-x-0.5"
+              >
+                <path
+                  d="M3.5 8h9m0 0L9 4.5M12.5 8 9 11.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </Button>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </Container>
+    </section>
   )
 }
 

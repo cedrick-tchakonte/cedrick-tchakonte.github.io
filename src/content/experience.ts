@@ -66,10 +66,14 @@ export const experiences: ExperienceItem[] = [
     date: { en: 'May 2025 - Aug 2025', fr: 'Mai 2025 - Août 2025' },
     description: {
       en: [
-        'Automated C++ Digital-Twin generation from SoC documentation, a task where current LLMs struggle with hardware code (Verilog/VHDL): explored several approaches (RAG with vector databases, LoRA/QLoRA fine-tuning); solution integrated across ST divisions (automotive, RF, MCUs).',
+        'Automated C++ Digital-Twin generation from SoC documentation, a task where current LLMs struggle with hardware code (Verilog/VHDL).',
+        'Explored several approaches (RAG with vector databases, LoRA/QLoRA fine-tuning).',
+        'Solution integrated across ST divisions (automotive, RF, MCUs).',
       ],
       fr: [
-        'Génération automatique de modèles C++ de jumeaux numériques à partir de la documentation SoC, une tâche où les LLM actuels butent sur le code matériel (Verilog/VHDL) : exploration de plusieurs approches (RAG avec bases vectorielles, fine-tuning LoRA/QLoRA) ; solution intégrée dans plusieurs divisions ST (automobile, RF, microcontrôleurs).',
+        'Génération automatique de modèles C++ de jumeaux numériques à partir de la documentation SoC, une tâche où les LLM actuels butent sur le code matériel (Verilog/VHDL).',
+        'Exploration de plusieurs approches (RAG avec bases vectorielles, fine-tuning LoRA/QLoRA).',
+        'Solution intégrée dans plusieurs divisions ST (automobile, RF, microcontrôleurs).',
       ],
     },
     location: { en: 'Grenoble, France', fr: 'Grenoble, France' },

@@ -1,20 +1,23 @@
 import { motion } from 'framer-motion'
+
 import { useT } from '@/i18n'
+import { fadeUp } from '@/lib/motion'
 
 const AvailabilityBadge = () => {
   const t = useT()
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-      className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-semibold rounded-full bg-gradient-to-r from-accent-500 to-accent-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-default"
+      variants={fadeUp}
+      initial="hidden"
+      animate="visible"
+      className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full bg-accent-500/10 px-3 py-1 text-xs font-medium text-accent-700 ring-1 ring-inset ring-accent-500/20 sm:text-sm dark:bg-accent-400/10 dark:text-accent-300 dark:ring-accent-400/20"
     >
-      <span className="relative flex h-3 w-3">
-        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-        <span className="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
-      </span>
+      {/* The one status dot allowed to (softly) pulse. */}
+      <span
+        aria-hidden="true"
+        className="h-2 w-2 flex-shrink-0 rounded-full bg-accent-500 motion-safe:animate-pulse dark:bg-accent-400"
+      />
       <span>
         {t({
           en: 'Open to a 6-month ML research internship · early 2027',

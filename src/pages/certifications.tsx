@@ -1,10 +1,12 @@
 import Head from 'next/head'
+import { motion } from 'framer-motion'
 import type { IconType } from 'react-icons'
 import { FaAward, FaLayerGroup, FaCalendarAlt, FaBrain } from 'react-icons/fa'
 import { PageLayout } from '@/components/PageLayout'
 import CertificationCard from '@/components/CertificationCard'
 import siteMetadata from '@/data/siteMetadata'
 import { useT, type I18n } from '@/i18n'
+import { fadeUp, reveal, stagger } from '@/lib/motion'
 import { certifications } from '@/content/certifications'
 
 export default function Certifications() {
@@ -54,43 +56,52 @@ export default function Certifications() {
           fr: "Certifications professionnelles attestant d'une expertise en IA, deep learning, cybersécurité et développement logiciel.",
         })}
       >
-        {/* Statistics Section */}
-        <div className="grid grid-cols-2 gap-4 mb-12 md:grid-cols-4">
-          {stats.map((stat, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center p-6 text-center transition-shadow bg-white border shadow-sm rounded-2xl dark:bg-primaryText-800 border-primaryText-200/60 dark:border-primaryText-700/50 hover:shadow-md"
+        {/* Statistics */}
+        <motion.dl
+          className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4"
+          variants={stagger}
+          {...reveal}
+        >
+          {stats.map((stat) => (
+            <motion.div
+              key={stat.label.en}
+              variants={fadeUp}
+              className="flex flex-col rounded-2xl border border-primaryText-200/70 bg-white p-6 shadow-sm dark:border-primaryText-800 dark:bg-primaryText-900"
             >
-              <div className="flex items-center justify-center mb-3 text-white shadow-md w-11 h-11 rounded-xl bg-gradient-to-br from-accent-500 to-accent-600">
-                <stat.icon className="w-5 h-5" aria-hidden="true" />
-              </div>
-              <p className="text-3xl font-bold text-primaryText-900 dark:text-primaryText-100">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-sm text-primaryText-500 dark:text-primaryText-400">
+              <dt className="flex items-center gap-2 text-sm text-primaryText-500 dark:text-primaryText-400">
+                <stat.icon className="h-4 w-4 flex-none text-accent-600 dark:text-accent-400" aria-hidden="true" />
                 {t(stat.label)}
-              </p>
-            </div>
+              </dt>
+              <dd className="mt-2 text-3xl font-semibold tracking-tight text-primaryText-900 dark:text-primaryText-50">
+                {stat.value}
+              </dd>
+            </motion.div>
           ))}
-        </div>
+        </motion.dl>
 
-        {/* Grid Layout for Certification Cards */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+        {/* Certification cards */}
+        <motion.ul
+          role="list"
+          className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 xl:grid-cols-3"
+          variants={stagger}
+          {...reveal}
+        >
           {certifications.map((certification, index) => (
-            <CertificationCard
-              key={index}
-              certification={{
-                ...certification,
-                name:
-                  typeof certification.name === 'string'
-                    ? certification.name
-                    : t(certification.name),
-                date: t(certification.date),
-                description: t(certification.description),
-              }}
-            />
+            <motion.li key={index} variants={fadeUp} className="grid">
+              <CertificationCard
+                certification={{
+                  ...certification,
+                  name:
+                    typeof certification.name === 'string'
+                      ? certification.name
+                      : t(certification.name),
+                  date: t(certification.date),
+                  description: t(certification.description),
+                }}
+              />
+            </motion.li>
           ))}
-        </div>
+        </motion.ul>
       </PageLayout>
     </>
   )

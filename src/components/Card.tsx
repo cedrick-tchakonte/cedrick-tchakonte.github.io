@@ -1,62 +1,132 @@
 import clsx from 'clsx'
-import { motion } from 'framer-motion'
+import Image, { type StaticImageData } from 'next/image'
+import type { IconType } from 'react-icons'
 
 import { LocaleLink } from '@/components/LocaleLink'
 
-type CardProps = {
-  as?: React.ElementType
+/*
+ * One card family for the whole site: same surface, padding, radius, logo tile,
+ * title / subtitle / meta typography, bullets, tags and link style. Experience,
+ * volunteer, education, certification, mobility and home feature cards are all
+ * built from these pieces so they stay visually identical.
+ */
+
+type CardProps<T extends React.ElementType> = {
+  as?: T
   className?: string
   children?: React.ReactNode
-}
+} & Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'className' | 'children'>
 
-function CardRoot({ as: Component = 'div', className, children }: CardProps) {
+/** Spec surface; lifts on hover only when it holds a Card.Link. Extra props go to the rendered element. */
+function CardRoot<T extends React.ElementType = 'div'>({
+  as,
+  className,
+  children,
+  ...props
+}: CardProps<T>) {
+  const Component: React.ElementType = as ?? 'div'
+
   return (
-    <motion.div
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: 'spring', stiffness: 300 }}
+    <Component
+      className={clsx(
+        className,
+        'group relative isolate flex flex-col items-start',
+        'rounded-2xl border border-primaryText-200/70 bg-white p-6 shadow-sm sm:p-8',
+        'dark:border-primaryText-800 dark:bg-primaryText-900',
+        'transition-[transform,box-shadow,border-color] duration-300 ease-smooth',
+        // Only clickable cards (those with a Card.Link overlay) react to hover.
+        '[&:has([data-card-link]):hover]:border-accent-300/60 [&:has([data-card-link]):hover]:shadow-md',
+        'motion-safe:[&:has([data-card-link]):hover]:-translate-y-0.5',
+        'dark:[&:has([data-card-link]):hover]:border-accent-500/40'
+      )}
+      {...props}
     >
-      <Component
-        className={clsx(
-          className,
-          'group relative flex flex-col items-start p-8 overflow-hidden',
-          'bg-white dark:bg-primaryText-800',
-          'rounded-2xl backdrop-blur-sm',
-          'border border-primaryText-200/50 dark:border-primaryText-700/50',
-          'shadow-[0_0_0_1px_rgba(0,0,0,0.03),0_2px_4px_rgba(0,0,0,0.05),0_12px_24px_rgba(0,0,0,0.05)]',
-          'dark:shadow-[0_0_0_1px_rgba(255,255,255,0.1),0_2px_4px_rgba(0,0,0,0.2),0_12px_24px_rgba(0,0,0,0.2)]',
-          'transform-gpu transition-all duration-300'
-        )}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-primaryText-100/0 via-primaryText-100/0 to-primaryText-100/20 dark:from-primaryText-800/0 dark:via-primaryText-800/0 dark:to-primaryText-800/20" />
-        {children}
-      </Component>
-    </motion.div>
+      {children}
+    </Component>
   )
 }
 
 type CardLinkProps = React.ComponentPropsWithoutRef<typeof LocaleLink>
 
-function CardLink({ children, ...props }: CardLinkProps) {
+/** Makes the whole card clickable (overlay) with a subtle tinted hover. */
+function CardLink({ children, className, ...props }: CardLinkProps) {
   return (
     <>
-      <div className="absolute z-0 transition-all duration-500 ease-out scale-95 opacity-0 -inset-y-6 -inset-x-4 bg-gradient-to-br from-accent-500/5 via-accent-500/10 to-accent-500/20 group-hover:scale-100 group-hover:opacity-100 dark:from-accent-400/10 dark:via-accent-400/15 dark:to-accent-400/25 sm:-inset-x-6 sm:rounded-2xl" />
-      <LocaleLink {...props}>
-        <span className="absolute z-20 -inset-y-6 -inset-x-4 sm:-inset-x-6 sm:rounded-2xl" />
-        <motion.span
-          className="relative z-10"
-          whileHover={{ x: 5 }}
-          transition={{ type: 'spring', stiffness: 400 }}
-        >
-          {children}
-        </motion.span>
+      <span
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 rounded-2xl bg-accent-50/0 transition-colors duration-300 ease-smooth group-hover:bg-accent-50/70 dark:bg-accent-400/0 dark:group-hover:bg-accent-400/[0.04]"
+      />
+      <LocaleLink
+        data-card-link
+        className={clsx('group/link focus-visible:outline-none', className)}
+        {...props}
+      >
+        <span className="absolute inset-0 z-20 rounded-2xl group-focus-visible/link:ring-2 group-focus-visible/link:ring-accent-500" />
+        <span className="relative z-10">{children}</span>
       </LocaleLink>
     </>
   )
 }
 
-function CardDescription({ children }: { children?: React.ReactNode }) {
+type CardTitleProps = {
+  as?: React.ElementType
+  href?: string
+  className?: string
+  children?: React.ReactNode
+}
+
+function CardTitle({
+  as: Component = 'h3',
+  href,
+  className,
+  children,
+}: CardTitleProps) {
   return (
-    <p className="relative z-10 mt-4 text-base leading-7 text-primaryText-600 dark:text-primaryText-400 transition-colors duration-300 group-hover:text-primaryText-700 dark:group-hover:text-primaryText-300">
+    <Component
+      className={clsx(
+        className,
+        'text-lg font-semibold tracking-tight text-primaryText-900 dark:text-primaryText-50'
+      )}
+    >
+      {href ? <CardLink href={href}>{children}</CardLink> : children}
+    </Component>
+  )
+}
+
+/** Secondary line under a title (institution, issuer, university). */
+function CardSubtitle({
+  className,
+  children,
+}: {
+  className?: string
+  children?: React.ReactNode
+}) {
+  return (
+    <p
+      className={clsx(
+        className,
+        'mt-1 text-sm text-primaryText-600 dark:text-primaryText-400'
+      )}
+    >
+      {children}
+    </p>
+  )
+}
+
+function CardDescription({
+  className,
+  children,
+}: {
+  className?: string
+  children?: React.ReactNode
+}) {
+  return (
+    <p
+      className={clsx(
+        className,
+        'relative z-10 mt-2 text-sm leading-6 text-primaryText-600 dark:text-primaryText-400'
+      )}
+    >
       {children}
     </p>
   )
@@ -80,9 +150,7 @@ function CardEyebrow({
     <Component
       className={clsx(
         className,
-        'relative z-10 order-first mb-4 flex items-center text-sm font-medium',
-        'uppercase tracking-wider text-accent-500/80 dark:text-accent-400/80',
-        'transition-colors duration-300 group-hover:text-accent-600 dark:group-hover:text-accent-300',
+        'relative z-10 order-first mb-4 flex items-center text-sm font-semibold text-accent-600 dark:text-accent-400',
         decorate && 'pl-3.5'
       )}
       {...props}
@@ -92,22 +160,194 @@ function CardEyebrow({
           className="absolute inset-y-0 left-0 flex items-center"
           aria-hidden="true"
         >
-          <span className="h-6 w-0.5 rounded-full bg-gradient-to-b from-accent-400 via-accent-500 to-accent-600 dark:from-accent-300 dark:via-accent-400 dark:to-accent-500 animate-pulse" />
+          <span className="h-4 w-0.5 rounded-full bg-accent-500/40 dark:bg-accent-400/40" />
         </span>
       )}
-      <motion.span
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+      {children}
+    </Component>
+  )
+}
+
+/** Date / location row: muted text with small muted icons. */
+function CardMeta({
+  className,
+  children,
+}: {
+  className?: string
+  children?: React.ReactNode
+}) {
+  return (
+    <div
+      className={clsx(
+        className,
+        'flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-primaryText-500 dark:text-primaryText-400'
+      )}
+    >
+      {children}
+    </div>
+  )
+}
+
+function CardMetaItem({
+  icon: Icon,
+  children,
+}: {
+  icon: IconType
+  children?: React.ReactNode
+}) {
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <Icon
+        aria-hidden="true"
+        className="h-3.5 w-3.5 flex-none text-primaryText-400 dark:text-primaryText-500"
+      />
+      {children}
+    </span>
+  )
+}
+
+/** Bullet list with a small accent dot. */
+function CardList({
+  items,
+  className,
+}: {
+  items: string[]
+  className?: string
+}) {
+  return (
+    <ul
+      role="list"
+      className={clsx(
+        className,
+        'space-y-2 text-sm leading-6 text-primaryText-600 dark:text-primaryText-400'
+      )}
+    >
+      {items.map((item, index) => (
+        <li key={index} className="flex gap-3">
+          <span
+            aria-hidden="true"
+            className="mt-[0.5625rem] h-1.5 w-1.5 flex-none rounded-full bg-accent-500/70 dark:bg-accent-400/70"
+          />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+/** Neutral chip for tags. */
+function CardTag({
+  className,
+  children,
+}: {
+  className?: string
+  children?: React.ReactNode
+}) {
+  return (
+    <span
+      className={clsx(
+        className,
+        'inline-flex items-center rounded-full bg-primaryText-100 px-2.5 py-0.5 text-xs font-medium text-primaryText-700 dark:bg-primaryText-800 dark:text-primaryText-300'
+      )}
+    >
+      {children}
+    </span>
+  )
+}
+
+/** Logo in a white rounded tile with a ring; same height for square and wide logos. */
+function CardLogo({
+  src,
+  alt,
+  className,
+}: {
+  src: string | StaticImageData
+  alt: string
+  className?: string
+}) {
+  return (
+    <div
+      className={clsx(
+        className,
+        'relative z-10 flex h-12 min-w-[3rem] flex-none items-center justify-center rounded-xl bg-white px-2.5 ring-1 ring-primaryText-900/5 dark:ring-white/10'
+      )}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={160}
+        height={48}
+        unoptimized
+        className="h-8 w-auto max-w-[8.5rem] object-contain"
+      />
+    </div>
+  )
+}
+
+function ChevronRightIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M6.75 5.75 9.25 8l-2.5 2.25"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        stroke="currentColor"
+      />
+    </svg>
+  )
+}
+
+type CardCtaProps = {
+  className?: string
+  children?: React.ReactNode
+  /** When set, renders a standalone link (e.g. external) instead of a label for a Card.Link card. */
+  href?: string
+  target?: string
+  rel?: string
+}
+
+/** Accent link text with a small arrow that nudges on hover. */
+function CardCta({ className, children, href, target, rel }: CardCtaProps) {
+  const base =
+    'relative z-10 inline-flex items-center gap-1 text-sm font-medium text-accent-600 dark:text-accent-400'
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target}
+        rel={rel}
+        className={clsx(
+          className,
+          base,
+          'group/cta -my-2 rounded-lg py-2 transition-colors duration-200 ease-smooth hover:text-accent-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 dark:hover:text-accent-300'
+        )}
       >
         {children}
-      </motion.span>
-    </Component>
+        <ChevronRightIcon className="h-4 w-4 flex-none transition-transform duration-200 ease-smooth motion-safe:group-hover/cta:translate-x-0.5" />
+      </a>
+    )
+  }
+
+  return (
+    <div className={clsx(className, base)}>
+      {children}
+      <ChevronRightIcon className="h-4 w-4 flex-none transition-transform duration-200 ease-smooth motion-safe:group-hover:translate-x-0.5" />
+    </div>
   )
 }
 
 export const Card = Object.assign(CardRoot, {
   Link: CardLink,
+  Title: CardTitle,
+  Subtitle: CardSubtitle,
   Description: CardDescription,
   Eyebrow: CardEyebrow,
+  Meta: CardMeta,
+  MetaItem: CardMetaItem,
+  List: CardList,
+  Tag: CardTag,
+  Logo: CardLogo,
+  Cta: CardCta,
 })

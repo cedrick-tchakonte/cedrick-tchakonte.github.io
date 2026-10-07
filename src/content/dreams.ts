@@ -28,8 +28,8 @@ export const dreamLabs: DreamLab[] = [
     name: 'AMI Labs',
     focus: { en: 'World Models (Paris)', fr: "Modèles du monde (Paris)" },
     description: {
-      en: "Yann LeCun's Paris-based frontier lab building world models: AI that learns abstract representations of the real world to predict, plan and act reliably. Advanced Machine Intelligence with safety and real-world impact at its core.",
-      fr: "Le laboratoire de pointe de Yann LeCun, basé à Paris, qui construit des modèles du monde : une IA capable d'apprendre des représentations abstraites du monde réel pour prédire, planifier et agir de façon fiable. Une intelligence machine avancée plaçant la sûreté et l'impact concret au cœur de sa démarche.",
+      en: "Yann LeCun's Paris-based frontier lab building world models: AI that learns abstract representations of the real world to predict, plan and act safely and reliably.",
+      fr: "Le laboratoire de pointe de Yann LeCun, basé à Paris, qui construit des modèles du monde : une IA capable d'apprendre des représentations abstraites du monde réel pour prédire, planifier et agir de façon sûre et fiable.",
     },
     href: 'https://amilabs.xyz/',
     logo: amiLogo,
@@ -38,8 +38,8 @@ export const dreamLabs: DreamLab[] = [
     name: 'Google DeepMind',
     focus: { en: 'AGI & Scientific Discovery', fr: "IA générale et découverte scientifique" },
     description: {
-      en: 'From AlphaFold to Gemini, DeepMind treats intelligence as a scientific frontier, blending deep learning and reinforcement learning to solve problems that matter for science and society.',
-      fr: "D'AlphaFold à Gemini, DeepMind aborde l'intelligence comme une frontière scientifique, mêlant apprentissage profond et apprentissage par renforcement pour résoudre des problèmes qui comptent pour la science et la société.",
+      en: 'From AlphaFold to Gemini, DeepMind treats intelligence as a scientific frontier, blending deep and reinforcement learning to solve problems that matter.',
+      fr: "D'AlphaFold à Gemini, DeepMind aborde l'intelligence comme une frontière scientifique, mêlant apprentissage profond et par renforcement pour résoudre des problèmes qui comptent.",
     },
     href: 'https://deepmind.google/',
     logo: deepmindLogo,
@@ -48,8 +48,8 @@ export const dreamLabs: DreamLab[] = [
     name: 'Meta FAIR',
     focus: { en: 'Open Frontier Research', fr: "Recherche de pointe ouverte" },
     description: {
-      en: "Meta's Fundamental AI Research lab advances open science in large language models, computer vision and self-supervised learning, the kind of foundational work I want to contribute to.",
-      fr: "Le laboratoire de recherche fondamentale en IA de Meta fait progresser la science ouverte autour des grands modèles de langage, de la vision par ordinateur et de l'apprentissage auto-supervisé : exactement le type de travaux fondamentaux auxquels je veux contribuer.",
+      en: "Meta's Fundamental AI Research lab advances open science in LLMs, computer vision and self-supervised learning: foundational work I want to contribute to.",
+      fr: "Le laboratoire de recherche fondamentale en IA de Meta fait progresser la science ouverte autour des LLM, de la vision par ordinateur et de l'apprentissage auto-supervisé : des travaux fondamentaux auxquels je veux contribuer.",
     },
     href: 'https://ai.meta.com/research/',
     logo: metaLogo,
@@ -148,12 +148,12 @@ export const dreamLabs: DreamLab[] = [
 
 export const vision: I18n<string>[] = [
   {
-    en: "It comes down to one thing: I love maths, and AI is where maths starts to think. I'm the kind of person who gets pulled into a research paper late at night, then spends the next morning trying to rebuild it just to see if it really works.",
-    fr: "Tout se résume à une chose : j'aime les maths, et l'IA est l'endroit où les maths se mettent à penser. Je suis du genre à me plonger dans un article de recherche tard le soir, puis à passer la matinée suivante à essayer de le reconstruire, juste pour voir s'il fonctionne vraiment.",
+    en: "I love maths, and AI is where maths starts to think. I get pulled into papers late at night, then spend the next morning rebuilding them to see if they really work.",
+    fr: "J'aime les maths, et l'IA est l'endroit où les maths se mettent à penser. Je me plonge dans des articles tard le soir, puis je passe la matinée suivante à les reconstruire pour voir s'ils fonctionnent vraiment.",
   },
   {
-    en: "I don't want to only use these models, I want to understand how they work and help build the next ones. My goal is to do genuine research, surrounded by people who push me, on problems that actually matter.",
-    fr: "Je ne veux pas seulement utiliser ces modèles, je veux comprendre comment ils fonctionnent et aider à construire les prochains. Mon objectif est de faire de la vraie recherche, entouré de personnes qui me tirent vers le haut, sur des problèmes qui comptent réellement.",
+    en: "I don't just want to use these models, I want to understand them and help build the next ones: genuine research, with people who push me, on problems that matter.",
+    fr: "Je ne veux pas seulement utiliser ces modèles, je veux les comprendre et aider à construire les prochains : de la vraie recherche, avec des personnes qui me tirent vers le haut, sur des problèmes qui comptent.",
   },
 ]
 

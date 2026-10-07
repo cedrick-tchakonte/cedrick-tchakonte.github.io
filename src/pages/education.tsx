@@ -1,8 +1,10 @@
 import Head from 'next/head'
+import { motion } from 'framer-motion'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import BackgroundEducationCard from '@/components/BackgroundEducationCard'
 import siteMetadata from '@/data/siteMetadata'
 import { useT } from '@/i18n'
+import { fadeUp, reveal, stagger } from '@/lib/motion'
 import { educationBackground } from '@/content/education'
 
 export default function Education() {
@@ -27,23 +29,23 @@ export default function Education() {
           fr: "Voici une vue détaillée de mon parcours académique, présentant les établissements que j'ai fréquentés, les diplômes obtenus et les réussites marquantes de mes études.",
         })}
       >
-        {/* One Card per Line Layout */}
-        <div className="flex flex-col space-y-8">
+        <motion.ul role="list" className="space-y-6" variants={stagger} {...reveal}>
           {educationBackground.map((education, index) => (
-            <BackgroundEducationCard
-              key={index}
-              education={{
-                degree: t(education.degree),
-                institution: t(education.institution),
-                logo: education.logo,
-                startDate: t(education.startDate),
-                endDate: t(education.endDate),
-                description: t(education.description),
-                highlights: t(education.highlights),
-              }}
-            />
+            <motion.li key={index} variants={fadeUp}>
+              <BackgroundEducationCard
+                education={{
+                  degree: t(education.degree),
+                  institution: t(education.institution),
+                  logo: education.logo,
+                  startDate: t(education.startDate),
+                  endDate: t(education.endDate),
+                  description: t(education.description),
+                  highlights: t(education.highlights),
+                }}
+              />
+            </motion.li>
           ))}
-        </div>
+        </motion.ul>
       </SimpleLayout>
     </>
   )

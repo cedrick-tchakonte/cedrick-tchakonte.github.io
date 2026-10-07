@@ -1,10 +1,12 @@
 import Head from 'next/head'
+import { motion } from 'framer-motion'
 import { EntryCard } from '@/components/EntryCard'
 import { SectionHeading } from '@/components/SectionHeading'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { experiences } from '@/content/experience'
 import siteMetadata from '@/data/siteMetadata'
 import { useT } from '@/i18n'
+import { fadeUp, reveal, stagger } from '@/lib/motion'
 
 export default function Experience() {
   const t = useT()
@@ -27,14 +29,11 @@ export default function Experience() {
       >
         <SectionHeading
           title={t({ en: 'Work Experience', fr: 'Expérience professionnelle' })}
-          className="mb-10"
+          className="mb-8"
         />
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-        >
+        <motion.ul role="list" className="space-y-6" variants={stagger} {...reveal}>
           {experiences.map((experience, index) => (
-            <li key={index}>
+            <motion.li key={index} variants={fadeUp}>
               <EntryCard
                 logo={experience.logo}
                 logoAlt={t(experience.company)}
@@ -44,9 +43,9 @@ export default function Experience() {
                 bullets={t(experience.description)}
                 link={experience.link}
               />
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </SimpleLayout>
     </>
   )

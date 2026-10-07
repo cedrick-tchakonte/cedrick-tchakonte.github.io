@@ -1,66 +1,74 @@
-import React from 'react';
-import Image, { type StaticImageData } from 'next/image';
+import React from 'react'
+import Image, { type StaticImageData } from 'next/image'
+import { FaCalendarAlt } from 'react-icons/fa'
+
+import { Card } from '@/components/Card'
+import { useT } from '@/i18n'
 
 type Location = {
-  city: string;
-  country: string;
-  image: string | StaticImageData;
-  description: string;
-  startDate: string;
-  endDate: string;
-  university?: string;
-  credit?: string;
-};
+  city: string
+  country: string
+  image: string | StaticImageData
+  description: string
+  startDate: string
+  endDate: string
+  university?: string
+  credit?: string
+}
 
 type InternationalMobilityCardProps = {
-  location: Location;
-};
+  location: Location
+}
 
-const InternationalMobilityCard = ({ location }: InternationalMobilityCardProps) => {
+/** Mobility place in the shared card family. Scroll reveal is owned by the page grid. */
+const InternationalMobilityCard = ({
+  location,
+}: InternationalMobilityCardProps) => {
+  const t = useT()
+
   return (
-    <div className="relative w-full h-80 bg-white dark:bg-primaryText-800 rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl group border border-primaryText-200/50 dark:border-primaryText-700/50">
-      {/* Image */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+    <Card className="h-full">
+      {/* Photo */}
+      <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-primaryText-100 ring-1 ring-primaryText-900/5 dark:bg-primaryText-800 dark:ring-white/10">
         <Image
           src={location.image}
           alt={location.city}
-          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
+          className="object-cover transition-transform duration-500 ease-smooth motion-safe:group-hover:scale-[1.02]"
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
         />
       </div>
 
-      {/* Overlay avec la ville et le pays */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/20 to-black/30 flex flex-col justify-between p-4">
-        <div className="z-10">
-          <h3 className="text-2xl font-semibold text-white drop-shadow-lg">
-            {location.city}, {location.country}
-          </h3>
-          {location.university && (
-            <p className="mt-1 text-sm text-white/90 drop-shadow">{location.university}</p>
-          )}
-        </div>
-        <div className="absolute top-4 right-4 text-sm text-white bg-black/60 px-2 py-1 rounded-lg backdrop-blur-sm">
-          {location.startDate} - {location.endDate}
-        </div>
-      </div>
+      {/* City, place and dates */}
+      <Card.Title className="mt-6">
+        {location.city}, {location.country}
+      </Card.Title>
+      {location.university && (
+        <Card.Subtitle>{location.university}</Card.Subtitle>
+      )}
+      <Card.Meta className="mt-2">
+        <Card.MetaItem icon={FaCalendarAlt}>
+          {location.startDate === location.endDate
+            ? location.startDate
+            : `${location.startDate} - ${location.endDate}`}
+        </Card.MetaItem>
+      </Card.Meta>
 
-      {/* Description de la localisation */}
-      <div className="absolute bottom-0 left-0 right-0 bg-white/95 dark:bg-primaryText-900/95 backdrop-blur-sm p-4 rounded-b-2xl shadow-lg border-t border-primaryText-200/50 dark:border-primaryText-700/50">
-        <h4 className="font-semibold text-lg text-primaryText-800 dark:text-primaryText-100">
-          About {location.city}
-        </h4>
-        <p className="text-sm text-primaryText-600 dark:text-primaryText-400 mt-2 leading-relaxed">
-          {location.description}
+      {/* About the place */}
+      <h4 className="mt-5 text-sm font-semibold text-primaryText-900 dark:text-primaryText-50">
+        {t({ en: 'About', fr: 'À propos de' })} {location.city}
+      </h4>
+      <p className="mt-1 text-sm leading-6 text-primaryText-600 dark:text-primaryText-400">
+        {location.description}
+      </p>
+
+      {location.credit && (
+        <p className="mt-auto pt-4 text-xs text-primaryText-500">
+          {location.credit}
         </p>
-        {location.credit && (
-          <p className="mt-2 text-[10px] text-primaryText-400 dark:text-primaryText-500">
-            {location.credit}
-          </p>
-        )}
-      </div>
-    </div>
-  );
-};
+      )}
+    </Card>
+  )
+}
 
-export default InternationalMobilityCard;
+export default InternationalMobilityCard

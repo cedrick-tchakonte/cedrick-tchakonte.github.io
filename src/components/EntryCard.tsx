@@ -1,7 +1,7 @@
-import Image, { type StaticImageData } from 'next/image'
-import { Card } from '@/components/Card'
-import { RiLinksLine } from 'react-icons/ri'
+import type { StaticImageData } from 'next/image'
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
+
+import { Card } from '@/components/Card'
 
 export type EntryCardProps = {
   /** Logo / brand mark shown in the badge. */
@@ -18,8 +18,9 @@ export type EntryCardProps = {
 
 /**
  * Shared timeline/entry card used by the Experience and Volunteer pages so both
- * share one consistent layout (logo badge, title, date + location meta, bullet
- * list, source link). Bullets render as a real <ul> for valid, accessible markup.
+ * share one consistent layout (logo tile, title, date + location meta, bullet
+ * list, source link). The whole card is the link. Scroll reveal is owned by the
+ * page list (`stagger` + `fadeUp`), so the card itself does not animate in.
  */
 export function EntryCard({
   logo,
@@ -31,47 +32,21 @@ export function EntryCard({
   link,
 }: EntryCardProps) {
   return (
-    <Card>
-      <div className="relative z-10 inline-flex items-center h-16 px-4 bg-white shadow-md rounded-xl shadow-primaryText-800/5 ring-1 ring-primaryText-900/5 dark:bg-white dark:ring-0">
-        <Image
-          src={logo}
-          alt={logoAlt}
-          width={240}
-          height={64}
-          unoptimized
-          className="object-contain"
-          style={{ height: '2.75rem', width: 'auto', maxWidth: '180px' }}
-        />
+    <Card className="h-full">
+      <div className="flex w-full flex-col gap-4 sm:flex-row sm:gap-5">
+        <Card.Logo src={logo} alt={logoAlt} />
+        <div className="min-w-0">
+          <Card.Title href={link.url}>{title}</Card.Title>
+          <Card.Meta className="mt-2">
+            <Card.MetaItem icon={FaCalendarAlt}>{date}</Card.MetaItem>
+            <Card.MetaItem icon={FaMapMarkerAlt}>{location}</Card.MetaItem>
+          </Card.Meta>
+        </div>
       </div>
 
-      <h3 className="mt-6 text-base font-semibold text-primaryText-800 dark:text-primaryText-100">
-        <Card.Link href={link.url}>{title}</Card.Link>
-      </h3>
+      <Card.List items={bullets} className="mt-5" />
 
-      {/* Date and location */}
-      <div className="relative z-30 mt-3 space-y-2">
-        <p className="flex items-center text-sm text-primaryText-600 dark:text-primaryText-400">
-          <FaCalendarAlt className="flex-none w-4 h-4 mr-2 text-accent-500" />
-          {date}
-        </p>
-        <p className="flex items-center text-sm text-primaryText-600 dark:text-primaryText-400">
-          <FaMapMarkerAlt className="flex-none w-4 h-4 mr-2 text-accent-500" />
-          {location}
-        </p>
-      </div>
-
-      <ul className="relative z-10 mt-4 space-y-2 text-base leading-7 text-primaryText-600 dark:text-primaryText-400 transition-colors duration-300 group-hover:text-primaryText-700 dark:group-hover:text-primaryText-300">
-        {bullets.map((item, index) => (
-          <li className="ml-4 list-disc" key={index}>
-            {item}
-          </li>
-        ))}
-      </ul>
-
-      <div className="relative z-10 flex mt-6 text-sm font-medium transition text-primaryText-400 group-hover:text-accent-500 dark:text-primaryText-200">
-        <RiLinksLine className="flex-none w-6 h-6" />
-        <span className="ml-2">{link.label}</span>
-      </div>
+      <Card.Cta className="mt-auto pt-6">{link.label}</Card.Cta>
     </Card>
   )
 }

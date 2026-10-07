@@ -34,6 +34,10 @@ module.exports = {
         gradientStart: colors.sky,
         gradientEnd: colors.stone,
       },
+      // Same curve as EASE in src/lib/motion.ts, so CSS and framer-motion feel alike.
+      transitionTimingFunction: {
+        smooth: 'cubic-bezier(0.22, 1, 0.36, 1)',
+      },
     },
   },
 }

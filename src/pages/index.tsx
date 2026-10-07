@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon, XIcon, InstagramIcon } from '@/components/SocialIcons'
 import SocialLink from '@/components/SocialLink'
@@ -11,8 +12,8 @@ import DivideLine from '@/components/DivideLine'
 import AvailabilityBadge from '@/components/AvailabilityBadge'
 import siteMetadata from '@/data/siteMetadata'
 import { useT } from '@/i18n'
+import { fadeUp, stagger } from '@/lib/motion'
 import schoolLogo from '@/images/ensta-logo.png'
-
 
 const Home = () => {
   const t = useT()
@@ -44,17 +45,29 @@ const Home = () => {
         <meta name="msapplication-TileColor" content="#00aba9" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
-      <Container className="mt-9">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <Container className="pt-16 sm:pt-20">
+        <motion.div
+          className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16"
+          variants={stagger}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="max-w-2xl">
-            <h1 className="text-4xl font-bold tracking-tight text-primaryText-800 dark:text-primaryText-100 sm:text-5xl bg-gradient-to-r from-primaryText-800 to-primaryText-600 dark:from-primaryText-100 dark:to-primaryText-300 bg-clip-text text-transparent">
+            {/* Self-animating (fadeUp) and carries its own bottom margin */}
+            <AvailabilityBadge />
+            <motion.h1
+              variants={fadeUp}
+              className="text-4xl font-bold tracking-tight text-primaryText-900 dark:text-primaryText-50 sm:text-5xl"
+            >
               {t(siteMetadata.authorHeadline)}
-            </h1>
-            <p className="mt-6 text-base text-primaryText-600 dark:text-primaryText-400">
+            </motion.h1>
+            <motion.p
+              variants={fadeUp}
+              className="mt-6 text-base leading-7 text-primaryText-600 dark:text-primaryText-400"
+            >
               {t(siteMetadata.authorAbout)}
-            </p>
-            {/* div container for social links */}
-            <div className="flex gap-6 mt-6">
+            </motion.p>
+            <motion.div variants={fadeUp} className="mt-6 flex items-center gap-6">
               <SocialLink
                 href={siteMetadata.socials.x}
                 aria-label="Follow on X"
@@ -75,31 +88,25 @@ const Home = () => {
                 aria-label="Follow on Instagram"
                 icon={InstagramIcon}
               />
-            </div>
+            </motion.div>
           </div>
-          <div className="flex flex-col items-center lg:items-end gap-4">
-            {/* Badge de disponibilité à côté de la photo */}
-            <AvailabilityBadge />
-
-            <div className="relative group">
-              {/* Effet de glow derrière l'image */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-accent-500 to-accent-600 rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-              {/* Image avec effets */}
-              <div className="relative">
-                <Image
-                  src={schoolLogo}
-                  alt="Ensta Paris Logo"
-                  width={400}
-                  height={400}
-                  priority
-                  className="relative rounded-2xl shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-1 border-4 border-primaryText-200/50 dark:border-primaryText-700/50 bg-white dark:bg-primaryText-800 p-4"
-                />
-                {/* Effet de reflet */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
+          <motion.div
+            variants={fadeUp}
+            className="mx-auto w-full max-w-sm lg:mx-0 lg:ml-auto lg:max-w-md"
+          >
+            {/* Logo on a white panel in both themes (the mark has dark text) */}
+            <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-primaryText-900/5 dark:ring-white/10 sm:p-8">
+              <Image
+                src={schoolLogo}
+                alt="Ensta Paris Logo"
+                width={400}
+                height={400}
+                priority
+                className="h-auto w-full object-contain"
+              />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </Container>
       <div className="mt-16 sm:mt-20">
         <DivideLine />
