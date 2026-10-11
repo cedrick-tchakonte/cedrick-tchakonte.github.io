@@ -26,11 +26,13 @@ export const experiences: ExperienceItem[] = [
     description: {
       en: [
         'Built a multimodal dataset from 3D scans, meshes and impact-test data (Euro/China/Japan NCAP).',
-        'Designed 3D CNN/GNN surrogate models with transfer learning (ResNet, EfficientNet) to predict pedestrian-protection metrics, benchmarked against finite-element simulations.',
+        'Designed 3D CNN/GNN surrogate models with transfer learning (ResNet, ShuffleNet, EfficientNet) to predict pedestrian-protection metrics.',
+        'Benchmarked them against physical tests and finite-element simulations to support early-stage safety optimization.',
       ],
       fr: [
         "Constitution d'un jeu de données multimodal (scans 3D, maillages, essais de choc Euro/China/Japan NCAP).",
-        'Conception de modèles de substitution 3D CNN/GNN avec transfer learning (ResNet, EfficientNet) pour prédire les critères de protection des piétons, comparés aux simulations par éléments finis.',
+        'Conception de modèles de substitution 3D CNN/GNN avec transfer learning (ResNet, ShuffleNet, EfficientNet) pour prédire les critères de protection des piétons.',
+        "Comparaison aux essais physiques et aux simulations par éléments finis, pour appuyer l'optimisation de la sécurité dès les premières phases de conception.",
       ],
     },
     location: { en: 'GrEEn Campus Poissy, France', fr: 'GrEEn Campus Poissy, France' },
@@ -48,10 +50,12 @@ export const experiences: ExperienceItem[] = [
       en: [
         'Co-developed an AI assistant for financial regulatory analysis, focusing on the AI layer: a Graph RAG pipeline building knowledge graphs from regulatory corpora via LLM-based entity and relation extraction.',
         'Combined vector search with graph traversal for hybrid retrieval, improving relevance over standard RAG.',
+        'Built LLM/NLP decision-support systems for regulatory compliance; fine-tuned small language models with LoRA/QLoRA to cut compute cost.',
       ],
       fr: [
         "Co-développement d'un assistant IA d'analyse réglementaire financière, centré sur la couche IA : pipeline Graph RAG bâtissant des graphes de connaissances depuis des corpus réglementaires (extraction d'entités et de relations par LLM).",
         "Combinaison de la recherche vectorielle et du parcours de graphe pour une recherche hybride, améliorant la pertinence par rapport au RAG classique.",
+        "Développement de systèmes d'aide à la décision LLM/NLP pour la conformité réglementaire ; fine-tuning de petits modèles de langage avec LoRA/QLoRA pour réduire le coût de calcul.",
       ],
     },
     location: { en: 'Station F, Paris, France', fr: 'Station F, Paris, France' },

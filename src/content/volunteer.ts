@@ -2,6 +2,7 @@ import type { StaticImageData } from 'next/image'
 import type { I18n } from '@/i18n'
 import enstafrikLogo from '@/images/logos/enstafrik.png'
 import ryzomLogo from '@/images/logos/ryzom.svg'
+import taepLogo from '@/images/logos/taep.png'
 
 export interface VolunteerActivity {
   title: I18n<string>
@@ -14,6 +15,18 @@ export interface VolunteerActivity {
 }
 
 export const volunteerActivities: VolunteerActivity[] = [
+  {
+    title: { en: 'Student Consultant', fr: 'Consultant étudiant' },
+    organization: 'TAEP (ENSTA Paris Junior Enterprise)',
+    date: { en: '2024 - Present', fr: '2024 - Présent' },
+    description: {
+      en: ['Technical projects for industrial clients.'],
+      fr: ['Projets techniques pour des clients industriels.'],
+    },
+    location: { en: 'ENSTA Paris, France', fr: 'ENSTA Paris, France' },
+    link: { url: 'https://www.taep.fr/', label: 'TAEP' },
+    logo: taepLogo,
+  },
   {
     title: { en: 'Treasurer', fr: 'Trésorier' },
     organization: 'ENSTAFRIK Association',

@@ -117,6 +117,7 @@ const siteMetadata: SiteMetadata = {
       submenu: [
         { name: { en: 'Experience', fr: 'Expérience' }, href: '/experience' },
         { name: { en: 'Projects', fr: 'Projets' }, href: '/projects' },
+        { name: { en: 'Research Interests', fr: 'Thèmes de recherche' }, href: '/research-interests' },
         { name: { en: 'Skills', fr: 'Compétences' }, href: '/skills' },
       ],
     },

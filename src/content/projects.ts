@@ -7,6 +7,9 @@ import {
   FaRobot,
   FaVideo,
   FaBookOpen,
+  FaChartLine,
+  FaFeatherAlt,
+  FaImage,
 } from 'react-icons/fa'
 
 import { type I18n } from '@/i18n'
@@ -21,6 +24,36 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
+  {
+    title: {
+      en: 'Statistical vs. Neural Language Models',
+      fr: 'Modèles de langage statistiques et neuronaux',
+    },
+    description: {
+      en: 'Compared n-gram models (add-k smoothing, grid search) with small and large LSTM language models (PyTorch) on COGS; evaluated perplexity in and out of distribution, showing that all models degrade on compositional generalization (Language Modeling course, IP Paris, 2026).',
+      fr: "Comparaison de modèles n-grammes (lissage add-k, recherche sur grille) et de modèles de langage LSTM, petit et grand (PyTorch), sur COGS ; évaluation de la perplexité dans et hors distribution, montrant que tous les modèles se dégradent en généralisation compositionnelle (cours Language Modeling, IP Paris, 2026).",
+    },
+    icon: FaChartLine,
+    category: {
+      en: 'NLP & Language Modeling',
+      fr: 'NLP et modélisation du langage',
+    },
+  },
+  {
+    title: {
+      en: 'Character-Level Text Generation',
+      fr: 'Génération de texte caractère par caractère',
+    },
+    description: {
+      en: 'Trained a character-level LSTM language model (Keras) on Les Fleurs du Mal; compared greedy decoding, temperature and top-k sampling, and beam search (Language Modeling course, IP Paris, 2026).',
+      fr: "Entraînement d'un modèle de langage LSTM au niveau caractère (Keras) sur Les Fleurs du Mal ; comparaison du décodage glouton, de l'échantillonnage avec température et top-k, et de la recherche en faisceau (beam search) (cours Language Modeling, IP Paris, 2026).",
+    },
+    icon: FaFeatherAlt,
+    category: {
+      en: 'NLP & Text Generation',
+      fr: 'NLP et génération de texte',
+    },
+  },
   {
     title: {
       en: 'Retinal Vessel Segmentation in SLO Ophthalmoscopy',
@@ -50,6 +83,21 @@ export const projectsData: Project[] = [
     category: {
       en: 'Deep Learning & Adversarial ML',
       fr: 'Apprentissage profond et ML adverse',
+    },
+  },
+  {
+    title: {
+      en: 'Image Super-Resolution and Neural Style Transfer',
+      fr: 'Super-résolution et transfert de style neuronal',
+    },
+    description: {
+      en: 'CNN image classifiers (MNIST, CIFAR-10); CNN super-resolution benchmarked against linear interpolation; style transfer and Deep Dream with a pretrained VGG19 (deep learning labs).',
+      fr: "CNN de classification d'images (MNIST, CIFAR-10) ; CNN de super-résolution comparé à l'interpolation linéaire ; transfert de style et Deep Dream avec un VGG19 pré-entraîné (TP de deep learning).",
+    },
+    icon: FaImage,
+    category: {
+      en: 'Deep Learning & Computer Vision',
+      fr: 'Deep learning et vision par ordinateur',
     },
   },
   {

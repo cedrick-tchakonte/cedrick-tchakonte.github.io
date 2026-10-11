@@ -31,13 +31,13 @@ export const educationBackground: EducationBackground[] = [
       en: [
         '2nd in France and 41st worldwide (QS World University Rankings 2026)',
         'M2 Data Science (École Polytechnique): Convex Analysis and Optimization Theory',
-        'M2 Data & AI (IP Paris): Kernel Machines, Deep Learning',
+        'M2 Data & AI (IP Paris): Kernel Machines, Deep Learning, Language Modeling',
         'MVA (ENS Paris-Saclay): Point Clouds and 3D Modeling',
       ],
       fr: [
         '2ᵉ en France et 41ᵉ mondial (QS World University Rankings 2026)',
         "M2 Data Science (École polytechnique) : Analyse convexe et théorie de l'optimisation",
-        'M2 Data & IA (IP Paris) : Méthodes à noyaux, Deep Learning',
+        'M2 Data & IA (IP Paris) : Méthodes à noyaux, Deep Learning, Language Modeling',
         'MVA (ENS Paris-Saclay) : Nuages de points et modélisation 3D',
       ],
     },
